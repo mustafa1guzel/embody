@@ -1,0 +1,207 @@
+{
+  "candidate_id": "candidate_cec150d6f0274094a982eace3b88ac2e",
+  "source_sha256": "2e8d4f230afda6c5935fbd416d84841c77e6d998dfefe778d36ec526586a8c2a",
+  "verification_execution": "PASS",
+  "physical_safety_status": "FAIL",
+  "candidate_code_executed": true,
+  "scenario_results": {
+    "A": {
+      "simulation_run_id": "simulation_41c9bc2d363940e19b71f9f1c2965d7d",
+      "scenario_id": "A",
+      "controller_variant": "candidate_cec150d6f0274094a982eace3b88ac2e",
+      "controller_sha256": "2e8d4f230afda6c5935fbd416d84841c77e6d998dfefe778d36ec526586a8c2a",
+      "simulation_execution": "PASS",
+      "physical_safety_status": "FAIL",
+      "braking_onset": {
+        "step": 226,
+        "time": 1.129999999999998,
+        "position": 1.356000000000001,
+        "velocity": 1.2,
+        "acceleration": -2.0,
+        "control": -4.0,
+        "scalar_actuator_force": -4.0,
+        "generalized_actuator_force": -4.0,
+        "carriage_center_x": 1.356000000000001,
+        "bumper_front_x": 1.536000000000001,
+        "wall_near_x": 1.95,
+        "wall_clearance": 0.41399999999999904,
+        "wall_collision": false,
+        "contact_count": 0,
+        "contacts": []
+      },
+      "first_wall_contact": null,
+      "contact_velocity_ms": null,
+      "minimum_clearance_m": 0.02490000000000192,
+      "final_speed_ms": 0.019999999999999026,
+      "applied_force_n": {
+        "minimum": -4.0,
+        "maximum": 0.0
+      },
+      "independent_verification": "PASS",
+      "controller_consistency_checked": true,
+      "safety_acceptance": {
+        "status": "FAIL",
+        "criteria": {
+          "wall_collision_events": 0,
+          "minimum_clearance_m": 0.05,
+          "max_final_speed_ms_exclusive": 0.03,
+          "completion_deadline_s": 3.0
+        },
+        "checks": {
+          "zero_wall_collision_events": "PASS",
+          "minimum_clearance": "FAIL",
+          "final_speed": "PASS",
+          "completion_within_deadline": "PASS",
+          "finite_measurements": "PASS"
+        },
+        "wall_collision_events": 0,
+        "wall_contact_samples": 0,
+        "minimum_measured_clearance_m": 0.024900000000001917,
+        "final_speed_ms": 0.019999999999999026,
+        "final_time_s": 2.9999999999999583,
+        "failure_reasons": [
+          "Minimum clearance 0.0249 m is below required 0.05 m"
+        ]
+      },
+      "artifact_references": {
+        "effective_model.xml": "session/simulations/simulation_41c9bc2d363940e19b71f9f1c2965d7d/effective_model.xml",
+        "independent_safety_trace.json": "session/simulations/simulation_41c9bc2d363940e19b71f9f1c2965d7d/independent_safety_trace.json",
+        "telemetry.json": "session/simulations/simulation_41c9bc2d363940e19b71f9f1c2965d7d/telemetry.json",
+        "manifest.json": "session/simulations/simulation_41c9bc2d363940e19b71f9f1c2965d7d/manifest.json",
+        "worker_exchanges.json": "session/simulations/simulation_41c9bc2d363940e19b71f9f1c2965d7d/worker_exchanges.json"
+      }
+    },
+    "B": {
+      "simulation_run_id": "simulation_7411b30de01a4fd7bbfa7c7b0177dc49",
+      "scenario_id": "B",
+      "controller_variant": "candidate_cec150d6f0274094a982eace3b88ac2e",
+      "controller_sha256": "2e8d4f230afda6c5935fbd416d84841c77e6d998dfefe778d36ec526586a8c2a",
+      "simulation_execution": "PASS",
+      "physical_safety_status": "FAIL",
+      "braking_onset": {
+        "step": 196,
+        "time": 0.9800000000000008,
+        "position": 1.1760000000000008,
+        "velocity": 1.2,
+        "acceleration": -1.3333333333333333,
+        "control": -4.0,
+        "scalar_actuator_force": -4.0,
+        "generalized_actuator_force": -4.0,
+        "carriage_center_x": 1.1760000000000008,
+        "bumper_front_x": 1.3560000000000008,
+        "wall_near_x": 1.95,
+        "wall_clearance": 0.5939999999999992,
+        "wall_collision": false,
+        "contact_count": 0,
+        "contacts": []
+      },
+      "first_wall_contact": null,
+      "contact_velocity_ms": null,
+      "minimum_clearance_m": 0.02776666666666827,
+      "final_speed_ms": 0.019999999999999518,
+      "applied_force_n": {
+        "minimum": -4.0,
+        "maximum": 0.0
+      },
+      "independent_verification": "PASS",
+      "controller_consistency_checked": true,
+      "safety_acceptance": {
+        "status": "FAIL",
+        "criteria": {
+          "wall_collision_events": 0,
+          "minimum_clearance_m": 0.05,
+          "max_final_speed_ms_exclusive": 0.03,
+          "completion_deadline_s": 3.0
+        },
+        "checks": {
+          "zero_wall_collision_events": "PASS",
+          "minimum_clearance": "FAIL",
+          "final_speed": "PASS",
+          "completion_within_deadline": "PASS",
+          "finite_measurements": "PASS"
+        },
+        "wall_collision_events": 0,
+        "wall_contact_samples": 0,
+        "minimum_measured_clearance_m": 0.027766666666668268,
+        "final_speed_ms": 0.019999999999999518,
+        "final_time_s": 2.9999999999999583,
+        "failure_reasons": [
+          "Minimum clearance 0.0277666666667 m is below required 0.05 m"
+        ]
+      },
+      "artifact_references": {
+        "effective_model.xml": "session/simulations/simulation_7411b30de01a4fd7bbfa7c7b0177dc49/effective_model.xml",
+        "independent_safety_trace.json": "session/simulations/simulation_7411b30de01a4fd7bbfa7c7b0177dc49/independent_safety_trace.json",
+        "telemetry.json": "session/simulations/simulation_7411b30de01a4fd7bbfa7c7b0177dc49/telemetry.json",
+        "manifest.json": "session/simulations/simulation_7411b30de01a4fd7bbfa7c7b0177dc49/manifest.json",
+        "worker_exchanges.json": "session/simulations/simulation_7411b30de01a4fd7bbfa7c7b0177dc49/worker_exchanges.json"
+      }
+    },
+    "C": {
+      "simulation_run_id": "simulation_69a7db36221a466b97fd6c36643b66a5",
+      "scenario_id": "C",
+      "controller_variant": "candidate_cec150d6f0274094a982eace3b88ac2e",
+      "controller_sha256": "2e8d4f230afda6c5935fbd416d84841c77e6d998dfefe778d36ec526586a8c2a",
+      "simulation_execution": "PASS",
+      "physical_safety_status": "FAIL",
+      "braking_onset": {
+        "step": 224,
+        "time": 1.119999999999998,
+        "position": 1.119999999999998,
+        "velocity": 1.0,
+        "acceleration": -2.0,
+        "control": -4.0,
+        "scalar_actuator_force": -4.0,
+        "generalized_actuator_force": -4.0,
+        "carriage_center_x": 1.119999999999998,
+        "bumper_front_x": 1.299999999999998,
+        "wall_near_x": 1.5999999999999999,
+        "wall_clearance": 0.3000000000000018,
+        "wall_collision": false,
+        "contact_count": 0,
+        "contacts": []
+      },
+      "first_wall_contact": null,
+      "contact_velocity_ms": null,
+      "minimum_clearance_m": 0.02260000000000484,
+      "final_speed_ms": 0.019999999999999248,
+      "applied_force_n": {
+        "minimum": -4.0,
+        "maximum": 0.0
+      },
+      "independent_verification": "PASS",
+      "controller_consistency_checked": true,
+      "safety_acceptance": {
+        "status": "FAIL",
+        "criteria": {
+          "wall_collision_events": 0,
+          "minimum_clearance_m": 0.05,
+          "max_final_speed_ms_exclusive": 0.03,
+          "completion_deadline_s": 3.0
+        },
+        "checks": {
+          "zero_wall_collision_events": "PASS",
+          "minimum_clearance": "FAIL",
+          "final_speed": "PASS",
+          "completion_within_deadline": "PASS",
+          "finite_measurements": "PASS"
+        },
+        "wall_collision_events": 0,
+        "wall_contact_samples": 0,
+        "minimum_measured_clearance_m": 0.02260000000000484,
+        "final_speed_ms": 0.019999999999999248,
+        "final_time_s": 2.9999999999999583,
+        "failure_reasons": [
+          "Minimum clearance 0.0226 m is below required 0.05 m"
+        ]
+      },
+      "artifact_references": {
+        "effective_model.xml": "session/simulations/simulation_69a7db36221a466b97fd6c36643b66a5/effective_model.xml",
+        "independent_safety_trace.json": "session/simulations/simulation_69a7db36221a466b97fd6c36643b66a5/independent_safety_trace.json",
+        "telemetry.json": "session/simulations/simulation_69a7db36221a466b97fd6c36643b66a5/telemetry.json",
+        "manifest.json": "session/simulations/simulation_69a7db36221a466b97fd6c36643b66a5/manifest.json",
+        "worker_exchanges.json": "session/simulations/simulation_69a7db36221a466b97fd6c36643b66a5/worker_exchanges.json"
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "A": {"bodybase": {}, "worldbase": {}},
+  "B": {"bodybase": {"mass_kg": 3.0}, "worldbase": {"scenario": "heavier_robot"}},
+  "C": {"bodybase": {}, "worldbase": {"scenario": "changed_environment", "initial_velocity_ms": 1.0, "wall_position_x_m": 1.65}}
+}

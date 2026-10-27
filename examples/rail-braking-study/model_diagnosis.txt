@@ -1,0 +1,56 @@
+I inspected the actual controller, robot model, and all three authoritative scenarios, then ran and verified simulations.
+
+### Cause
+The collision is caused by the controller’s fixed braking trigger:
+
+- `robot/controller.py` brakes only when `wall_clearance <= 0.12 m`
+- It ignores:
+  - robot mass
+  - current speed
+  - actuator braking authority
+  - required safety clearance
+  - discrete-time reaction effects
+
+### Evidence
+Baseline controller failed in all scenarios:
+
+- **A**: brakes at `0.12 m`, but physics predicts it needs about **0.36 m** to stop from `1.2 m/s` with `2.0 kg` and `4 N` braking.  
+  Result: wall contact at `0.97 m/s`.
+- **B**: heavier robot (`3.0 kg`) needs about **0.54 m** to stop.  
+  Result: wall contact at `1.05 m/s`.
+- **C**: changed wall location and initial speed; still needs about **0.25 m** to stop.  
+  Result: wall contact at `0.71 m/s`.
+
+Those are measured simulation results, independently verified.
+
+### Repair proposed
+I submitted a controller-only patch that:
+
+- computes braking onset from **measured stopping distance**
+- uses actual:
+  - carriage mass
+  - actuator force limits
+  - timestep
+  - current velocity
+- includes a **reaction buffer**
+- keeps braking latched near the wall so it doesn’t release too early
+- actively damps residual reverse motion so final speed settles below the limit
+
+### Verification result
+The second proposal was independently executed and **passed A/B/C**:
+
+- **Candidate:** `candidate_9ba053aaee684edf8f1914731a5449fc`
+
+Measured outcomes:
+
+- **A**: min clearance `0.0524 m`, final speed ~`0`
+- **B**: min clearance `0.05237 m`, final speed ~`0`
+- **C**: min clearance `0.05255 m`, final speed ~`0`
+
+All passed:
+- zero wall contact events
+- minimum clearance ≥ `0.05 m`
+- final speed < `0.03 m/s`
+
+### Concise diagnosis
+The wall collision was not a MuJoCo or geometry issue; it was a controller design defect. A fixed `0.12 m` trigger is too late and does not generalize across masses or environments. A stopping-distance-based controller fixes that and was independently verified across the provided robot/world variants.

@@ -1,0 +1,1908 @@
+{
+  "ai_status": "PENDING_APPROVAL",
+  "application_allowed": false,
+  "head": {
+    "circuit": {
+      "catalog_sha256": "e4dd5819d64a7d6bf0e7d84eed9f2df56e35e41fc27fbbd7a21e49b242bfda85",
+      "components": [
+        {
+          "id": "board",
+          "name": "board",
+          "parent": "sensor_barrier",
+          "part": "esp32_devkitc_v4_wroom32",
+          "position_m": [
+            -0.07,
+            0,
+            0.015
+          ],
+          "roles": {
+            "IO18": "output",
+            "IO19": "input",
+            "IO23": "pwm"
+          },
+          "rotation_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "sensor",
+          "name": "sensor",
+          "parent": "sensor_barrier",
+          "part": "hcsr04_sen15569",
+          "position_m": [
+            0.03,
+            0.04,
+            0.015
+          ],
+          "roles": {},
+          "rotation_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "servo",
+          "name": "servo",
+          "parent": "sensor_barrier",
+          "part": "towerpro_sg90_digital",
+          "position_m": [
+            0.05,
+            -0.03,
+            0.015
+          ],
+          "roles": {},
+          "rotation_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "supply",
+          "name": "supply",
+          "parent": "sensor_barrier",
+          "part": "regulated_dual_supply",
+          "position_m": [
+            -0.07,
+            -0.07,
+            0.015
+          ],
+          "roles": {},
+          "rotation_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "upper",
+          "name": "upper",
+          "parent": "sensor_barrier",
+          "part": "resistor_2200",
+          "position_m": [
+            -0.005,
+            0.015,
+            0.015
+          ],
+          "roles": {},
+          "rotation_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "lower",
+          "name": "lower",
+          "parent": "sensor_barrier",
+          "part": "resistor_3300",
+          "position_m": [
+            -0.005,
+            -0.015,
+            0.015
+          ],
+          "roles": {},
+          "rotation_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "id": "sensor_barrier",
+      "nets": [
+        {
+          "id": "net_0",
+          "name": "reference_0"
+        },
+        {
+          "id": "net_1",
+          "name": "reference_1"
+        },
+        {
+          "id": "net_2",
+          "name": "reference_2"
+        },
+        {
+          "id": "net_3",
+          "name": "reference_3"
+        },
+        {
+          "id": "net_4",
+          "name": "reference_4"
+        },
+        {
+          "id": "net_5",
+          "name": "reference_5"
+        },
+        {
+          "id": "net_6",
+          "name": "reference_6"
+        }
+      ],
+      "revision": 12,
+      "schema_version": 1,
+      "wires": [
+        {
+          "a": {
+            "component": "supply",
+            "pin": "5V"
+          },
+          "b": {
+            "component": "board",
+            "pin": "5V"
+          },
+          "id": "wire_0",
+          "net": "net_0"
+        },
+        {
+          "a": {
+            "component": "supply",
+            "pin": "5V"
+          },
+          "b": {
+            "component": "sensor",
+            "pin": "VCC"
+          },
+          "id": "wire_1",
+          "net": "net_0"
+        },
+        {
+          "a": {
+            "component": "supply",
+            "pin": "4V8"
+          },
+          "b": {
+            "component": "servo",
+            "pin": "VCC"
+          },
+          "id": "wire_2",
+          "net": "net_1"
+        },
+        {
+          "a": {
+            "component": "supply",
+            "pin": "GND"
+          },
+          "b": {
+            "component": "board",
+            "pin": "GND"
+          },
+          "id": "wire_3",
+          "net": "net_2"
+        },
+        {
+          "a": {
+            "component": "supply",
+            "pin": "GND"
+          },
+          "b": {
+            "component": "sensor",
+            "pin": "GND"
+          },
+          "id": "wire_4",
+          "net": "net_2"
+        },
+        {
+          "a": {
+            "component": "supply",
+            "pin": "GND"
+          },
+          "b": {
+            "component": "servo",
+            "pin": "GND"
+          },
+          "id": "wire_5",
+          "net": "net_2"
+        },
+        {
+          "a": {
+            "component": "board",
+            "pin": "IO18"
+          },
+          "b": {
+            "component": "sensor",
+            "pin": "TRIG"
+          },
+          "id": "wire_6",
+          "net": "net_3"
+        },
+        {
+          "a": {
+            "component": "sensor",
+            "pin": "ECHO"
+          },
+          "b": {
+            "component": "upper",
+            "pin": "A"
+          },
+          "id": "wire_7",
+          "net": "net_4"
+        },
+        {
+          "a": {
+            "component": "upper",
+            "pin": "B"
+          },
+          "b": {
+            "component": "board",
+            "pin": "IO19"
+          },
+          "id": "wire_8",
+          "net": "net_5"
+        },
+        {
+          "a": {
+            "component": "upper",
+            "pin": "B"
+          },
+          "b": {
+            "component": "lower",
+            "pin": "A"
+          },
+          "id": "wire_9",
+          "net": "net_5"
+        },
+        {
+          "a": {
+            "component": "lower",
+            "pin": "B"
+          },
+          "b": {
+            "component": "supply",
+            "pin": "GND"
+          },
+          "id": "wire_10",
+          "net": "net_2"
+        },
+        {
+          "a": {
+            "component": "board",
+            "pin": "IO23"
+          },
+          "b": {
+            "component": "servo",
+            "pin": "SIGNAL"
+          },
+          "id": "wire_11",
+          "net": "net_6"
+        }
+      ]
+    },
+    "controller_sha256": "41295f842a63f8732198501d1efff57a5f3490e5eb0a308e8dbcb43580314dfb",
+    "design_plans": [],
+    "device_spec": {
+      "device_id": "sensor_controlled_barrier",
+      "environment": {
+        "approach_end_s": 2.0,
+        "departure_end_s": 4.2,
+        "duration_s": 8.0,
+        "initial_object_x_m": 0.8,
+        "near_object_x_m": 0.25,
+        "object_half_extent_m": 0.04
+      },
+      "logic": {
+        "clear_threshold_m": 0.6,
+        "close_while_near": false,
+        "debounce_samples": 2,
+        "hold_s": 0.4,
+        "open_target_rad": 1.4,
+        "stale_s": 0.25,
+        "threshold_m": 0.45,
+        "timeout_s": 2.0,
+        "update_s": 0.02
+      },
+      "mechanical": {
+        "damping_nm_s_rad": 0.015,
+        "joint_range_rad": [
+          0.0,
+          1.65
+        ],
+        "length_m": 0.24,
+        "mass_kg": 0.035,
+        "timestep_s": 0.002,
+        "torque_limit_nm": 0.12
+      },
+      "requirements": {
+        "closed_tolerance_rad": 0.04,
+        "joint_tolerance_rad": 0.01,
+        "max_speed_rad_s": 6.0,
+        "open_angle_rad": 1.25,
+        "opening_deadline_s": 2.0
+      },
+      "schema_version": 1,
+      "sensor": {
+        "direction": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "interval_s": 0.07,
+        "latency_s": 0.02,
+        "maximum_m": 4.0,
+        "minimum_m": 0.02,
+        "origin_m": [
+          0.0,
+          -0.12,
+          0.08
+        ],
+        "quantization_m": 0.001
+      }
+    },
+    "evidence_refs": [],
+    "id": "engineering_project",
+    "interfaces": [
+      {
+        "abstraction": "SIMULATED_DECODED_SIGNAL",
+        "component": "board",
+        "id": "distance_input",
+        "kind": "digital_sensor_input",
+        "pin": "IO19",
+        "sample_interval_s": 0.07,
+        "unit": "m",
+        "world_object": null
+      },
+      {
+        "abstraction": "SIMULATED_DECODED_SIGNAL",
+        "component": "board",
+        "id": "servo_request",
+        "kind": "pwm_request",
+        "pin": "IO23",
+        "sample_interval_s": 0.02,
+        "unit": "rad",
+        "world_object": null
+      },
+      {
+        "abstraction": "STATIC_POWER_REFERENCE",
+        "component": "supply",
+        "id": "servo_power",
+        "kind": "power_source",
+        "pin": "4V8",
+        "sample_interval_s": 1.0,
+        "unit": "V",
+        "world_object": null
+      }
+    ],
+    "revision": 0,
+    "schema_version": 1,
+    "world": {
+      "environment": {
+        "duration_s": 1.0,
+        "gravity_m_s2": [
+          0.0,
+          0.0,
+          -9.81
+        ],
+        "timestep_s": 0.005
+      },
+      "id": "world_main",
+      "objects": [
+        {
+          "actuator": null,
+          "contact": {
+            "enabled": true,
+            "friction": [
+              0.7,
+              0.005,
+              0.0001
+            ]
+          },
+          "dimensions_m": [
+            4.0,
+            4.0,
+            0.1
+          ],
+          "geometry": "plane",
+          "id": "floor",
+          "joint": null,
+          "kind": "static",
+          "mass_kg": 0.0,
+          "name": "Floor",
+          "parent": null,
+          "position_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_rad": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "visual": {
+            "material": "illustrative_solid",
+            "rgba": [
+              0.35,
+              0.58,
+              0.67,
+              1.0
+            ]
+          }
+        }
+      ],
+      "revision": 0,
+      "schema_version": 1,
+      "units": "SI",
+      "unsupported": [
+        "Deformable bodies, mesh assets, arbitrary MJCF, fluid/thermal/electrical dynamics and user code are unsupported.",
+        "Contacts and joint limits are compliant MuJoCo constraints, not rigid safety guarantees."
+      ]
+    }
+  },
+  "head_sha256": "6e7e16d7cad1fe4c314b5253fc5d709ce6da163ad166e20c6f45831c5bf63954",
+  "limits": {
+    "actions_per_batch": 16,
+    "batches": 12,
+    "parts": 12,
+    "total_actions": 96
+  },
+  "review": null,
+  "schema": {
+    "additionalProperties": false,
+    "properties": {
+      "assumptions": {
+        "items": {
+          "maxLength": 500,
+          "minLength": 1,
+          "type": "string"
+        },
+        "maxItems": 8,
+        "minItems": 1,
+        "type": "array"
+      },
+      "explanation": {
+        "maxLength": 2000,
+        "minLength": 1,
+        "type": "string"
+      },
+      "goal": {
+        "maxLength": 2000,
+        "minLength": 1,
+        "type": "string"
+      },
+      "limitations": {
+        "items": {
+          "maxLength": 500,
+          "minLength": 1,
+          "type": "string"
+        },
+        "maxItems": 12,
+        "minItems": 1,
+        "type": "array"
+      },
+      "roles": {
+        "additionalProperties": false,
+        "properties": {
+          "chassis_part_id": {
+            "maxLength": 48,
+            "pattern": "^[A-Za-z][A-Za-z0-9_]{0,47}$",
+            "type": "string"
+          },
+          "front_axle_part_id": {
+            "maxLength": 48,
+            "pattern": "^[A-Za-z][A-Za-z0-9_]{0,47}$",
+            "type": "string"
+          },
+          "motor_mount_parts": {
+            "additionalProperties": false,
+            "properties": {
+              "left": {
+                "maxLength": 48,
+                "pattern": "^[A-Za-z][A-Za-z0-9_]{0,47}$",
+                "type": "string"
+              },
+              "right": {
+                "maxLength": 48,
+                "pattern": "^[A-Za-z][A-Za-z0-9_]{0,47}$",
+                "type": "string"
+              }
+            },
+            "required": [
+              "left",
+              "right"
+            ],
+            "type": "object"
+          },
+          "rear_axle_part_id": {
+            "maxLength": 48,
+            "pattern": "^[A-Za-z][A-Za-z0-9_]{0,47}$",
+            "type": "string"
+          },
+          "root_body_id": {
+            "maxLength": 48,
+            "pattern": "^[A-Za-z][A-Za-z0-9_]{0,47}$",
+            "type": "string"
+          },
+          "wheels": {
+            "additionalProperties": false,
+            "properties": {
+              "front_left": {
+                "additionalProperties": false,
+                "properties": {
+                  "joint_body_id": {
+                    "maxLength": 48,
+                    "pattern": "^[A-Za-z][A-Za-z0-9_]{0,47}$",
+                    "type": "string"
+                  },
+                  "part_id": {
+                    "maxLength": 48,
+                    "pattern": "^[A-Za-z][A-Za-z0-9_]{0,47}$",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "part_id",
+                  "joint_body_id"
+                ],
+                "type": "object"
+              },
+              "front_right": {
+                "additionalProperties": false,
+                "properties": {
+                  "joint_body_id": {
+                    "maxLength": 48,
+                    "pattern": "^[A-Za-z][A-Za-z0-9_]{0,47}$",
+                    "type": "string"
+                  },
+                  "part_id": {
+                    "maxLength": 48,
+                    "pattern": "^[A-Za-z][A-Za-z0-9_]{0,47}$",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "part_id",
+                  "joint_body_id"
+                ],
+                "type": "object"
+              },
+              "rear_left": {
+                "additionalProperties": false,
+                "properties": {
+                  "joint_body_id": {
+                    "maxLength": 48,
+                    "pattern": "^[A-Za-z][A-Za-z0-9_]{0,47}$",
+                    "type": "string"
+                  },
+                  "part_id": {
+                    "maxLength": 48,
+                    "pattern": "^[A-Za-z][A-Za-z0-9_]{0,47}$",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "part_id",
+                  "joint_body_id"
+                ],
+                "type": "object"
+              },
+              "rear_right": {
+                "additionalProperties": false,
+                "properties": {
+                  "joint_body_id": {
+                    "maxLength": 48,
+                    "pattern": "^[A-Za-z][A-Za-z0-9_]{0,47}$",
+                    "type": "string"
+                  },
+                  "part_id": {
+                    "maxLength": 48,
+                    "pattern": "^[A-Za-z][A-Za-z0-9_]{0,47}$",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "part_id",
+                  "joint_body_id"
+                ],
+                "type": "object"
+              }
+            },
+            "required": [
+              "front_left",
+              "front_right",
+              "rear_left",
+              "rear_right"
+            ],
+            "type": "object"
+          }
+        },
+        "required": [
+          "root_body_id",
+          "chassis_part_id",
+          "front_axle_part_id",
+          "rear_axle_part_id",
+          "wheels",
+          "motor_mount_parts"
+        ],
+        "type": "object"
+      },
+      "schema_version": {
+        "enum": [
+          1
+        ],
+        "type": "integer"
+      },
+      "steps": {
+        "items": {
+          "additionalProperties": false,
+          "properties": {
+            "depends_on": {
+              "items": {
+                "maxLength": 48,
+                "pattern": "^[A-Za-z][A-Za-z0-9_]{0,47}$",
+                "type": "string"
+              },
+              "maxItems": 12,
+              "type": "array"
+            },
+            "id": {
+              "maxLength": 48,
+              "pattern": "^[A-Za-z][A-Za-z0-9_]{0,47}$",
+              "type": "string"
+            },
+            "operations": {
+              "items": {
+                "anyOf": [
+                  {
+                    "additionalProperties": false,
+                    "properties": {
+                      "geometry": {
+                        "enum": [
+                          "box",
+                          "sphere",
+                          "cylinder",
+                          "capsule",
+                          "plane"
+                        ]
+                      },
+                      "kind": {
+                        "enum": [
+                          "set_shape"
+                        ],
+                        "type": "string"
+                      },
+                      "target": {
+                        "maxLength": 48,
+                        "pattern": "^[A-Za-z][A-Za-z0-9_]{0,47}$",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "kind",
+                      "target",
+                      "geometry"
+                    ],
+                    "type": "object"
+                  },
+                  {
+                    "additionalProperties": false,
+                    "properties": {
+                      "id": {
+                        "maxLength": 48,
+                        "pattern": "^[A-Za-z][A-Za-z0-9_]{0,47}$",
+                        "type": "string"
+                      },
+                      "kind": {
+                        "enum": [
+                          "create_object"
+                        ],
+                        "type": "string"
+                      },
+                      "parent": {
+                        "anyOf": [
+                          {
+                            "maxLength": 48,
+                            "pattern": "^[A-Za-z][A-Za-z0-9_]{0,47}$",
+                            "type": "string"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "primitive": {
+                        "enum": [
+                          "dynamic_body",
+                          "rigid_link",
+                          "anchor",
+                          "revolute",
+                          "motor"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "kind",
+                      "primitive",
+                      "id",
+                      "parent"
+                    ],
+                    "type": "object"
+                  },
+                  {
+                    "additionalProperties": false,
+                    "properties": {
+                      "kind": {
+                        "enum": [
+                          "move_object"
+                        ],
+                        "type": "string"
+                      },
+                      "position_m": {
+                        "items": {
+                          "maximum": 10,
+                          "minimum": -10,
+                          "type": "number"
+                        },
+                        "maxItems": 3,
+                        "minItems": 3,
+                        "type": "array"
+                      },
+                      "target": {
+                        "maxLength": 48,
+                        "pattern": "^[A-Za-z][A-Za-z0-9_]{0,47}$",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "kind",
+                      "target",
+                      "position_m"
+                    ],
+                    "type": "object"
+                  },
+                  {
+                    "additionalProperties": false,
+                    "properties": {
+                      "kind": {
+                        "enum": [
+                          "rotate_object"
+                        ],
+                        "type": "string"
+                      },
+                      "rotation_rad": {
+                        "items": {
+                          "maximum": 6.283185307179586,
+                          "minimum": -6.283185307179586,
+                          "type": "number"
+                        },
+                        "maxItems": 3,
+                        "minItems": 3,
+                        "type": "array"
+                      },
+                      "target": {
+                        "maxLength": 48,
+                        "pattern": "^[A-Za-z][A-Za-z0-9_]{0,47}$",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "kind",
+                      "target",
+                      "rotation_rad"
+                    ],
+                    "type": "object"
+                  },
+                  {
+                    "additionalProperties": false,
+                    "properties": {
+                      "dimensions_m": {
+                        "items": {
+                          "maximum": 5,
+                          "minimum": 0.005,
+                          "type": "number"
+                        },
+                        "maxItems": 3,
+                        "minItems": 3,
+                        "type": "array"
+                      },
+                      "kind": {
+                        "enum": [
+                          "set_geometry"
+                        ],
+                        "type": "string"
+                      },
+                      "target": {
+                        "maxLength": 48,
+                        "pattern": "^[A-Za-z][A-Za-z0-9_]{0,47}$",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "kind",
+                      "target",
+                      "dimensions_m"
+                    ],
+                    "type": "object"
+                  },
+                  {
+                    "additionalProperties": false,
+                    "properties": {
+                      "kind": {
+                        "enum": [
+                          "set_mass"
+                        ],
+                        "type": "string"
+                      },
+                      "mass_kg": {
+                        "maximum": 100,
+                        "minimum": 0,
+                        "type": "number"
+                      },
+                      "target": {
+                        "maxLength": 48,
+                        "pattern": "^[A-Za-z][A-Za-z0-9_]{0,47}$",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "kind",
+                      "target",
+                      "mass_kg"
+                    ],
+                    "type": "object"
+                  },
+                  {
+                    "additionalProperties": false,
+                    "properties": {
+                      "joint": {
+                        "anyOf": [
+                          {
+                            "additionalProperties": false,
+                            "properties": {
+                              "axis": {
+                                "items": {
+                                  "maximum": 1,
+                                  "minimum": -1,
+                                  "type": "number"
+                                },
+                                "maxItems": 3,
+                                "minItems": 3,
+                                "type": "array"
+                              },
+                              "damping": {
+                                "maximum": 10,
+                                "minimum": 0,
+                                "type": "number"
+                              },
+                              "initial_position": {
+                                "maximum": 10,
+                                "minimum": -10,
+                                "type": "number"
+                              },
+                              "initial_velocity": {
+                                "maximum": 5,
+                                "minimum": -5,
+                                "type": "number"
+                              },
+                              "kind": {
+                                "enum": [
+                                  "revolute",
+                                  "prismatic",
+                                  "free"
+                                ]
+                              },
+                              "range": {
+                                "items": {
+                                  "maximum": 10,
+                                  "minimum": -10,
+                                  "type": "number"
+                                },
+                                "maxItems": 2,
+                                "minItems": 2,
+                                "type": "array"
+                              }
+                            },
+                            "required": [
+                              "kind",
+                              "axis",
+                              "range",
+                              "initial_position",
+                              "initial_velocity",
+                              "damping"
+                            ],
+                            "type": "object"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "kind": {
+                        "enum": [
+                          "create_joint"
+                        ],
+                        "type": "string"
+                      },
+                      "target": {
+                        "maxLength": 48,
+                        "pattern": "^[A-Za-z][A-Za-z0-9_]{0,47}$",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "kind",
+                      "target",
+                      "joint"
+                    ],
+                    "type": "object"
+                  },
+                  {
+                    "additionalProperties": false,
+                    "properties": {
+                      "actuator": {
+                        "anyOf": [
+                          {
+                            "additionalProperties": false,
+                            "properties": {
+                              "command": {
+                                "maximum": 100,
+                                "minimum": -100,
+                                "type": "number"
+                              },
+                              "limit": {
+                                "maximum": 100,
+                                "minimum": 0.001,
+                                "type": "number"
+                              },
+                              "unit": {
+                                "enum": [
+                                  "N",
+                                  "N*m"
+                                ]
+                              }
+                            },
+                            "required": [
+                              "limit",
+                              "command",
+                              "unit"
+                            ],
+                            "type": "object"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "kind": {
+                        "enum": [
+                          "set_actuator"
+                        ],
+                        "type": "string"
+                      },
+                      "target": {
+                        "maxLength": 48,
+                        "pattern": "^[A-Za-z][A-Za-z0-9_]{0,47}$",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "kind",
+                      "target",
+                      "actuator"
+                    ],
+                    "type": "object"
+                  },
+                  {
+                    "additionalProperties": false,
+                    "properties": {
+                      "kind": {
+                        "enum": [
+                          "create_parametric_part"
+                        ],
+                        "type": "string"
+                      },
+                      "part": {
+                        "anyOf": [
+                          {
+                            "additionalProperties": false,
+                            "properties": {
+                              "body_id": {
+                                "maxLength": 48,
+                                "pattern": "^[A-Za-z][A-Za-z0-9_]{0,47}$",
+                                "type": "string"
+                              },
+                              "family": {
+                                "const": "wheel"
+                              },
+                              "id": {
+                                "maxLength": 48,
+                                "pattern": "^[A-Za-z][A-Za-z0-9_]{0,47}$",
+                                "type": "string"
+                              },
+                              "mass_kg": {
+                                "maximum": 100,
+                                "minimum": 0,
+                                "type": "number"
+                              },
+                              "mounting_holes": {
+                                "items": {
+                                  "additionalProperties": false,
+                                  "properties": {
+                                    "diameter_m": {
+                                      "maximum": 0.05,
+                                      "minimum": 0.002,
+                                      "type": "number"
+                                    },
+                                    "id": {
+                                      "maxLength": 24,
+                                      "pattern": "^[A-Za-z][A-Za-z0-9_]{0,23}$",
+                                      "type": "string"
+                                    },
+                                    "u": {
+                                      "maximum": 0.49,
+                                      "minimum": -0.49,
+                                      "type": "number"
+                                    },
+                                    "v": {
+                                      "maximum": 0.49,
+                                      "minimum": -0.49,
+                                      "type": "number"
+                                    }
+                                  },
+                                  "required": [
+                                    "id",
+                                    "diameter_m",
+                                    "u",
+                                    "v"
+                                  ],
+                                  "type": "object"
+                                },
+                                "maxItems": 8,
+                                "type": "array"
+                              },
+                              "parameters": {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "axle_hole_diameter_m": {
+                                    "maximum": 0.04,
+                                    "minimum": 0.002,
+                                    "type": "number"
+                                  },
+                                  "hub_thickness_m": {
+                                    "maximum": 0.02,
+                                    "minimum": 0,
+                                    "type": "number"
+                                  },
+                                  "outer_diameter_m": {
+                                    "maximum": 0.25,
+                                    "minimum": 0.03,
+                                    "type": "number"
+                                  },
+                                  "thickness_m": {
+                                    "maximum": 0.08,
+                                    "minimum": 0.01,
+                                    "type": "number"
+                                  }
+                                },
+                                "required": [
+                                  "outer_diameter_m",
+                                  "thickness_m",
+                                  "axle_hole_diameter_m",
+                                  "hub_thickness_m"
+                                ],
+                                "type": "object"
+                              },
+                              "parent_body_id": {
+                                "anyOf": [
+                                  {
+                                    "maxLength": 48,
+                                    "pattern": "^[A-Za-z][A-Za-z0-9_]{0,47}$",
+                                    "type": "string"
+                                  },
+                                  {
+                                    "type": "null"
+                                  }
+                                ]
+                              },
+                              "position_m": {
+                                "items": {
+                                  "maximum": 10,
+                                  "minimum": -10,
+                                  "type": "number"
+                                },
+                                "maxItems": 3,
+                                "minItems": 3,
+                                "type": "array"
+                              },
+                              "rotation_rad": {
+                                "items": {
+                                  "maximum": 3.141592653589793,
+                                  "minimum": -3.141592653589793,
+                                  "type": "number"
+                                },
+                                "maxItems": 3,
+                                "minItems": 3,
+                                "type": "array"
+                              }
+                            },
+                            "required": [
+                              "id",
+                              "body_id",
+                              "family",
+                              "parameters",
+                              "parent_body_id",
+                              "position_m",
+                              "rotation_rad",
+                              "mass_kg",
+                              "mounting_holes"
+                            ],
+                            "type": "object"
+                          },
+                          {
+                            "additionalProperties": false,
+                            "properties": {
+                              "body_id": {
+                                "maxLength": 48,
+                                "pattern": "^[A-Za-z][A-Za-z0-9_]{0,47}$",
+                                "type": "string"
+                              },
+                              "family": {
+                                "const": "axle"
+                              },
+                              "id": {
+                                "maxLength": 48,
+                                "pattern": "^[A-Za-z][A-Za-z0-9_]{0,47}$",
+                                "type": "string"
+                              },
+                              "mass_kg": {
+                                "maximum": 100,
+                                "minimum": 0,
+                                "type": "number"
+                              },
+                              "mounting_holes": {
+                                "items": {
+                                  "additionalProperties": false,
+                                  "properties": {
+                                    "diameter_m": {
+                                      "maximum": 0.05,
+                                      "minimum": 0.002,
+                                      "type": "number"
+                                    },
+                                    "id": {
+                                      "maxLength": 24,
+                                      "pattern": "^[A-Za-z][A-Za-z0-9_]{0,23}$",
+                                      "type": "string"
+                                    },
+                                    "u": {
+                                      "maximum": 0.49,
+                                      "minimum": -0.49,
+                                      "type": "number"
+                                    },
+                                    "v": {
+                                      "maximum": 0.49,
+                                      "minimum": -0.49,
+                                      "type": "number"
+                                    }
+                                  },
+                                  "required": [
+                                    "id",
+                                    "diameter_m",
+                                    "u",
+                                    "v"
+                                  ],
+                                  "type": "object"
+                                },
+                                "maxItems": 8,
+                                "type": "array"
+                              },
+                              "parameters": {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "diameter_m": {
+                                    "maximum": 0.05,
+                                    "minimum": 0.005,
+                                    "type": "number"
+                                  },
+                                  "length_m": {
+                                    "maximum": 0.6,
+                                    "minimum": 0.03,
+                                    "type": "number"
+                                  }
+                                },
+                                "required": [
+                                  "diameter_m",
+                                  "length_m"
+                                ],
+                                "type": "object"
+                              },
+                              "parent_body_id": {
+                                "anyOf": [
+                                  {
+                                    "maxLength": 48,
+                                    "pattern": "^[A-Za-z][A-Za-z0-9_]{0,47}$",
+                                    "type": "string"
+                                  },
+                                  {
+                                    "type": "null"
+                                  }
+                                ]
+                              },
+                              "position_m": {
+                                "items": {
+                                  "maximum": 10,
+                                  "minimum": -10,
+                                  "type": "number"
+                                },
+                                "maxItems": 3,
+                                "minItems": 3,
+                                "type": "array"
+                              },
+                              "rotation_rad": {
+                                "items": {
+                                  "maximum": 3.141592653589793,
+                                  "minimum": -3.141592653589793,
+                                  "type": "number"
+                                },
+                                "maxItems": 3,
+                                "minItems": 3,
+                                "type": "array"
+                              }
+                            },
+                            "required": [
+                              "id",
+                              "body_id",
+                              "family",
+                              "parameters",
+                              "parent_body_id",
+                              "position_m",
+                              "rotation_rad",
+                              "mass_kg",
+                              "mounting_holes"
+                            ],
+                            "type": "object"
+                          },
+                          {
+                            "additionalProperties": false,
+                            "properties": {
+                              "body_id": {
+                                "maxLength": 48,
+                                "pattern": "^[A-Za-z][A-Za-z0-9_]{0,47}$",
+                                "type": "string"
+                              },
+                              "family": {
+                                "const": "chassis"
+                              },
+                              "id": {
+                                "maxLength": 48,
+                                "pattern": "^[A-Za-z][A-Za-z0-9_]{0,47}$",
+                                "type": "string"
+                              },
+                              "mass_kg": {
+                                "maximum": 100,
+                                "minimum": 0,
+                                "type": "number"
+                              },
+                              "mounting_holes": {
+                                "items": {
+                                  "additionalProperties": false,
+                                  "properties": {
+                                    "diameter_m": {
+                                      "maximum": 0.05,
+                                      "minimum": 0.002,
+                                      "type": "number"
+                                    },
+                                    "id": {
+                                      "maxLength": 24,
+                                      "pattern": "^[A-Za-z][A-Za-z0-9_]{0,23}$",
+                                      "type": "string"
+                                    },
+                                    "u": {
+                                      "maximum": 0.49,
+                                      "minimum": -0.49,
+                                      "type": "number"
+                                    },
+                                    "v": {
+                                      "maximum": 0.49,
+                                      "minimum": -0.49,
+                                      "type": "number"
+                                    }
+                                  },
+                                  "required": [
+                                    "id",
+                                    "diameter_m",
+                                    "u",
+                                    "v"
+                                  ],
+                                  "type": "object"
+                                },
+                                "maxItems": 8,
+                                "type": "array"
+                              },
+                              "parameters": {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "corner_radius_m": {
+                                    "maximum": 0.1,
+                                    "minimum": 0.001,
+                                    "type": "number"
+                                  },
+                                  "length_m": {
+                                    "maximum": 1,
+                                    "minimum": 0.08,
+                                    "type": "number"
+                                  },
+                                  "thickness_m": {
+                                    "maximum": 0.05,
+                                    "minimum": 0.005,
+                                    "type": "number"
+                                  },
+                                  "width_m": {
+                                    "maximum": 0.6,
+                                    "minimum": 0.06,
+                                    "type": "number"
+                                  }
+                                },
+                                "required": [
+                                  "length_m",
+                                  "width_m",
+                                  "thickness_m",
+                                  "corner_radius_m"
+                                ],
+                                "type": "object"
+                              },
+                              "parent_body_id": {
+                                "anyOf": [
+                                  {
+                                    "maxLength": 48,
+                                    "pattern": "^[A-Za-z][A-Za-z0-9_]{0,47}$",
+                                    "type": "string"
+                                  },
+                                  {
+                                    "type": "null"
+                                  }
+                                ]
+                              },
+                              "position_m": {
+                                "items": {
+                                  "maximum": 10,
+                                  "minimum": -10,
+                                  "type": "number"
+                                },
+                                "maxItems": 3,
+                                "minItems": 3,
+                                "type": "array"
+                              },
+                              "rotation_rad": {
+                                "items": {
+                                  "maximum": 3.141592653589793,
+                                  "minimum": -3.141592653589793,
+                                  "type": "number"
+                                },
+                                "maxItems": 3,
+                                "minItems": 3,
+                                "type": "array"
+                              }
+                            },
+                            "required": [
+                              "id",
+                              "body_id",
+                              "family",
+                              "parameters",
+                              "parent_body_id",
+                              "position_m",
+                              "rotation_rad",
+                              "mass_kg",
+                              "mounting_holes"
+                            ],
+                            "type": "object"
+                          },
+                          {
+                            "additionalProperties": false,
+                            "properties": {
+                              "body_id": {
+                                "maxLength": 48,
+                                "pattern": "^[A-Za-z][A-Za-z0-9_]{0,47}$",
+                                "type": "string"
+                              },
+                              "family": {
+                                "const": "motor_mount"
+                              },
+                              "id": {
+                                "maxLength": 48,
+                                "pattern": "^[A-Za-z][A-Za-z0-9_]{0,47}$",
+                                "type": "string"
+                              },
+                              "mass_kg": {
+                                "maximum": 100,
+                                "minimum": 0,
+                                "type": "number"
+                              },
+                              "mounting_holes": {
+                                "items": {
+                                  "additionalProperties": false,
+                                  "properties": {
+                                    "diameter_m": {
+                                      "maximum": 0.05,
+                                      "minimum": 0.002,
+                                      "type": "number"
+                                    },
+                                    "id": {
+                                      "maxLength": 24,
+                                      "pattern": "^[A-Za-z][A-Za-z0-9_]{0,23}$",
+                                      "type": "string"
+                                    },
+                                    "u": {
+                                      "maximum": 0.49,
+                                      "minimum": -0.49,
+                                      "type": "number"
+                                    },
+                                    "v": {
+                                      "maximum": 0.49,
+                                      "minimum": -0.49,
+                                      "type": "number"
+                                    }
+                                  },
+                                  "required": [
+                                    "id",
+                                    "diameter_m",
+                                    "u",
+                                    "v"
+                                  ],
+                                  "type": "object"
+                                },
+                                "maxItems": 8,
+                                "type": "array"
+                              },
+                              "parameters": {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "corner_radius_m": {
+                                    "maximum": 0.05,
+                                    "minimum": 0.001,
+                                    "type": "number"
+                                  },
+                                  "length_m": {
+                                    "maximum": 0.3,
+                                    "minimum": 0.02,
+                                    "type": "number"
+                                  },
+                                  "thickness_m": {
+                                    "maximum": 0.03,
+                                    "minimum": 0.005,
+                                    "type": "number"
+                                  },
+                                  "width_m": {
+                                    "maximum": 0.2,
+                                    "minimum": 0.02,
+                                    "type": "number"
+                                  }
+                                },
+                                "required": [
+                                  "length_m",
+                                  "width_m",
+                                  "thickness_m",
+                                  "corner_radius_m"
+                                ],
+                                "type": "object"
+                              },
+                              "parent_body_id": {
+                                "anyOf": [
+                                  {
+                                    "maxLength": 48,
+                                    "pattern": "^[A-Za-z][A-Za-z0-9_]{0,47}$",
+                                    "type": "string"
+                                  },
+                                  {
+                                    "type": "null"
+                                  }
+                                ]
+                              },
+                              "position_m": {
+                                "items": {
+                                  "maximum": 10,
+                                  "minimum": -10,
+                                  "type": "number"
+                                },
+                                "maxItems": 3,
+                                "minItems": 3,
+                                "type": "array"
+                              },
+                              "rotation_rad": {
+                                "items": {
+                                  "maximum": 3.141592653589793,
+                                  "minimum": -3.141592653589793,
+                                  "type": "number"
+                                },
+                                "maxItems": 3,
+                                "minItems": 3,
+                                "type": "array"
+                              }
+                            },
+                            "required": [
+                              "id",
+                              "body_id",
+                              "family",
+                              "parameters",
+                              "parent_body_id",
+                              "position_m",
+                              "rotation_rad",
+                              "mass_kg",
+                              "mounting_holes"
+                            ],
+                            "type": "object"
+                          }
+                        ]
+                      }
+                    },
+                    "required": [
+                      "kind",
+                      "part"
+                    ],
+                    "type": "object"
+                  },
+                  {
+                    "additionalProperties": false,
+                    "properties": {
+                      "kind": {
+                        "enum": [
+                          "update_shape_parameter"
+                        ],
+                        "type": "string"
+                      },
+                      "parameter": {
+                        "enum": [
+                          "axle_hole_diameter_m",
+                          "corner_radius_m",
+                          "diameter_m",
+                          "end_radius_m",
+                          "height_m",
+                          "hub_thickness_m",
+                          "length_m",
+                          "outer_diameter_m",
+                          "thickness_m",
+                          "width_m"
+                        ]
+                      },
+                      "target": {
+                        "maxLength": 48,
+                        "pattern": "^[A-Za-z][A-Za-z0-9_]{0,47}$",
+                        "type": "string"
+                      },
+                      "value": {
+                        "maximum": 1,
+                        "minimum": 0,
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "kind",
+                      "target",
+                      "parameter",
+                      "value"
+                    ],
+                    "type": "object"
+                  },
+                  {
+                    "additionalProperties": false,
+                    "properties": {
+                      "hole": {
+                        "additionalProperties": false,
+                        "properties": {
+                          "diameter_m": {
+                            "maximum": 0.05,
+                            "minimum": 0.002,
+                            "type": "number"
+                          },
+                          "id": {
+                            "maxLength": 24,
+                            "pattern": "^[A-Za-z][A-Za-z0-9_]{0,23}$",
+                            "type": "string"
+                          },
+                          "u": {
+                            "maximum": 0.49,
+                            "minimum": -0.49,
+                            "type": "number"
+                          },
+                          "v": {
+                            "maximum": 0.49,
+                            "minimum": -0.49,
+                            "type": "number"
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "diameter_m",
+                          "u",
+                          "v"
+                        ],
+                        "type": "object"
+                      },
+                      "kind": {
+                        "enum": [
+                          "add_mounting_hole"
+                        ],
+                        "type": "string"
+                      },
+                      "target": {
+                        "maxLength": 48,
+                        "pattern": "^[A-Za-z][A-Za-z0-9_]{0,47}$",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "kind",
+                      "target",
+                      "hole"
+                    ],
+                    "type": "object"
+                  },
+                  {
+                    "additionalProperties": false,
+                    "properties": {
+                      "hole": {
+                        "additionalProperties": false,
+                        "properties": {
+                          "diameter_m": {
+                            "maximum": 0.05,
+                            "minimum": 0.002,
+                            "type": "number"
+                          },
+                          "id": {
+                            "maxLength": 24,
+                            "pattern": "^[A-Za-z][A-Za-z0-9_]{0,23}$",
+                            "type": "string"
+                          },
+                          "u": {
+                            "maximum": 0.49,
+                            "minimum": -0.49,
+                            "type": "number"
+                          },
+                          "v": {
+                            "maximum": 0.49,
+                            "minimum": -0.49,
+                            "type": "number"
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "diameter_m",
+                          "u",
+                          "v"
+                        ],
+                        "type": "object"
+                      },
+                      "kind": {
+                        "enum": [
+                          "update_mounting_hole"
+                        ],
+                        "type": "string"
+                      },
+                      "target": {
+                        "maxLength": 48,
+                        "pattern": "^[A-Za-z][A-Za-z0-9_]{0,47}$",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "kind",
+                      "target",
+                      "hole"
+                    ],
+                    "type": "object"
+                  },
+                  {
+                    "additionalProperties": false,
+                    "properties": {
+                      "frame": {
+                        "additionalProperties": false,
+                        "properties": {
+                          "hole_id": {
+                            "anyOf": [
+                              {
+                                "maxLength": 24,
+                                "pattern": "^[A-Za-z][A-Za-z0-9_]{0,23}$",
+                                "type": "string"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "id": {
+                            "maxLength": 24,
+                            "pattern": "^[A-Za-z][A-Za-z0-9_]{0,23}$",
+                            "type": "string"
+                          },
+                          "rotation_rad": {
+                            "items": {
+                              "maximum": 3.141592653589793,
+                              "minimum": -3.141592653589793,
+                              "type": "number"
+                            },
+                            "maxItems": 3,
+                            "minItems": 3,
+                            "type": "array"
+                          },
+                          "source": {
+                            "enum": [
+                              "origin",
+                              "hole",
+                              "top",
+                              "bottom",
+                              "arm_east",
+                              "arm_north",
+                              "arm_south",
+                              "arm_west",
+                              "axle",
+                              "axle_left",
+                              "axle_right",
+                              "battery",
+                              "controller",
+                              "front_axle",
+                              "motor_pad",
+                              "motor_top",
+                              "rear_axle",
+                              "rear_left_mount",
+                              "rear_right_mount",
+                              "root"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "source",
+                          "hole_id",
+                          "rotation_rad"
+                        ],
+                        "type": "object"
+                      },
+                      "kind": {
+                        "enum": [
+                          "set_attachment_frame"
+                        ],
+                        "type": "string"
+                      },
+                      "mounted_body_id": {
+                        "anyOf": [
+                          {
+                            "maxLength": 48,
+                            "pattern": "^[A-Za-z][A-Za-z0-9_]{0,47}$",
+                            "type": "string"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "target": {
+                        "maxLength": 48,
+                        "pattern": "^[A-Za-z][A-Za-z0-9_]{0,47}$",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "kind",
+                      "target",
+                      "frame",
+                      "mounted_body_id"
+                    ],
+                    "type": "object"
+                  },
+                  {
+                    "additionalProperties": false,
+                    "properties": {
+                      "frame_id": {
+                        "maxLength": 24,
+                        "pattern": "^[A-Za-z][A-Za-z0-9_]{0,23}$",
+                        "type": "string"
+                      },
+                      "joint_body_id": {
+                        "maxLength": 48,
+                        "pattern": "^[A-Za-z][A-Za-z0-9_]{0,47}$",
+                        "type": "string"
+                      },
+                      "kind": {
+                        "enum": [
+                          "attach_part_to_joint"
+                        ],
+                        "type": "string"
+                      },
+                      "target": {
+                        "maxLength": 48,
+                        "pattern": "^[A-Za-z][A-Za-z0-9_]{0,47}$",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "kind",
+                      "target",
+                      "joint_body_id",
+                      "frame_id"
+                    ],
+                    "type": "object"
+                  },
+                  {
+                    "additionalProperties": false,
+                    "properties": {
+                      "frame_id": {
+                        "maxLength": 24,
+                        "pattern": "^[A-Za-z][A-Za-z0-9_]{0,23}$",
+                        "type": "string"
+                      },
+                      "kind": {
+                        "enum": [
+                          "attach_part_to_mount"
+                        ],
+                        "type": "string"
+                      },
+                      "mount_body_id": {
+                        "maxLength": 48,
+                        "pattern": "^[A-Za-z][A-Za-z0-9_]{0,47}$",
+                        "type": "string"
+                      },
+                      "target": {
+                        "maxLength": 48,
+                        "pattern": "^[A-Za-z][A-Za-z0-9_]{0,47}$",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "kind",
+                      "target",
+                      "mount_body_id",
+                      "frame_id"
+                    ],
+                    "type": "object"
+                  }
+                ]
+              },
+              "maxItems": 16,
+              "minItems": 1,
+              "type": "array"
+            },
+            "purpose": {
+              "maxLength": 500,
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "depends_on",
+            "purpose",
+            "operations"
+          ],
+          "type": "object"
+        },
+        "maxItems": 12,
+        "minItems": 1,
+        "type": "array"
+      }
+    },
+    "required": [
+      "schema_version",
+      "goal",
+      "roles",
+      "assumptions",
+      "limitations",
+      "explanation",
+      "steps"
+    ],
+    "type": "object"
+  },
+  "status": "PENDING_APPROVAL",
+  "task": "Create a simple four-wheel toy rover with a rectangular chassis, two horizontal axles, four wheels and two rear motor mounting plates.\n\nKeep all mechanical components correctly connected.\n\nUse simple dimensions suitable for a small desktop robot and prepare the assembly for physical simulation."
+}

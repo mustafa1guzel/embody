@@ -1,0 +1,386 @@
+{
+  "A": {
+    "simulation_run_id": "simulation_e07e1656ec2f444da307fbcdfef783e8",
+    "scenario_id": "A",
+    "controller_variant": "faulty",
+    "controller_sha256": "04527c57d5662ad0010181872d3f66ce64317f5535dd3a718f7017dbd16f8753",
+    "simulation_execution": "PASS",
+    "physical_safety_status": "FAIL",
+    "braking_onset": {
+      "step": 275,
+      "time": 1.3749999999999927,
+      "position": 1.6500000000000012,
+      "velocity": 1.2,
+      "acceleration": -2.0,
+      "control": -4.0,
+      "scalar_actuator_force": -4.0,
+      "generalized_actuator_force": -4.0,
+      "carriage_center_x": 1.6500000000000012,
+      "bumper_front_x": 1.8300000000000012,
+      "wall_near_x": 1.95,
+      "wall_clearance": 0.11999999999999877,
+      "wall_collision": false,
+      "contact_count": 0,
+      "contacts": []
+    },
+    "first_wall_contact": {
+      "step": 298,
+      "time": 1.4899999999999902,
+      "position": 1.774200000000001,
+      "velocity": 0.9699999999999998,
+      "acceleration": -248.42105263142884,
+      "control": -4.0,
+      "scalar_actuator_force": -4.0,
+      "generalized_actuator_force": -4.0,
+      "carriage_center_x": 1.774200000000001,
+      "bumper_front_x": 1.954200000000001,
+      "wall_near_x": 1.95,
+      "wall_clearance": -0.004200000000001092,
+      "wall_collision": true,
+      "contact_count": 4,
+      "contacts": [
+        {
+          "geom_ids": [
+            4,
+            5
+          ],
+          "geom_1": "front_bumper",
+          "geom_2": "wall",
+          "dist": -0.00420000000000114,
+          "normal_force_n": 123.16927920797504,
+          "involves_wall": true
+        },
+        {
+          "geom_ids": [
+            4,
+            5
+          ],
+          "geom_1": "front_bumper",
+          "geom_2": "wall",
+          "dist": -0.00420000000000114,
+          "normal_force_n": 123.16927920797504,
+          "involves_wall": true
+        },
+        {
+          "geom_ids": [
+            4,
+            5
+          ],
+          "geom_1": "front_bumper",
+          "geom_2": "wall",
+          "dist": -0.00420000000000114,
+          "normal_force_n": 123.16927920797504,
+          "involves_wall": true
+        },
+        {
+          "geom_ids": [
+            4,
+            5
+          ],
+          "geom_1": "front_bumper",
+          "geom_2": "wall",
+          "dist": -0.00420000000000114,
+          "normal_force_n": 123.16927920797504,
+          "involves_wall": true
+        }
+      ]
+    },
+    "contact_velocity_ms": 0.9699999999999998,
+    "minimum_clearance_m": -0.004200000000001092,
+    "final_speed_ms": 0.27210526315714445,
+    "applied_force_n": {
+      "minimum": -4.0,
+      "maximum": 0.0
+    },
+    "independent_verification": "PASS",
+    "safety_acceptance": {
+      "status": "FAIL",
+      "criteria": {
+        "wall_collision_events": 0,
+        "minimum_clearance_m": 0.05,
+        "max_final_speed_ms_exclusive": 0.03,
+        "completion_deadline_s": 3.0
+      },
+      "checks": {
+        "zero_wall_collision_events": "FAIL",
+        "minimum_clearance": "FAIL",
+        "final_speed": "FAIL",
+        "completion_within_deadline": "PASS",
+        "finite_measurements": "PASS"
+      },
+      "wall_collision_events": 1,
+      "wall_contact_samples": 4,
+      "minimum_measured_clearance_m": -0.004200000000001092,
+      "final_speed_ms": 0.27210526315714445,
+      "final_time_s": 2.9999999999999583,
+      "failure_reasons": [
+        "Observed 1 wall contact episode(s) in 4 sampled states",
+        "Minimum clearance -0.0042 m is below required 0.05 m",
+        "Final speed 0.272105263157 m/s is not below 0.03 m/s"
+      ]
+    },
+    "artifact_references": {
+      "telemetry.json": "simulations/simulation_e07e1656ec2f444da307fbcdfef783e8/telemetry.json",
+      "diagnostics.json": "simulations/simulation_e07e1656ec2f444da307fbcdfef783e8/diagnostics.json",
+      "independent_safety_trace.json": "simulations/simulation_e07e1656ec2f444da307fbcdfef783e8/independent_safety_trace.json",
+      "effective_model.xml": "simulations/simulation_e07e1656ec2f444da307fbcdfef783e8/effective_model.xml",
+      "manifest.json": "simulations/simulation_e07e1656ec2f444da307fbcdfef783e8/manifest.json"
+    }
+  },
+  "B": {
+    "simulation_run_id": "simulation_98926ab246fa48e49eaf6f08d1c8165a",
+    "scenario_id": "B",
+    "controller_variant": "faulty",
+    "controller_sha256": "04527c57d5662ad0010181872d3f66ce64317f5535dd3a718f7017dbd16f8753",
+    "simulation_execution": "PASS",
+    "physical_safety_status": "FAIL",
+    "braking_onset": {
+      "step": 275,
+      "time": 1.3749999999999927,
+      "position": 1.6500000000000012,
+      "velocity": 1.2,
+      "acceleration": -1.3333333333333333,
+      "control": -4.0,
+      "scalar_actuator_force": -4.0,
+      "generalized_actuator_force": -4.0,
+      "carriage_center_x": 1.6500000000000012,
+      "bumper_front_x": 1.8300000000000012,
+      "wall_near_x": 1.95,
+      "wall_clearance": 0.11999999999999877,
+      "wall_collision": false,
+      "contact_count": 0,
+      "contacts": []
+    },
+    "first_wall_contact": {
+      "step": 297,
+      "time": 1.4849999999999903,
+      "position": 1.773566666666669,
+      "velocity": 1.0533333333333348,
+      "acceleration": -259.2982456138902,
+      "control": -4.0,
+      "scalar_actuator_force": -4.0,
+      "generalized_actuator_force": -4.0,
+      "carriage_center_x": 1.773566666666669,
+      "bumper_front_x": 1.953566666666669,
+      "wall_near_x": 1.95,
+      "wall_clearance": -0.0035666666666689384,
+      "wall_collision": true,
+      "contact_count": 4,
+      "contacts": [
+        {
+          "geom_ids": [
+            4,
+            5
+          ],
+          "geom_1": "front_bumper",
+          "geom_2": "wall",
+          "dist": -0.003566666666668987,
+          "normal_force_n": 193.43247002210015,
+          "involves_wall": true
+        },
+        {
+          "geom_ids": [
+            4,
+            5
+          ],
+          "geom_1": "front_bumper",
+          "geom_2": "wall",
+          "dist": -0.003566666666668987,
+          "normal_force_n": 193.43247002210015,
+          "involves_wall": true
+        },
+        {
+          "geom_ids": [
+            4,
+            5
+          ],
+          "geom_1": "front_bumper",
+          "geom_2": "wall",
+          "dist": -0.003566666666668987,
+          "normal_force_n": 193.43247002210015,
+          "involves_wall": true
+        },
+        {
+          "geom_ids": [
+            4,
+            5
+          ],
+          "geom_1": "front_bumper",
+          "geom_2": "wall",
+          "dist": -0.003566666666668987,
+          "normal_force_n": 193.43247002210015,
+          "involves_wall": true
+        }
+      ]
+    },
+    "contact_velocity_ms": 1.0533333333333348,
+    "minimum_clearance_m": -0.0035666666666689384,
+    "final_speed_ms": 0.2431578947361161,
+    "applied_force_n": {
+      "minimum": -4.0,
+      "maximum": 0.0
+    },
+    "independent_verification": "PASS",
+    "safety_acceptance": {
+      "status": "FAIL",
+      "criteria": {
+        "wall_collision_events": 0,
+        "minimum_clearance_m": 0.05,
+        "max_final_speed_ms_exclusive": 0.03,
+        "completion_deadline_s": 3.0
+      },
+      "checks": {
+        "zero_wall_collision_events": "FAIL",
+        "minimum_clearance": "FAIL",
+        "final_speed": "FAIL",
+        "completion_within_deadline": "PASS",
+        "finite_measurements": "PASS"
+      },
+      "wall_collision_events": 1,
+      "wall_contact_samples": 3,
+      "minimum_measured_clearance_m": -0.0035666666666689384,
+      "final_speed_ms": 0.2431578947361161,
+      "final_time_s": 2.9999999999999583,
+      "failure_reasons": [
+        "Observed 1 wall contact episode(s) in 3 sampled states",
+        "Minimum clearance -0.00356666666667 m is below required 0.05 m",
+        "Final speed 0.243157894736 m/s is not below 0.03 m/s"
+      ]
+    },
+    "artifact_references": {
+      "telemetry.json": "simulations/simulation_98926ab246fa48e49eaf6f08d1c8165a/telemetry.json",
+      "diagnostics.json": "simulations/simulation_98926ab246fa48e49eaf6f08d1c8165a/diagnostics.json",
+      "independent_safety_trace.json": "simulations/simulation_98926ab246fa48e49eaf6f08d1c8165a/independent_safety_trace.json",
+      "effective_model.xml": "simulations/simulation_98926ab246fa48e49eaf6f08d1c8165a/effective_model.xml",
+      "manifest.json": "simulations/simulation_98926ab246fa48e49eaf6f08d1c8165a/manifest.json"
+    }
+  },
+  "C": {
+    "simulation_run_id": "simulation_93f6d2db1cc341b18650b607cc8e9fb8",
+    "scenario_id": "C",
+    "controller_variant": "faulty",
+    "controller_sha256": "04527c57d5662ad0010181872d3f66ce64317f5535dd3a718f7017dbd16f8753",
+    "simulation_execution": "PASS",
+    "physical_safety_status": "FAIL",
+    "braking_onset": {
+      "step": 260,
+      "time": 1.2999999999999943,
+      "position": 1.2999999999999943,
+      "velocity": 1.0,
+      "acceleration": -2.0,
+      "control": -4.0,
+      "scalar_actuator_force": -4.0,
+      "generalized_actuator_force": -4.0,
+      "carriage_center_x": 1.2999999999999943,
+      "bumper_front_x": 1.4799999999999942,
+      "wall_near_x": 1.5999999999999999,
+      "wall_clearance": 0.12000000000000566,
+      "wall_collision": false,
+      "contact_count": 0,
+      "contacts": []
+    },
+    "first_wall_contact": {
+      "step": 289,
+      "time": 1.4449999999999912,
+      "position": 1.4232499999999941,
+      "velocity": 0.7099999999999997,
+      "acceleration": -183.68421052613567,
+      "control": -4.0,
+      "scalar_actuator_force": -4.0,
+      "generalized_actuator_force": -4.0,
+      "carriage_center_x": 1.4232499999999941,
+      "bumper_front_x": 1.603249999999994,
+      "wall_near_x": 1.5999999999999999,
+      "wall_clearance": -0.003249999999994202,
+      "wall_collision": true,
+      "contact_count": 4,
+      "contacts": [
+        {
+          "geom_ids": [
+            4,
+            5
+          ],
+          "geom_1": "front_bumper",
+          "geom_2": "wall",
+          "dist": -0.0032499999999942505,
+          "normal_force_n": 90.84264006788693,
+          "involves_wall": true
+        },
+        {
+          "geom_ids": [
+            4,
+            5
+          ],
+          "geom_1": "front_bumper",
+          "geom_2": "wall",
+          "dist": -0.0032499999999942505,
+          "normal_force_n": 90.84264006788693,
+          "involves_wall": true
+        },
+        {
+          "geom_ids": [
+            4,
+            5
+          ],
+          "geom_1": "front_bumper",
+          "geom_2": "wall",
+          "dist": -0.0032499999999942505,
+          "normal_force_n": 90.84264006788693,
+          "involves_wall": true
+        },
+        {
+          "geom_ids": [
+            4,
+            5
+          ],
+          "geom_1": "front_bumper",
+          "geom_2": "wall",
+          "dist": -0.0032499999999942505,
+          "normal_force_n": 90.84264006788693,
+          "involves_wall": true
+        }
+      ]
+    },
+    "contact_velocity_ms": 0.7099999999999997,
+    "minimum_clearance_m": -0.003249999999994202,
+    "final_speed_ms": 0.20842105263067864,
+    "applied_force_n": {
+      "minimum": -4.0,
+      "maximum": 0.0
+    },
+    "independent_verification": "PASS",
+    "safety_acceptance": {
+      "status": "FAIL",
+      "criteria": {
+        "wall_collision_events": 0,
+        "minimum_clearance_m": 0.05,
+        "max_final_speed_ms_exclusive": 0.03,
+        "completion_deadline_s": 3.0
+      },
+      "checks": {
+        "zero_wall_collision_events": "FAIL",
+        "minimum_clearance": "FAIL",
+        "final_speed": "FAIL",
+        "completion_within_deadline": "PASS",
+        "finite_measurements": "PASS"
+      },
+      "wall_collision_events": 1,
+      "wall_contact_samples": 4,
+      "minimum_measured_clearance_m": -0.003249999999994202,
+      "final_speed_ms": 0.20842105263067864,
+      "final_time_s": 2.9999999999999583,
+      "failure_reasons": [
+        "Observed 1 wall contact episode(s) in 4 sampled states",
+        "Minimum clearance -0.00324999999999 m is below required 0.05 m",
+        "Final speed 0.208421052631 m/s is not below 0.03 m/s"
+      ]
+    },
+    "artifact_references": {
+      "telemetry.json": "simulations/simulation_93f6d2db1cc341b18650b607cc8e9fb8/telemetry.json",
+      "diagnostics.json": "simulations/simulation_93f6d2db1cc341b18650b607cc8e9fb8/diagnostics.json",
+      "independent_safety_trace.json": "simulations/simulation_93f6d2db1cc341b18650b607cc8e9fb8/independent_safety_trace.json",
+      "effective_model.xml": "simulations/simulation_93f6d2db1cc341b18650b607cc8e9fb8/effective_model.xml",
+      "manifest.json": "simulations/simulation_93f6d2db1cc341b18650b607cc8e9fb8/manifest.json"
+    }
+  }
+}

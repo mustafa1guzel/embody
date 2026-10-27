@@ -1,0 +1,1212 @@
+{
+  "status": "COMPLETE",
+  "recording_inventory_sha256": "539b34f96960bf2cfe900f9d7b5f272786aea0a016d7ce60d9e806781aee7a23",
+  "renderer": "mujoco.Renderer / existing core.simulation._capture",
+  "basis": "Recorded telemetry state reconstruction; no new dynamics or acceptance evaluation",
+  "candidate_code_executed": false,
+  "new_simulations_executed": 0,
+  "scenarios": {
+    "A": {
+      "original": [
+        {
+          "path": "A/original/render_frames/frame_0000.png",
+          "step": 0,
+          "time": 0.0,
+          "position": 0.0,
+          "velocity": 1.2,
+          "sha256": "171778f456c250fbd5f2cfb477c07f98401a418b2cc45cdd990df6da35662be4",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "pixel_std": 109.57009938848566,
+          "visible_geom_pixels": {
+            "carriage_box": 2081,
+            "front_bumper": 688,
+            "rail_track": 5286,
+            "wall": 8910
+          },
+          "bumper_front_x": 0.18,
+          "control": 0.0,
+          "wall_collision": false,
+          "wall_clearance": 1.77
+        },
+        {
+          "path": "A/original/render_frames/frame_0200.png",
+          "step": 200,
+          "time": 1.0000000000000007,
+          "position": 1.2000000000000008,
+          "velocity": 1.2,
+          "sha256": "a3d995b0ef6d4f490b4a17d06e86f4eed3bf42da135ca12ac2aac762e0629c8e",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "pixel_std": 109.53715104870291,
+          "visible_geom_pixels": {
+            "carriage_box": 2126,
+            "front_bumper": 451,
+            "rail_track": 5292,
+            "wall": 8910
+          },
+          "bumper_front_x": 1.3800000000000008,
+          "control": 0.0,
+          "wall_collision": false,
+          "wall_clearance": 0.5699999999999992
+        },
+        {
+          "path": "A/original/render_frames/frame_0275.png",
+          "step": 275,
+          "time": 1.3749999999999927,
+          "position": 1.6500000000000012,
+          "velocity": 1.2,
+          "sha256": "20ea0e74e02cd5294a909335073b938812baacdbccd3d54669c6e1c1211ca2a5",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "pixel_std": 109.57442642541837,
+          "visible_geom_pixels": {
+            "carriage_box": 2233,
+            "front_bumper": 460,
+            "rail_track": 5286,
+            "wall": 8910
+          },
+          "bumper_front_x": 1.8300000000000012,
+          "control": -4.0,
+          "wall_collision": false,
+          "wall_clearance": 0.11999999999999877
+        },
+        {
+          "path": "A/original/render_frames/frame_0298.png",
+          "step": 298,
+          "time": 1.4899999999999902,
+          "position": 1.774200000000001,
+          "velocity": 0.9699999999999998,
+          "sha256": "ae7128d262511550e4b0b7ae9916da7f34a839674a051bdaf1671bec8521edc9",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "pixel_std": 109.48083522458026,
+          "visible_geom_pixels": {
+            "carriage_box": 2267,
+            "front_bumper": 423,
+            "rail_track": 5334,
+            "wall": 8159
+          },
+          "bumper_front_x": 1.954200000000001,
+          "control": -4.0,
+          "wall_collision": true,
+          "wall_clearance": -0.004200000000001092
+        },
+        {
+          "path": "A/original/render_frames/frame_0400.png",
+          "step": 400,
+          "time": 1.9999999999999793,
+          "position": 1.635426315789865,
+          "velocity": -0.27210526315714445,
+          "sha256": "c97045e2a46b239f402fe7000d91a0b233b0a39c822a6436fe1c9cfb03707873",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "pixel_std": 109.5706104124298,
+          "visible_geom_pixels": {
+            "carriage_box": 2233,
+            "front_bumper": 460,
+            "rail_track": 5286,
+            "wall": 8910
+          },
+          "bumper_front_x": 1.815426315789865,
+          "control": 0.0,
+          "wall_collision": false,
+          "wall_clearance": 0.13457368421013505
+        },
+        {
+          "path": "A/original/render_frames/frame_0600.png",
+          "step": 600,
+          "time": 2.9999999999999583,
+          "position": 1.3633210526327353,
+          "velocity": -0.27210526315714445,
+          "sha256": "1f1b1afe9f423ca461e0c206970a274cfd8ef60506c8fd732a0cbdd33f2ae7ea",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "pixel_std": 109.5476906240142,
+          "visible_geom_pixels": {
+            "carriage_box": 2156,
+            "front_bumper": 451,
+            "rail_track": 5290,
+            "wall": 8910
+          },
+          "bumper_front_x": 1.5433210526327352,
+          "control": 0.0,
+          "wall_collision": false,
+          "wall_clearance": 0.40667894736726473
+        }
+      ],
+      "attempt_1": [
+        {
+          "path": "A/attempt_1/render_frames/frame_0000.png",
+          "step": 0,
+          "time": 0.0,
+          "position": 0.0,
+          "velocity": 1.2,
+          "sha256": "171778f456c250fbd5f2cfb477c07f98401a418b2cc45cdd990df6da35662be4",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "pixel_std": 109.57009938848566,
+          "visible_geom_pixels": {
+            "carriage_box": 2081,
+            "front_bumper": 688,
+            "rail_track": 5286,
+            "wall": 8910
+          },
+          "bumper_front_x": 0.18,
+          "control": 0.0,
+          "wall_collision": false,
+          "wall_clearance": 1.77
+        },
+        {
+          "path": "A/attempt_1/render_frames/frame_0200.png",
+          "step": 200,
+          "time": 1.0000000000000007,
+          "position": 1.2000000000000008,
+          "velocity": 1.2,
+          "sha256": "a3d995b0ef6d4f490b4a17d06e86f4eed3bf42da135ca12ac2aac762e0629c8e",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "pixel_std": 109.53715104870291,
+          "visible_geom_pixels": {
+            "carriage_box": 2126,
+            "front_bumper": 451,
+            "rail_track": 5292,
+            "wall": 8910
+          },
+          "bumper_front_x": 1.3800000000000008,
+          "control": 0.0,
+          "wall_collision": false,
+          "wall_clearance": 0.5699999999999992
+        },
+        {
+          "path": "A/attempt_1/render_frames/frame_0226.png",
+          "step": 226,
+          "time": 1.129999999999998,
+          "position": 1.356000000000001,
+          "velocity": 1.2,
+          "sha256": "0b8d94e06dabd9b26f9b7b2e43ed2bd660eb0eb42925febe5c3f09beabf7f6e2",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "pixel_std": 109.54640238675196,
+          "visible_geom_pixels": {
+            "carriage_box": 2159,
+            "front_bumper": 453,
+            "rail_track": 5290,
+            "wall": 8910
+          },
+          "bumper_front_x": 1.536000000000001,
+          "control": -4.0,
+          "wall_collision": false,
+          "wall_clearance": 0.41399999999999904
+        },
+        {
+          "path": "A/attempt_1/render_frames/frame_0400.png",
+          "step": 400,
+          "time": 1.9999999999999793,
+          "position": 1.7251000000000003,
+          "velocity": 0.019999999999999026,
+          "sha256": "29ea3df8855da5ce6b000b966ca655cae16c4d8c66e18fd891bd153cc97c4fa1",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "pixel_std": 109.53222875601031,
+          "visible_geom_pixels": {
+            "carriage_box": 2253,
+            "front_bumper": 463,
+            "rail_track": 5284,
+            "wall": 8532
+          },
+          "bumper_front_x": 1.9051000000000002,
+          "control": 0.0,
+          "wall_collision": false,
+          "wall_clearance": 0.04489999999999972
+        },
+        {
+          "path": "A/attempt_1/render_frames/frame_0600.png",
+          "step": 600,
+          "time": 2.9999999999999583,
+          "position": 1.745099999999998,
+          "velocity": 0.019999999999999026,
+          "sha256": "4fb1665cb96eb1bf90ec97df7c384461674f1919364a4787e3908359a1169d81",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "pixel_std": 109.51097677358601,
+          "visible_geom_pixels": {
+            "carriage_box": 2259,
+            "front_bumper": 463,
+            "rail_track": 5294,
+            "wall": 8373
+          },
+          "bumper_front_x": 1.925099999999998,
+          "control": 0.0,
+          "wall_collision": false,
+          "wall_clearance": 0.02490000000000192
+        }
+      ],
+      "attempt_2": [
+        {
+          "path": "A/attempt_2/render_frames/frame_0000.png",
+          "step": 0,
+          "time": 0.0,
+          "position": 0.0,
+          "velocity": 1.2,
+          "sha256": "171778f456c250fbd5f2cfb477c07f98401a418b2cc45cdd990df6da35662be4",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "pixel_std": 109.57009938848566,
+          "visible_geom_pixels": {
+            "carriage_box": 2081,
+            "front_bumper": 688,
+            "rail_track": 5286,
+            "wall": 8910
+          },
+          "bumper_front_x": 0.18,
+          "control": 0.0,
+          "wall_collision": false,
+          "wall_clearance": 1.77
+        },
+        {
+          "path": "A/attempt_2/render_frames/frame_0200.png",
+          "step": 200,
+          "time": 1.0000000000000007,
+          "position": 1.2000000000000008,
+          "velocity": 1.2,
+          "sha256": "a3d995b0ef6d4f490b4a17d06e86f4eed3bf42da135ca12ac2aac762e0629c8e",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "pixel_std": 109.53715104870291,
+          "visible_geom_pixels": {
+            "carriage_box": 2126,
+            "front_bumper": 451,
+            "rail_track": 5292,
+            "wall": 8910
+          },
+          "bumper_front_x": 1.3800000000000008,
+          "control": 0.0,
+          "wall_collision": false,
+          "wall_clearance": 0.5699999999999992
+        },
+        {
+          "path": "A/attempt_2/render_frames/frame_0226.png",
+          "step": 226,
+          "time": 1.129999999999998,
+          "position": 1.356000000000001,
+          "velocity": 1.2,
+          "sha256": "0b8d94e06dabd9b26f9b7b2e43ed2bd660eb0eb42925febe5c3f09beabf7f6e2",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "pixel_std": 109.54640238675196,
+          "visible_geom_pixels": {
+            "carriage_box": 2159,
+            "front_bumper": 453,
+            "rail_track": 5290,
+            "wall": 8910
+          },
+          "bumper_front_x": 1.536000000000001,
+          "control": -4.0,
+          "wall_collision": false,
+          "wall_clearance": 0.41399999999999904
+        },
+        {
+          "path": "A/attempt_2/render_frames/frame_0346.png",
+          "step": 346,
+          "time": 1.729999999999985,
+          "position": 1.717600000000001,
+          "velocity": 0.009999999999999025,
+          "sha256": "67bfa62c8b3ac8aed4e917e27d57d19ca26f33b3e6a77df56a0162a07b1a90ff",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "pixel_std": 109.5390397108847,
+          "visible_geom_pixels": {
+            "carriage_box": 2253,
+            "front_bumper": 458,
+            "rail_track": 5285,
+            "wall": 8590
+          },
+          "bumper_front_x": 1.8976000000000008,
+          "control": -4.0,
+          "wall_collision": false,
+          "wall_clearance": 0.052399999999999114
+        },
+        {
+          "path": "A/attempt_2/render_frames/frame_0400.png",
+          "step": 400,
+          "time": 1.9999999999999793,
+          "position": 1.717600000000001,
+          "velocity": -9.749145934989656e-16,
+          "sha256": "67bfa62c8b3ac8aed4e917e27d57d19ca26f33b3e6a77df56a0162a07b1a90ff",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "pixel_std": 109.5390397108847,
+          "visible_geom_pixels": {
+            "carriage_box": 2253,
+            "front_bumper": 458,
+            "rail_track": 5285,
+            "wall": 8590
+          },
+          "bumper_front_x": 1.8976000000000008,
+          "control": 0.0,
+          "wall_collision": false,
+          "wall_clearance": 0.052399999999999114
+        },
+        {
+          "path": "A/attempt_2/render_frames/frame_0600.png",
+          "step": 600,
+          "time": 2.9999999999999583,
+          "position": 1.717600000000001,
+          "velocity": -9.749145934989656e-16,
+          "sha256": "67bfa62c8b3ac8aed4e917e27d57d19ca26f33b3e6a77df56a0162a07b1a90ff",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "pixel_std": 109.5390397108847,
+          "visible_geom_pixels": {
+            "carriage_box": 2253,
+            "front_bumper": 458,
+            "rail_track": 5285,
+            "wall": 8590
+          },
+          "bumper_front_x": 1.8976000000000008,
+          "control": 0.0,
+          "wall_collision": false,
+          "wall_clearance": 0.052399999999999114
+        }
+      ]
+    },
+    "B": {
+      "original": [
+        {
+          "path": "B/original/render_frames/frame_0000.png",
+          "step": 0,
+          "time": 0.0,
+          "position": 0.0,
+          "velocity": 1.2,
+          "sha256": "171778f456c250fbd5f2cfb477c07f98401a418b2cc45cdd990df6da35662be4",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "pixel_std": 109.57009938848566,
+          "visible_geom_pixels": {
+            "carriage_box": 2081,
+            "front_bumper": 688,
+            "rail_track": 5286,
+            "wall": 8910
+          },
+          "bumper_front_x": 0.18,
+          "control": 0.0,
+          "wall_collision": false,
+          "wall_clearance": 1.77
+        },
+        {
+          "path": "B/original/render_frames/frame_0200.png",
+          "step": 200,
+          "time": 1.0000000000000007,
+          "position": 1.2000000000000008,
+          "velocity": 1.2,
+          "sha256": "a3d995b0ef6d4f490b4a17d06e86f4eed3bf42da135ca12ac2aac762e0629c8e",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "pixel_std": 109.53715104870291,
+          "visible_geom_pixels": {
+            "carriage_box": 2126,
+            "front_bumper": 451,
+            "rail_track": 5292,
+            "wall": 8910
+          },
+          "bumper_front_x": 1.3800000000000008,
+          "control": 0.0,
+          "wall_collision": false,
+          "wall_clearance": 0.5699999999999992
+        },
+        {
+          "path": "B/original/render_frames/frame_0275.png",
+          "step": 275,
+          "time": 1.3749999999999927,
+          "position": 1.6500000000000012,
+          "velocity": 1.2,
+          "sha256": "20ea0e74e02cd5294a909335073b938812baacdbccd3d54669c6e1c1211ca2a5",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "pixel_std": 109.57442642541837,
+          "visible_geom_pixels": {
+            "carriage_box": 2233,
+            "front_bumper": 460,
+            "rail_track": 5286,
+            "wall": 8910
+          },
+          "bumper_front_x": 1.8300000000000012,
+          "control": -4.0,
+          "wall_collision": false,
+          "wall_clearance": 0.11999999999999877
+        },
+        {
+          "path": "B/original/render_frames/frame_0297.png",
+          "step": 297,
+          "time": 1.4849999999999903,
+          "position": 1.773566666666669,
+          "velocity": 1.0533333333333348,
+          "sha256": "d1233b645ad38221f6bd00172db9c21d0804a93ed077341f8a473d00be3a0b3d",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "pixel_std": 109.48129954359167,
+          "visible_geom_pixels": {
+            "carriage_box": 2261,
+            "front_bumper": 433,
+            "rail_track": 5334,
+            "wall": 8159
+          },
+          "bumper_front_x": 1.953566666666669,
+          "control": -4.0,
+          "wall_collision": true,
+          "wall_clearance": -0.0035666666666689384
+        },
+        {
+          "path": "B/original/render_frames/frame_0400.png",
+          "step": 400,
+          "time": 1.9999999999999793,
+          "position": 1.6483403508775654,
+          "velocity": -0.2431578947361161,
+          "sha256": "b1ba5236c3516035155f1f36d4b9c02dcba0d20abb2f71ab17fec78560d62984",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "pixel_std": 109.57366691068313,
+          "visible_geom_pixels": {
+            "carriage_box": 2236,
+            "front_bumper": 460,
+            "rail_track": 5286,
+            "wall": 8910
+          },
+          "bumper_front_x": 1.8283403508775653,
+          "control": 0.0,
+          "wall_collision": false,
+          "wall_clearance": 0.12165964912243465
+        },
+        {
+          "path": "B/original/render_frames/frame_0600.png",
+          "step": 600,
+          "time": 2.9999999999999583,
+          "position": 1.4051824561414419,
+          "velocity": -0.2431578947361161,
+          "sha256": "d59a11f4f45db9177243b373882bc41b81adc898c87eef287a07f572b4016f9c",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "pixel_std": 109.55051811461739,
+          "visible_geom_pixels": {
+            "carriage_box": 2176,
+            "front_bumper": 451,
+            "rail_track": 5288,
+            "wall": 8910
+          },
+          "bumper_front_x": 1.5851824561414418,
+          "control": 0.0,
+          "wall_collision": false,
+          "wall_clearance": 0.36481754385855814
+        }
+      ],
+      "attempt_1": [
+        {
+          "path": "B/attempt_1/render_frames/frame_0000.png",
+          "step": 0,
+          "time": 0.0,
+          "position": 0.0,
+          "velocity": 1.2,
+          "sha256": "171778f456c250fbd5f2cfb477c07f98401a418b2cc45cdd990df6da35662be4",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "pixel_std": 109.57009938848566,
+          "visible_geom_pixels": {
+            "carriage_box": 2081,
+            "front_bumper": 688,
+            "rail_track": 5286,
+            "wall": 8910
+          },
+          "bumper_front_x": 0.18,
+          "control": 0.0,
+          "wall_collision": false,
+          "wall_clearance": 1.77
+        },
+        {
+          "path": "B/attempt_1/render_frames/frame_0196.png",
+          "step": 196,
+          "time": 0.9800000000000008,
+          "position": 1.1760000000000008,
+          "velocity": 1.2,
+          "sha256": "769bb46f529218dc3ac896fd5bf4c82e75e4afa0cb5436d0c0def7042cd49fa4",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "pixel_std": 109.53572128951804,
+          "visible_geom_pixels": {
+            "carriage_box": 2120,
+            "front_bumper": 450,
+            "rail_track": 5294,
+            "wall": 8910
+          },
+          "bumper_front_x": 1.3560000000000008,
+          "control": -4.0,
+          "wall_collision": false,
+          "wall_clearance": 0.5939999999999992
+        },
+        {
+          "path": "B/attempt_1/render_frames/frame_0200.png",
+          "step": 200,
+          "time": 1.0000000000000007,
+          "position": 1.1996666666666675,
+          "velocity": 1.1733333333333336,
+          "sha256": "3d5d4ce4d3dd7f8b64757caae8c568cc92d2398accaeb43d0f054b9fa835a975",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "pixel_std": 109.53709958078119,
+          "visible_geom_pixels": {
+            "carriage_box": 2125,
+            "front_bumper": 452,
+            "rail_track": 5294,
+            "wall": 8910
+          },
+          "bumper_front_x": 1.3796666666666675,
+          "control": -4.0,
+          "wall_collision": false,
+          "wall_clearance": 0.5703333333333325
+        },
+        {
+          "path": "B/attempt_1/render_frames/frame_0400.png",
+          "step": 400,
+          "time": 1.9999999999999793,
+          "position": 1.722233333333334,
+          "velocity": 0.019999999999999518,
+          "sha256": "e93314dce38e0e3a895757632a7b55ccd7e3d3ace3a55f774b1db3a2b13fe77c",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "pixel_std": 109.53417495515006,
+          "visible_geom_pixels": {
+            "carriage_box": 2255,
+            "front_bumper": 467,
+            "rail_track": 5285,
+            "wall": 8548
+          },
+          "bumper_front_x": 1.9022333333333339,
+          "control": 0.0,
+          "wall_collision": false,
+          "wall_clearance": 0.04776666666666607
+        },
+        {
+          "path": "B/attempt_1/render_frames/frame_0600.png",
+          "step": 600,
+          "time": 2.9999999999999583,
+          "position": 1.7422333333333317,
+          "velocity": 0.019999999999999518,
+          "sha256": "f2ed935bf44c7c74284c538a9715e80a525a9839842f8074f6fe39ff6ca93225",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "pixel_std": 109.51439680744369,
+          "visible_geom_pixels": {
+            "carriage_box": 2259,
+            "front_bumper": 463,
+            "rail_track": 5290,
+            "wall": 8398
+          },
+          "bumper_front_x": 1.9222333333333317,
+          "control": 0.0,
+          "wall_collision": false,
+          "wall_clearance": 0.02776666666666827
+        }
+      ],
+      "attempt_2": [
+        {
+          "path": "B/attempt_2/render_frames/frame_0000.png",
+          "step": 0,
+          "time": 0.0,
+          "position": 0.0,
+          "velocity": 1.2,
+          "sha256": "171778f456c250fbd5f2cfb477c07f98401a418b2cc45cdd990df6da35662be4",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "pixel_std": 109.57009938848566,
+          "visible_geom_pixels": {
+            "carriage_box": 2081,
+            "front_bumper": 688,
+            "rail_track": 5286,
+            "wall": 8910
+          },
+          "bumper_front_x": 0.18,
+          "control": 0.0,
+          "wall_collision": false,
+          "wall_clearance": 1.77
+        },
+        {
+          "path": "B/attempt_2/render_frames/frame_0196.png",
+          "step": 196,
+          "time": 0.9800000000000008,
+          "position": 1.1760000000000008,
+          "velocity": 1.2,
+          "sha256": "769bb46f529218dc3ac896fd5bf4c82e75e4afa0cb5436d0c0def7042cd49fa4",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "pixel_std": 109.53572128951804,
+          "visible_geom_pixels": {
+            "carriage_box": 2120,
+            "front_bumper": 450,
+            "rail_track": 5294,
+            "wall": 8910
+          },
+          "bumper_front_x": 1.3560000000000008,
+          "control": -4.0,
+          "wall_collision": false,
+          "wall_clearance": 0.5939999999999992
+        },
+        {
+          "path": "B/attempt_2/render_frames/frame_0200.png",
+          "step": 200,
+          "time": 1.0000000000000007,
+          "position": 1.1996666666666675,
+          "velocity": 1.1733333333333336,
+          "sha256": "3d5d4ce4d3dd7f8b64757caae8c568cc92d2398accaeb43d0f054b9fa835a975",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "pixel_std": 109.53709958078119,
+          "visible_geom_pixels": {
+            "carriage_box": 2125,
+            "front_bumper": 452,
+            "rail_track": 5294,
+            "wall": 8910
+          },
+          "bumper_front_x": 1.3796666666666675,
+          "control": -4.0,
+          "wall_collision": false,
+          "wall_clearance": 0.5703333333333325
+        },
+        {
+          "path": "B/attempt_2/render_frames/frame_0376.png",
+          "step": 376,
+          "time": 1.879999999999982,
+          "position": 1.7176333333333342,
+          "velocity": 0.006666666666666186,
+          "sha256": "7cd017d9a2b73b5208e511e58c91c4158c445af37d753f48b86db1f5cfdd32ef",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "pixel_std": 109.53901740303431,
+          "visible_geom_pixels": {
+            "carriage_box": 2254,
+            "front_bumper": 458,
+            "rail_track": 5285,
+            "wall": 8589
+          },
+          "bumper_front_x": 1.8976333333333342,
+          "control": -4.0,
+          "wall_collision": false,
+          "wall_clearance": 0.052366666666665784
+        },
+        {
+          "path": "B/attempt_2/render_frames/frame_0400.png",
+          "step": 400,
+          "time": 1.9999999999999793,
+          "position": 1.7176333333333342,
+          "velocity": -4.807265696626928e-16,
+          "sha256": "7cd017d9a2b73b5208e511e58c91c4158c445af37d753f48b86db1f5cfdd32ef",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "pixel_std": 109.53901740303431,
+          "visible_geom_pixels": {
+            "carriage_box": 2254,
+            "front_bumper": 458,
+            "rail_track": 5285,
+            "wall": 8589
+          },
+          "bumper_front_x": 1.8976333333333342,
+          "control": 0.0,
+          "wall_collision": false,
+          "wall_clearance": 0.052366666666665784
+        },
+        {
+          "path": "B/attempt_2/render_frames/frame_0600.png",
+          "step": 600,
+          "time": 2.9999999999999583,
+          "position": 1.7176333333333342,
+          "velocity": -4.807265696626928e-16,
+          "sha256": "7cd017d9a2b73b5208e511e58c91c4158c445af37d753f48b86db1f5cfdd32ef",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "pixel_std": 109.53901740303431,
+          "visible_geom_pixels": {
+            "carriage_box": 2254,
+            "front_bumper": 458,
+            "rail_track": 5285,
+            "wall": 8589
+          },
+          "bumper_front_x": 1.8976333333333342,
+          "control": 0.0,
+          "wall_collision": false,
+          "wall_clearance": 0.052366666666665784
+        }
+      ]
+    },
+    "C": {
+      "original": [
+        {
+          "path": "C/original/render_frames/frame_0000.png",
+          "step": 0,
+          "time": 0.0,
+          "position": 0.0,
+          "velocity": 1.0,
+          "sha256": "dc4a4328a58e630b57de7f7b970d9b37a87614c8a0db0e6d88494c37adef7a76",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "pixel_std": 109.29240453924324,
+          "visible_geom_pixels": {
+            "carriage_box": 2081,
+            "front_bumper": 688,
+            "rail_track": 5351,
+            "wall": 7125
+          },
+          "bumper_front_x": 0.18,
+          "control": 0.0,
+          "wall_collision": false,
+          "wall_clearance": 1.42
+        },
+        {
+          "path": "C/original/render_frames/frame_0200.png",
+          "step": 200,
+          "time": 1.0000000000000007,
+          "position": 1.0000000000000007,
+          "velocity": 1.0,
+          "sha256": "e7483982630fda2aece93f18906db795fbafe5c9d45cd4f07e90f9a617f16bda",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "pixel_std": 109.26374558323023,
+          "visible_geom_pixels": {
+            "carriage_box": 2098,
+            "front_bumper": 453,
+            "rail_track": 5355,
+            "wall": 7125
+          },
+          "bumper_front_x": 1.1800000000000006,
+          "control": 0.0,
+          "wall_collision": false,
+          "wall_clearance": 0.41999999999999926
+        },
+        {
+          "path": "C/original/render_frames/frame_0260.png",
+          "step": 260,
+          "time": 1.2999999999999943,
+          "position": 1.2999999999999943,
+          "velocity": 1.0,
+          "sha256": "4c8fd28d95c2a19d03e2e762069ba144eb707b55692b846f7ab0d7a5c802c6e3",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "pixel_std": 109.28844001097418,
+          "visible_geom_pixels": {
+            "carriage_box": 2146,
+            "front_bumper": 449,
+            "rail_track": 5356,
+            "wall": 7125
+          },
+          "bumper_front_x": 1.4799999999999942,
+          "control": -4.0,
+          "wall_collision": false,
+          "wall_clearance": 0.12000000000000566
+        },
+        {
+          "path": "C/original/render_frames/frame_0289.png",
+          "step": 289,
+          "time": 1.4449999999999912,
+          "position": 1.4232499999999941,
+          "velocity": 0.7099999999999997,
+          "sha256": "fd8c737d06c81693ad31ad72ae81c0daf15bb8c949ce9040af8025febc76cb3e",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "pixel_std": 109.23844582930609,
+          "visible_geom_pixels": {
+            "carriage_box": 2182,
+            "front_bumper": 423,
+            "rail_track": 5382,
+            "wall": 6650
+          },
+          "bumper_front_x": 1.603249999999994,
+          "control": -4.0,
+          "wall_collision": true,
+          "wall_clearance": -0.003249999999994202
+        },
+        {
+          "path": "C/original/render_frames/frame_0400.png",
+          "step": 400,
+          "time": 1.9999999999999793,
+          "position": 1.3075763157899787,
+          "velocity": -0.20842105263067864,
+          "sha256": "d78482172d11c69ae9abb2fc883e6aa94cd3f0891563d81058fe9540f376cb73",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "pixel_std": 109.29037893537598,
+          "visible_geom_pixels": {
+            "carriage_box": 2140,
+            "front_bumper": 453,
+            "rail_track": 5355,
+            "wall": 7125
+          },
+          "bumper_front_x": 1.4875763157899786,
+          "control": 0.0,
+          "wall_collision": false,
+          "wall_clearance": 0.11242368421002125
+        },
+        {
+          "path": "C/original/render_frames/frame_0600.png",
+          "step": 600,
+          "time": 2.9999999999999583,
+          "position": 1.0991552631593202,
+          "velocity": -0.20842105263067864,
+          "sha256": "1deabd0b24ebb1cd854446a3892b844041a3d823b2527bb00fc6b983f6ab17e8",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "pixel_std": 109.2654265905494,
+          "visible_geom_pixels": {
+            "carriage_box": 2094,
+            "front_bumper": 449,
+            "rail_track": 5361,
+            "wall": 7125
+          },
+          "bumper_front_x": 1.2791552631593202,
+          "control": 0.0,
+          "wall_collision": false,
+          "wall_clearance": 0.3208447368406797
+        }
+      ],
+      "attempt_1": [
+        {
+          "path": "C/attempt_1/render_frames/frame_0000.png",
+          "step": 0,
+          "time": 0.0,
+          "position": 0.0,
+          "velocity": 1.0,
+          "sha256": "dc4a4328a58e630b57de7f7b970d9b37a87614c8a0db0e6d88494c37adef7a76",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "pixel_std": 109.29240453924324,
+          "visible_geom_pixels": {
+            "carriage_box": 2081,
+            "front_bumper": 688,
+            "rail_track": 5351,
+            "wall": 7125
+          },
+          "bumper_front_x": 0.18,
+          "control": 0.0,
+          "wall_collision": false,
+          "wall_clearance": 1.42
+        },
+        {
+          "path": "C/attempt_1/render_frames/frame_0200.png",
+          "step": 200,
+          "time": 1.0000000000000007,
+          "position": 1.0000000000000007,
+          "velocity": 1.0,
+          "sha256": "e7483982630fda2aece93f18906db795fbafe5c9d45cd4f07e90f9a617f16bda",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "pixel_std": 109.26374558323023,
+          "visible_geom_pixels": {
+            "carriage_box": 2098,
+            "front_bumper": 453,
+            "rail_track": 5355,
+            "wall": 7125
+          },
+          "bumper_front_x": 1.1800000000000006,
+          "control": 0.0,
+          "wall_collision": false,
+          "wall_clearance": 0.41999999999999926
+        },
+        {
+          "path": "C/attempt_1/render_frames/frame_0224.png",
+          "step": 224,
+          "time": 1.119999999999998,
+          "position": 1.119999999999998,
+          "velocity": 1.0,
+          "sha256": "5d951c691ed4b3fd30daf13ec84ce1b3915400678329bab6ebab6e5ac07b0cc5",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "pixel_std": 109.26663605969951,
+          "visible_geom_pixels": {
+            "carriage_box": 2121,
+            "front_bumper": 441,
+            "rail_track": 5355,
+            "wall": 7125
+          },
+          "bumper_front_x": 1.299999999999998,
+          "control": -4.0,
+          "wall_collision": false,
+          "wall_clearance": 0.3000000000000018
+        },
+        {
+          "path": "C/attempt_1/render_frames/frame_0400.png",
+          "step": 400,
+          "time": 1.9999999999999793,
+          "position": 1.3773999999999973,
+          "velocity": 0.019999999999999248,
+          "sha256": "2361d818c9e4a2d440200ce7fee376cf0722677483a959000b7524a16eef481c",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "pixel_std": 109.28526266047793,
+          "visible_geom_pixels": {
+            "carriage_box": 2168,
+            "front_bumper": 454,
+            "rail_track": 5353,
+            "wall": 6986
+          },
+          "bumper_front_x": 1.5573999999999972,
+          "control": 0.0,
+          "wall_collision": false,
+          "wall_clearance": 0.042600000000002636
+        },
+        {
+          "path": "C/attempt_1/render_frames/frame_0600.png",
+          "step": 600,
+          "time": 2.9999999999999583,
+          "position": 1.397399999999995,
+          "velocity": 0.019999999999999248,
+          "sha256": "b0504a040ebe1090725105ca33eda2555d30ef10588ed9650adaf29cf1a004b8",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "pixel_std": 109.26542496801818,
+          "visible_geom_pixels": {
+            "carriage_box": 2175,
+            "front_bumper": 453,
+            "rail_track": 5355,
+            "wall": 6843
+          },
+          "bumper_front_x": 1.577399999999995,
+          "control": 0.0,
+          "wall_collision": false,
+          "wall_clearance": 0.02260000000000484
+        }
+      ],
+      "attempt_2": [
+        {
+          "path": "C/attempt_2/render_frames/frame_0000.png",
+          "step": 0,
+          "time": 0.0,
+          "position": 0.0,
+          "velocity": 1.0,
+          "sha256": "dc4a4328a58e630b57de7f7b970d9b37a87614c8a0db0e6d88494c37adef7a76",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "pixel_std": 109.29240453924324,
+          "visible_geom_pixels": {
+            "carriage_box": 2081,
+            "front_bumper": 688,
+            "rail_track": 5351,
+            "wall": 7125
+          },
+          "bumper_front_x": 0.18,
+          "control": 0.0,
+          "wall_collision": false,
+          "wall_clearance": 1.42
+        },
+        {
+          "path": "C/attempt_2/render_frames/frame_0200.png",
+          "step": 200,
+          "time": 1.0000000000000007,
+          "position": 1.0000000000000007,
+          "velocity": 1.0,
+          "sha256": "e7483982630fda2aece93f18906db795fbafe5c9d45cd4f07e90f9a617f16bda",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "pixel_std": 109.26374558323023,
+          "visible_geom_pixels": {
+            "carriage_box": 2098,
+            "front_bumper": 453,
+            "rail_track": 5355,
+            "wall": 7125
+          },
+          "bumper_front_x": 1.1800000000000006,
+          "control": 0.0,
+          "wall_collision": false,
+          "wall_clearance": 0.41999999999999926
+        },
+        {
+          "path": "C/attempt_2/render_frames/frame_0223.png",
+          "step": 223,
+          "time": 1.1149999999999982,
+          "position": 1.1149999999999982,
+          "velocity": 1.0,
+          "sha256": "59add98fdfad47f7d3c300f4dbb12dd55b46285e3417c074f9f16cd13d6ea83e",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "pixel_std": 109.26567202780925,
+          "visible_geom_pixels": {
+            "carriage_box": 2120,
+            "front_bumper": 441,
+            "rail_track": 5355,
+            "wall": 7125
+          },
+          "bumper_front_x": 1.2949999999999982,
+          "control": -4.0,
+          "wall_collision": false,
+          "wall_clearance": 0.3050000000000017
+        },
+        {
+          "path": "C/attempt_2/render_frames/frame_0323.png",
+          "step": 323,
+          "time": 1.6149999999999876,
+          "position": 1.3674499999999983,
+          "velocity": 0.009999999999999247,
+          "sha256": "5d119147056bb028e01385ac85b7408fb007b6ceba5ea538be9af8b41051344e",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "pixel_std": 109.29142853531928,
+          "visible_geom_pixels": {
+            "carriage_box": 2166,
+            "front_bumper": 455,
+            "rail_track": 5355,
+            "wall": 7047
+          },
+          "bumper_front_x": 1.5474499999999982,
+          "control": -4.0,
+          "wall_collision": false,
+          "wall_clearance": 0.05255000000000165
+        },
+        {
+          "path": "C/attempt_2/render_frames/frame_0400.png",
+          "step": 400,
+          "time": 1.9999999999999793,
+          "position": 1.3674499999999983,
+          "velocity": -7.528699885739343e-16,
+          "sha256": "5d119147056bb028e01385ac85b7408fb007b6ceba5ea538be9af8b41051344e",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "pixel_std": 109.29142853531928,
+          "visible_geom_pixels": {
+            "carriage_box": 2166,
+            "front_bumper": 455,
+            "rail_track": 5355,
+            "wall": 7047
+          },
+          "bumper_front_x": 1.5474499999999982,
+          "control": 0.0,
+          "wall_collision": false,
+          "wall_clearance": 0.05255000000000165
+        },
+        {
+          "path": "C/attempt_2/render_frames/frame_0600.png",
+          "step": 600,
+          "time": 2.9999999999999583,
+          "position": 1.3674499999999983,
+          "velocity": -7.528699885739343e-16,
+          "sha256": "5d119147056bb028e01385ac85b7408fb007b6ceba5ea538be9af8b41051344e",
+          "dimensions": [
+            1024,
+            768
+          ],
+          "pixel_std": 109.29142853531928,
+          "visible_geom_pixels": {
+            "carriage_box": 2166,
+            "front_bumper": 455,
+            "rail_track": 5355,
+            "wall": 7047
+          },
+          "bumper_front_x": 1.5474499999999982,
+          "control": 0.0,
+          "wall_collision": false,
+          "wall_clearance": 0.05255000000000165
+        }
+      ]
+    }
+  },
+  "packaging": {
+    "kind": "DERIVED_METADATA_ONLY; no new render or simulation",
+    "source_index_sha256": "e7ff261ecd162059a50421b8ffaa5d3a10e21003ab96ae21d40fcd871fc734e2",
+    "source_recording_inventory_sha256": "806bd47925e2e316c97980349f4c72ec289bd14c33c8306e8a5a9dd39cc8132b"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "robot_id": "linear_axis_01",
+  "mass_kg": 2.0,
+  "max_force_n": 4.0,
+  "max_velocity_ms": 1.2,
+  "joint_type": "prismatic",
+  "axis": "x",
+  "collision_geometry": {
+    "carriage_half_size_m": [0.13, 0.16, 0.08],
+    "bumper_half_size_m": [0.025, 0.18, 0.085],
+    "bumper_center_x_m": 0.155
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "robot_id": "planar_arm_2dof",
+  "requirements": {"duration_s":4.0,"timestep_s":0.005,"target_tolerance_m":0.02,"final_velocity_limit":0.03,"maximum_velocity":5.0,"settling_window_s":0.5,"joint_limit_tolerance":0.002,"no_contact":true},
+  "development": {
+    "arm_nominal":{"q0":[0.0,0.3],"v0":[0.0,0.0],"goal_q":[0.7,-1.0]},
+    "arm_alternate":{"q0":[0.0,0.3],"v0":[0.0,0.0],"goal_q":[-0.6,1.1]},
+    "arm_unreachable":{"q0":[0.0,0.3],"v0":[0.0,0.0],"target_xy_m":[2.0,0.0]}
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "scope": "Two separate saved model-authored experiments, not new inference or simulation. Repair PASS does not overwrite original FAIL. Finite one-second proxy checks, not hardware or universal safety.",
+  "new_model_requests": 0,
+  "new_native_integration_steps": 0,
+  "studies": [
+    {
+      "case": "initial-construction",
+      "authorship": "GENUINE_MODEL_AUTHORED",
+      "signed_forward_displacement_m": -0.018516035883634246,
+      "required_signed_forward_displacement_m": 0.005,
+      "rear_torque_commands_nm": {
+        "rear_left": 0.012,
+        "rear_right": 0.012
+      },
+      "verdict": "FAIL",
+      "checks": {
+        "bounded_actuator_forces": true,
+        "finite_native_states": true,
+        "fresh_replay": true,
+        "ground_contacts_measured": true,
+        "measurable_horizontal_movement": true,
+        "no_unexpected_contacts": true,
+        "upright_throughout": true,
+        "signed_forward_displacement": false
+      },
+      "fresh_native_replay": "PASS",
+      "proposal_status": "PROPOSED_NOT_APPLIED",
+      "input_project_sha256": "96769d8382af89009eb9610a6024cfd5f5a2521fc4547ef254c5cc20b31c901b",
+      "trajectory_sha256": "8d8d0f0f41a4bb2db0cc63978608df37e6eb81c7b9925f693e3a5ddecd361814"
+    },
+    {
+      "case": "actuator-command-repair",
+      "authorship": "GENUINE_MODEL_AUTHORED",
+      "signed_forward_displacement_m": 0.018515946952333998,
+      "required_signed_forward_displacement_m": 0.005,
+      "rear_torque_commands_nm": {
+        "rear_left": -0.012,
+        "rear_right": -0.012
+      },
+      "verdict": "PASS",
+      "checks": {
+        "bounded_actuator_forces": true,
+        "finite_native_states": true,
+        "fresh_replay": true,
+        "ground_contacts_measured": true,
+        "measurable_horizontal_movement": true,
+        "no_unexpected_contacts": true,
+        "signed_forward_displacement": true,
+        "upright_throughout": true
+      },
+      "fresh_native_replay": "PASS",
+      "proposal_status": "PROPOSED_NOT_APPLIED",
+      "input_project_sha256": "b0e8278aa19715a72f683e47390033ab1a151bf94517aa0c2dd0b095c0d36f86",
+      "trajectory_sha256": "dafa0382bb35af8e960b8976240ddffa6aa66c1f9f928d7c45dd411a738f5779"
+    }
+  ],
+  "raw_evidence": "Preserved local sealed archive; not republished as a conversation transcript."
+}

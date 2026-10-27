@@ -1,0 +1,1107 @@
+{
+  "kind": "DERIVED_PUBLIC_PACKAGE; originals remain separate and unchanged",
+  "source_inventory_sha256": "806bd47925e2e316c97980349f4c72ec289bd14c33c8306e8a5a9dd39cc8132b",
+  "source_native_index_sha256": "e7ff261ecd162059a50421b8ffaa5d3a10e21003ab96ae21d40fcd871fc734e2",
+  "public_inventory_sha256": "539b34f96960bf2cfe900f9d7b5f272786aea0a016d7ce60d9e806781aee7a23",
+  "files": [
+    {
+      "file": "baseline_physics_measurements.json",
+      "source_sha256": "c73918dc31a56f141c763ed2a76c5e485d4dd0377ec1e182e08a51a6155f3e1e",
+      "public_sha256": "c73918dc31a56f141c763ed2a76c5e485d4dd0377ec1e182e08a51a6155f3e1e",
+      "metadata_changes": []
+    },
+    {
+      "file": "model_diagnosis.txt",
+      "source_sha256": "2ad14775e41e3e7193e015177a71f00c088d73bea0a58952d9b1eefadef4e0e9",
+      "public_sha256": "2ad14775e41e3e7193e015177a71f00c088d73bea0a58952d9b1eefadef4e0e9",
+      "metadata_changes": []
+    },
+    {
+      "file": "model_proposals/attempt_1/controller.py",
+      "source_sha256": "2e8d4f230afda6c5935fbd416d84841c77e6d998dfefe778d36ec526586a8c2a",
+      "public_sha256": "2e8d4f230afda6c5935fbd416d84841c77e6d998dfefe778d36ec526586a8c2a",
+      "metadata_changes": []
+    },
+    {
+      "file": "model_proposals/attempt_1/proposal.diff",
+      "source_sha256": "64e3915f218996ab8e265caf402a8634b3da7fc5202bd4d3c3daa16bde20d5eb",
+      "public_sha256": "64e3915f218996ab8e265caf402a8634b3da7fc5202bd4d3c3daa16bde20d5eb",
+      "metadata_changes": []
+    },
+    {
+      "file": "model_proposals/attempt_1/provenance.json",
+      "source_sha256": "80fecb7e8fb7a20315b7c090e31a3f48ccbbf8a625818c5312582d0cee425a60",
+      "public_sha256": "80fecb7e8fb7a20315b7c090e31a3f48ccbbf8a625818c5312582d0cee425a60",
+      "metadata_changes": []
+    },
+    {
+      "file": "model_proposals/attempt_1/validation.json",
+      "source_sha256": "112b323c09dce3e4fe97d82e7cab5e5825ecc1f1c76bb95e3e0319ed3cabd662",
+      "public_sha256": "112b323c09dce3e4fe97d82e7cab5e5825ecc1f1c76bb95e3e0319ed3cabd662",
+      "metadata_changes": []
+    },
+    {
+      "file": "model_proposals/attempt_1/verification.json",
+      "source_sha256": "cc02ecd367f28445e3ce6250e4b74f46fa08c6151b013a6211a9994e30faa3df",
+      "public_sha256": "9289a3ab64877c53411cafd3687259bd784b3f85ac8cc6f36cfbb564e45b16a8",
+      "metadata_changes": [
+        {
+          "pointer": "/scenario_results/A/artifact_references/effective_model.xml",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "811b7fa5d7885916766203c7210040d75282134bdc423bc610de3cb790e2031d",
+          "public_value_sha256": "ea9925ef82b3bfdab65ecf78afcad87b793babbb6425585f1720ee991dec6d06"
+        },
+        {
+          "pointer": "/scenario_results/A/artifact_references/independent_safety_trace.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "4b0d583799bb7838950ce709bfd5d248c7b94b9e5317a252169818895a62d2fc",
+          "public_value_sha256": "d2583ea0634fe79bc2ecf609525e8a7028cdf1602a703e8fc2ae99daed8c1f4b"
+        },
+        {
+          "pointer": "/scenario_results/A/artifact_references/telemetry.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "0f2913eb7f294f64c5e049cc2ee1fe5aa309a5fac27f0b63ab1362a6f3c540e0",
+          "public_value_sha256": "9c9f028db7b9a7625990d198763bcab9b42dbf2382fd40d63eb543906e7ea489"
+        },
+        {
+          "pointer": "/scenario_results/A/artifact_references/manifest.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "47f12b240890c4bbdecafa05c9870b731edcc75269d9338d17d2e0415724b78b",
+          "public_value_sha256": "779fe5c58e8f3eb179715c222a806c51bc6a8b995c30ae6aaa1e62e7eef4ec65"
+        },
+        {
+          "pointer": "/scenario_results/A/artifact_references/worker_exchanges.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "6b4d90d715d870a357154fca2c95e5e6cb7c67393caf3e47e8d0f0feef17aa5d",
+          "public_value_sha256": "03220a26c9380d3be0d4c4f0171ed60649032b1970cd2b760afa04df52cc42fe"
+        },
+        {
+          "pointer": "/scenario_results/B/artifact_references/effective_model.xml",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "ec32f7ea63db647b3af90d0cee66313c6c2b8a96a3ddf4b09357b490fb7b30aa",
+          "public_value_sha256": "704bcc630e1668522a9e316327886f515f728da9a18b2175df4d2836e2a61033"
+        },
+        {
+          "pointer": "/scenario_results/B/artifact_references/independent_safety_trace.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "6fc34ea106afcdd3a1419f7ef6ee0426c4a46272b83cafb166a6defb86c887ec",
+          "public_value_sha256": "bd35a36d83a3264049f6907beeeb9bcf6baf13830f47500251a58a3eadd72caf"
+        },
+        {
+          "pointer": "/scenario_results/B/artifact_references/telemetry.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "d6cb319b4043a6bf62c07f7a67821f9d9c5b36c0affc7a8e8c463f42dac74986",
+          "public_value_sha256": "8450c60e7cc85beeaa13561bf4c74fe67b77b22728526c7d0e533ef8545b62c3"
+        },
+        {
+          "pointer": "/scenario_results/B/artifact_references/manifest.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "d13eb410fb34da459010d724109dee3f0d773da09e948920ccc501add0faf802",
+          "public_value_sha256": "fdcbe71b4ceab8f9a7de33dc0ad6687e9afe4ad17e7bddb4c709b87f4cfc7ce6"
+        },
+        {
+          "pointer": "/scenario_results/B/artifact_references/worker_exchanges.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "81f6e1da2aadd8eeca75147422834d736ee9e42845a9da02a1f958ae09538272",
+          "public_value_sha256": "7e6058f724b0d991df5e5a3bd27f1ccd1e0998acc7c667f8ee8a2bc5e039115e"
+        },
+        {
+          "pointer": "/scenario_results/C/artifact_references/effective_model.xml",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "e6f0679074d3fdd3746977af9cde46fd5a45c567bd34b84045ad26c8d60b6d38",
+          "public_value_sha256": "a7e7f0251b1d4378dd07a5f561c636dbac2054e6b03da2c5695c81c9d53e1395"
+        },
+        {
+          "pointer": "/scenario_results/C/artifact_references/independent_safety_trace.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "c2bc004e615b24aa0e9accafafcb76671c7e679fffed681c105ee20943fc07ed",
+          "public_value_sha256": "e585fb710a8f142e5535b2ff7f09306662c4b4c3221a04217414102816ef1c03"
+        },
+        {
+          "pointer": "/scenario_results/C/artifact_references/telemetry.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "48e4f5b56942b53e2c8f76d5358a0edc3e3d099fcc8f9ee036db070b24e0b2f9",
+          "public_value_sha256": "250f06df5407da6f2a24052e30e963473f0571228525ce5c29c120fbcce19ba3"
+        },
+        {
+          "pointer": "/scenario_results/C/artifact_references/manifest.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "8c40f08a9d1e736a97f495fc3abd2b84a45c36a70b20baf38e6be1bb753982d7",
+          "public_value_sha256": "d523ad13d75c455a7f08709e448d8b489f9ed8a74de0045ca9a2a5e7853e8d93"
+        },
+        {
+          "pointer": "/scenario_results/C/artifact_references/worker_exchanges.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "b5e38a16a21f7f10b7b0cf7362a60cbb3eb6152b2e107e40d8543e9000e7e113",
+          "public_value_sha256": "8748f6470b9fedfeeef743a61e9b0b964bed864e2cadc1e3d0f41c0cad8290bf"
+        }
+      ]
+    },
+    {
+      "file": "model_proposals/attempt_2/controller.py",
+      "source_sha256": "8f87dbce9dd4491695c0fddee4dabb420fee89c234b13a0f88fb333f28bc85e6",
+      "public_sha256": "8f87dbce9dd4491695c0fddee4dabb420fee89c234b13a0f88fb333f28bc85e6",
+      "metadata_changes": []
+    },
+    {
+      "file": "model_proposals/attempt_2/proposal.diff",
+      "source_sha256": "6b12f56ec85b2a602c7cde506db66928145b44b29c7ee79cd693c2966333dcf3",
+      "public_sha256": "6b12f56ec85b2a602c7cde506db66928145b44b29c7ee79cd693c2966333dcf3",
+      "metadata_changes": []
+    },
+    {
+      "file": "model_proposals/attempt_2/provenance.json",
+      "source_sha256": "99f19fc212478dafb4380025ea0cfd2f536d594e7dcc6963e70a5f9fa0781058",
+      "public_sha256": "99f19fc212478dafb4380025ea0cfd2f536d594e7dcc6963e70a5f9fa0781058",
+      "metadata_changes": []
+    },
+    {
+      "file": "model_proposals/attempt_2/validation.json",
+      "source_sha256": "a0c8f7c4f8ecd42c04e5ea36f7a445cdc1b5372f0df4c2c44c541365a0a5635c",
+      "public_sha256": "a0c8f7c4f8ecd42c04e5ea36f7a445cdc1b5372f0df4c2c44c541365a0a5635c",
+      "metadata_changes": []
+    },
+    {
+      "file": "model_proposals/attempt_2/verification.json",
+      "source_sha256": "454de926a2903724a3e680a1379900cc9dac86ac35a0731d98ba3e38d2c55807",
+      "public_sha256": "9ada7ec631b96498a51139230d8162f8c59ba820474d7006abcbd2faac31cb6c",
+      "metadata_changes": [
+        {
+          "pointer": "/scenario_results/A/artifact_references/effective_model.xml",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "5284466a41b4d055d41450685c8d3a572e98bc1c40b8468ef86782865e86694e",
+          "public_value_sha256": "3d831fc11af3e24d9454c094058c4527ad1e0320db01d8c5de4b8a8323bb5663"
+        },
+        {
+          "pointer": "/scenario_results/A/artifact_references/independent_safety_trace.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "49d2e6619611af7af6a101a4d0218a74b75bfee9669550b5f8cd7c5aff5f9381",
+          "public_value_sha256": "7b8fbe6d9a05495e29f69eff44690ae62a7f10fa794d72fbfe54f4c050e49ddf"
+        },
+        {
+          "pointer": "/scenario_results/A/artifact_references/telemetry.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "90ec6d59c3c839aaefc89de11e3d417733537f804018df7bca4e3e9d18dab09e",
+          "public_value_sha256": "b40e1c2b0c21a56a3cee387aa7053796e1eb86780f3f52968c542f1a7194c589"
+        },
+        {
+          "pointer": "/scenario_results/A/artifact_references/manifest.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "ac9561f63ab39f0085dea50aac034457f57cc4a0b46acbfe222f4b281ce69b87",
+          "public_value_sha256": "7785b8cc8ac77d609f515febf451985b9d48862ea2bab99abb159475f752eb40"
+        },
+        {
+          "pointer": "/scenario_results/A/artifact_references/worker_exchanges.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "c258487bdbb838d7754319d37b74dcb4cb946c6e4f486df4eea461d094f6c641",
+          "public_value_sha256": "1b9a83df61d09698a7d0726342e5d743e975cb8e0e942ac245ca329ce8fe323c"
+        },
+        {
+          "pointer": "/scenario_results/B/artifact_references/effective_model.xml",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "c2e729c874cd207be2fa84de4787632c73c1d4acecc55b9fbd4f6717a721dcb3",
+          "public_value_sha256": "28bbc4182c53d1be3a5aa2dd6c3bb8213ae5e9810aebec41d96c3567a65a9cde"
+        },
+        {
+          "pointer": "/scenario_results/B/artifact_references/independent_safety_trace.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "749ec82b4a2edce467c5583ce307d0cabce2470bab56ba415f78c17e7e963090",
+          "public_value_sha256": "4c5d1051b44fb26c36c4a7245cba6e30d36bf6b66c5833186112d498ce3e8769"
+        },
+        {
+          "pointer": "/scenario_results/B/artifact_references/telemetry.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "fe5b4c928ae7b20bc746b253ca81909b90934fa5dac850220a7e6c29cb906e1d",
+          "public_value_sha256": "0bde9dd82763aab7dd52ddf180755f5f9332f731fdf388263994b1add9fdbe28"
+        },
+        {
+          "pointer": "/scenario_results/B/artifact_references/manifest.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "fec870e6dab5cf8fbf4c8276e45ec6a6895580cc0b64faf26d17b41a02b1b8fd",
+          "public_value_sha256": "9621591208546aea1fba9ea75f0ddb75506990a082650c5e83f6dd97f8e236df"
+        },
+        {
+          "pointer": "/scenario_results/B/artifact_references/worker_exchanges.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "671d77fb868640d1d031fe1adb86903ddf012bd76f66c83510274ee8b6120c8b",
+          "public_value_sha256": "b080bf1b0e363cf9c275cde16766c5d6419f6286fd74963d8f58ae0b38d8616d"
+        },
+        {
+          "pointer": "/scenario_results/C/artifact_references/effective_model.xml",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "ed5d89b068841cad65e8afa2130aeee40115190dec3d1a47f278a50117274e54",
+          "public_value_sha256": "f1ffa8f3e3b4da0763bc89ad5aa47b39f65d637eacc8b9ab88d926bc549c26a9"
+        },
+        {
+          "pointer": "/scenario_results/C/artifact_references/independent_safety_trace.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "23f4ce49a016a4b76c2f0fb7f5c829006e199a9625433297bef214744c05b8ea",
+          "public_value_sha256": "80ce95a42c7bba91b21e32a6cfae442cb219339819b65a7c47fb48c0b41fe334"
+        },
+        {
+          "pointer": "/scenario_results/C/artifact_references/telemetry.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "3c9219cb2c0321cd13d57fe64246f79232a3e33942012fbecea6afce12cf59da",
+          "public_value_sha256": "8850fd8aaf78e0179df34db1a87ec2f6e522b1a91f5fecf68f2c2cdc44ef3437"
+        },
+        {
+          "pointer": "/scenario_results/C/artifact_references/manifest.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "35f97f741a8a87d05b277d7c09dd4f750b08ad8bc47b898ed51d592815da4ca1",
+          "public_value_sha256": "8d339f158685842e4576c5920c38cba574ec74a6e145c895391aa4786ccde4a2"
+        },
+        {
+          "pointer": "/scenario_results/C/artifact_references/worker_exchanges.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "78733f8d8c927f27386d398c9d154e4d5b066098c8a07830726773468c932e94",
+          "public_value_sha256": "5890aca49220300b73ea976cda65547782dedde9721fa38db7d66bb551694962"
+        }
+      ]
+    },
+    {
+      "file": "session/execution_trace.jsonl",
+      "source_sha256": "b558603fc5341f3d65c8426227741af3a8bd644ca8092cc14c09decc6d8bb2a0",
+      "public_sha256": "c00fc83d995a53dccc60cb1d085745c338216498cfed8a5e6ae67a832f4576ba",
+      "metadata_changes": [
+        {
+          "pointer": "/payload/request_path",
+          "rule": "informational API reference; payload remains unbundled",
+          "source_value_sha256": "7d7f8c117319b379df7cd32baf4b5528d2369e4e864228ef48b7f4a323b443d8",
+          "public_value_sha256": "d980ca972e28342dc49858eddb65d2ca22d73bd71975eec25993e3b0fba02903"
+        },
+        {
+          "pointer": "/payload/request_path",
+          "rule": "informational API reference; payload remains unbundled",
+          "source_value_sha256": "b5a96df6ccb7ad8f66f5f885992dd02b60a73db470604ae1476a317e686a66d2",
+          "public_value_sha256": "066aa6b09fdc76fdb07a17d91f68e56f46e80e83918b2ffd70651cd9525e1fa3"
+        },
+        {
+          "pointer": "/payload/request_path",
+          "rule": "informational API reference; payload remains unbundled",
+          "source_value_sha256": "bf6dbcc24637b150fb221f3a8ddb71ad732fda36ff2a9846355f49d0596f5062",
+          "public_value_sha256": "7206b07c41723c325241b3bd74856970638302d007b989f838473a81df986d13"
+        },
+        {
+          "pointer": "/payload/request_path",
+          "rule": "informational API reference; payload remains unbundled",
+          "source_value_sha256": "205ac834ca6848617ae69472034717187d91b4320d73d1624a534931d4756eb5",
+          "public_value_sha256": "67641b473a108474acc94fb9b45e4ba117346e7db68f18a780e0f3c350f0e6ce"
+        },
+        {
+          "pointer": "/payload/request_path",
+          "rule": "informational API reference; payload remains unbundled",
+          "source_value_sha256": "0b8ee5ecb92e4c2ecabd70604971425034ff029b85a0f1ee2e413c198c6ff67a",
+          "public_value_sha256": "12fdcf177c9399d7e347f02f17b10a184602b8316eb53b2cd7b736a4875b0b06"
+        },
+        {
+          "pointer": "/payload/scenario_results/A/artifact_references/effective_model.xml",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "811b7fa5d7885916766203c7210040d75282134bdc423bc610de3cb790e2031d",
+          "public_value_sha256": "ea9925ef82b3bfdab65ecf78afcad87b793babbb6425585f1720ee991dec6d06"
+        },
+        {
+          "pointer": "/payload/scenario_results/A/artifact_references/independent_safety_trace.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "4b0d583799bb7838950ce709bfd5d248c7b94b9e5317a252169818895a62d2fc",
+          "public_value_sha256": "d2583ea0634fe79bc2ecf609525e8a7028cdf1602a703e8fc2ae99daed8c1f4b"
+        },
+        {
+          "pointer": "/payload/scenario_results/A/artifact_references/telemetry.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "0f2913eb7f294f64c5e049cc2ee1fe5aa309a5fac27f0b63ab1362a6f3c540e0",
+          "public_value_sha256": "9c9f028db7b9a7625990d198763bcab9b42dbf2382fd40d63eb543906e7ea489"
+        },
+        {
+          "pointer": "/payload/scenario_results/A/artifact_references/manifest.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "47f12b240890c4bbdecafa05c9870b731edcc75269d9338d17d2e0415724b78b",
+          "public_value_sha256": "779fe5c58e8f3eb179715c222a806c51bc6a8b995c30ae6aaa1e62e7eef4ec65"
+        },
+        {
+          "pointer": "/payload/scenario_results/A/artifact_references/worker_exchanges.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "6b4d90d715d870a357154fca2c95e5e6cb7c67393caf3e47e8d0f0feef17aa5d",
+          "public_value_sha256": "03220a26c9380d3be0d4c4f0171ed60649032b1970cd2b760afa04df52cc42fe"
+        },
+        {
+          "pointer": "/payload/scenario_results/B/artifact_references/effective_model.xml",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "ec32f7ea63db647b3af90d0cee66313c6c2b8a96a3ddf4b09357b490fb7b30aa",
+          "public_value_sha256": "704bcc630e1668522a9e316327886f515f728da9a18b2175df4d2836e2a61033"
+        },
+        {
+          "pointer": "/payload/scenario_results/B/artifact_references/independent_safety_trace.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "6fc34ea106afcdd3a1419f7ef6ee0426c4a46272b83cafb166a6defb86c887ec",
+          "public_value_sha256": "bd35a36d83a3264049f6907beeeb9bcf6baf13830f47500251a58a3eadd72caf"
+        },
+        {
+          "pointer": "/payload/scenario_results/B/artifact_references/telemetry.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "d6cb319b4043a6bf62c07f7a67821f9d9c5b36c0affc7a8e8c463f42dac74986",
+          "public_value_sha256": "8450c60e7cc85beeaa13561bf4c74fe67b77b22728526c7d0e533ef8545b62c3"
+        },
+        {
+          "pointer": "/payload/scenario_results/B/artifact_references/manifest.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "d13eb410fb34da459010d724109dee3f0d773da09e948920ccc501add0faf802",
+          "public_value_sha256": "fdcbe71b4ceab8f9a7de33dc0ad6687e9afe4ad17e7bddb4c709b87f4cfc7ce6"
+        },
+        {
+          "pointer": "/payload/scenario_results/B/artifact_references/worker_exchanges.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "81f6e1da2aadd8eeca75147422834d736ee9e42845a9da02a1f958ae09538272",
+          "public_value_sha256": "7e6058f724b0d991df5e5a3bd27f1ccd1e0998acc7c667f8ee8a2bc5e039115e"
+        },
+        {
+          "pointer": "/payload/scenario_results/C/artifact_references/effective_model.xml",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "e6f0679074d3fdd3746977af9cde46fd5a45c567bd34b84045ad26c8d60b6d38",
+          "public_value_sha256": "a7e7f0251b1d4378dd07a5f561c636dbac2054e6b03da2c5695c81c9d53e1395"
+        },
+        {
+          "pointer": "/payload/scenario_results/C/artifact_references/independent_safety_trace.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "c2bc004e615b24aa0e9accafafcb76671c7e679fffed681c105ee20943fc07ed",
+          "public_value_sha256": "e585fb710a8f142e5535b2ff7f09306662c4b4c3221a04217414102816ef1c03"
+        },
+        {
+          "pointer": "/payload/scenario_results/C/artifact_references/telemetry.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "48e4f5b56942b53e2c8f76d5358a0edc3e3d099fcc8f9ee036db070b24e0b2f9",
+          "public_value_sha256": "250f06df5407da6f2a24052e30e963473f0571228525ce5c29c120fbcce19ba3"
+        },
+        {
+          "pointer": "/payload/scenario_results/C/artifact_references/manifest.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "8c40f08a9d1e736a97f495fc3abd2b84a45c36a70b20baf38e6be1bb753982d7",
+          "public_value_sha256": "d523ad13d75c455a7f08709e448d8b489f9ed8a74de0045ca9a2a5e7853e8d93"
+        },
+        {
+          "pointer": "/payload/scenario_results/C/artifact_references/worker_exchanges.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "b5e38a16a21f7f10b7b0cf7362a60cbb3eb6152b2e107e40d8543e9000e7e113",
+          "public_value_sha256": "8748f6470b9fedfeeef743a61e9b0b964bed864e2cadc1e3d0f41c0cad8290bf"
+        },
+        {
+          "pointer": "/payload/request_path",
+          "rule": "informational API reference; payload remains unbundled",
+          "source_value_sha256": "72461ca4c16422390bd05f7531141100c3c42faf2e68f56aba0737c5509fed2a",
+          "public_value_sha256": "ed9cc4d62b3d30b93c327bff7659259fb07f091e323cc2e26d79630ff92f3ce7"
+        },
+        {
+          "pointer": "/payload/scenario_results/A/artifact_references/effective_model.xml",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "5284466a41b4d055d41450685c8d3a572e98bc1c40b8468ef86782865e86694e",
+          "public_value_sha256": "3d831fc11af3e24d9454c094058c4527ad1e0320db01d8c5de4b8a8323bb5663"
+        },
+        {
+          "pointer": "/payload/scenario_results/A/artifact_references/independent_safety_trace.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "49d2e6619611af7af6a101a4d0218a74b75bfee9669550b5f8cd7c5aff5f9381",
+          "public_value_sha256": "7b8fbe6d9a05495e29f69eff44690ae62a7f10fa794d72fbfe54f4c050e49ddf"
+        },
+        {
+          "pointer": "/payload/scenario_results/A/artifact_references/telemetry.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "90ec6d59c3c839aaefc89de11e3d417733537f804018df7bca4e3e9d18dab09e",
+          "public_value_sha256": "b40e1c2b0c21a56a3cee387aa7053796e1eb86780f3f52968c542f1a7194c589"
+        },
+        {
+          "pointer": "/payload/scenario_results/A/artifact_references/manifest.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "ac9561f63ab39f0085dea50aac034457f57cc4a0b46acbfe222f4b281ce69b87",
+          "public_value_sha256": "7785b8cc8ac77d609f515febf451985b9d48862ea2bab99abb159475f752eb40"
+        },
+        {
+          "pointer": "/payload/scenario_results/A/artifact_references/worker_exchanges.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "c258487bdbb838d7754319d37b74dcb4cb946c6e4f486df4eea461d094f6c641",
+          "public_value_sha256": "1b9a83df61d09698a7d0726342e5d743e975cb8e0e942ac245ca329ce8fe323c"
+        },
+        {
+          "pointer": "/payload/scenario_results/B/artifact_references/effective_model.xml",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "c2e729c874cd207be2fa84de4787632c73c1d4acecc55b9fbd4f6717a721dcb3",
+          "public_value_sha256": "28bbc4182c53d1be3a5aa2dd6c3bb8213ae5e9810aebec41d96c3567a65a9cde"
+        },
+        {
+          "pointer": "/payload/scenario_results/B/artifact_references/independent_safety_trace.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "749ec82b4a2edce467c5583ce307d0cabce2470bab56ba415f78c17e7e963090",
+          "public_value_sha256": "4c5d1051b44fb26c36c4a7245cba6e30d36bf6b66c5833186112d498ce3e8769"
+        },
+        {
+          "pointer": "/payload/scenario_results/B/artifact_references/telemetry.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "fe5b4c928ae7b20bc746b253ca81909b90934fa5dac850220a7e6c29cb906e1d",
+          "public_value_sha256": "0bde9dd82763aab7dd52ddf180755f5f9332f731fdf388263994b1add9fdbe28"
+        },
+        {
+          "pointer": "/payload/scenario_results/B/artifact_references/manifest.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "fec870e6dab5cf8fbf4c8276e45ec6a6895580cc0b64faf26d17b41a02b1b8fd",
+          "public_value_sha256": "9621591208546aea1fba9ea75f0ddb75506990a082650c5e83f6dd97f8e236df"
+        },
+        {
+          "pointer": "/payload/scenario_results/B/artifact_references/worker_exchanges.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "671d77fb868640d1d031fe1adb86903ddf012bd76f66c83510274ee8b6120c8b",
+          "public_value_sha256": "b080bf1b0e363cf9c275cde16766c5d6419f6286fd74963d8f58ae0b38d8616d"
+        },
+        {
+          "pointer": "/payload/scenario_results/C/artifact_references/effective_model.xml",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "ed5d89b068841cad65e8afa2130aeee40115190dec3d1a47f278a50117274e54",
+          "public_value_sha256": "f1ffa8f3e3b4da0763bc89ad5aa47b39f65d637eacc8b9ab88d926bc549c26a9"
+        },
+        {
+          "pointer": "/payload/scenario_results/C/artifact_references/independent_safety_trace.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "23f4ce49a016a4b76c2f0fb7f5c829006e199a9625433297bef214744c05b8ea",
+          "public_value_sha256": "80ce95a42c7bba91b21e32a6cfae442cb219339819b65a7c47fb48c0b41fe334"
+        },
+        {
+          "pointer": "/payload/scenario_results/C/artifact_references/telemetry.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "3c9219cb2c0321cd13d57fe64246f79232a3e33942012fbecea6afce12cf59da",
+          "public_value_sha256": "8850fd8aaf78e0179df34db1a87ec2f6e522b1a91f5fecf68f2c2cdc44ef3437"
+        },
+        {
+          "pointer": "/payload/scenario_results/C/artifact_references/manifest.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "35f97f741a8a87d05b277d7c09dd4f750b08ad8bc47b898ed51d592815da4ca1",
+          "public_value_sha256": "8d339f158685842e4576c5920c38cba574ec74a6e145c895391aa4786ccde4a2"
+        },
+        {
+          "pointer": "/payload/scenario_results/C/artifact_references/worker_exchanges.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "78733f8d8c927f27386d398c9d154e4d5b066098c8a07830726773468c932e94",
+          "public_value_sha256": "5890aca49220300b73ea976cda65547782dedde9721fa38db7d66bb551694962"
+        },
+        {
+          "pointer": "/payload/request_path",
+          "rule": "informational API reference; payload remains unbundled",
+          "source_value_sha256": "2a147e4969c8ffddb202955adf5136d4f89e59c5fb2011a04883f4deb7127690",
+          "public_value_sha256": "20c4cb3d4a1c5a2f3355ca33b04f7d4d0bbe129a81457549a8b68c5173764ace"
+        },
+        {
+          "pointer": "/payload/candidate_verifications/0/scenario_results/A/artifact_references/effective_model.xml",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "811b7fa5d7885916766203c7210040d75282134bdc423bc610de3cb790e2031d",
+          "public_value_sha256": "ea9925ef82b3bfdab65ecf78afcad87b793babbb6425585f1720ee991dec6d06"
+        },
+        {
+          "pointer": "/payload/candidate_verifications/0/scenario_results/A/artifact_references/independent_safety_trace.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "4b0d583799bb7838950ce709bfd5d248c7b94b9e5317a252169818895a62d2fc",
+          "public_value_sha256": "d2583ea0634fe79bc2ecf609525e8a7028cdf1602a703e8fc2ae99daed8c1f4b"
+        },
+        {
+          "pointer": "/payload/candidate_verifications/0/scenario_results/A/artifact_references/telemetry.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "0f2913eb7f294f64c5e049cc2ee1fe5aa309a5fac27f0b63ab1362a6f3c540e0",
+          "public_value_sha256": "9c9f028db7b9a7625990d198763bcab9b42dbf2382fd40d63eb543906e7ea489"
+        },
+        {
+          "pointer": "/payload/candidate_verifications/0/scenario_results/A/artifact_references/manifest.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "47f12b240890c4bbdecafa05c9870b731edcc75269d9338d17d2e0415724b78b",
+          "public_value_sha256": "779fe5c58e8f3eb179715c222a806c51bc6a8b995c30ae6aaa1e62e7eef4ec65"
+        },
+        {
+          "pointer": "/payload/candidate_verifications/0/scenario_results/A/artifact_references/worker_exchanges.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "6b4d90d715d870a357154fca2c95e5e6cb7c67393caf3e47e8d0f0feef17aa5d",
+          "public_value_sha256": "03220a26c9380d3be0d4c4f0171ed60649032b1970cd2b760afa04df52cc42fe"
+        },
+        {
+          "pointer": "/payload/candidate_verifications/0/scenario_results/B/artifact_references/effective_model.xml",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "ec32f7ea63db647b3af90d0cee66313c6c2b8a96a3ddf4b09357b490fb7b30aa",
+          "public_value_sha256": "704bcc630e1668522a9e316327886f515f728da9a18b2175df4d2836e2a61033"
+        },
+        {
+          "pointer": "/payload/candidate_verifications/0/scenario_results/B/artifact_references/independent_safety_trace.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "6fc34ea106afcdd3a1419f7ef6ee0426c4a46272b83cafb166a6defb86c887ec",
+          "public_value_sha256": "bd35a36d83a3264049f6907beeeb9bcf6baf13830f47500251a58a3eadd72caf"
+        },
+        {
+          "pointer": "/payload/candidate_verifications/0/scenario_results/B/artifact_references/telemetry.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "d6cb319b4043a6bf62c07f7a67821f9d9c5b36c0affc7a8e8c463f42dac74986",
+          "public_value_sha256": "8450c60e7cc85beeaa13561bf4c74fe67b77b22728526c7d0e533ef8545b62c3"
+        },
+        {
+          "pointer": "/payload/candidate_verifications/0/scenario_results/B/artifact_references/manifest.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "d13eb410fb34da459010d724109dee3f0d773da09e948920ccc501add0faf802",
+          "public_value_sha256": "fdcbe71b4ceab8f9a7de33dc0ad6687e9afe4ad17e7bddb4c709b87f4cfc7ce6"
+        },
+        {
+          "pointer": "/payload/candidate_verifications/0/scenario_results/B/artifact_references/worker_exchanges.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "81f6e1da2aadd8eeca75147422834d736ee9e42845a9da02a1f958ae09538272",
+          "public_value_sha256": "7e6058f724b0d991df5e5a3bd27f1ccd1e0998acc7c667f8ee8a2bc5e039115e"
+        },
+        {
+          "pointer": "/payload/candidate_verifications/0/scenario_results/C/artifact_references/effective_model.xml",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "e6f0679074d3fdd3746977af9cde46fd5a45c567bd34b84045ad26c8d60b6d38",
+          "public_value_sha256": "a7e7f0251b1d4378dd07a5f561c636dbac2054e6b03da2c5695c81c9d53e1395"
+        },
+        {
+          "pointer": "/payload/candidate_verifications/0/scenario_results/C/artifact_references/independent_safety_trace.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "c2bc004e615b24aa0e9accafafcb76671c7e679fffed681c105ee20943fc07ed",
+          "public_value_sha256": "e585fb710a8f142e5535b2ff7f09306662c4b4c3221a04217414102816ef1c03"
+        },
+        {
+          "pointer": "/payload/candidate_verifications/0/scenario_results/C/artifact_references/telemetry.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "48e4f5b56942b53e2c8f76d5358a0edc3e3d099fcc8f9ee036db070b24e0b2f9",
+          "public_value_sha256": "250f06df5407da6f2a24052e30e963473f0571228525ce5c29c120fbcce19ba3"
+        },
+        {
+          "pointer": "/payload/candidate_verifications/0/scenario_results/C/artifact_references/manifest.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "8c40f08a9d1e736a97f495fc3abd2b84a45c36a70b20baf38e6be1bb753982d7",
+          "public_value_sha256": "d523ad13d75c455a7f08709e448d8b489f9ed8a74de0045ca9a2a5e7853e8d93"
+        },
+        {
+          "pointer": "/payload/candidate_verifications/0/scenario_results/C/artifact_references/worker_exchanges.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "b5e38a16a21f7f10b7b0cf7362a60cbb3eb6152b2e107e40d8543e9000e7e113",
+          "public_value_sha256": "8748f6470b9fedfeeef743a61e9b0b964bed864e2cadc1e3d0f41c0cad8290bf"
+        },
+        {
+          "pointer": "/payload/candidate_verifications/1/scenario_results/A/artifact_references/effective_model.xml",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "5284466a41b4d055d41450685c8d3a572e98bc1c40b8468ef86782865e86694e",
+          "public_value_sha256": "3d831fc11af3e24d9454c094058c4527ad1e0320db01d8c5de4b8a8323bb5663"
+        },
+        {
+          "pointer": "/payload/candidate_verifications/1/scenario_results/A/artifact_references/independent_safety_trace.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "49d2e6619611af7af6a101a4d0218a74b75bfee9669550b5f8cd7c5aff5f9381",
+          "public_value_sha256": "7b8fbe6d9a05495e29f69eff44690ae62a7f10fa794d72fbfe54f4c050e49ddf"
+        },
+        {
+          "pointer": "/payload/candidate_verifications/1/scenario_results/A/artifact_references/telemetry.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "90ec6d59c3c839aaefc89de11e3d417733537f804018df7bca4e3e9d18dab09e",
+          "public_value_sha256": "b40e1c2b0c21a56a3cee387aa7053796e1eb86780f3f52968c542f1a7194c589"
+        },
+        {
+          "pointer": "/payload/candidate_verifications/1/scenario_results/A/artifact_references/manifest.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "ac9561f63ab39f0085dea50aac034457f57cc4a0b46acbfe222f4b281ce69b87",
+          "public_value_sha256": "7785b8cc8ac77d609f515febf451985b9d48862ea2bab99abb159475f752eb40"
+        },
+        {
+          "pointer": "/payload/candidate_verifications/1/scenario_results/A/artifact_references/worker_exchanges.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "c258487bdbb838d7754319d37b74dcb4cb946c6e4f486df4eea461d094f6c641",
+          "public_value_sha256": "1b9a83df61d09698a7d0726342e5d743e975cb8e0e942ac245ca329ce8fe323c"
+        },
+        {
+          "pointer": "/payload/candidate_verifications/1/scenario_results/B/artifact_references/effective_model.xml",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "c2e729c874cd207be2fa84de4787632c73c1d4acecc55b9fbd4f6717a721dcb3",
+          "public_value_sha256": "28bbc4182c53d1be3a5aa2dd6c3bb8213ae5e9810aebec41d96c3567a65a9cde"
+        },
+        {
+          "pointer": "/payload/candidate_verifications/1/scenario_results/B/artifact_references/independent_safety_trace.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "749ec82b4a2edce467c5583ce307d0cabce2470bab56ba415f78c17e7e963090",
+          "public_value_sha256": "4c5d1051b44fb26c36c4a7245cba6e30d36bf6b66c5833186112d498ce3e8769"
+        },
+        {
+          "pointer": "/payload/candidate_verifications/1/scenario_results/B/artifact_references/telemetry.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "fe5b4c928ae7b20bc746b253ca81909b90934fa5dac850220a7e6c29cb906e1d",
+          "public_value_sha256": "0bde9dd82763aab7dd52ddf180755f5f9332f731fdf388263994b1add9fdbe28"
+        },
+        {
+          "pointer": "/payload/candidate_verifications/1/scenario_results/B/artifact_references/manifest.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "fec870e6dab5cf8fbf4c8276e45ec6a6895580cc0b64faf26d17b41a02b1b8fd",
+          "public_value_sha256": "9621591208546aea1fba9ea75f0ddb75506990a082650c5e83f6dd97f8e236df"
+        },
+        {
+          "pointer": "/payload/candidate_verifications/1/scenario_results/B/artifact_references/worker_exchanges.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "671d77fb868640d1d031fe1adb86903ddf012bd76f66c83510274ee8b6120c8b",
+          "public_value_sha256": "b080bf1b0e363cf9c275cde16766c5d6419f6286fd74963d8f58ae0b38d8616d"
+        },
+        {
+          "pointer": "/payload/candidate_verifications/1/scenario_results/C/artifact_references/effective_model.xml",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "ed5d89b068841cad65e8afa2130aeee40115190dec3d1a47f278a50117274e54",
+          "public_value_sha256": "f1ffa8f3e3b4da0763bc89ad5aa47b39f65d637eacc8b9ab88d926bc549c26a9"
+        },
+        {
+          "pointer": "/payload/candidate_verifications/1/scenario_results/C/artifact_references/independent_safety_trace.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "23f4ce49a016a4b76c2f0fb7f5c829006e199a9625433297bef214744c05b8ea",
+          "public_value_sha256": "80ce95a42c7bba91b21e32a6cfae442cb219339819b65a7c47fb48c0b41fe334"
+        },
+        {
+          "pointer": "/payload/candidate_verifications/1/scenario_results/C/artifact_references/telemetry.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "3c9219cb2c0321cd13d57fe64246f79232a3e33942012fbecea6afce12cf59da",
+          "public_value_sha256": "8850fd8aaf78e0179df34db1a87ec2f6e522b1a91f5fecf68f2c2cdc44ef3437"
+        },
+        {
+          "pointer": "/payload/candidate_verifications/1/scenario_results/C/artifact_references/manifest.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "35f97f741a8a87d05b277d7c09dd4f750b08ad8bc47b898ed51d592815da4ca1",
+          "public_value_sha256": "8d339f158685842e4576c5920c38cba574ec74a6e145c895391aa4786ccde4a2"
+        },
+        {
+          "pointer": "/payload/candidate_verifications/1/scenario_results/C/artifact_references/worker_exchanges.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "78733f8d8c927f27386d398c9d154e4d5b066098c8a07830726773468c932e94",
+          "public_value_sha256": "5890aca49220300b73ea976cda65547782dedde9721fa38db7d66bb551694962"
+        }
+      ]
+    },
+    {
+      "file": "session/experiment_policy.json",
+      "source_sha256": "de3fe80e027f83af2d25a034907f587c022f50eec84626366b994c6fb5b10e63",
+      "public_sha256": "de3fe80e027f83af2d25a034907f587c022f50eec84626366b994c6fb5b10e63",
+      "metadata_changes": []
+    },
+    {
+      "file": "session/session_result.json",
+      "source_sha256": "f583df1469a5af96e023395d7528ca8ff882c861b8916328c884ccfc0c9e17e3",
+      "public_sha256": "e0d924ffaeb1d6f8597c2ccc31f7386e9e8e0b0af6a8268e679d88d8fd791022",
+      "metadata_changes": [
+        {
+          "pointer": "/candidate_verifications/0/scenario_results/A/artifact_references/effective_model.xml",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "811b7fa5d7885916766203c7210040d75282134bdc423bc610de3cb790e2031d",
+          "public_value_sha256": "ea9925ef82b3bfdab65ecf78afcad87b793babbb6425585f1720ee991dec6d06"
+        },
+        {
+          "pointer": "/candidate_verifications/0/scenario_results/A/artifact_references/independent_safety_trace.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "4b0d583799bb7838950ce709bfd5d248c7b94b9e5317a252169818895a62d2fc",
+          "public_value_sha256": "d2583ea0634fe79bc2ecf609525e8a7028cdf1602a703e8fc2ae99daed8c1f4b"
+        },
+        {
+          "pointer": "/candidate_verifications/0/scenario_results/A/artifact_references/telemetry.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "0f2913eb7f294f64c5e049cc2ee1fe5aa309a5fac27f0b63ab1362a6f3c540e0",
+          "public_value_sha256": "9c9f028db7b9a7625990d198763bcab9b42dbf2382fd40d63eb543906e7ea489"
+        },
+        {
+          "pointer": "/candidate_verifications/0/scenario_results/A/artifact_references/manifest.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "47f12b240890c4bbdecafa05c9870b731edcc75269d9338d17d2e0415724b78b",
+          "public_value_sha256": "779fe5c58e8f3eb179715c222a806c51bc6a8b995c30ae6aaa1e62e7eef4ec65"
+        },
+        {
+          "pointer": "/candidate_verifications/0/scenario_results/A/artifact_references/worker_exchanges.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "6b4d90d715d870a357154fca2c95e5e6cb7c67393caf3e47e8d0f0feef17aa5d",
+          "public_value_sha256": "03220a26c9380d3be0d4c4f0171ed60649032b1970cd2b760afa04df52cc42fe"
+        },
+        {
+          "pointer": "/candidate_verifications/0/scenario_results/B/artifact_references/effective_model.xml",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "ec32f7ea63db647b3af90d0cee66313c6c2b8a96a3ddf4b09357b490fb7b30aa",
+          "public_value_sha256": "704bcc630e1668522a9e316327886f515f728da9a18b2175df4d2836e2a61033"
+        },
+        {
+          "pointer": "/candidate_verifications/0/scenario_results/B/artifact_references/independent_safety_trace.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "6fc34ea106afcdd3a1419f7ef6ee0426c4a46272b83cafb166a6defb86c887ec",
+          "public_value_sha256": "bd35a36d83a3264049f6907beeeb9bcf6baf13830f47500251a58a3eadd72caf"
+        },
+        {
+          "pointer": "/candidate_verifications/0/scenario_results/B/artifact_references/telemetry.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "d6cb319b4043a6bf62c07f7a67821f9d9c5b36c0affc7a8e8c463f42dac74986",
+          "public_value_sha256": "8450c60e7cc85beeaa13561bf4c74fe67b77b22728526c7d0e533ef8545b62c3"
+        },
+        {
+          "pointer": "/candidate_verifications/0/scenario_results/B/artifact_references/manifest.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "d13eb410fb34da459010d724109dee3f0d773da09e948920ccc501add0faf802",
+          "public_value_sha256": "fdcbe71b4ceab8f9a7de33dc0ad6687e9afe4ad17e7bddb4c709b87f4cfc7ce6"
+        },
+        {
+          "pointer": "/candidate_verifications/0/scenario_results/B/artifact_references/worker_exchanges.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "81f6e1da2aadd8eeca75147422834d736ee9e42845a9da02a1f958ae09538272",
+          "public_value_sha256": "7e6058f724b0d991df5e5a3bd27f1ccd1e0998acc7c667f8ee8a2bc5e039115e"
+        },
+        {
+          "pointer": "/candidate_verifications/0/scenario_results/C/artifact_references/effective_model.xml",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "e6f0679074d3fdd3746977af9cde46fd5a45c567bd34b84045ad26c8d60b6d38",
+          "public_value_sha256": "a7e7f0251b1d4378dd07a5f561c636dbac2054e6b03da2c5695c81c9d53e1395"
+        },
+        {
+          "pointer": "/candidate_verifications/0/scenario_results/C/artifact_references/independent_safety_trace.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "c2bc004e615b24aa0e9accafafcb76671c7e679fffed681c105ee20943fc07ed",
+          "public_value_sha256": "e585fb710a8f142e5535b2ff7f09306662c4b4c3221a04217414102816ef1c03"
+        },
+        {
+          "pointer": "/candidate_verifications/0/scenario_results/C/artifact_references/telemetry.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "48e4f5b56942b53e2c8f76d5358a0edc3e3d099fcc8f9ee036db070b24e0b2f9",
+          "public_value_sha256": "250f06df5407da6f2a24052e30e963473f0571228525ce5c29c120fbcce19ba3"
+        },
+        {
+          "pointer": "/candidate_verifications/0/scenario_results/C/artifact_references/manifest.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "8c40f08a9d1e736a97f495fc3abd2b84a45c36a70b20baf38e6be1bb753982d7",
+          "public_value_sha256": "d523ad13d75c455a7f08709e448d8b489f9ed8a74de0045ca9a2a5e7853e8d93"
+        },
+        {
+          "pointer": "/candidate_verifications/0/scenario_results/C/artifact_references/worker_exchanges.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "b5e38a16a21f7f10b7b0cf7362a60cbb3eb6152b2e107e40d8543e9000e7e113",
+          "public_value_sha256": "8748f6470b9fedfeeef743a61e9b0b964bed864e2cadc1e3d0f41c0cad8290bf"
+        },
+        {
+          "pointer": "/candidate_verifications/1/scenario_results/A/artifact_references/effective_model.xml",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "5284466a41b4d055d41450685c8d3a572e98bc1c40b8468ef86782865e86694e",
+          "public_value_sha256": "3d831fc11af3e24d9454c094058c4527ad1e0320db01d8c5de4b8a8323bb5663"
+        },
+        {
+          "pointer": "/candidate_verifications/1/scenario_results/A/artifact_references/independent_safety_trace.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "49d2e6619611af7af6a101a4d0218a74b75bfee9669550b5f8cd7c5aff5f9381",
+          "public_value_sha256": "7b8fbe6d9a05495e29f69eff44690ae62a7f10fa794d72fbfe54f4c050e49ddf"
+        },
+        {
+          "pointer": "/candidate_verifications/1/scenario_results/A/artifact_references/telemetry.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "90ec6d59c3c839aaefc89de11e3d417733537f804018df7bca4e3e9d18dab09e",
+          "public_value_sha256": "b40e1c2b0c21a56a3cee387aa7053796e1eb86780f3f52968c542f1a7194c589"
+        },
+        {
+          "pointer": "/candidate_verifications/1/scenario_results/A/artifact_references/manifest.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "ac9561f63ab39f0085dea50aac034457f57cc4a0b46acbfe222f4b281ce69b87",
+          "public_value_sha256": "7785b8cc8ac77d609f515febf451985b9d48862ea2bab99abb159475f752eb40"
+        },
+        {
+          "pointer": "/candidate_verifications/1/scenario_results/A/artifact_references/worker_exchanges.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "c258487bdbb838d7754319d37b74dcb4cb946c6e4f486df4eea461d094f6c641",
+          "public_value_sha256": "1b9a83df61d09698a7d0726342e5d743e975cb8e0e942ac245ca329ce8fe323c"
+        },
+        {
+          "pointer": "/candidate_verifications/1/scenario_results/B/artifact_references/effective_model.xml",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "c2e729c874cd207be2fa84de4787632c73c1d4acecc55b9fbd4f6717a721dcb3",
+          "public_value_sha256": "28bbc4182c53d1be3a5aa2dd6c3bb8213ae5e9810aebec41d96c3567a65a9cde"
+        },
+        {
+          "pointer": "/candidate_verifications/1/scenario_results/B/artifact_references/independent_safety_trace.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "749ec82b4a2edce467c5583ce307d0cabce2470bab56ba415f78c17e7e963090",
+          "public_value_sha256": "4c5d1051b44fb26c36c4a7245cba6e30d36bf6b66c5833186112d498ce3e8769"
+        },
+        {
+          "pointer": "/candidate_verifications/1/scenario_results/B/artifact_references/telemetry.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "fe5b4c928ae7b20bc746b253ca81909b90934fa5dac850220a7e6c29cb906e1d",
+          "public_value_sha256": "0bde9dd82763aab7dd52ddf180755f5f9332f731fdf388263994b1add9fdbe28"
+        },
+        {
+          "pointer": "/candidate_verifications/1/scenario_results/B/artifact_references/manifest.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "fec870e6dab5cf8fbf4c8276e45ec6a6895580cc0b64faf26d17b41a02b1b8fd",
+          "public_value_sha256": "9621591208546aea1fba9ea75f0ddb75506990a082650c5e83f6dd97f8e236df"
+        },
+        {
+          "pointer": "/candidate_verifications/1/scenario_results/B/artifact_references/worker_exchanges.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "671d77fb868640d1d031fe1adb86903ddf012bd76f66c83510274ee8b6120c8b",
+          "public_value_sha256": "b080bf1b0e363cf9c275cde16766c5d6419f6286fd74963d8f58ae0b38d8616d"
+        },
+        {
+          "pointer": "/candidate_verifications/1/scenario_results/C/artifact_references/effective_model.xml",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "ed5d89b068841cad65e8afa2130aeee40115190dec3d1a47f278a50117274e54",
+          "public_value_sha256": "f1ffa8f3e3b4da0763bc89ad5aa47b39f65d637eacc8b9ab88d926bc549c26a9"
+        },
+        {
+          "pointer": "/candidate_verifications/1/scenario_results/C/artifact_references/independent_safety_trace.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "23f4ce49a016a4b76c2f0fb7f5c829006e199a9625433297bef214744c05b8ea",
+          "public_value_sha256": "80ce95a42c7bba91b21e32a6cfae442cb219339819b65a7c47fb48c0b41fe334"
+        },
+        {
+          "pointer": "/candidate_verifications/1/scenario_results/C/artifact_references/telemetry.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "3c9219cb2c0321cd13d57fe64246f79232a3e33942012fbecea6afce12cf59da",
+          "public_value_sha256": "8850fd8aaf78e0179df34db1a87ec2f6e522b1a91f5fecf68f2c2cdc44ef3437"
+        },
+        {
+          "pointer": "/candidate_verifications/1/scenario_results/C/artifact_references/manifest.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "35f97f741a8a87d05b277d7c09dd4f750b08ad8bc47b898ed51d592815da4ca1",
+          "public_value_sha256": "8d339f158685842e4576c5920c38cba574ec74a6e145c895391aa4786ccde4a2"
+        },
+        {
+          "pointer": "/candidate_verifications/1/scenario_results/C/artifact_references/worker_exchanges.json",
+          "rule": "recording-relative artifact metadata",
+          "source_value_sha256": "78733f8d8c927f27386d398c9d154e4d5b066098c8a07830726773468c932e94",
+          "public_value_sha256": "5890aca49220300b73ea976cda65547782dedde9721fa38db7d66bb551694962"
+        }
+      ]
+    },
+    {
+      "file": "session/simulations/simulation_26e5d09c4f214d9185c3c3de2c984ff0/effective_model.xml",
+      "source_sha256": "93f6e47ae6e2f35c976835147da9a0dd02f5f2c96b825337cbc114f807ddad1d",
+      "public_sha256": "93f6e47ae6e2f35c976835147da9a0dd02f5f2c96b825337cbc114f807ddad1d",
+      "metadata_changes": []
+    },
+    {
+      "file": "session/simulations/simulation_26e5d09c4f214d9185c3c3de2c984ff0/independent_safety_trace.json",
+      "source_sha256": "fd32ada62eb980730ff5e38b5fc901a5810dfee4c0d2a3781a9a8fa4343c228c",
+      "public_sha256": "fd32ada62eb980730ff5e38b5fc901a5810dfee4c0d2a3781a9a8fa4343c228c",
+      "metadata_changes": []
+    },
+    {
+      "file": "session/simulations/simulation_26e5d09c4f214d9185c3c3de2c984ff0/telemetry.json",
+      "source_sha256": "3107c4ad97730ace483241a6e140a84f6d08d63ddcff449de4d809e0bbca9544",
+      "public_sha256": "5a0c933d620a0d388a42dd7fdfd6f5f0780ae4b771f62c717ba075094b796ffc",
+      "metadata_changes": [
+        {
+          "pointer": "/metadata/model_path",
+          "rule": "project-relative model provenance",
+          "source_value_sha256": "4072107572142bc4213226c0c06e12e909893e086cf46f93701398ecbae94ec4",
+          "public_value_sha256": "c79fa7a8d120d2e3d9fec06dbcea539a9c7c997abba1507ac5a4af0eb08ab67e"
+        }
+      ]
+    },
+    {
+      "file": "session/simulations/simulation_41c9bc2d363940e19b71f9f1c2965d7d/effective_model.xml",
+      "source_sha256": "638bfc4269485e5eb1790b851c022dcecf5ed99c6c8f9155bc11724f0b23e46c",
+      "public_sha256": "638bfc4269485e5eb1790b851c022dcecf5ed99c6c8f9155bc11724f0b23e46c",
+      "metadata_changes": []
+    },
+    {
+      "file": "session/simulations/simulation_41c9bc2d363940e19b71f9f1c2965d7d/independent_safety_trace.json",
+      "source_sha256": "e570c7db7f8b2bd44126f0815bf89d97854f9237bff2f6332ecbfc33f65574e9",
+      "public_sha256": "e570c7db7f8b2bd44126f0815bf89d97854f9237bff2f6332ecbfc33f65574e9",
+      "metadata_changes": []
+    },
+    {
+      "file": "session/simulations/simulation_41c9bc2d363940e19b71f9f1c2965d7d/telemetry.json",
+      "source_sha256": "92f227143f5ef028192c69fbe79cb078dd533924ecfa690cb93e825c239364ca",
+      "public_sha256": "62f114540dae12049bd231533b9e353f063168544063908f828ac53f129f355b",
+      "metadata_changes": [
+        {
+          "pointer": "/metadata/model_path",
+          "rule": "project-relative model provenance",
+          "source_value_sha256": "4072107572142bc4213226c0c06e12e909893e086cf46f93701398ecbae94ec4",
+          "public_value_sha256": "c79fa7a8d120d2e3d9fec06dbcea539a9c7c997abba1507ac5a4af0eb08ab67e"
+        }
+      ]
+    },
+    {
+      "file": "session/simulations/simulation_69a7db36221a466b97fd6c36643b66a5/effective_model.xml",
+      "source_sha256": "93f6e47ae6e2f35c976835147da9a0dd02f5f2c96b825337cbc114f807ddad1d",
+      "public_sha256": "93f6e47ae6e2f35c976835147da9a0dd02f5f2c96b825337cbc114f807ddad1d",
+      "metadata_changes": []
+    },
+    {
+      "file": "session/simulations/simulation_69a7db36221a466b97fd6c36643b66a5/independent_safety_trace.json",
+      "source_sha256": "37840f87d9e16c8d4e737e1d3d76839e9c9538f8da7c1d1c095327f1ee19b8e6",
+      "public_sha256": "37840f87d9e16c8d4e737e1d3d76839e9c9538f8da7c1d1c095327f1ee19b8e6",
+      "metadata_changes": []
+    },
+    {
+      "file": "session/simulations/simulation_69a7db36221a466b97fd6c36643b66a5/telemetry.json",
+      "source_sha256": "1c2664198900741530ddde3e4be1dd48045a54f8a42fcb3c7a242598df15b87a",
+      "public_sha256": "7811880abb18b8f948f6952559ca71d82fd42a63853f062a043e9637124b2fa4",
+      "metadata_changes": [
+        {
+          "pointer": "/metadata/model_path",
+          "rule": "project-relative model provenance",
+          "source_value_sha256": "4072107572142bc4213226c0c06e12e909893e086cf46f93701398ecbae94ec4",
+          "public_value_sha256": "c79fa7a8d120d2e3d9fec06dbcea539a9c7c997abba1507ac5a4af0eb08ab67e"
+        }
+      ]
+    },
+    {
+      "file": "session/simulations/simulation_7411b30de01a4fd7bbfa7c7b0177dc49/effective_model.xml",
+      "source_sha256": "325399fd2038334aac3700ae9c9d3c951f963ee493e92c38b1906072fae9af19",
+      "public_sha256": "325399fd2038334aac3700ae9c9d3c951f963ee493e92c38b1906072fae9af19",
+      "metadata_changes": []
+    },
+    {
+      "file": "session/simulations/simulation_7411b30de01a4fd7bbfa7c7b0177dc49/independent_safety_trace.json",
+      "source_sha256": "48f414dadc3e6ca5188227373f32ebc389550fdbd00849d94a1223023f5ebb6e",
+      "public_sha256": "48f414dadc3e6ca5188227373f32ebc389550fdbd00849d94a1223023f5ebb6e",
+      "metadata_changes": []
+    },
+    {
+      "file": "session/simulations/simulation_7411b30de01a4fd7bbfa7c7b0177dc49/telemetry.json",
+      "source_sha256": "99b6d84d8b17dbdbf03f475d54a15d9abdfe9529a15f3db0418d5b19dc65a4a9",
+      "public_sha256": "2316365bba93e1c6b9114e6f65ae6bc1fbe8765a1b3ac8f075fb43c7f6404a41",
+      "metadata_changes": [
+        {
+          "pointer": "/metadata/model_path",
+          "rule": "project-relative model provenance",
+          "source_value_sha256": "4072107572142bc4213226c0c06e12e909893e086cf46f93701398ecbae94ec4",
+          "public_value_sha256": "c79fa7a8d120d2e3d9fec06dbcea539a9c7c997abba1507ac5a4af0eb08ab67e"
+        }
+      ]
+    },
+    {
+      "file": "session/simulations/simulation_74e4d4249487453ba1479e0450b7037f/effective_model.xml",
+      "source_sha256": "638bfc4269485e5eb1790b851c022dcecf5ed99c6c8f9155bc11724f0b23e46c",
+      "public_sha256": "638bfc4269485e5eb1790b851c022dcecf5ed99c6c8f9155bc11724f0b23e46c",
+      "metadata_changes": []
+    },
+    {
+      "file": "session/simulations/simulation_74e4d4249487453ba1479e0450b7037f/independent_safety_trace.json",
+      "source_sha256": "c5d717813b92fb7af249140149609dfacfdff28eb6eeb6e4857dcdcfb42a1a73",
+      "public_sha256": "c5d717813b92fb7af249140149609dfacfdff28eb6eeb6e4857dcdcfb42a1a73",
+      "metadata_changes": []
+    },
+    {
+      "file": "session/simulations/simulation_74e4d4249487453ba1479e0450b7037f/telemetry.json",
+      "source_sha256": "da18784ea1e9d2d0aebb9314c90e39fe550e4f8491d5e34de2a58d35ac6c6fa0",
+      "public_sha256": "dc8dcc88d47b29f1e788fc1e93b0f6d2686ec064d3c1ae60a16251b364be255e",
+      "metadata_changes": [
+        {
+          "pointer": "/metadata/model_path",
+          "rule": "project-relative model provenance",
+          "source_value_sha256": "4072107572142bc4213226c0c06e12e909893e086cf46f93701398ecbae94ec4",
+          "public_value_sha256": "c79fa7a8d120d2e3d9fec06dbcea539a9c7c997abba1507ac5a4af0eb08ab67e"
+        }
+      ]
+    },
+    {
+      "file": "session/simulations/simulation_7d3f31e63e614ac3ab7dc186866a036e/effective_model.xml",
+      "source_sha256": "325399fd2038334aac3700ae9c9d3c951f963ee493e92c38b1906072fae9af19",
+      "public_sha256": "325399fd2038334aac3700ae9c9d3c951f963ee493e92c38b1906072fae9af19",
+      "metadata_changes": []
+    },
+    {
+      "file": "session/simulations/simulation_7d3f31e63e614ac3ab7dc186866a036e/independent_safety_trace.json",
+      "source_sha256": "9eab701f280e2c30205104aa54a69ca87bed8ffd0a456bbb575c12a0326cd4e3",
+      "public_sha256": "9eab701f280e2c30205104aa54a69ca87bed8ffd0a456bbb575c12a0326cd4e3",
+      "metadata_changes": []
+    },
+    {
+      "file": "session/simulations/simulation_7d3f31e63e614ac3ab7dc186866a036e/telemetry.json",
+      "source_sha256": "673e29931089037961dd2c8cf71326a9ded6f817a42e47bca2b8c784a6745206",
+      "public_sha256": "4e7d7a164454fd1d65a1a40622153d6fa50b0ab32eeaa12040a6570a7c4ba53c",
+      "metadata_changes": [
+        {
+          "pointer": "/metadata/model_path",
+          "rule": "project-relative model provenance",
+          "source_value_sha256": "4072107572142bc4213226c0c06e12e909893e086cf46f93701398ecbae94ec4",
+          "public_value_sha256": "c79fa7a8d120d2e3d9fec06dbcea539a9c7c997abba1507ac5a4af0eb08ab67e"
+        }
+      ]
+    },
+    {
+      "file": "session/simulations/simulation_93f6d2db1cc341b18650b607cc8e9fb8/effective_model.xml",
+      "source_sha256": "93f6e47ae6e2f35c976835147da9a0dd02f5f2c96b825337cbc114f807ddad1d",
+      "public_sha256": "93f6e47ae6e2f35c976835147da9a0dd02f5f2c96b825337cbc114f807ddad1d",
+      "metadata_changes": []
+    },
+    {
+      "file": "session/simulations/simulation_93f6d2db1cc341b18650b607cc8e9fb8/independent_safety_trace.json",
+      "source_sha256": "42e2610c4cbd9c40fa6983b613085cc720622aa13c72595d022be90ed8b71d3d",
+      "public_sha256": "42e2610c4cbd9c40fa6983b613085cc720622aa13c72595d022be90ed8b71d3d",
+      "metadata_changes": []
+    },
+    {
+      "file": "session/simulations/simulation_93f6d2db1cc341b18650b607cc8e9fb8/telemetry.json",
+      "source_sha256": "31cd9bdee5fe7d914bb2603e86a391a3f81201af316bc484b9d0f55712b3e601",
+      "public_sha256": "27aab49a537bb9f7fa4765f4b5bbd1e221203ef0e244010d3bfa40bcc94f6536",
+      "metadata_changes": [
+        {
+          "pointer": "/metadata/model_path",
+          "rule": "project-relative model provenance",
+          "source_value_sha256": "4072107572142bc4213226c0c06e12e909893e086cf46f93701398ecbae94ec4",
+          "public_value_sha256": "c79fa7a8d120d2e3d9fec06dbcea539a9c7c997abba1507ac5a4af0eb08ab67e"
+        }
+      ]
+    },
+    {
+      "file": "session/simulations/simulation_98926ab246fa48e49eaf6f08d1c8165a/effective_model.xml",
+      "source_sha256": "325399fd2038334aac3700ae9c9d3c951f963ee493e92c38b1906072fae9af19",
+      "public_sha256": "325399fd2038334aac3700ae9c9d3c951f963ee493e92c38b1906072fae9af19",
+      "metadata_changes": []
+    },
+    {
+      "file": "session/simulations/simulation_98926ab246fa48e49eaf6f08d1c8165a/independent_safety_trace.json",
+      "source_sha256": "61edccb56ca1c6a79604b025ff3e89941d58e5f46787ae7fc3027c7ceb0788a2",
+      "public_sha256": "61edccb56ca1c6a79604b025ff3e89941d58e5f46787ae7fc3027c7ceb0788a2",
+      "metadata_changes": []
+    },
+    {
+      "file": "session/simulations/simulation_98926ab246fa48e49eaf6f08d1c8165a/telemetry.json",
+      "source_sha256": "cd108e839094cd6d7132c861fef5a6be4048d24c3bf199bc7836e32cf9c92aea",
+      "public_sha256": "7fc5caf1a4e835a805b53e932385aeb1c759737e7d4dc6f4036073296a93dd39",
+      "metadata_changes": [
+        {
+          "pointer": "/metadata/model_path",
+          "rule": "project-relative model provenance",
+          "source_value_sha256": "4072107572142bc4213226c0c06e12e909893e086cf46f93701398ecbae94ec4",
+          "public_value_sha256": "c79fa7a8d120d2e3d9fec06dbcea539a9c7c997abba1507ac5a4af0eb08ab67e"
+        }
+      ]
+    },
+    {
+      "file": "session/simulations/simulation_e07e1656ec2f444da307fbcdfef783e8/effective_model.xml",
+      "source_sha256": "638bfc4269485e5eb1790b851c022dcecf5ed99c6c8f9155bc11724f0b23e46c",
+      "public_sha256": "638bfc4269485e5eb1790b851c022dcecf5ed99c6c8f9155bc11724f0b23e46c",
+      "metadata_changes": []
+    },
+    {
+      "file": "session/simulations/simulation_e07e1656ec2f444da307fbcdfef783e8/independent_safety_trace.json",
+      "source_sha256": "75a12eb8af5d392da6362cdd1d9135a87ffc8401ef7383950d75814184fb8b55",
+      "public_sha256": "75a12eb8af5d392da6362cdd1d9135a87ffc8401ef7383950d75814184fb8b55",
+      "metadata_changes": []
+    },
+    {
+      "file": "session/simulations/simulation_e07e1656ec2f444da307fbcdfef783e8/telemetry.json",
+      "source_sha256": "95d748cb073781106bdca726cb34b4e043dff9ee2980d117187707f24516dfb4",
+      "public_sha256": "8e761a477d1d1e18d26805a044fd004ada61e56ffe2f680a4c7e4e979abf74ae",
+      "metadata_changes": [
+        {
+          "pointer": "/metadata/model_path",
+          "rule": "project-relative model provenance",
+          "source_value_sha256": "4072107572142bc4213226c0c06e12e909893e086cf46f93701398ecbae94ec4",
+          "public_value_sha256": "c79fa7a8d120d2e3d9fec06dbcea539a9c7c997abba1507ac5a4af0eb08ab67e"
+        }
+      ]
+    }
+  ],
+  "source_verdicts": {
+    "A/original": "FAIL",
+    "A/attempt_1": "FAIL",
+    "A/attempt_2": "PASS",
+    "B/original": "FAIL",
+    "B/attempt_1": "FAIL",
+    "B/attempt_2": "PASS",
+    "C/original": "FAIL",
+    "C/attempt_1": "FAIL",
+    "C/attempt_2": "PASS"
+  },
+  "native_frame_count": 51,
+  "limitations": [
+    "Metadata-projected JSON has its own hashes, not the original byte identity.",
+    "Original manifest is included; reproducing redacted-file derivation needs private originals.",
+    "Unbundled API/worker references remain informational and cannot be read through the inventory.",
+    "Saved native replay uses the same engine; no new integration or real-world safety proof."
+  ]
+}

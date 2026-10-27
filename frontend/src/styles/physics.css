@@ -1,0 +1,8 @@
+.physics-panel { font-size: 12px; max-width: 1200px; }
+.physics-panel table { width: 100%; border-collapse: collapse; margin: var(--space-3) 0; }
+.physics-panel th, .physics-panel td { text-align: left; vertical-align: top; padding: var(--space-2); border-bottom: 1px solid var(--border); }
+.physics-panel th { color: var(--secondary); font-weight: 500; }
+.physics-panel td:nth-child(2) { font-family: 'IBM Plex Mono', monospace; white-space: nowrap; }
+.physics-panel li { margin: var(--space-1) 0; color: var(--secondary); }
+.physics-verdicts { display: flex; flex-wrap: wrap; gap: var(--space-4); padding: var(--space-2) 0; border-bottom: 1px solid var(--border); }
+.physics-verdicts strong { font-weight: 500; }

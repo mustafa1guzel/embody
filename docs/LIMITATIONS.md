@@ -1,0 +1,15 @@
+# Scope and limitations
+
+EMBODY is a bounded local engineering prototype.
+
+- **Geometry:** supported parametric families and faceted display geometry, not a general BREP/CAD kernel. Display holes and rounded features may be omitted from solid collision/inertia proxies. Entered mass is an assumption, not a measured material density.
+- **Mechanics:** explicit registered frames, parent bodies and supported joints. No inferred bearing fit, manufacturing tolerance, strength, continuous vehicle travel or certified assembly safety.
+- **Electronics:** reference catalog, graph, pin/voltage and bounded static checks. Unknown ratings remain unknown. No electrical transient solver, MCU/firmware execution or verified rover powertrain coupling.
+- **AI:** bounded inspect/propose tools and specific construction/repair scopes, not unrestricted chat-to-any-device synthesis. A copied proposal is not an applied project. Mock examples are not genuine model decisions.
+- **Physics:** finite native MuJoCo cases and fresh replay. Contact/force/direction checks do not establish robust locomotion, autonomy, real tire compliance, real-world hardware safety or universal controller correctness.
+- **Evidence:** original failure and later repair are separate historical experiments. Present-day visualizations/reconstructions are labelled. The stepwise construction recording uses a recording-only read adapter, not a general shipping live-build animation feature.
+- **Security:** local single-operator authorization, finite budgets and separate review/application. Candidate controller code requires valid separately approved isolation. Current historical containment evidence is expired/identity-mismatched and cannot authorize execution.
+- **Portability:** the default rail A/B/C study has an explicitly derived public metadata package and saved native frames. Original-byte identities and derived-byte identities differ and are recorded separately. Reproducing redacted-file derivation needs the private originals. Advanced archived rover, arm, robustness and construction reviews and some integration tests still need their original archives.
+- **Publication/security:** this publication copy uses two fixed, independently created real host canaries. The changed worker and qualification definition passed the complete separately approved private-installation qualification on 27 October 2026. That installation-bound certificate is not distributed and cannot authorize a different deployment. A fresh clone cannot repeat this historical containment qualification from public files alone: the pinned predecessor/versioned inventory and matching original protected files must be provisioned through a separate reviewed process, followed by fresh explicit execution approval. A synthetic test path is intentionally retained; no live credential was identified by the performed scan.
+
+The publication audit must not be mistaken for authorization to spend API credits, requalify VMs, execute untrusted code or apply a design. Licensing and any future public distribution remain the owner's decisions; this task does not publish anything.

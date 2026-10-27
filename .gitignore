@@ -1,0 +1,79 @@
+# Python environments and caches
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# Local credentials, including editor/backup variants
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Local editor/agent state and operating-system metadata
+.vscode/
+.idea/
+.agents/
+.codex/
+.DS_Store
+/AGENTS.md
+/prompts/
+/.day*-output
+
+# Local runtime, media production and submission packages
+.runtime/
+*.log
+/media/
+/mediasubmission/
+/Media Submission/
+
+# Installed frontend dependencies and generated build output
+/frontend/node_modules/
+/frontend/dist/
+/robot/.approved-controller.lock
+/robot/.approved-arm-controller.lock
+
+# Public documentation is intentionally small; local reports are retained.
+/docs/*
+!/docs/ARCHITECTURE.md
+!/docs/DEVELOPMENT.md
+!/docs/VERIFICATION.md
+!/docs/LIMITATIONS.md
+!/docs/assets/
+/docs/assets/*
+!/docs/assets/product/
+!/docs/assets/development/
+
+# Private historical archives stay local; portable public data is under examples/.
+/artifacts/*
+
+# Exact reviewed immutable empty-project identity fixture; no mutable registry state.
+!/artifacts/phase17_live_creation/
+/artifacts/phase17_live_creation/*
+!/artifacts/phase17_live_creation/20261024/
+/artifacts/phase17_live_creation/20261024/*
+!/artifacts/phase17_live_creation/20261024/live_execution/
+/artifacts/phase17_live_creation/20261024/live_execution/*
+!/artifacts/phase17_live_creation/20261024/live_execution/review_registry/
+/artifacts/phase17_live_creation/20261024/live_execution/review_registry/*
+!/artifacts/phase17_live_creation/20261024/live_execution/review_registry/projects/
+/artifacts/phase17_live_creation/20261024/live_execution/review_registry/projects/*
+!/artifacts/phase17_live_creation/20261024/live_execution/review_registry/projects/p_192ae155384543e2b4636b4b8c396768/
+/artifacts/phase17_live_creation/20261024/live_execution/review_registry/projects/p_192ae155384543e2b4636b4b8c396768/*
+!/artifacts/phase17_live_creation/20261024/live_execution/review_registry/projects/p_192ae155384543e2b4636b4b8c396768/projects/
+/artifacts/phase17_live_creation/20261024/live_execution/review_registry/projects/p_192ae155384543e2b4636b4b8c396768/projects/*
+!/artifacts/phase17_live_creation/20261024/live_execution/review_registry/projects/p_192ae155384543e2b4636b4b8c396768/head.json
+!/artifacts/phase17_live_creation/20261024/live_execution/review_registry/projects/p_192ae155384543e2b4636b4b8c396768/projects/cd783ec97be238f0c9b98864d04aad291a2936a3d14450880e3c42e1fc3c902b.json
+
+# Internal-only historical recording/dossier drivers; local files are preserved.
+/tools/day9_recording.py
+/tools/day10_12_http_qa.py
+/tools/day10_12_evidence.py
+
+# Preserve the sealed original frontend snapshot locally; tests import its audited projection.
+/frontend/test/evidence.json
+
+# Local dependency links are not publication content.
+/frontend/node_modules

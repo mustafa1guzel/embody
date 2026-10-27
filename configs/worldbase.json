@@ -1,0 +1,15 @@
+{
+  "scenario": "braking_before_wall",
+  "wall_reference": "center",
+  "wall_position_x_m": 2.0,
+  "wall_half_size_m": [0.05, 0.50, 0.50],
+  "wall_center_yz_m": [0.0, 0.50],
+  "initial_position_x_m": 0.0,
+  "initial_velocity_ms": 1.2,
+  "minimum_clearance_m": 0.05,
+  "simulation_timestep_s": 0.005,
+  "simulation_duration_s": 3.0,
+  "max_final_speed_ms": 0.03,
+  "completion_deadline_s": 3.0,
+  "gravity_ms2": [0.0, 0.0, -9.81]
+}

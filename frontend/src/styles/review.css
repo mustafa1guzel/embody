@@ -1,0 +1,23 @@
+.verification-selector { display: flex; align-items: center; margin: 4px 0 12px; }
+.result-table table { width: 100%; border-collapse: collapse; text-align: left; font-size: 11px; }
+.result-table th { font-weight: 400; color: var(--secondary); padding: 5px 8px; border-bottom: 1px solid var(--border); }
+.result-table td { font: 11px 'IBM Plex Mono'; padding: 7px 8px; border-bottom: 1px solid var(--border); }
+.review-panel { border-top: 1px solid var(--border); margin-top: 16px; padding: 12px 0; }
+.section-heading { display: flex; gap: 8px; align-items: center; justify-content: space-between; color: var(--secondary); font-size: 11px; padding: 4px 0; }
+.review-panel > p { font-size: 12px; line-height: 1.75; }
+.review-panel .properties { display: grid; grid-template-columns: 130px minmax(0,1fr); gap: 8px; font-size: 11px; margin: 12px 0; }
+.properties dt { color: var(--secondary); }
+.properties dd { margin: 0; }
+.review-panel > label, .review-panel form label { display: flex; flex-direction: column; align-items: stretch; gap: 6px; margin: 8px 0; font-size: 11px; }
+.review-panel .consent { flex-direction: row; }
+.review-panel .actions { display: flex; gap: 8px; flex-wrap: wrap; margin: 12px 0; }
+.review-panel button { border: 1px solid var(--border); font-size: 11px; }
+.review-panel form { display: flex; align-items: flex-end; gap: 12px; margin: 16px 0; }
+.review-panel form label { flex: 1; margin: 0; }
+.review-status { display: block; margin-top: 12px; color: var(--accent); font-size: 13px; font-weight: 500; }
+.review-panel > code { display: block; margin: 8px 0; }
+.unified-diff { padding: 8px 0; background: var(--bg); overflow: auto; max-height: 340px; }
+.unified-diff > span { display: block; min-height: 19px; padding: 0 12px; white-space: pre; }
+.unified-diff .added { color: var(--success); background: #27382f; }
+.unified-diff .removed { color: var(--danger); background: #3b2d2c; }
+.unified-diff .hunk { color: var(--trace); background: var(--raised); }

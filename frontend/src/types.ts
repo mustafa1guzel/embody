@@ -1,0 +1,13 @@
+export type Mode='studio'|'code'|'agent';
+export type Variant='original'|'attempt_1'|'attempt_2';
+export type Sample={step:number;time:number;position:number;velocity:number;wall_clearance:number;generalized_actuator_force:number;wall_collision:boolean;[key:string]:unknown};
+export type ArmSample={step:number;time:number;qpos_rad:number[];qvel_rad_s:number[];command:number[];generalized_torque_nm:number[];end_effector_m:number[];target_error_m:number;joint_limit_margin_rad:number[];contacts:unknown[];geom_poses:{position:number[];quaternion_wxyz:number[]}[]};
+export type FileData={path:string;content:string;sha256:string;historical:boolean};
+export type Proposal={source:string;diff:string;validation:Record<string,any>;verification:Record<string,any>;provenance:Record<string,any>};
+export type SceneObject={id:string;name:string;kind:string;position?:number[];quaternion_wxyz?:number[];[key:string]:any};
+export type Scene={bodies:SceneObject[];geoms:SceneObject[];joints:SceneObject[];actuators:SceneObject[];reference_position:number;slide_axis_world:number[];transform_check:string;family?:'arm'};
+export type Trajectory={samples:Sample[];summary:Record<string,any>;independent:Record<string,any>;markers:{label:string;index:number;time:number}[];telemetry_reference:string};
+export type Experiment={scenario:string;provenance:string;inventory_sha256:string;context:Record<string,any>;scene:Scene;variants:Record<Variant,Trajectory>};
+export type Bootstrap={csrf_token:string;files:{path:string;historical:boolean}[];recording_sha256:string;api_cost_on_open:string;live_policy:Record<string,string>};
+export type RecordedAgent={mode:'recorded';calls:{name:string;arguments:unknown;output:unknown;verification_feedback?:unknown}[];diagnosis:string;result:Record<string,any>};
+export const labels:Record<Variant,string>={original:'Original · faulty',attempt_1:'GPT proposal 1 · safety failed',attempt_2:'GPT revision 2 · safety passed'};

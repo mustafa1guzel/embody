@@ -1,0 +1,2237 @@
+[
+  {
+    "spec": {
+      "id": "shape_wheel",
+      "body_id": "wheel",
+      "family": "wheel",
+      "parameters": {
+        "outer_diameter_m": 0.12,
+        "thickness_m": 0.025,
+        "axle_hole_diameter_m": 0.009,
+        "hub_thickness_m": 0.004
+      },
+      "parent_body_id": null,
+      "position_m": [
+        0,
+        0,
+        0
+      ],
+      "rotation_rad": [
+        0,
+        0,
+        0
+      ],
+      "mounting_holes": [],
+      "assembly_id": "engineering_project",
+      "schema_version": 1,
+      "geometry_revision": 0,
+      "units": "SI",
+      "attachment_frames": [
+        {
+          "id": "origin",
+          "source": "origin",
+          "hole_id": null,
+          "rotation_rad": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "top",
+          "source": "top",
+          "hole_id": null,
+          "rotation_rad": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "bottom",
+          "source": "bottom",
+          "hole_id": null,
+          "rotation_rad": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "axle",
+          "source": "axle",
+          "hole_id": null,
+          "rotation_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "joint_attachment": null,
+      "mounted_bodies": [],
+      "visual": {
+        "generator": "SHAPEBASE_FACETED_V1",
+        "arc_segments_per_quadrant": 8,
+        "cad_solid_status": "NOT_BREP_NO_STEP_EXPORT"
+      },
+      "physical": {
+        "representation": "SOLID_CYLINDER",
+        "accuracy": "APPROXIMATE",
+        "mass_kg": 0,
+        "mass_source": "EXPLICIT_USER_VALUE_KG",
+        "density_source": "UNKNOWN_NOT_INFERRED",
+        "inertia_source": "MUJOCO_UNIFORM_COLLISION_PROXY",
+        "included_features": [
+          "Nominal outer cylinder envelope including hub depth",
+          "Explicit mass with uniform proxy inertia"
+        ],
+        "omitted_features": [
+          "Axle through-bore; proxy is solid across opening",
+          "Tire/hub profile, tread, compliance and bearing fit",
+          "Actual material distribution and manufacturing detail"
+        ]
+      }
+    },
+    "geometry": {
+      "shape_id": "shape_wheel",
+      "body_id": "wheel",
+      "geometry_revision": 0,
+      "shape_sha256": "203602c6e8287e576eed2569425f915e5f310c67d6800a37feec27ddc9bdeb85",
+      "representation": "FACETED_PARAMETRIC_EXTRUSIONS",
+      "dimensions_m": [
+        0.12,
+        0.12,
+        0.029
+      ],
+      "sections": [
+        {
+          "id": "tire",
+          "outline_m": [
+            [
+              0.06,
+              0.0
+            ],
+            [
+              0.058847116824,
+              0.011705419321
+            ],
+            [
+              0.055432771951,
+              0.022961005942
+            ],
+            [
+              0.049888176738,
+              0.033334213981
+            ],
+            [
+              0.042426406871,
+              0.042426406871
+            ],
+            [
+              0.033334213981,
+              0.049888176738
+            ],
+            [
+              0.022961005942,
+              0.055432771951
+            ],
+            [
+              0.011705419321,
+              0.058847116824
+            ],
+            [
+              0.0,
+              0.06
+            ],
+            [
+              -0.011705419321,
+              0.058847116824
+            ],
+            [
+              -0.022961005942,
+              0.055432771951
+            ],
+            [
+              -0.033334213981,
+              0.049888176738
+            ],
+            [
+              -0.042426406871,
+              0.042426406871
+            ],
+            [
+              -0.049888176738,
+              0.033334213981
+            ],
+            [
+              -0.055432771951,
+              0.022961005942
+            ],
+            [
+              -0.058847116824,
+              0.011705419321
+            ],
+            [
+              -0.06,
+              0.0
+            ],
+            [
+              -0.058847116824,
+              -0.011705419321
+            ],
+            [
+              -0.055432771951,
+              -0.022961005942
+            ],
+            [
+              -0.049888176738,
+              -0.033334213981
+            ],
+            [
+              -0.042426406871,
+              -0.042426406871
+            ],
+            [
+              -0.033334213981,
+              -0.049888176738
+            ],
+            [
+              -0.022961005942,
+              -0.055432771951
+            ],
+            [
+              -0.011705419321,
+              -0.058847116824
+            ],
+            [
+              -0.0,
+              -0.06
+            ],
+            [
+              0.011705419321,
+              -0.058847116824
+            ],
+            [
+              0.022961005942,
+              -0.055432771951
+            ],
+            [
+              0.033334213981,
+              -0.049888176738
+            ],
+            [
+              0.042426406871,
+              -0.042426406871
+            ],
+            [
+              0.049888176738,
+              -0.033334213981
+            ],
+            [
+              0.055432771951,
+              -0.022961005942
+            ],
+            [
+              0.058847116824,
+              -0.011705419321
+            ]
+          ],
+          "holes": [
+            {
+              "id": "hub_void",
+              "center_m": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "radius_m": 0.027
+            }
+          ],
+          "position_m": [
+            0,
+            0,
+            -0.0125
+          ],
+          "depth_m": 0.025
+        },
+        {
+          "id": "hub",
+          "outline_m": [
+            [
+              0.027,
+              0.0
+            ],
+            [
+              0.026481202571,
+              0.005267438694
+            ],
+            [
+              0.024944747378,
+              0.010332452674
+            ],
+            [
+              0.022449679532,
+              0.015000396292
+            ],
+            [
+              0.019091883092,
+              0.019091883092
+            ],
+            [
+              0.015000396292,
+              0.022449679532
+            ],
+            [
+              0.010332452674,
+              0.024944747378
+            ],
+            [
+              0.005267438694,
+              0.026481202571
+            ],
+            [
+              0.0,
+              0.027
+            ],
+            [
+              -0.005267438694,
+              0.026481202571
+            ],
+            [
+              -0.010332452674,
+              0.024944747378
+            ],
+            [
+              -0.015000396292,
+              0.022449679532
+            ],
+            [
+              -0.019091883092,
+              0.019091883092
+            ],
+            [
+              -0.022449679532,
+              0.015000396292
+            ],
+            [
+              -0.024944747378,
+              0.010332452674
+            ],
+            [
+              -0.026481202571,
+              0.005267438694
+            ],
+            [
+              -0.027,
+              0.0
+            ],
+            [
+              -0.026481202571,
+              -0.005267438694
+            ],
+            [
+              -0.024944747378,
+              -0.010332452674
+            ],
+            [
+              -0.022449679532,
+              -0.015000396292
+            ],
+            [
+              -0.019091883092,
+              -0.019091883092
+            ],
+            [
+              -0.015000396292,
+              -0.022449679532
+            ],
+            [
+              -0.010332452674,
+              -0.024944747378
+            ],
+            [
+              -0.005267438694,
+              -0.026481202571
+            ],
+            [
+              -0.0,
+              -0.027
+            ],
+            [
+              0.005267438694,
+              -0.026481202571
+            ],
+            [
+              0.010332452674,
+              -0.024944747378
+            ],
+            [
+              0.015000396292,
+              -0.022449679532
+            ],
+            [
+              0.019091883092,
+              -0.019091883092
+            ],
+            [
+              0.022449679532,
+              -0.015000396292
+            ],
+            [
+              0.024944747378,
+              -0.010332452674
+            ],
+            [
+              0.026481202571,
+              -0.005267438694
+            ]
+          ],
+          "holes": [
+            {
+              "id": "axle_hole",
+              "center_m": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "radius_m": 0.0045
+            }
+          ],
+          "position_m": [
+            0,
+            0,
+            -0.0145
+          ],
+          "depth_m": 0.029
+        }
+      ],
+      "cylinder": null,
+      "holes": [
+        {
+          "id": "axle_hole",
+          "center_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "radius_m": 0.0045
+        }
+      ],
+      "attachment_frames": [
+        {
+          "id": "origin",
+          "position_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_rad": [
+            0,
+            0,
+            0
+          ],
+          "source": "origin",
+          "hole_id": null
+        },
+        {
+          "id": "top",
+          "position_m": [
+            0.0,
+            0.0,
+            0.0145
+          ],
+          "rotation_rad": [
+            0,
+            0,
+            0
+          ],
+          "source": "top",
+          "hole_id": null
+        },
+        {
+          "id": "bottom",
+          "position_m": [
+            0.0,
+            0.0,
+            -0.0145
+          ],
+          "rotation_rad": [
+            0,
+            0,
+            0
+          ],
+          "source": "bottom",
+          "hole_id": null
+        },
+        {
+          "id": "axle",
+          "position_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_rad": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "source": "axle",
+          "hole_id": null
+        }
+      ],
+      "physical": {
+        "representation": "SOLID_CYLINDER",
+        "accuracy": "APPROXIMATE",
+        "mass_kg": 0,
+        "mass_source": "EXPLICIT_USER_VALUE_KG",
+        "density_source": "UNKNOWN_NOT_INFERRED",
+        "inertia_source": "MUJOCO_UNIFORM_COLLISION_PROXY",
+        "included_features": [
+          "Nominal outer cylinder envelope including hub depth",
+          "Explicit mass with uniform proxy inertia"
+        ],
+        "omitted_features": [
+          "Axle through-bore; proxy is solid across opening",
+          "Tire/hub profile, tread, compliance and bearing fit",
+          "Actual material distribution and manufacturing detail"
+        ]
+      },
+      "limitations": [
+        "No BREP, CAD booleans, STEP export or fabrication proof.",
+        "Collision proxy is separate; through-holes/rounding are omitted for envelope parts."
+      ]
+    }
+  },
+  {
+    "spec": {
+      "id": "shape_axle",
+      "body_id": "axle",
+      "family": "axle",
+      "parameters": {
+        "diameter_m": 0.008,
+        "length_m": 0.24
+      },
+      "parent_body_id": null,
+      "position_m": [
+        0,
+        0,
+        0
+      ],
+      "rotation_rad": [
+        0,
+        0,
+        0
+      ],
+      "mounting_holes": [],
+      "assembly_id": "engineering_project",
+      "schema_version": 1,
+      "geometry_revision": 0,
+      "units": "SI",
+      "attachment_frames": [
+        {
+          "id": "origin",
+          "source": "origin",
+          "hole_id": null,
+          "rotation_rad": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "top",
+          "source": "top",
+          "hole_id": null,
+          "rotation_rad": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "bottom",
+          "source": "bottom",
+          "hole_id": null,
+          "rotation_rad": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "axle_left",
+          "source": "axle_left",
+          "hole_id": null,
+          "rotation_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "axle_right",
+          "source": "axle_right",
+          "hole_id": null,
+          "rotation_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "joint_attachment": null,
+      "mounted_bodies": [],
+      "visual": {
+        "generator": "SHAPEBASE_FACETED_V1",
+        "arc_segments_per_quadrant": 8,
+        "cad_solid_status": "NOT_BREP_NO_STEP_EXPORT"
+      },
+      "physical": {
+        "representation": "SOLID_CYLINDER",
+        "accuracy": "EXACT_SUPPORTED_PRIMITIVE",
+        "mass_kg": 0,
+        "mass_source": "EXPLICIT_USER_VALUE_KG",
+        "density_source": "UNKNOWN_NOT_INFERRED",
+        "inertia_source": "MUJOCO_UNIFORM_COLLISION_PROXY",
+        "included_features": [
+          "Nominal solid cylinder and local pose",
+          "Explicit mass with uniform proxy inertia"
+        ],
+        "omitted_features": []
+      }
+    },
+    "geometry": {
+      "shape_id": "shape_axle",
+      "body_id": "axle",
+      "geometry_revision": 0,
+      "shape_sha256": "c85813a548ffc19d978fe0dc68ad98101424d147ac0f23de4f5cdb0bd3aa031b",
+      "representation": "FACETED_SOLID_CYLINDER",
+      "dimensions_m": [
+        0.008,
+        0.008,
+        0.24
+      ],
+      "sections": [],
+      "cylinder": {
+        "radius_m": 0.004,
+        "length_m": 0.24,
+        "radial_segments": 32
+      },
+      "holes": [],
+      "attachment_frames": [
+        {
+          "id": "origin",
+          "position_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_rad": [
+            0,
+            0,
+            0
+          ],
+          "source": "origin",
+          "hole_id": null
+        },
+        {
+          "id": "top",
+          "position_m": [
+            0.0,
+            0.0,
+            0.12
+          ],
+          "rotation_rad": [
+            0,
+            0,
+            0
+          ],
+          "source": "top",
+          "hole_id": null
+        },
+        {
+          "id": "bottom",
+          "position_m": [
+            0.0,
+            0.0,
+            -0.12
+          ],
+          "rotation_rad": [
+            0,
+            0,
+            0
+          ],
+          "source": "bottom",
+          "hole_id": null
+        },
+        {
+          "id": "axle_left",
+          "position_m": [
+            0.0,
+            0.0,
+            -0.12
+          ],
+          "rotation_rad": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "source": "axle_left",
+          "hole_id": null
+        },
+        {
+          "id": "axle_right",
+          "position_m": [
+            0.0,
+            0.0,
+            0.12
+          ],
+          "rotation_rad": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "source": "axle_right",
+          "hole_id": null
+        }
+      ],
+      "physical": {
+        "representation": "SOLID_CYLINDER",
+        "accuracy": "EXACT_SUPPORTED_PRIMITIVE",
+        "mass_kg": 0,
+        "mass_source": "EXPLICIT_USER_VALUE_KG",
+        "density_source": "UNKNOWN_NOT_INFERRED",
+        "inertia_source": "MUJOCO_UNIFORM_COLLISION_PROXY",
+        "included_features": [
+          "Nominal solid cylinder and local pose",
+          "Explicit mass with uniform proxy inertia"
+        ],
+        "omitted_features": []
+      },
+      "limitations": [
+        "No BREP, CAD booleans, STEP export or fabrication proof.",
+        "Collision proxy is separate; through-holes/rounding are omitted for envelope parts."
+      ]
+    }
+  },
+  {
+    "spec": {
+      "id": "shape_chassis",
+      "body_id": "chassis",
+      "family": "chassis",
+      "parameters": {
+        "length_m": 0.3,
+        "width_m": 0.18,
+        "thickness_m": 0.015,
+        "corner_radius_m": 0.012
+      },
+      "parent_body_id": null,
+      "position_m": [
+        0,
+        0,
+        0
+      ],
+      "rotation_rad": [
+        0,
+        0,
+        0
+      ],
+      "mounting_holes": [],
+      "assembly_id": "engineering_project",
+      "schema_version": 1,
+      "geometry_revision": 0,
+      "units": "SI",
+      "attachment_frames": [
+        {
+          "id": "origin",
+          "source": "origin",
+          "hole_id": null,
+          "rotation_rad": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "top",
+          "source": "top",
+          "hole_id": null,
+          "rotation_rad": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "bottom",
+          "source": "bottom",
+          "hole_id": null,
+          "rotation_rad": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "front_axle",
+          "source": "front_axle",
+          "hole_id": null,
+          "rotation_rad": [
+            1.5707963267948966,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "rear_axle",
+          "source": "rear_axle",
+          "hole_id": null,
+          "rotation_rad": [
+            1.5707963267948966,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "rear_left_mount",
+          "source": "rear_left_mount",
+          "hole_id": null,
+          "rotation_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "rear_right_mount",
+          "source": "rear_right_mount",
+          "hole_id": null,
+          "rotation_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "battery",
+          "source": "battery",
+          "hole_id": null,
+          "rotation_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "controller",
+          "source": "controller",
+          "hole_id": null,
+          "rotation_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "arm_east",
+          "source": "arm_east",
+          "hole_id": null,
+          "rotation_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "arm_north",
+          "source": "arm_north",
+          "hole_id": null,
+          "rotation_rad": [
+            0.0,
+            0.0,
+            1.5707963267948966
+          ]
+        },
+        {
+          "id": "arm_west",
+          "source": "arm_west",
+          "hole_id": null,
+          "rotation_rad": [
+            0.0,
+            0.0,
+            3.141592653589793
+          ]
+        },
+        {
+          "id": "arm_south",
+          "source": "arm_south",
+          "hole_id": null,
+          "rotation_rad": [
+            0.0,
+            0.0,
+            -1.5707963267948966
+          ]
+        }
+      ],
+      "joint_attachment": null,
+      "mounted_bodies": [],
+      "visual": {
+        "generator": "SHAPEBASE_FACETED_V1",
+        "arc_segments_per_quadrant": 8,
+        "cad_solid_status": "NOT_BREP_NO_STEP_EXPORT"
+      },
+      "physical": {
+        "representation": "ENVELOPE_BOX",
+        "accuracy": "APPROXIMATE",
+        "mass_kg": 0,
+        "mass_source": "EXPLICIT_USER_VALUE_KG",
+        "density_source": "UNKNOWN_NOT_INFERRED",
+        "inertia_source": "MUJOCO_UNIFORM_COLLISION_PROXY",
+        "included_features": [
+          "Nominal box extents and local pose",
+          "Explicit mass with uniform proxy inertia"
+        ],
+        "omitted_features": [
+          "Rounded outer corners",
+          "Mounting through-holes; proxy is solid across openings",
+          "Actual material distribution and manufacturing detail"
+        ]
+      }
+    },
+    "geometry": {
+      "shape_id": "shape_chassis",
+      "body_id": "chassis",
+      "geometry_revision": 0,
+      "shape_sha256": "2b2cd2ee02068f390730184f528136c6c4948764133b087318e1b3b342f07de0",
+      "representation": "FACETED_PARAMETRIC_EXTRUSIONS",
+      "dimensions_m": [
+        0.3,
+        0.18,
+        0.015
+      ],
+      "sections": [
+        {
+          "id": "main",
+          "outline_m": [
+            [
+              0.15,
+              0.078
+            ],
+            [
+              0.149769423365,
+              0.080341083864
+            ],
+            [
+              0.14908655439,
+              0.082592201188
+            ],
+            [
+              0.147977635348,
+              0.084666842796
+            ],
+            [
+              0.146485281374,
+              0.086485281374
+            ],
+            [
+              0.144666842796,
+              0.087977635348
+            ],
+            [
+              0.142592201188,
+              0.08908655439
+            ],
+            [
+              0.140341083864,
+              0.089769423365
+            ],
+            [
+              0.138,
+              0.09
+            ],
+            [
+              -0.138,
+              0.09
+            ],
+            [
+              -0.140341083864,
+              0.089769423365
+            ],
+            [
+              -0.142592201188,
+              0.08908655439
+            ],
+            [
+              -0.144666842796,
+              0.087977635348
+            ],
+            [
+              -0.146485281374,
+              0.086485281374
+            ],
+            [
+              -0.147977635348,
+              0.084666842796
+            ],
+            [
+              -0.14908655439,
+              0.082592201188
+            ],
+            [
+              -0.149769423365,
+              0.080341083864
+            ],
+            [
+              -0.15,
+              0.078
+            ],
+            [
+              -0.15,
+              -0.078
+            ],
+            [
+              -0.149769423365,
+              -0.080341083864
+            ],
+            [
+              -0.14908655439,
+              -0.082592201188
+            ],
+            [
+              -0.147977635348,
+              -0.084666842796
+            ],
+            [
+              -0.146485281374,
+              -0.086485281374
+            ],
+            [
+              -0.144666842796,
+              -0.087977635348
+            ],
+            [
+              -0.142592201188,
+              -0.08908655439
+            ],
+            [
+              -0.140341083864,
+              -0.089769423365
+            ],
+            [
+              -0.138,
+              -0.09
+            ],
+            [
+              0.138,
+              -0.09
+            ],
+            [
+              0.140341083864,
+              -0.089769423365
+            ],
+            [
+              0.142592201188,
+              -0.08908655439
+            ],
+            [
+              0.144666842796,
+              -0.087977635348
+            ],
+            [
+              0.146485281374,
+              -0.086485281374
+            ],
+            [
+              0.147977635348,
+              -0.084666842796
+            ],
+            [
+              0.14908655439,
+              -0.082592201188
+            ],
+            [
+              0.149769423365,
+              -0.080341083864
+            ],
+            [
+              0.15,
+              -0.078
+            ]
+          ],
+          "holes": [],
+          "position_m": [
+            0,
+            0,
+            -0.0075
+          ],
+          "depth_m": 0.015
+        }
+      ],
+      "cylinder": null,
+      "holes": [],
+      "attachment_frames": [
+        {
+          "id": "origin",
+          "position_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_rad": [
+            0,
+            0,
+            0
+          ],
+          "source": "origin",
+          "hole_id": null
+        },
+        {
+          "id": "top",
+          "position_m": [
+            0.0,
+            0.0,
+            0.0075
+          ],
+          "rotation_rad": [
+            0,
+            0,
+            0
+          ],
+          "source": "top",
+          "hole_id": null
+        },
+        {
+          "id": "bottom",
+          "position_m": [
+            0.0,
+            0.0,
+            -0.0075
+          ],
+          "rotation_rad": [
+            0,
+            0,
+            0
+          ],
+          "source": "bottom",
+          "hole_id": null
+        },
+        {
+          "id": "front_axle",
+          "position_m": [
+            0.096,
+            0.0,
+            -0.0075
+          ],
+          "rotation_rad": [
+            1.5707963267948966,
+            0.0,
+            0.0
+          ],
+          "source": "front_axle",
+          "hole_id": null
+        },
+        {
+          "id": "rear_axle",
+          "position_m": [
+            -0.096,
+            0.0,
+            -0.0075
+          ],
+          "rotation_rad": [
+            1.5707963267948966,
+            0.0,
+            0.0
+          ],
+          "source": "rear_axle",
+          "hole_id": null
+        },
+        {
+          "id": "rear_left_mount",
+          "position_m": [
+            -0.096,
+            0.054,
+            0.0075
+          ],
+          "rotation_rad": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "source": "rear_left_mount",
+          "hole_id": null
+        },
+        {
+          "id": "rear_right_mount",
+          "position_m": [
+            -0.096,
+            -0.054,
+            0.0075
+          ],
+          "rotation_rad": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "source": "rear_right_mount",
+          "hole_id": null
+        },
+        {
+          "id": "battery",
+          "position_m": [
+            -0.045,
+            0.0,
+            0.0075
+          ],
+          "rotation_rad": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "source": "battery",
+          "hole_id": null
+        },
+        {
+          "id": "controller",
+          "position_m": [
+            0.045,
+            0.0,
+            0.0075
+          ],
+          "rotation_rad": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "source": "controller",
+          "hole_id": null
+        },
+        {
+          "id": "arm_east",
+          "position_m": [
+            0.15,
+            0.0,
+            0.0
+          ],
+          "rotation_rad": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "source": "arm_east",
+          "hole_id": null
+        },
+        {
+          "id": "arm_north",
+          "position_m": [
+            0.0,
+            0.09,
+            0.0
+          ],
+          "rotation_rad": [
+            0.0,
+            0.0,
+            1.5707963267948966
+          ],
+          "source": "arm_north",
+          "hole_id": null
+        },
+        {
+          "id": "arm_west",
+          "position_m": [
+            -0.15,
+            0.0,
+            0.0
+          ],
+          "rotation_rad": [
+            0.0,
+            0.0,
+            3.141592653589793
+          ],
+          "source": "arm_west",
+          "hole_id": null
+        },
+        {
+          "id": "arm_south",
+          "position_m": [
+            0.0,
+            -0.09,
+            0.0
+          ],
+          "rotation_rad": [
+            0.0,
+            0.0,
+            -1.5707963267948966
+          ],
+          "source": "arm_south",
+          "hole_id": null
+        }
+      ],
+      "physical": {
+        "representation": "ENVELOPE_BOX",
+        "accuracy": "APPROXIMATE",
+        "mass_kg": 0,
+        "mass_source": "EXPLICIT_USER_VALUE_KG",
+        "density_source": "UNKNOWN_NOT_INFERRED",
+        "inertia_source": "MUJOCO_UNIFORM_COLLISION_PROXY",
+        "included_features": [
+          "Nominal box extents and local pose",
+          "Explicit mass with uniform proxy inertia"
+        ],
+        "omitted_features": [
+          "Rounded outer corners",
+          "Mounting through-holes; proxy is solid across openings",
+          "Actual material distribution and manufacturing detail"
+        ]
+      },
+      "limitations": [
+        "No BREP, CAD booleans, STEP export or fabrication proof.",
+        "Collision proxy is separate; through-holes/rounding are omitted for envelope parts."
+      ]
+    }
+  },
+  {
+    "spec": {
+      "id": "shape_motor_mount",
+      "body_id": "motor_mount",
+      "family": "motor_mount",
+      "parameters": {
+        "length_m": 0.045,
+        "width_m": 0.03,
+        "thickness_m": 0.006,
+        "corner_radius_m": 0.004
+      },
+      "parent_body_id": null,
+      "position_m": [
+        0,
+        0,
+        0
+      ],
+      "rotation_rad": [
+        0,
+        0,
+        0
+      ],
+      "mounting_holes": [],
+      "assembly_id": "engineering_project",
+      "schema_version": 1,
+      "geometry_revision": 0,
+      "units": "SI",
+      "attachment_frames": [
+        {
+          "id": "origin",
+          "source": "origin",
+          "hole_id": null,
+          "rotation_rad": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "top",
+          "source": "top",
+          "hole_id": null,
+          "rotation_rad": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "bottom",
+          "source": "bottom",
+          "hole_id": null,
+          "rotation_rad": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "motor_top",
+          "source": "motor_top",
+          "hole_id": null,
+          "rotation_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "joint_attachment": null,
+      "mounted_bodies": [],
+      "visual": {
+        "generator": "SHAPEBASE_FACETED_V1",
+        "arc_segments_per_quadrant": 8,
+        "cad_solid_status": "NOT_BREP_NO_STEP_EXPORT"
+      },
+      "physical": {
+        "representation": "ENVELOPE_BOX",
+        "accuracy": "APPROXIMATE",
+        "mass_kg": 0,
+        "mass_source": "EXPLICIT_USER_VALUE_KG",
+        "density_source": "UNKNOWN_NOT_INFERRED",
+        "inertia_source": "MUJOCO_UNIFORM_COLLISION_PROXY",
+        "included_features": [
+          "Nominal box extents and local pose",
+          "Explicit mass with uniform proxy inertia"
+        ],
+        "omitted_features": [
+          "Rounded outer corners",
+          "Mounting through-holes; proxy is solid across openings",
+          "Actual material distribution and manufacturing detail"
+        ]
+      }
+    },
+    "geometry": {
+      "shape_id": "shape_motor_mount",
+      "body_id": "motor_mount",
+      "geometry_revision": 0,
+      "shape_sha256": "da09606233cd9b49b29a053e8b271d1ae6d8cbb81d49cc69aef6a9d30fb34e11",
+      "representation": "FACETED_PARAMETRIC_EXTRUSIONS",
+      "dimensions_m": [
+        0.045,
+        0.03,
+        0.006
+      ],
+      "sections": [
+        {
+          "id": "main",
+          "outline_m": [
+            [
+              0.0225,
+              0.011
+            ],
+            [
+              0.022423141122,
+              0.011780361288
+            ],
+            [
+              0.02219551813,
+              0.012530733729
+            ],
+            [
+              0.021825878449,
+              0.013222280932
+            ],
+            [
+              0.021328427125,
+              0.013828427125
+            ],
+            [
+              0.020722280932,
+              0.014325878449
+            ],
+            [
+              0.020030733729,
+              0.01469551813
+            ],
+            [
+              0.019280361288,
+              0.014923141122
+            ],
+            [
+              0.0185,
+              0.015
+            ],
+            [
+              -0.0185,
+              0.015
+            ],
+            [
+              -0.019280361288,
+              0.014923141122
+            ],
+            [
+              -0.020030733729,
+              0.01469551813
+            ],
+            [
+              -0.020722280932,
+              0.014325878449
+            ],
+            [
+              -0.021328427125,
+              0.013828427125
+            ],
+            [
+              -0.021825878449,
+              0.013222280932
+            ],
+            [
+              -0.02219551813,
+              0.012530733729
+            ],
+            [
+              -0.022423141122,
+              0.011780361288
+            ],
+            [
+              -0.0225,
+              0.011
+            ],
+            [
+              -0.0225,
+              -0.011
+            ],
+            [
+              -0.022423141122,
+              -0.011780361288
+            ],
+            [
+              -0.02219551813,
+              -0.012530733729
+            ],
+            [
+              -0.021825878449,
+              -0.013222280932
+            ],
+            [
+              -0.021328427125,
+              -0.013828427125
+            ],
+            [
+              -0.020722280932,
+              -0.014325878449
+            ],
+            [
+              -0.020030733729,
+              -0.01469551813
+            ],
+            [
+              -0.019280361288,
+              -0.014923141122
+            ],
+            [
+              -0.0185,
+              -0.015
+            ],
+            [
+              0.0185,
+              -0.015
+            ],
+            [
+              0.019280361288,
+              -0.014923141122
+            ],
+            [
+              0.020030733729,
+              -0.01469551813
+            ],
+            [
+              0.020722280932,
+              -0.014325878449
+            ],
+            [
+              0.021328427125,
+              -0.013828427125
+            ],
+            [
+              0.021825878449,
+              -0.013222280932
+            ],
+            [
+              0.02219551813,
+              -0.012530733729
+            ],
+            [
+              0.022423141122,
+              -0.011780361288
+            ],
+            [
+              0.0225,
+              -0.011
+            ]
+          ],
+          "holes": [],
+          "position_m": [
+            0,
+            0,
+            -0.003
+          ],
+          "depth_m": 0.006
+        }
+      ],
+      "cylinder": null,
+      "holes": [],
+      "attachment_frames": [
+        {
+          "id": "origin",
+          "position_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_rad": [
+            0,
+            0,
+            0
+          ],
+          "source": "origin",
+          "hole_id": null
+        },
+        {
+          "id": "top",
+          "position_m": [
+            0.0,
+            0.0,
+            0.003
+          ],
+          "rotation_rad": [
+            0,
+            0,
+            0
+          ],
+          "source": "top",
+          "hole_id": null
+        },
+        {
+          "id": "bottom",
+          "position_m": [
+            0.0,
+            0.0,
+            -0.003
+          ],
+          "rotation_rad": [
+            0,
+            0,
+            0
+          ],
+          "source": "bottom",
+          "hole_id": null
+        },
+        {
+          "id": "motor_top",
+          "position_m": [
+            0.0,
+            0.0,
+            0.003
+          ],
+          "rotation_rad": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "source": "motor_top",
+          "hole_id": null
+        }
+      ],
+      "physical": {
+        "representation": "ENVELOPE_BOX",
+        "accuracy": "APPROXIMATE",
+        "mass_kg": 0,
+        "mass_source": "EXPLICIT_USER_VALUE_KG",
+        "density_source": "UNKNOWN_NOT_INFERRED",
+        "inertia_source": "MUJOCO_UNIFORM_COLLISION_PROXY",
+        "included_features": [
+          "Nominal box extents and local pose",
+          "Explicit mass with uniform proxy inertia"
+        ],
+        "omitted_features": [
+          "Rounded outer corners",
+          "Mounting through-holes; proxy is solid across openings",
+          "Actual material distribution and manufacturing detail"
+        ]
+      },
+      "limitations": [
+        "No BREP, CAD booleans, STEP export or fabrication proof.",
+        "Collision proxy is separate; through-holes/rounding are omitted for envelope parts."
+      ]
+    }
+  },
+  {
+    "spec": {
+      "id": "shape_drone_arm",
+      "body_id": "drone_arm",
+      "family": "drone_arm",
+      "parameters": {
+        "length_m": 0.2,
+        "width_m": 0.025,
+        "thickness_m": 0.008
+      },
+      "parent_body_id": null,
+      "position_m": [
+        0,
+        0,
+        0
+      ],
+      "rotation_rad": [
+        0,
+        0,
+        0
+      ],
+      "mounting_holes": [],
+      "assembly_id": "engineering_project",
+      "schema_version": 1,
+      "geometry_revision": 0,
+      "units": "SI",
+      "attachment_frames": [
+        {
+          "id": "origin",
+          "source": "origin",
+          "hole_id": null,
+          "rotation_rad": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "top",
+          "source": "top",
+          "hole_id": null,
+          "rotation_rad": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "bottom",
+          "source": "bottom",
+          "hole_id": null,
+          "rotation_rad": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "root",
+          "source": "root",
+          "hole_id": null,
+          "rotation_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "motor_pad",
+          "source": "motor_pad",
+          "hole_id": null,
+          "rotation_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "joint_attachment": null,
+      "mounted_bodies": [],
+      "visual": {
+        "generator": "SHAPEBASE_FACETED_V1",
+        "arc_segments_per_quadrant": 8,
+        "cad_solid_status": "NOT_BREP_NO_STEP_EXPORT"
+      },
+      "physical": {
+        "representation": "ENVELOPE_BOX",
+        "accuracy": "APPROXIMATE",
+        "mass_kg": 0,
+        "mass_source": "EXPLICIT_USER_VALUE_KG",
+        "density_source": "UNKNOWN_NOT_INFERRED",
+        "inertia_source": "MUJOCO_UNIFORM_COLLISION_PROXY",
+        "included_features": [
+          "Nominal box extents and local pose",
+          "Explicit mass with uniform proxy inertia"
+        ],
+        "omitted_features": [
+          "Mounting through-holes; proxy is solid across openings",
+          "Actual material distribution and manufacturing detail"
+        ]
+      }
+    },
+    "geometry": {
+      "shape_id": "shape_drone_arm",
+      "body_id": "drone_arm",
+      "geometry_revision": 0,
+      "shape_sha256": "d0a8610efb26a7c4aef61903610fcab557cb5367d25e4dd14f57f8a9e5d64245",
+      "representation": "FACETED_PARAMETRIC_EXTRUSIONS",
+      "dimensions_m": [
+        0.2,
+        0.025,
+        0.008
+      ],
+      "sections": [
+        {
+          "id": "main",
+          "outline_m": [
+            [
+              -0.1,
+              -0.0125
+            ],
+            [
+              0.1,
+              -0.0125
+            ],
+            [
+              0.1,
+              0.0125
+            ],
+            [
+              -0.1,
+              0.0125
+            ]
+          ],
+          "holes": [],
+          "position_m": [
+            0,
+            0,
+            -0.004
+          ],
+          "depth_m": 0.008
+        }
+      ],
+      "cylinder": null,
+      "holes": [],
+      "attachment_frames": [
+        {
+          "id": "origin",
+          "position_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_rad": [
+            0,
+            0,
+            0
+          ],
+          "source": "origin",
+          "hole_id": null
+        },
+        {
+          "id": "top",
+          "position_m": [
+            0.0,
+            0.0,
+            0.004
+          ],
+          "rotation_rad": [
+            0,
+            0,
+            0
+          ],
+          "source": "top",
+          "hole_id": null
+        },
+        {
+          "id": "bottom",
+          "position_m": [
+            0.0,
+            0.0,
+            -0.004
+          ],
+          "rotation_rad": [
+            0,
+            0,
+            0
+          ],
+          "source": "bottom",
+          "hole_id": null
+        },
+        {
+          "id": "root",
+          "position_m": [
+            -0.1,
+            0.0,
+            0.0
+          ],
+          "rotation_rad": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "source": "root",
+          "hole_id": null
+        },
+        {
+          "id": "motor_pad",
+          "position_m": [
+            0.1,
+            0.0,
+            0.0
+          ],
+          "rotation_rad": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "source": "motor_pad",
+          "hole_id": null
+        }
+      ],
+      "physical": {
+        "representation": "ENVELOPE_BOX",
+        "accuracy": "APPROXIMATE",
+        "mass_kg": 0,
+        "mass_source": "EXPLICIT_USER_VALUE_KG",
+        "density_source": "UNKNOWN_NOT_INFERRED",
+        "inertia_source": "MUJOCO_UNIFORM_COLLISION_PROXY",
+        "included_features": [
+          "Nominal box extents and local pose",
+          "Explicit mass with uniform proxy inertia"
+        ],
+        "omitted_features": [
+          "Mounting through-holes; proxy is solid across openings",
+          "Actual material distribution and manufacturing detail"
+        ]
+      },
+      "limitations": [
+        "No BREP, CAD booleans, STEP export or fabrication proof.",
+        "Collision proxy is separate; through-holes/rounding are omitted for envelope parts."
+      ]
+    }
+  },
+  {
+    "spec": {
+      "id": "shape_motor_pad",
+      "body_id": "motor_pad",
+      "family": "motor_pad",
+      "parameters": {
+        "length_m": 0.05,
+        "width_m": 0.05,
+        "thickness_m": 0.006,
+        "corner_radius_m": 0.008
+      },
+      "parent_body_id": null,
+      "position_m": [
+        0,
+        0,
+        0
+      ],
+      "rotation_rad": [
+        0,
+        0,
+        0
+      ],
+      "mounting_holes": [],
+      "assembly_id": "engineering_project",
+      "schema_version": 1,
+      "geometry_revision": 0,
+      "units": "SI",
+      "attachment_frames": [
+        {
+          "id": "origin",
+          "source": "origin",
+          "hole_id": null,
+          "rotation_rad": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "top",
+          "source": "top",
+          "hole_id": null,
+          "rotation_rad": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "bottom",
+          "source": "bottom",
+          "hole_id": null,
+          "rotation_rad": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "motor_top",
+          "source": "motor_top",
+          "hole_id": null,
+          "rotation_rad": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "joint_attachment": null,
+      "mounted_bodies": [],
+      "visual": {
+        "generator": "SHAPEBASE_FACETED_V1",
+        "arc_segments_per_quadrant": 8,
+        "cad_solid_status": "NOT_BREP_NO_STEP_EXPORT"
+      },
+      "physical": {
+        "representation": "ENVELOPE_BOX",
+        "accuracy": "APPROXIMATE",
+        "mass_kg": 0,
+        "mass_source": "EXPLICIT_USER_VALUE_KG",
+        "density_source": "UNKNOWN_NOT_INFERRED",
+        "inertia_source": "MUJOCO_UNIFORM_COLLISION_PROXY",
+        "included_features": [
+          "Nominal box extents and local pose",
+          "Explicit mass with uniform proxy inertia"
+        ],
+        "omitted_features": [
+          "Rounded outer corners",
+          "Mounting through-holes; proxy is solid across openings",
+          "Actual material distribution and manufacturing detail"
+        ]
+      }
+    },
+    "geometry": {
+      "shape_id": "shape_motor_pad",
+      "body_id": "motor_pad",
+      "geometry_revision": 0,
+      "shape_sha256": "26993689d0f0ceb9f1c4c6c7437e8f1bff7424428590204ccdae06aa70cdb29d",
+      "representation": "FACETED_PARAMETRIC_EXTRUSIONS",
+      "dimensions_m": [
+        0.05,
+        0.05,
+        0.006
+      ],
+      "sections": [
+        {
+          "id": "main",
+          "outline_m": [
+            [
+              0.025,
+              0.017
+            ],
+            [
+              0.024846282243,
+              0.018560722576
+            ],
+            [
+              0.02439103626,
+              0.020061467459
+            ],
+            [
+              0.023651756898,
+              0.021444561864
+            ],
+            [
+              0.022656854249,
+              0.022656854249
+            ],
+            [
+              0.021444561864,
+              0.023651756898
+            ],
+            [
+              0.020061467459,
+              0.02439103626
+            ],
+            [
+              0.018560722576,
+              0.024846282243
+            ],
+            [
+              0.017,
+              0.025
+            ],
+            [
+              -0.017,
+              0.025
+            ],
+            [
+              -0.018560722576,
+              0.024846282243
+            ],
+            [
+              -0.020061467459,
+              0.02439103626
+            ],
+            [
+              -0.021444561864,
+              0.023651756898
+            ],
+            [
+              -0.022656854249,
+              0.022656854249
+            ],
+            [
+              -0.023651756898,
+              0.021444561864
+            ],
+            [
+              -0.02439103626,
+              0.020061467459
+            ],
+            [
+              -0.024846282243,
+              0.018560722576
+            ],
+            [
+              -0.025,
+              0.017
+            ],
+            [
+              -0.025,
+              -0.017
+            ],
+            [
+              -0.024846282243,
+              -0.018560722576
+            ],
+            [
+              -0.02439103626,
+              -0.020061467459
+            ],
+            [
+              -0.023651756898,
+              -0.021444561864
+            ],
+            [
+              -0.022656854249,
+              -0.022656854249
+            ],
+            [
+              -0.021444561864,
+              -0.023651756898
+            ],
+            [
+              -0.020061467459,
+              -0.02439103626
+            ],
+            [
+              -0.018560722576,
+              -0.024846282243
+            ],
+            [
+              -0.017,
+              -0.025
+            ],
+            [
+              0.017,
+              -0.025
+            ],
+            [
+              0.018560722576,
+              -0.024846282243
+            ],
+            [
+              0.020061467459,
+              -0.02439103626
+            ],
+            [
+              0.021444561864,
+              -0.023651756898
+            ],
+            [
+              0.022656854249,
+              -0.022656854249
+            ],
+            [
+              0.023651756898,
+              -0.021444561864
+            ],
+            [
+              0.02439103626,
+              -0.020061467459
+            ],
+            [
+              0.024846282243,
+              -0.018560722576
+            ],
+            [
+              0.025,
+              -0.017
+            ]
+          ],
+          "holes": [],
+          "position_m": [
+            0,
+            0,
+            -0.003
+          ],
+          "depth_m": 0.006
+        }
+      ],
+      "cylinder": null,
+      "holes": [],
+      "attachment_frames": [
+        {
+          "id": "origin",
+          "position_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_rad": [
+            0,
+            0,
+            0
+          ],
+          "source": "origin",
+          "hole_id": null
+        },
+        {
+          "id": "top",
+          "position_m": [
+            0.0,
+            0.0,
+            0.003
+          ],
+          "rotation_rad": [
+            0,
+            0,
+            0
+          ],
+          "source": "top",
+          "hole_id": null
+        },
+        {
+          "id": "bottom",
+          "position_m": [
+            0.0,
+            0.0,
+            -0.003
+          ],
+          "rotation_rad": [
+            0,
+            0,
+            0
+          ],
+          "source": "bottom",
+          "hole_id": null
+        },
+        {
+          "id": "motor_top",
+          "position_m": [
+            0.0,
+            0.0,
+            0.003
+          ],
+          "rotation_rad": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "source": "motor_top",
+          "hole_id": null
+        }
+      ],
+      "physical": {
+        "representation": "ENVELOPE_BOX",
+        "accuracy": "APPROXIMATE",
+        "mass_kg": 0,
+        "mass_source": "EXPLICIT_USER_VALUE_KG",
+        "density_source": "UNKNOWN_NOT_INFERRED",
+        "inertia_source": "MUJOCO_UNIFORM_COLLISION_PROXY",
+        "included_features": [
+          "Nominal box extents and local pose",
+          "Explicit mass with uniform proxy inertia"
+        ],
+        "omitted_features": [
+          "Rounded outer corners",
+          "Mounting through-holes; proxy is solid across openings",
+          "Actual material distribution and manufacturing detail"
+        ]
+      },
+      "limitations": [
+        "No BREP, CAD booleans, STEP export or fabrication proof.",
+        "Collision proxy is separate; through-holes/rounding are omitted for envelope parts."
+      ]
+    }
+  }
+]

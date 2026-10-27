@@ -1,0 +1,12 @@
+{
+  "recording_id": "20261023T084445275136Z",
+  "root": "examples/rail-braking-study",
+  "inventory_sha256": "539b34f96960bf2cfe900f9d7b5f272786aea0a016d7ce60d9e806781aee7a23",
+  "native_replay_root": "examples/rail-braking-study/native",
+  "native_index_sha256": "5bf8cd2b97a41b7fd1635ad49c79de1cbd26202d07c88b454ec33ef1192df3dd",
+  "packaging": {
+    "kind": "DERIVED_PUBLIC_METADATA_PACKAGE; no new model call, simulation or render",
+    "source_inventory_sha256": "806bd47925e2e316c97980349f4c72ec289bd14c33c8306e8a5a9dd39cc8132b",
+    "derivation": "examples/rail-braking-study/derivation.json"
+  }
+}

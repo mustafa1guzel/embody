@@ -1,0 +1,10 @@
+{
+  "call_id": "call_ouJDH36fwBr1nORUH3yxyWKQ",
+  "source_sha256": "8f87dbce9dd4491695c0fddee4dabb420fee89c234b13a0f88fb333f28bc85e6",
+  "original_sha256": "04527c57d5662ad0010181872d3f66ce64317f5535dd3a718f7017dbd16f8753",
+  "exact_api_arguments_match": true,
+  "exact_validated_source_matches_api": true,
+  "exact_unified_diff_matches": true,
+  "operator_source_modification": false,
+  "candidate_id": "candidate_9ba053aaee684edf8f1914731a5449fc"
+}

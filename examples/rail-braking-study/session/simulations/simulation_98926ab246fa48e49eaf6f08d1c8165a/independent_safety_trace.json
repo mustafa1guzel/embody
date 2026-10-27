@@ -1,0 +1,7037 @@
+{
+  "method": "Fresh MjModel/MjData; direct mj_step; wall geom IDs and mj_geomDistance",
+  "model_sha256": "4856298d3046fa8607275053b8ab0dd395d44038e58564bcdf9bc821b1625f88",
+  "effective_mjcf_sha256": "325399fd2038334aac3700ae9c9d3c951f963ee493e92c38b1906072fae9af19",
+  "effective_context_matches": true,
+  "trace": [
+    {
+      "step": 0,
+      "time": 0.0,
+      "position": 0.0,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.7699999999999998,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 1,
+      "time": 0.005,
+      "position": 0.006,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.7639999999999998,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 2,
+      "time": 0.01,
+      "position": 0.012,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.7579999999999998,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 3,
+      "time": 0.015,
+      "position": 0.018,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.7519999999999998,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 4,
+      "time": 0.02,
+      "position": 0.023999999999999997,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.7459999999999998,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 5,
+      "time": 0.025,
+      "position": 0.029999999999999995,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.74,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 6,
+      "time": 0.030000000000000002,
+      "position": 0.036,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.7339999999999998,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 7,
+      "time": 0.035,
+      "position": 0.041999999999999996,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.728,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 8,
+      "time": 0.04,
+      "position": 0.047999999999999994,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.7219999999999998,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 9,
+      "time": 0.045,
+      "position": 0.05399999999999999,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.7159999999999997,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 10,
+      "time": 0.049999999999999996,
+      "position": 0.05999999999999999,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.7099999999999997,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 11,
+      "time": 0.05499999999999999,
+      "position": 0.06599999999999999,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.7039999999999997,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 12,
+      "time": 0.05999999999999999,
+      "position": 0.072,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.6979999999999997,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 13,
+      "time": 0.06499999999999999,
+      "position": 0.078,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.6919999999999997,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 14,
+      "time": 0.06999999999999999,
+      "position": 0.084,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.6859999999999997,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 15,
+      "time": 0.075,
+      "position": 0.09000000000000001,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.6799999999999997,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 16,
+      "time": 0.08,
+      "position": 0.09600000000000002,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.674,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 17,
+      "time": 0.085,
+      "position": 0.10200000000000002,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.6679999999999997,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 18,
+      "time": 0.09000000000000001,
+      "position": 0.10800000000000003,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.6619999999999997,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 19,
+      "time": 0.09500000000000001,
+      "position": 0.11400000000000003,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.6559999999999997,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 20,
+      "time": 0.10000000000000002,
+      "position": 0.12000000000000004,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.6499999999999995,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 21,
+      "time": 0.10500000000000002,
+      "position": 0.12600000000000003,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.6439999999999997,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 22,
+      "time": 0.11000000000000003,
+      "position": 0.13200000000000003,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.6379999999999997,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 23,
+      "time": 0.11500000000000003,
+      "position": 0.13800000000000004,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.6319999999999997,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 24,
+      "time": 0.12000000000000004,
+      "position": 0.14400000000000004,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.6259999999999997,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 25,
+      "time": 0.12500000000000003,
+      "position": 0.15000000000000005,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.6199999999999997,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 26,
+      "time": 0.13000000000000003,
+      "position": 0.15600000000000006,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.6139999999999997,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 27,
+      "time": 0.13500000000000004,
+      "position": 0.16200000000000006,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.6079999999999999,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 28,
+      "time": 0.14000000000000004,
+      "position": 0.16800000000000007,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.6019999999999996,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 29,
+      "time": 0.14500000000000005,
+      "position": 0.17400000000000007,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.5959999999999996,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 30,
+      "time": 0.15000000000000005,
+      "position": 0.18000000000000008,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.5899999999999999,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 31,
+      "time": 0.15500000000000005,
+      "position": 0.18600000000000008,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.5839999999999996,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 32,
+      "time": 0.16000000000000006,
+      "position": 0.1920000000000001,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.5779999999999996,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 33,
+      "time": 0.16500000000000006,
+      "position": 0.1980000000000001,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.5719999999999996,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 34,
+      "time": 0.17000000000000007,
+      "position": 0.2040000000000001,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.5659999999999996,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 35,
+      "time": 0.17500000000000007,
+      "position": 0.2100000000000001,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.5599999999999996,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 36,
+      "time": 0.18000000000000008,
+      "position": 0.2160000000000001,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.5539999999999996,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 37,
+      "time": 0.18500000000000008,
+      "position": 0.22200000000000011,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.5479999999999996,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 38,
+      "time": 0.19000000000000009,
+      "position": 0.22800000000000012,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.5419999999999998,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 39,
+      "time": 0.1950000000000001,
+      "position": 0.23400000000000012,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.5359999999999996,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 40,
+      "time": 0.2000000000000001,
+      "position": 0.24000000000000013,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.5299999999999996,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 41,
+      "time": 0.2050000000000001,
+      "position": 0.24600000000000014,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.5239999999999996,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 42,
+      "time": 0.2100000000000001,
+      "position": 0.2520000000000001,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.5179999999999996,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 43,
+      "time": 0.2150000000000001,
+      "position": 0.2580000000000001,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.5119999999999996,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 44,
+      "time": 0.2200000000000001,
+      "position": 0.2640000000000001,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.5059999999999996,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 45,
+      "time": 0.22500000000000012,
+      "position": 0.27000000000000013,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.4999999999999996,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 46,
+      "time": 0.23000000000000012,
+      "position": 0.27600000000000013,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.4939999999999996,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 47,
+      "time": 0.23500000000000013,
+      "position": 0.28200000000000014,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.4879999999999995,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 48,
+      "time": 0.24000000000000013,
+      "position": 0.28800000000000014,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.4819999999999995,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 49,
+      "time": 0.24500000000000013,
+      "position": 0.29400000000000015,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.4759999999999995,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 50,
+      "time": 0.2500000000000001,
+      "position": 0.30000000000000016,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.4699999999999998,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 51,
+      "time": 0.2550000000000001,
+      "position": 0.30600000000000016,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.4639999999999995,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 52,
+      "time": 0.2600000000000001,
+      "position": 0.31200000000000017,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.4579999999999997,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 53,
+      "time": 0.2650000000000001,
+      "position": 0.31800000000000017,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.4519999999999995,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 54,
+      "time": 0.27000000000000013,
+      "position": 0.3240000000000002,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.4459999999999995,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 55,
+      "time": 0.27500000000000013,
+      "position": 0.3300000000000002,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.4399999999999995,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 56,
+      "time": 0.28000000000000014,
+      "position": 0.3360000000000002,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.4339999999999997,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 57,
+      "time": 0.28500000000000014,
+      "position": 0.3420000000000002,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.4279999999999995,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 58,
+      "time": 0.29000000000000015,
+      "position": 0.3480000000000002,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.4219999999999995,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 59,
+      "time": 0.29500000000000015,
+      "position": 0.3540000000000002,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.4159999999999995,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 60,
+      "time": 0.30000000000000016,
+      "position": 0.3600000000000002,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.4099999999999995,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 61,
+      "time": 0.30500000000000016,
+      "position": 0.3660000000000002,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.4039999999999995,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 62,
+      "time": 0.31000000000000016,
+      "position": 0.3720000000000002,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.3979999999999995,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 63,
+      "time": 0.31500000000000017,
+      "position": 0.3780000000000002,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.3919999999999995,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 64,
+      "time": 0.3200000000000002,
+      "position": 0.38400000000000023,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.3859999999999995,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 65,
+      "time": 0.3250000000000002,
+      "position": 0.39000000000000024,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.3799999999999994,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 66,
+      "time": 0.3300000000000002,
+      "position": 0.39600000000000024,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.3739999999999994,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 67,
+      "time": 0.3350000000000002,
+      "position": 0.40200000000000025,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.3679999999999994,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 68,
+      "time": 0.3400000000000002,
+      "position": 0.40800000000000025,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.3619999999999994,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 69,
+      "time": 0.3450000000000002,
+      "position": 0.41400000000000026,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.3559999999999994,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 70,
+      "time": 0.3500000000000002,
+      "position": 0.42000000000000026,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.3499999999999996,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 71,
+      "time": 0.3550000000000002,
+      "position": 0.42600000000000027,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.3439999999999994,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 72,
+      "time": 0.3600000000000002,
+      "position": 0.4320000000000003,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.3379999999999994,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 73,
+      "time": 0.3650000000000002,
+      "position": 0.4380000000000003,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.3319999999999994,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 74,
+      "time": 0.3700000000000002,
+      "position": 0.4440000000000003,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.3259999999999994,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 75,
+      "time": 0.3750000000000002,
+      "position": 0.4500000000000003,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.3199999999999994,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 76,
+      "time": 0.3800000000000002,
+      "position": 0.4560000000000003,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.3139999999999994,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 77,
+      "time": 0.38500000000000023,
+      "position": 0.4620000000000003,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.3079999999999994,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 78,
+      "time": 0.39000000000000024,
+      "position": 0.4680000000000003,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.3019999999999994,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 79,
+      "time": 0.39500000000000024,
+      "position": 0.4740000000000003,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.2959999999999994,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 80,
+      "time": 0.40000000000000024,
+      "position": 0.4800000000000003,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.2899999999999994,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 81,
+      "time": 0.40500000000000025,
+      "position": 0.4860000000000003,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.2839999999999996,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 82,
+      "time": 0.41000000000000025,
+      "position": 0.4920000000000003,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.2779999999999996,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 83,
+      "time": 0.41500000000000026,
+      "position": 0.49800000000000033,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.2719999999999994,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 84,
+      "time": 0.42000000000000026,
+      "position": 0.5040000000000003,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.2659999999999993,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 85,
+      "time": 0.42500000000000027,
+      "position": 0.5100000000000003,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.2599999999999993,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 86,
+      "time": 0.43000000000000027,
+      "position": 0.5160000000000003,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.2539999999999993,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 87,
+      "time": 0.4350000000000003,
+      "position": 0.5220000000000004,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.2479999999999993,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 88,
+      "time": 0.4400000000000003,
+      "position": 0.5280000000000004,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.2419999999999995,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 89,
+      "time": 0.4450000000000003,
+      "position": 0.5340000000000004,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.2359999999999995,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 90,
+      "time": 0.4500000000000003,
+      "position": 0.5400000000000004,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.2299999999999993,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 91,
+      "time": 0.4550000000000003,
+      "position": 0.5460000000000004,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.2239999999999995,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 92,
+      "time": 0.4600000000000003,
+      "position": 0.5520000000000004,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.2179999999999993,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 93,
+      "time": 0.4650000000000003,
+      "position": 0.5580000000000004,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.2119999999999995,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 94,
+      "time": 0.4700000000000003,
+      "position": 0.5640000000000004,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.2059999999999993,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 95,
+      "time": 0.4750000000000003,
+      "position": 0.5700000000000004,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.1999999999999993,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 96,
+      "time": 0.4800000000000003,
+      "position": 0.5760000000000004,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.1939999999999993,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 97,
+      "time": 0.4850000000000003,
+      "position": 0.5820000000000004,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.1879999999999993,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 98,
+      "time": 0.4900000000000003,
+      "position": 0.5880000000000004,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.1819999999999995,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 99,
+      "time": 0.49500000000000033,
+      "position": 0.5940000000000004,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.1759999999999995,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 100,
+      "time": 0.5000000000000003,
+      "position": 0.6000000000000004,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.1699999999999995,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 101,
+      "time": 0.5050000000000003,
+      "position": 0.6060000000000004,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.1639999999999993,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 102,
+      "time": 0.5100000000000003,
+      "position": 0.6120000000000004,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.1579999999999993,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 103,
+      "time": 0.5150000000000003,
+      "position": 0.6180000000000004,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.1519999999999992,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 104,
+      "time": 0.5200000000000004,
+      "position": 0.6240000000000004,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.1459999999999992,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 105,
+      "time": 0.5250000000000004,
+      "position": 0.6300000000000004,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.1399999999999995,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 106,
+      "time": 0.5300000000000004,
+      "position": 0.6360000000000005,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.1339999999999992,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 107,
+      "time": 0.5350000000000004,
+      "position": 0.6420000000000005,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.1279999999999992,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 108,
+      "time": 0.5400000000000004,
+      "position": 0.6480000000000005,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.1219999999999992,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 109,
+      "time": 0.5450000000000004,
+      "position": 0.6540000000000005,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.1159999999999994,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 110,
+      "time": 0.5500000000000004,
+      "position": 0.6600000000000005,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.1099999999999992,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 111,
+      "time": 0.5550000000000004,
+      "position": 0.6660000000000005,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.1039999999999994,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 112,
+      "time": 0.5600000000000004,
+      "position": 0.6720000000000005,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.0979999999999992,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 113,
+      "time": 0.5650000000000004,
+      "position": 0.6780000000000005,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.0919999999999994,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 114,
+      "time": 0.5700000000000004,
+      "position": 0.6840000000000005,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.0859999999999994,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 115,
+      "time": 0.5750000000000004,
+      "position": 0.6900000000000005,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.0799999999999992,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 116,
+      "time": 0.5800000000000004,
+      "position": 0.6960000000000005,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.0739999999999994,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 117,
+      "time": 0.5850000000000004,
+      "position": 0.7020000000000005,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.0679999999999992,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 118,
+      "time": 0.5900000000000004,
+      "position": 0.7080000000000005,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.0619999999999994,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 119,
+      "time": 0.5950000000000004,
+      "position": 0.7140000000000005,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.0559999999999992,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 120,
+      "time": 0.6000000000000004,
+      "position": 0.7200000000000005,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.0499999999999992,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 121,
+      "time": 0.6050000000000004,
+      "position": 0.7260000000000005,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.0439999999999992,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 122,
+      "time": 0.6100000000000004,
+      "position": 0.7320000000000005,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.0379999999999994,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 123,
+      "time": 0.6150000000000004,
+      "position": 0.7380000000000005,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.0319999999999994,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 124,
+      "time": 0.6200000000000004,
+      "position": 0.7440000000000005,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.0259999999999994,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 125,
+      "time": 0.6250000000000004,
+      "position": 0.7500000000000006,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.0199999999999991,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 126,
+      "time": 0.6300000000000004,
+      "position": 0.7560000000000006,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.0139999999999991,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 127,
+      "time": 0.6350000000000005,
+      "position": 0.7620000000000006,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.0079999999999991,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 128,
+      "time": 0.6400000000000005,
+      "position": 0.7680000000000006,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 1.0019999999999993,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 129,
+      "time": 0.6450000000000005,
+      "position": 0.7740000000000006,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.9959999999999992,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 130,
+      "time": 0.6500000000000005,
+      "position": 0.7800000000000006,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.9899999999999992,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 131,
+      "time": 0.6550000000000005,
+      "position": 0.7860000000000006,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.9839999999999992,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 132,
+      "time": 0.6600000000000005,
+      "position": 0.7920000000000006,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.9779999999999992,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 133,
+      "time": 0.6650000000000005,
+      "position": 0.7980000000000006,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.9719999999999992,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 134,
+      "time": 0.6700000000000005,
+      "position": 0.8040000000000006,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.9659999999999993,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 135,
+      "time": 0.6750000000000005,
+      "position": 0.8100000000000006,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.9599999999999993,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 136,
+      "time": 0.6800000000000005,
+      "position": 0.8160000000000006,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.9539999999999991,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 137,
+      "time": 0.6850000000000005,
+      "position": 0.8220000000000006,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.9479999999999992,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 138,
+      "time": 0.6900000000000005,
+      "position": 0.8280000000000006,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.9419999999999992,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 139,
+      "time": 0.6950000000000005,
+      "position": 0.8340000000000006,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.9359999999999992,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 140,
+      "time": 0.7000000000000005,
+      "position": 0.8400000000000006,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.9299999999999992,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 141,
+      "time": 0.7050000000000005,
+      "position": 0.8460000000000006,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.9239999999999994,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 142,
+      "time": 0.7100000000000005,
+      "position": 0.8520000000000006,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.9179999999999994,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 143,
+      "time": 0.7150000000000005,
+      "position": 0.8580000000000007,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.9119999999999995,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 144,
+      "time": 0.7200000000000005,
+      "position": 0.8640000000000007,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.9059999999999994,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 145,
+      "time": 0.7250000000000005,
+      "position": 0.8700000000000007,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.8999999999999994,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 146,
+      "time": 0.7300000000000005,
+      "position": 0.8760000000000007,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.8939999999999994,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 147,
+      "time": 0.7350000000000005,
+      "position": 0.8820000000000007,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.8879999999999993,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 148,
+      "time": 0.7400000000000005,
+      "position": 0.8880000000000007,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.8819999999999993,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 149,
+      "time": 0.7450000000000006,
+      "position": 0.8940000000000007,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.8759999999999993,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 150,
+      "time": 0.7500000000000006,
+      "position": 0.9000000000000007,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.8699999999999993,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 151,
+      "time": 0.7550000000000006,
+      "position": 0.9060000000000007,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.8639999999999993,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 152,
+      "time": 0.7600000000000006,
+      "position": 0.9120000000000007,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.8579999999999993,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 153,
+      "time": 0.7650000000000006,
+      "position": 0.9180000000000007,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.8519999999999993,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 154,
+      "time": 0.7700000000000006,
+      "position": 0.9240000000000007,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.8459999999999993,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 155,
+      "time": 0.7750000000000006,
+      "position": 0.9300000000000007,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.8399999999999993,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 156,
+      "time": 0.7800000000000006,
+      "position": 0.9360000000000007,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.8339999999999993,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 157,
+      "time": 0.7850000000000006,
+      "position": 0.9420000000000007,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.8279999999999993,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 158,
+      "time": 0.7900000000000006,
+      "position": 0.9480000000000007,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.8219999999999993,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 159,
+      "time": 0.7950000000000006,
+      "position": 0.9540000000000007,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.8159999999999993,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 160,
+      "time": 0.8000000000000006,
+      "position": 0.9600000000000007,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.8099999999999993,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 161,
+      "time": 0.8050000000000006,
+      "position": 0.9660000000000007,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.8039999999999993,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 162,
+      "time": 0.8100000000000006,
+      "position": 0.9720000000000008,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.7979999999999993,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 163,
+      "time": 0.8150000000000006,
+      "position": 0.9780000000000008,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.7919999999999993,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 164,
+      "time": 0.8200000000000006,
+      "position": 0.9840000000000008,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.7859999999999993,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 165,
+      "time": 0.8250000000000006,
+      "position": 0.9900000000000008,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.7799999999999992,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 166,
+      "time": 0.8300000000000006,
+      "position": 0.9960000000000008,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.7739999999999992,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 167,
+      "time": 0.8350000000000006,
+      "position": 1.0020000000000007,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.7679999999999993,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 168,
+      "time": 0.8400000000000006,
+      "position": 1.0080000000000007,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.7619999999999992,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 169,
+      "time": 0.8450000000000006,
+      "position": 1.0140000000000007,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.7559999999999993,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 170,
+      "time": 0.8500000000000006,
+      "position": 1.0200000000000007,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.7499999999999993,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 171,
+      "time": 0.8550000000000006,
+      "position": 1.0260000000000007,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.7439999999999992,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 172,
+      "time": 0.8600000000000007,
+      "position": 1.0320000000000007,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.7379999999999992,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 173,
+      "time": 0.8650000000000007,
+      "position": 1.0380000000000007,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.7319999999999992,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 174,
+      "time": 0.8700000000000007,
+      "position": 1.0440000000000007,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.7259999999999992,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 175,
+      "time": 0.8750000000000007,
+      "position": 1.0500000000000007,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.7199999999999992,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 176,
+      "time": 0.8800000000000007,
+      "position": 1.0560000000000007,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.7139999999999993,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 177,
+      "time": 0.8850000000000007,
+      "position": 1.0620000000000007,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.7079999999999992,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 178,
+      "time": 0.8900000000000007,
+      "position": 1.0680000000000007,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.7019999999999993,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 179,
+      "time": 0.8950000000000007,
+      "position": 1.0740000000000007,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.6959999999999992,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 180,
+      "time": 0.9000000000000007,
+      "position": 1.0800000000000007,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.6899999999999992,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 181,
+      "time": 0.9050000000000007,
+      "position": 1.0860000000000007,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.6839999999999992,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 182,
+      "time": 0.9100000000000007,
+      "position": 1.0920000000000007,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.6779999999999992,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 183,
+      "time": 0.9150000000000007,
+      "position": 1.0980000000000008,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.6719999999999992,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 184,
+      "time": 0.9200000000000007,
+      "position": 1.1040000000000008,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.6659999999999991,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 185,
+      "time": 0.9250000000000007,
+      "position": 1.1100000000000008,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.6599999999999993,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 186,
+      "time": 0.9300000000000007,
+      "position": 1.1160000000000008,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.6539999999999991,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 187,
+      "time": 0.9350000000000007,
+      "position": 1.1220000000000008,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.6479999999999992,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 188,
+      "time": 0.9400000000000007,
+      "position": 1.1280000000000008,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.6419999999999991,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 189,
+      "time": 0.9450000000000007,
+      "position": 1.1340000000000008,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.6359999999999991,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 190,
+      "time": 0.9500000000000007,
+      "position": 1.1400000000000008,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.6299999999999991,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 191,
+      "time": 0.9550000000000007,
+      "position": 1.1460000000000008,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.6239999999999991,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 192,
+      "time": 0.9600000000000007,
+      "position": 1.1520000000000008,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.6179999999999992,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 193,
+      "time": 0.9650000000000007,
+      "position": 1.1580000000000008,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.6119999999999992,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 194,
+      "time": 0.9700000000000008,
+      "position": 1.1640000000000008,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.6059999999999991,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 195,
+      "time": 0.9750000000000008,
+      "position": 1.1700000000000008,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.5999999999999992,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 196,
+      "time": 0.9800000000000008,
+      "position": 1.1760000000000008,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.5939999999999992,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 197,
+      "time": 0.9850000000000008,
+      "position": 1.1820000000000008,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.5879999999999991,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 198,
+      "time": 0.9900000000000008,
+      "position": 1.1880000000000008,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.5819999999999991,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 199,
+      "time": 0.9950000000000008,
+      "position": 1.1940000000000008,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.5759999999999991,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 200,
+      "time": 1.0000000000000007,
+      "position": 1.2000000000000008,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.5699999999999992,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 201,
+      "time": 1.0050000000000006,
+      "position": 1.2060000000000008,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.5639999999999991,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 202,
+      "time": 1.0100000000000005,
+      "position": 1.2120000000000009,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.557999999999999,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 203,
+      "time": 1.0150000000000003,
+      "position": 1.2180000000000009,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.551999999999999,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 204,
+      "time": 1.0200000000000002,
+      "position": 1.2240000000000009,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.5459999999999992,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 205,
+      "time": 1.0250000000000001,
+      "position": 1.2300000000000009,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.539999999999999,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 206,
+      "time": 1.03,
+      "position": 1.2360000000000009,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.533999999999999,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 207,
+      "time": 1.035,
+      "position": 1.2420000000000009,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.527999999999999,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 208,
+      "time": 1.0399999999999998,
+      "position": 1.2480000000000009,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.521999999999999,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 209,
+      "time": 1.0449999999999997,
+      "position": 1.254000000000001,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.5159999999999991,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 210,
+      "time": 1.0499999999999996,
+      "position": 1.260000000000001,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.5099999999999991,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 211,
+      "time": 1.0549999999999995,
+      "position": 1.266000000000001,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.5039999999999991,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 212,
+      "time": 1.0599999999999994,
+      "position": 1.272000000000001,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.49799999999999905,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 213,
+      "time": 1.0649999999999993,
+      "position": 1.278000000000001,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.49199999999999905,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 214,
+      "time": 1.0699999999999992,
+      "position": 1.284000000000001,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.48599999999999904,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 215,
+      "time": 1.074999999999999,
+      "position": 1.290000000000001,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.47999999999999904,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 216,
+      "time": 1.079999999999999,
+      "position": 1.296000000000001,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.47399999999999903,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 217,
+      "time": 1.0849999999999989,
+      "position": 1.302000000000001,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.46799999999999903,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 218,
+      "time": 1.0899999999999987,
+      "position": 1.308000000000001,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.461999999999999,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 219,
+      "time": 1.0949999999999986,
+      "position": 1.314000000000001,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.4559999999999991,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 220,
+      "time": 1.0999999999999985,
+      "position": 1.320000000000001,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.449999999999999,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 221,
+      "time": 1.1049999999999984,
+      "position": 1.326000000000001,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.443999999999999,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 222,
+      "time": 1.1099999999999983,
+      "position": 1.332000000000001,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.437999999999999,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 223,
+      "time": 1.1149999999999982,
+      "position": 1.338000000000001,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.431999999999999,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 224,
+      "time": 1.119999999999998,
+      "position": 1.344000000000001,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.425999999999999,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 225,
+      "time": 1.124999999999998,
+      "position": 1.350000000000001,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.419999999999999,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 226,
+      "time": 1.129999999999998,
+      "position": 1.356000000000001,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.413999999999999,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 227,
+      "time": 1.1349999999999978,
+      "position": 1.362000000000001,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.407999999999999,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 228,
+      "time": 1.1399999999999977,
+      "position": 1.368000000000001,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.401999999999999,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 229,
+      "time": 1.1449999999999976,
+      "position": 1.374000000000001,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.39599999999999896,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 230,
+      "time": 1.1499999999999975,
+      "position": 1.380000000000001,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.38999999999999896,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 231,
+      "time": 1.1549999999999974,
+      "position": 1.386000000000001,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.38399999999999895,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 232,
+      "time": 1.1599999999999973,
+      "position": 1.392000000000001,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.37799999999999895,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 233,
+      "time": 1.1649999999999971,
+      "position": 1.398000000000001,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.371999999999999,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 234,
+      "time": 1.169999999999997,
+      "position": 1.404000000000001,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.36599999999999894,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 235,
+      "time": 1.174999999999997,
+      "position": 1.410000000000001,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.35999999999999893,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 236,
+      "time": 1.1799999999999968,
+      "position": 1.416000000000001,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.3539999999999989,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 237,
+      "time": 1.1849999999999967,
+      "position": 1.422000000000001,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.3479999999999989,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 238,
+      "time": 1.1899999999999966,
+      "position": 1.428000000000001,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.3419999999999989,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 239,
+      "time": 1.1949999999999965,
+      "position": 1.434000000000001,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.3359999999999989,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 240,
+      "time": 1.1999999999999964,
+      "position": 1.440000000000001,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.32999999999999896,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 241,
+      "time": 1.2049999999999963,
+      "position": 1.446000000000001,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.32399999999999896,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 242,
+      "time": 1.2099999999999962,
+      "position": 1.452000000000001,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.3179999999999989,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 243,
+      "time": 1.214999999999996,
+      "position": 1.458000000000001,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.3119999999999989,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 244,
+      "time": 1.219999999999996,
+      "position": 1.464000000000001,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.3059999999999989,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 245,
+      "time": 1.2249999999999959,
+      "position": 1.470000000000001,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.2999999999999989,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 246,
+      "time": 1.2299999999999958,
+      "position": 1.476000000000001,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.29399999999999893,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 247,
+      "time": 1.2349999999999957,
+      "position": 1.482000000000001,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.28799999999999887,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 248,
+      "time": 1.2399999999999956,
+      "position": 1.488000000000001,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.2819999999999989,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 249,
+      "time": 1.2449999999999954,
+      "position": 1.494000000000001,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.2759999999999989,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 250,
+      "time": 1.2499999999999953,
+      "position": 1.500000000000001,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.2699999999999989,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 251,
+      "time": 1.2549999999999952,
+      "position": 1.5060000000000011,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.26399999999999885,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 252,
+      "time": 1.2599999999999951,
+      "position": 1.5120000000000011,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.2579999999999989,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 253,
+      "time": 1.264999999999995,
+      "position": 1.5180000000000011,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.25199999999999884,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 254,
+      "time": 1.269999999999995,
+      "position": 1.5240000000000011,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.24599999999999883,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 255,
+      "time": 1.2749999999999948,
+      "position": 1.5300000000000011,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.23999999999999885,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 256,
+      "time": 1.2799999999999947,
+      "position": 1.5360000000000011,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.23399999999999885,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 257,
+      "time": 1.2849999999999946,
+      "position": 1.5420000000000011,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.22799999999999884,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 258,
+      "time": 1.2899999999999945,
+      "position": 1.5480000000000012,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.22199999999999886,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 259,
+      "time": 1.2949999999999944,
+      "position": 1.5540000000000012,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.21599999999999883,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 260,
+      "time": 1.2999999999999943,
+      "position": 1.5600000000000012,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.20999999999999883,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 261,
+      "time": 1.3049999999999942,
+      "position": 1.5660000000000012,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.20399999999999882,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 262,
+      "time": 1.309999999999994,
+      "position": 1.5720000000000012,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.19799999999999884,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 263,
+      "time": 1.314999999999994,
+      "position": 1.5780000000000012,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.1919999999999988,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 264,
+      "time": 1.3199999999999938,
+      "position": 1.5840000000000012,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.18599999999999883,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 265,
+      "time": 1.3249999999999937,
+      "position": 1.5900000000000012,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.1799999999999988,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 266,
+      "time": 1.3299999999999936,
+      "position": 1.5960000000000012,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.1739999999999988,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 267,
+      "time": 1.3349999999999935,
+      "position": 1.6020000000000012,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.1679999999999988,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 268,
+      "time": 1.3399999999999934,
+      "position": 1.6080000000000012,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.1619999999999988,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 269,
+      "time": 1.3449999999999933,
+      "position": 1.6140000000000012,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.1559999999999988,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 270,
+      "time": 1.3499999999999932,
+      "position": 1.6200000000000012,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.1499999999999988,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 271,
+      "time": 1.354999999999993,
+      "position": 1.6260000000000012,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.1439999999999988,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 272,
+      "time": 1.359999999999993,
+      "position": 1.6320000000000012,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.13799999999999876,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 273,
+      "time": 1.3649999999999929,
+      "position": 1.6380000000000012,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.13199999999999878,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 274,
+      "time": 1.3699999999999928,
+      "position": 1.6440000000000012,
+      "velocity": 1.2,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.12599999999999875,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 275,
+      "time": 1.3749999999999927,
+      "position": 1.6500000000000012,
+      "velocity": 1.2,
+      "control": -4.0,
+      "generalized_actuator_force": -4.0,
+      "wall_clearance": 0.11999999999999876,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 276,
+      "time": 1.3799999999999926,
+      "position": 1.655966666666668,
+      "velocity": 1.1933333333333334,
+      "control": -4.0,
+      "generalized_actuator_force": -4.0,
+      "wall_clearance": 0.11403333333333208,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 277,
+      "time": 1.3849999999999925,
+      "position": 1.6619000000000013,
+      "velocity": 1.1866666666666668,
+      "control": -4.0,
+      "generalized_actuator_force": -4.0,
+      "wall_clearance": 0.10809999999999872,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 278,
+      "time": 1.3899999999999924,
+      "position": 1.6678000000000013,
+      "velocity": 1.1800000000000002,
+      "control": -4.0,
+      "generalized_actuator_force": -4.0,
+      "wall_clearance": 0.10219999999999874,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 279,
+      "time": 1.3949999999999922,
+      "position": 1.673666666666668,
+      "velocity": 1.1733333333333336,
+      "control": -4.0,
+      "generalized_actuator_force": -4.0,
+      "wall_clearance": 0.09633333333333204,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 280,
+      "time": 1.3999999999999921,
+      "position": 1.6795000000000013,
+      "velocity": 1.166666666666667,
+      "control": -4.0,
+      "generalized_actuator_force": -4.0,
+      "wall_clearance": 0.09049999999999868,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 281,
+      "time": 1.404999999999992,
+      "position": 1.6853000000000014,
+      "velocity": 1.1600000000000004,
+      "control": -4.0,
+      "generalized_actuator_force": -4.0,
+      "wall_clearance": 0.08469999999999867,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 282,
+      "time": 1.409999999999992,
+      "position": 1.691066666666668,
+      "velocity": 1.1533333333333338,
+      "control": -4.0,
+      "generalized_actuator_force": -4.0,
+      "wall_clearance": 0.07893333333333197,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 283,
+      "time": 1.4149999999999918,
+      "position": 1.6968000000000014,
+      "velocity": 1.1466666666666672,
+      "control": -4.0,
+      "generalized_actuator_force": -4.0,
+      "wall_clearance": 0.07319999999999859,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 284,
+      "time": 1.4199999999999917,
+      "position": 1.7025000000000015,
+      "velocity": 1.1400000000000006,
+      "control": -4.0,
+      "generalized_actuator_force": -4.0,
+      "wall_clearance": 0.06749999999999855,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 285,
+      "time": 1.4249999999999916,
+      "position": 1.7081666666666682,
+      "velocity": 1.133333333333334,
+      "control": -4.0,
+      "generalized_actuator_force": -4.0,
+      "wall_clearance": 0.061833333333331846,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 286,
+      "time": 1.4299999999999915,
+      "position": 1.7138000000000015,
+      "velocity": 1.1266666666666674,
+      "control": -4.0,
+      "generalized_actuator_force": -4.0,
+      "wall_clearance": 0.056199999999998466,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 287,
+      "time": 1.4349999999999914,
+      "position": 1.7194000000000016,
+      "velocity": 1.1200000000000008,
+      "control": -4.0,
+      "generalized_actuator_force": -4.0,
+      "wall_clearance": 0.05059999999999842,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 288,
+      "time": 1.4399999999999913,
+      "position": 1.7249666666666683,
+      "velocity": 1.1133333333333342,
+      "control": -4.0,
+      "generalized_actuator_force": -4.0,
+      "wall_clearance": 0.0450333333333317,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 289,
+      "time": 1.4449999999999912,
+      "position": 1.7305000000000017,
+      "velocity": 1.1066666666666676,
+      "control": -4.0,
+      "generalized_actuator_force": -4.0,
+      "wall_clearance": 0.03949999999999831,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 290,
+      "time": 1.449999999999991,
+      "position": 1.7360000000000018,
+      "velocity": 1.100000000000001,
+      "control": -4.0,
+      "generalized_actuator_force": -4.0,
+      "wall_clearance": 0.03399999999999825,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 291,
+      "time": 1.454999999999991,
+      "position": 1.7414666666666685,
+      "velocity": 1.0933333333333344,
+      "control": -4.0,
+      "generalized_actuator_force": -4.0,
+      "wall_clearance": 0.02853333333333152,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 292,
+      "time": 1.4599999999999909,
+      "position": 1.746900000000002,
+      "velocity": 1.0866666666666678,
+      "control": -4.0,
+      "generalized_actuator_force": -4.0,
+      "wall_clearance": 0.02309999999999812,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 293,
+      "time": 1.4649999999999908,
+      "position": 1.752300000000002,
+      "velocity": 1.0800000000000012,
+      "control": -4.0,
+      "generalized_actuator_force": -4.0,
+      "wall_clearance": 0.017699999999998047,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 294,
+      "time": 1.4699999999999906,
+      "position": 1.7576666666666687,
+      "velocity": 1.0733333333333346,
+      "control": -4.0,
+      "generalized_actuator_force": -4.0,
+      "wall_clearance": 0.012333333333331307,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 295,
+      "time": 1.4749999999999905,
+      "position": 1.7630000000000021,
+      "velocity": 1.066666666666668,
+      "control": -4.0,
+      "generalized_actuator_force": -4.0,
+      "wall_clearance": 0.006999999999997896,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 296,
+      "time": 1.4799999999999904,
+      "position": 1.7683000000000022,
+      "velocity": 1.0600000000000014,
+      "control": -4.0,
+      "generalized_actuator_force": -4.0,
+      "wall_clearance": 0.0016999999999978142,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 297,
+      "time": 1.4849999999999903,
+      "position": 1.773566666666669,
+      "velocity": 1.0533333333333348,
+      "control": -4.0,
+      "generalized_actuator_force": -4.0,
+      "wall_clearance": -0.0035666666666689384,
+      "wall_contacts": [
+        {
+          "geom_ids": [
+            4,
+            5
+          ],
+          "geom_names": [
+            "front_bumper",
+            "wall"
+          ],
+          "distance_m": -0.003566666666668987
+        },
+        {
+          "geom_ids": [
+            4,
+            5
+          ],
+          "geom_names": [
+            "front_bumper",
+            "wall"
+          ],
+          "distance_m": -0.003566666666668987
+        },
+        {
+          "geom_ids": [
+            4,
+            5
+          ],
+          "geom_names": [
+            "front_bumper",
+            "wall"
+          ],
+          "distance_m": -0.003566666666668987
+        },
+        {
+          "geom_ids": [
+            4,
+            5
+          ],
+          "geom_names": [
+            "front_bumper",
+            "wall"
+          ],
+          "distance_m": -0.003566666666668987
+        }
+      ],
+      "contacts": [
+        {
+          "geom_ids": [
+            4,
+            5
+          ],
+          "geom_names": [
+            "front_bumper",
+            "wall"
+          ],
+          "distance_m": -0.003566666666668987
+        },
+        {
+          "geom_ids": [
+            4,
+            5
+          ],
+          "geom_names": [
+            "front_bumper",
+            "wall"
+          ],
+          "distance_m": -0.003566666666668987
+        },
+        {
+          "geom_ids": [
+            4,
+            5
+          ],
+          "geom_names": [
+            "front_bumper",
+            "wall"
+          ],
+          "distance_m": -0.003566666666668987
+        },
+        {
+          "geom_ids": [
+            4,
+            5
+          ],
+          "geom_names": [
+            "front_bumper",
+            "wall"
+          ],
+          "distance_m": -0.003566666666668987
+        }
+      ]
+    },
+    {
+      "step": 298,
+      "time": 1.4899999999999902,
+      "position": 1.7723508771929883,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": -0.002350877192988321,
+      "wall_contacts": [
+        {
+          "geom_ids": [
+            4,
+            5
+          ],
+          "geom_names": [
+            "front_bumper",
+            "wall"
+          ],
+          "distance_m": -0.0023508771929883696
+        },
+        {
+          "geom_ids": [
+            4,
+            5
+          ],
+          "geom_names": [
+            "front_bumper",
+            "wall"
+          ],
+          "distance_m": -0.0023508771929883696
+        },
+        {
+          "geom_ids": [
+            4,
+            5
+          ],
+          "geom_names": [
+            "front_bumper",
+            "wall"
+          ],
+          "distance_m": -0.0023508771929883696
+        },
+        {
+          "geom_ids": [
+            4,
+            5
+          ],
+          "geom_names": [
+            "front_bumper",
+            "wall"
+          ],
+          "distance_m": -0.0023508771929883696
+        }
+      ],
+      "contacts": [
+        {
+          "geom_ids": [
+            4,
+            5
+          ],
+          "geom_names": [
+            "front_bumper",
+            "wall"
+          ],
+          "distance_m": -0.0023508771929883696
+        },
+        {
+          "geom_ids": [
+            4,
+            5
+          ],
+          "geom_names": [
+            "front_bumper",
+            "wall"
+          ],
+          "distance_m": -0.0023508771929883696
+        },
+        {
+          "geom_ids": [
+            4,
+            5
+          ],
+          "geom_names": [
+            "front_bumper",
+            "wall"
+          ],
+          "distance_m": -0.0023508771929883696
+        },
+        {
+          "geom_ids": [
+            4,
+            5
+          ],
+          "geom_names": [
+            "front_bumper",
+            "wall"
+          ],
+          "distance_m": -0.0023508771929883696
+        }
+      ]
+    },
+    {
+      "step": 299,
+      "time": 1.4949999999999901,
+      "position": 1.7711350877193077,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": -0.0011350877193077036,
+      "wall_contacts": [
+        {
+          "geom_ids": [
+            4,
+            5
+          ],
+          "geom_names": [
+            "front_bumper",
+            "wall"
+          ],
+          "distance_m": -0.0011350877193077522
+        },
+        {
+          "geom_ids": [
+            4,
+            5
+          ],
+          "geom_names": [
+            "front_bumper",
+            "wall"
+          ],
+          "distance_m": -0.0011350877193077522
+        },
+        {
+          "geom_ids": [
+            4,
+            5
+          ],
+          "geom_names": [
+            "front_bumper",
+            "wall"
+          ],
+          "distance_m": -0.0011350877193077522
+        },
+        {
+          "geom_ids": [
+            4,
+            5
+          ],
+          "geom_names": [
+            "front_bumper",
+            "wall"
+          ],
+          "distance_m": -0.0011350877193077522
+        }
+      ],
+      "contacts": [
+        {
+          "geom_ids": [
+            4,
+            5
+          ],
+          "geom_names": [
+            "front_bumper",
+            "wall"
+          ],
+          "distance_m": -0.0011350877193077522
+        },
+        {
+          "geom_ids": [
+            4,
+            5
+          ],
+          "geom_names": [
+            "front_bumper",
+            "wall"
+          ],
+          "distance_m": -0.0011350877193077522
+        },
+        {
+          "geom_ids": [
+            4,
+            5
+          ],
+          "geom_names": [
+            "front_bumper",
+            "wall"
+          ],
+          "distance_m": -0.0011350877193077522
+        },
+        {
+          "geom_ids": [
+            4,
+            5
+          ],
+          "geom_names": [
+            "front_bumper",
+            "wall"
+          ],
+          "distance_m": -0.0011350877193077522
+        }
+      ]
+    },
+    {
+      "step": 300,
+      "time": 1.49999999999999,
+      "position": 1.769919298245627,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 8.070175437291381e-05,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 301,
+      "time": 1.50499999999999,
+      "position": 1.7687035087719465,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.001296491228053531,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 302,
+      "time": 1.5099999999999898,
+      "position": 1.7674877192982659,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.002512280701734148,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 303,
+      "time": 1.5149999999999897,
+      "position": 1.7662719298245853,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.003728070175414765,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 304,
+      "time": 1.5199999999999896,
+      "position": 1.7650561403509046,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.004943859649095383,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 305,
+      "time": 1.5249999999999895,
+      "position": 1.763840350877224,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.006159649122775999,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 306,
+      "time": 1.5299999999999894,
+      "position": 1.7626245614035434,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.007375438596456617,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 307,
+      "time": 1.5349999999999893,
+      "position": 1.7614087719298628,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.008591228070137236,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 308,
+      "time": 1.5399999999999892,
+      "position": 1.7601929824561822,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.009807017543817851,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 309,
+      "time": 1.544999999999989,
+      "position": 1.7589771929825015,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.01102280701749847,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 310,
+      "time": 1.549999999999989,
+      "position": 1.757761403508821,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.012238596491179086,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 311,
+      "time": 1.5549999999999888,
+      "position": 1.7565456140351403,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.013454385964859702,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 312,
+      "time": 1.5599999999999887,
+      "position": 1.7553298245614597,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.014670175438540321,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 313,
+      "time": 1.5649999999999886,
+      "position": 1.754114035087779,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.015885964912220937,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 314,
+      "time": 1.5699999999999885,
+      "position": 1.7528982456140985,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.017101754385901554,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 315,
+      "time": 1.5749999999999884,
+      "position": 1.7516824561404178,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.01831754385958217,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 316,
+      "time": 1.5799999999999883,
+      "position": 1.7504666666667372,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.019533333333262792,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 317,
+      "time": 1.5849999999999882,
+      "position": 1.7492508771930566,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.020749122806943406,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 318,
+      "time": 1.589999999999988,
+      "position": 1.748035087719376,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.021964912280624024,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 319,
+      "time": 1.594999999999988,
+      "position": 1.7468192982456954,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.02318070175430464,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 320,
+      "time": 1.5999999999999879,
+      "position": 1.7456035087720148,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.02439649122798526,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 321,
+      "time": 1.6049999999999878,
+      "position": 1.7443877192983341,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.025612280701665876,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 322,
+      "time": 1.6099999999999877,
+      "position": 1.7431719298246535,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.026828070175346493,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 323,
+      "time": 1.6149999999999876,
+      "position": 1.741956140350973,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.02804385964902711,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 324,
+      "time": 1.6199999999999875,
+      "position": 1.7407403508772923,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.029259649122707728,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 325,
+      "time": 1.6249999999999873,
+      "position": 1.7395245614036117,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.030475438596388345,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 326,
+      "time": 1.6299999999999872,
+      "position": 1.738308771929931,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.03169122807006896,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 327,
+      "time": 1.6349999999999871,
+      "position": 1.7370929824562504,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.03290701754374958,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 328,
+      "time": 1.639999999999987,
+      "position": 1.7358771929825698,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.034122807017430194,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 329,
+      "time": 1.644999999999987,
+      "position": 1.7346614035088892,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.03533859649111081,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 330,
+      "time": 1.6499999999999868,
+      "position": 1.7334456140352086,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.03655438596479143,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 331,
+      "time": 1.6549999999999867,
+      "position": 1.732229824561528,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.03777017543847205,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 332,
+      "time": 1.6599999999999866,
+      "position": 1.7310140350878473,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.038985964912152664,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 333,
+      "time": 1.6649999999999865,
+      "position": 1.7297982456141667,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.04020175438583328,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 334,
+      "time": 1.6699999999999864,
+      "position": 1.7285824561404861,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.041417543859513906,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 335,
+      "time": 1.6749999999999863,
+      "position": 1.7273666666668055,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.04263333333319452,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 336,
+      "time": 1.6799999999999862,
+      "position": 1.7261508771931249,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.043849122806875133,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 337,
+      "time": 1.684999999999986,
+      "position": 1.7249350877194443,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.04506491228055575,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 338,
+      "time": 1.689999999999986,
+      "position": 1.7237192982457636,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.04628070175423637,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 339,
+      "time": 1.6949999999999859,
+      "position": 1.722503508772083,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.047496491227916986,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 340,
+      "time": 1.6999999999999857,
+      "position": 1.7212877192984024,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.04871228070159761,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 341,
+      "time": 1.7049999999999856,
+      "position": 1.7200719298247218,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.04992807017527822,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 342,
+      "time": 1.7099999999999855,
+      "position": 1.7188561403510412,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.051143859648958845,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 343,
+      "time": 1.7149999999999854,
+      "position": 1.7176403508773606,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.052359649122639455,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 344,
+      "time": 1.7199999999999853,
+      "position": 1.71642456140368,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.05357543859632007,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 345,
+      "time": 1.7249999999999852,
+      "position": 1.7152087719299993,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.05479122807000069,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 346,
+      "time": 1.729999999999985,
+      "position": 1.7139929824563187,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.05600701754368131,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 347,
+      "time": 1.734999999999985,
+      "position": 1.712777192982638,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.05722280701736192,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 348,
+      "time": 1.739999999999985,
+      "position": 1.7115614035089575,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.05843859649104254,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 349,
+      "time": 1.7449999999999848,
+      "position": 1.7103456140352769,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.05965438596472316,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 350,
+      "time": 1.7499999999999847,
+      "position": 1.7091298245615962,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.060870175438403784,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 351,
+      "time": 1.7549999999999846,
+      "position": 1.7079140350879156,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.062085964912084395,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 352,
+      "time": 1.7599999999999845,
+      "position": 1.706698245614235,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.06330175438576502,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 353,
+      "time": 1.7649999999999844,
+      "position": 1.7054824561405544,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.06451754385944564,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 354,
+      "time": 1.7699999999999843,
+      "position": 1.7042666666668738,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.06573333333312625,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 355,
+      "time": 1.7749999999999841,
+      "position": 1.7030508771931931,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.06694912280680686,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 356,
+      "time": 1.779999999999984,
+      "position": 1.7018350877195125,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.06816491228048749,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 357,
+      "time": 1.784999999999984,
+      "position": 1.700619298245832,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.06938070175416809,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 358,
+      "time": 1.7899999999999838,
+      "position": 1.6994035087721513,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.07059649122784872,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 359,
+      "time": 1.7949999999999837,
+      "position": 1.6981877192984707,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.07181228070152933,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 360,
+      "time": 1.7999999999999836,
+      "position": 1.69697192982479,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.07302807017520994,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 361,
+      "time": 1.8049999999999835,
+      "position": 1.6957561403511094,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.07424385964889056,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 362,
+      "time": 1.8099999999999834,
+      "position": 1.6945403508774288,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.07545964912257118,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 363,
+      "time": 1.8149999999999833,
+      "position": 1.6933245614037482,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.07667543859625181,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 364,
+      "time": 1.8199999999999832,
+      "position": 1.6921087719300676,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.07789122806993241,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 365,
+      "time": 1.824999999999983,
+      "position": 1.690892982456387,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.07910701754361303,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 366,
+      "time": 1.829999999999983,
+      "position": 1.6896771929827064,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.08032280701729365,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 367,
+      "time": 1.8349999999999829,
+      "position": 1.6884614035090257,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.08153859649097427,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 368,
+      "time": 1.8399999999999828,
+      "position": 1.6872456140353451,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.0827543859646549,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 369,
+      "time": 1.8449999999999827,
+      "position": 1.6860298245616645,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.0839701754383355,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 370,
+      "time": 1.8499999999999825,
+      "position": 1.6848140350879839,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.08518596491201613,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 371,
+      "time": 1.8549999999999824,
+      "position": 1.6835982456143033,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.08640175438569674,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 372,
+      "time": 1.8599999999999823,
+      "position": 1.6823824561406227,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.08761754385937735,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 373,
+      "time": 1.8649999999999822,
+      "position": 1.681166666666942,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.08883333333305798,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 374,
+      "time": 1.8699999999999821,
+      "position": 1.6799508771932614,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.09004912280673859,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 375,
+      "time": 1.874999999999982,
+      "position": 1.6787350877195808,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.0912649122804192,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 376,
+      "time": 1.879999999999982,
+      "position": 1.6775192982459002,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.09248070175409982,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 377,
+      "time": 1.8849999999999818,
+      "position": 1.6763035087722196,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.09369649122778044,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 378,
+      "time": 1.8899999999999817,
+      "position": 1.675087719298539,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.09491228070146106,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 379,
+      "time": 1.8949999999999816,
+      "position": 1.6738719298248583,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.09612807017514167,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 380,
+      "time": 1.8999999999999815,
+      "position": 1.6726561403511777,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.09734385964882229,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 381,
+      "time": 1.9049999999999814,
+      "position": 1.671440350877497,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.09855964912250291,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 382,
+      "time": 1.9099999999999813,
+      "position": 1.6702245614038165,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.09977543859618353,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 383,
+      "time": 1.9149999999999812,
+      "position": 1.6690087719301359,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.10099122806986414,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 384,
+      "time": 1.919999999999981,
+      "position": 1.6677929824564552,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.10220701754354476,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 385,
+      "time": 1.924999999999981,
+      "position": 1.6665771929827746,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.10342280701722538,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 386,
+      "time": 1.9299999999999808,
+      "position": 1.665361403509094,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.104638596490906,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 387,
+      "time": 1.9349999999999807,
+      "position": 1.6641456140354134,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.10585438596458661,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 388,
+      "time": 1.9399999999999806,
+      "position": 1.6629298245617328,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.10707017543826723,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 389,
+      "time": 1.9449999999999805,
+      "position": 1.6617140350880522,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.10828596491194785,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 390,
+      "time": 1.9499999999999804,
+      "position": 1.6604982456143715,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.10950175438562848,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 391,
+      "time": 1.9549999999999803,
+      "position": 1.659282456140691,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.11071754385930908,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 392,
+      "time": 1.9599999999999802,
+      "position": 1.6580666666670103,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.1119333333329897,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 393,
+      "time": 1.96499999999998,
+      "position": 1.6568508771933297,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.11314912280667032,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 394,
+      "time": 1.96999999999998,
+      "position": 1.655635087719649,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.11436491228035094,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 395,
+      "time": 1.9749999999999799,
+      "position": 1.6544192982459685,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.11558070175403157,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 396,
+      "time": 1.9799999999999798,
+      "position": 1.6532035087722878,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.11679649122771217,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 397,
+      "time": 1.9849999999999797,
+      "position": 1.6519877192986072,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.1180122807013928,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 398,
+      "time": 1.9899999999999796,
+      "position": 1.6507719298249266,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.1192280701750734,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 399,
+      "time": 1.9949999999999795,
+      "position": 1.649556140351246,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.12044385964875402,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 400,
+      "time": 1.9999999999999793,
+      "position": 1.6483403508775654,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.12165964912243464,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 401,
+      "time": 2.0049999999999795,
+      "position": 1.6471245614038847,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.12287543859611526,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 402,
+      "time": 2.0099999999999794,
+      "position": 1.6459087719302041,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.12409122806979588,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 403,
+      "time": 2.0149999999999793,
+      "position": 1.6446929824565235,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.1253070175434765,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 404,
+      "time": 2.019999999999979,
+      "position": 1.643477192982843,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.1265228070171571,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 405,
+      "time": 2.024999999999979,
+      "position": 1.6422614035091623,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.12773859649083774,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 406,
+      "time": 2.029999999999979,
+      "position": 1.6410456140354817,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.12895438596451836,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 407,
+      "time": 2.034999999999979,
+      "position": 1.639829824561801,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.13017017543819895,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 408,
+      "time": 2.0399999999999787,
+      "position": 1.6386140350881204,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.1313859649118796,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 409,
+      "time": 2.0449999999999786,
+      "position": 1.6373982456144398,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.1326017543855602,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 410,
+      "time": 2.0499999999999785,
+      "position": 1.6361824561407592,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.13381754385924083,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 411,
+      "time": 2.0549999999999784,
+      "position": 1.6349666666670786,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.13503333333292142,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 412,
+      "time": 2.0599999999999783,
+      "position": 1.633750877193398,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.13624912280660204,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 413,
+      "time": 2.064999999999978,
+      "position": 1.6325350877197173,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.13746491228028265,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 414,
+      "time": 2.069999999999978,
+      "position": 1.6313192982460367,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.13868070175396327,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 415,
+      "time": 2.074999999999978,
+      "position": 1.630103508772356,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.13989649122764392,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 416,
+      "time": 2.079999999999978,
+      "position": 1.6288877192986755,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.14111228070132453,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 417,
+      "time": 2.0849999999999778,
+      "position": 1.6276719298249949,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.14232807017500512,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 418,
+      "time": 2.0899999999999777,
+      "position": 1.6264561403513143,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.14354385964868577,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 419,
+      "time": 2.0949999999999775,
+      "position": 1.6252403508776336,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.14475964912236639,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 420,
+      "time": 2.0999999999999774,
+      "position": 1.624024561403953,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.145975438596047,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 421,
+      "time": 2.1049999999999773,
+      "position": 1.6228087719302724,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.1471912280697276,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 422,
+      "time": 2.1099999999999772,
+      "position": 1.6215929824565918,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.1484070175434082,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 423,
+      "time": 2.114999999999977,
+      "position": 1.6203771929829112,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.14962280701708883,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 424,
+      "time": 2.119999999999977,
+      "position": 1.6191614035092305,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.15083859649076947,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 425,
+      "time": 2.124999999999977,
+      "position": 1.61794561403555,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.1520543859644501,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 426,
+      "time": 2.129999999999977,
+      "position": 1.6167298245618693,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.15327017543813068,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 427,
+      "time": 2.1349999999999767,
+      "position": 1.6155140350881887,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.1544859649118113,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 428,
+      "time": 2.1399999999999766,
+      "position": 1.614298245614508,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.15570175438549191,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 429,
+      "time": 2.1449999999999765,
+      "position": 1.6130824561408275,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.15691754385917256,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 430,
+      "time": 2.1499999999999764,
+      "position": 1.6118666666671468,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.15813333333285318,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 431,
+      "time": 2.1549999999999763,
+      "position": 1.6106508771934662,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.15934912280653377,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 432,
+      "time": 2.159999999999976,
+      "position": 1.6094350877197856,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.16056491228021438,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 433,
+      "time": 2.164999999999976,
+      "position": 1.608219298246105,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.161780701753895,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 434,
+      "time": 2.169999999999976,
+      "position": 1.6070035087724244,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.16299649122757562,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 435,
+      "time": 2.174999999999976,
+      "position": 1.6057877192987438,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.16421228070125626,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 436,
+      "time": 2.1799999999999757,
+      "position": 1.6045719298250631,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.16542807017493685,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 437,
+      "time": 2.1849999999999756,
+      "position": 1.6033561403513825,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.16664385964861747,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 438,
+      "time": 2.1899999999999755,
+      "position": 1.602140350877702,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.16785964912229812,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 439,
+      "time": 2.1949999999999754,
+      "position": 1.6009245614040213,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.16907543859597873,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 440,
+      "time": 2.1999999999999753,
+      "position": 1.5997087719303407,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.17029122806965932,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 441,
+      "time": 2.204999999999975,
+      "position": 1.59849298245666,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.17150701754333994,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 442,
+      "time": 2.209999999999975,
+      "position": 1.5972771929829794,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.17272280701702056,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 443,
+      "time": 2.214999999999975,
+      "position": 1.5960614035092988,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.17393859649070118,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 444,
+      "time": 2.219999999999975,
+      "position": 1.5948456140356182,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.1751543859643818,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 445,
+      "time": 2.2249999999999748,
+      "position": 1.5936298245619376,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.1763701754380624,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 446,
+      "time": 2.2299999999999747,
+      "position": 1.592414035088257,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.17758596491174303,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 447,
+      "time": 2.2349999999999746,
+      "position": 1.5911982456145763,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.17880175438542367,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 448,
+      "time": 2.2399999999999745,
+      "position": 1.5899824561408957,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.18001754385910426,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 449,
+      "time": 2.2449999999999743,
+      "position": 1.588766666667215,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.1812333333327849,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 450,
+      "time": 2.2499999999999742,
+      "position": 1.5875508771935345,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.1824491228064655,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 451,
+      "time": 2.254999999999974,
+      "position": 1.5863350877198539,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.18366491228014611,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 452,
+      "time": 2.259999999999974,
+      "position": 1.5851192982461733,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.18488070175382673,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 453,
+      "time": 2.264999999999974,
+      "position": 1.5839035087724926,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.18609649122750735,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 454,
+      "time": 2.269999999999974,
+      "position": 1.582687719298812,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.18731228070118797,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 455,
+      "time": 2.2749999999999737,
+      "position": 1.5814719298251314,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.18852807017486858,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 456,
+      "time": 2.2799999999999736,
+      "position": 1.5802561403514508,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.1897438596485492,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 457,
+      "time": 2.2849999999999735,
+      "position": 1.5790403508777702,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.19095964912222982,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 458,
+      "time": 2.2899999999999734,
+      "position": 1.5778245614040896,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.19217543859591044,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 459,
+      "time": 2.2949999999999733,
+      "position": 1.576608771930409,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.19339122806959108,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 460,
+      "time": 2.299999999999973,
+      "position": 1.5753929824567283,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.1946070175432717,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 461,
+      "time": 2.304999999999973,
+      "position": 1.5741771929830477,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.1958228070169523,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 462,
+      "time": 2.309999999999973,
+      "position": 1.572961403509367,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.1970385964906329,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 463,
+      "time": 2.314999999999973,
+      "position": 1.5717456140356865,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.19825438596431352,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 464,
+      "time": 2.3199999999999728,
+      "position": 1.5705298245620058,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.19947017543799417,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 465,
+      "time": 2.3249999999999726,
+      "position": 1.5693140350883252,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.20068596491167476,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 466,
+      "time": 2.3299999999999725,
+      "position": 1.5680982456146446,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.20190175438535538,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 467,
+      "time": 2.3349999999999724,
+      "position": 1.566882456140964,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.203117543859036,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 468,
+      "time": 2.3399999999999723,
+      "position": 1.5656666666672834,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.2043333333327166,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 469,
+      "time": 2.344999999999972,
+      "position": 1.5644508771936028,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.20554912280639726,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 470,
+      "time": 2.349999999999972,
+      "position": 1.5632350877199221,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.20676491228007784,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 471,
+      "time": 2.354999999999972,
+      "position": 1.5620192982462415,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.20798070175375846,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 472,
+      "time": 2.359999999999972,
+      "position": 1.560803508772561,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.20919649122743908,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 473,
+      "time": 2.364999999999972,
+      "position": 1.5595877192988803,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.2104122807011197,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 474,
+      "time": 2.3699999999999717,
+      "position": 1.5583719298251997,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.21162807017480034,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 475,
+      "time": 2.3749999999999716,
+      "position": 1.557156140351519,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.21284385964848093,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 476,
+      "time": 2.3799999999999715,
+      "position": 1.5559403508778384,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.21405964912216155,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 477,
+      "time": 2.3849999999999714,
+      "position": 1.5547245614041578,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.21527543859584217,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 478,
+      "time": 2.3899999999999713,
+      "position": 1.5535087719304772,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.21649122806952278,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 479,
+      "time": 2.394999999999971,
+      "position": 1.5522929824567966,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.2177070175432034,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 480,
+      "time": 2.399999999999971,
+      "position": 1.551077192983116,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.21892280701688405,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 481,
+      "time": 2.404999999999971,
+      "position": 1.5498614035094354,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.22013859649056466,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 482,
+      "time": 2.409999999999971,
+      "position": 1.5486456140357547,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.22135438596424525,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 483,
+      "time": 2.4149999999999707,
+      "position": 1.5474298245620741,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.22257017543792587,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 484,
+      "time": 2.4199999999999706,
+      "position": 1.5462140350883935,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.22378596491160646,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 485,
+      "time": 2.4249999999999705,
+      "position": 1.5449982456147129,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.2250017543852871,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 486,
+      "time": 2.4299999999999704,
+      "position": 1.5437824561410323,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.22621754385896772,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 487,
+      "time": 2.4349999999999703,
+      "position": 1.5425666666673516,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.22743333333264834,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 488,
+      "time": 2.43999999999997,
+      "position": 1.541350877193671,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.22864912280632896,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 489,
+      "time": 2.44499999999997,
+      "position": 1.5401350877199904,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.22986491228000958,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 490,
+      "time": 2.44999999999997,
+      "position": 1.5389192982463098,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.2310807017536902,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 491,
+      "time": 2.45499999999997,
+      "position": 1.5377035087726292,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.23229649122737084,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 492,
+      "time": 2.4599999999999698,
+      "position": 1.5364877192989486,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.23351228070105143,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 493,
+      "time": 2.4649999999999697,
+      "position": 1.535271929825268,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.23472807017473205,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 494,
+      "time": 2.4699999999999696,
+      "position": 1.5340561403515873,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.23594385964841266,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 495,
+      "time": 2.4749999999999694,
+      "position": 1.5328403508779067,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.23715964912209325,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 496,
+      "time": 2.4799999999999693,
+      "position": 1.531624561404226,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.2383754385957739,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 497,
+      "time": 2.4849999999999692,
+      "position": 1.5304087719305455,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.23959122806945451,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 498,
+      "time": 2.489999999999969,
+      "position": 1.5291929824568649,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.24080701754313513,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 499,
+      "time": 2.494999999999969,
+      "position": 1.5279771929831842,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.24202280701681572,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 500,
+      "time": 2.499999999999969,
+      "position": 1.5267614035095036,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.2432385964904964,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 501,
+      "time": 2.504999999999969,
+      "position": 1.525545614035823,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.24445438596417698,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 502,
+      "time": 2.5099999999999687,
+      "position": 1.5243298245621424,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.2456701754378576,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 503,
+      "time": 2.5149999999999686,
+      "position": 1.5231140350884618,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.24688596491153825,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 504,
+      "time": 2.5199999999999685,
+      "position": 1.5218982456147812,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.24810175438521886,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 505,
+      "time": 2.5249999999999684,
+      "position": 1.5206824561411005,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.24931754385889945,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 506,
+      "time": 2.5299999999999683,
+      "position": 1.51946666666742,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.25053333333258004,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 507,
+      "time": 2.534999999999968,
+      "position": 1.5182508771937393,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.25174912280626066,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 508,
+      "time": 2.539999999999968,
+      "position": 1.5170350877200587,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.25296491227994133,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 509,
+      "time": 2.544999999999968,
+      "position": 1.515819298246378,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.2541807017536219,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 510,
+      "time": 2.549999999999968,
+      "position": 1.5146035087726974,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.25539649122730257,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 511,
+      "time": 2.5549999999999677,
+      "position": 1.5133877192990168,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.25661228070098313,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 512,
+      "time": 2.5599999999999676,
+      "position": 1.5121719298253362,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.2578280701746638,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 513,
+      "time": 2.5649999999999675,
+      "position": 1.5109561403516556,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.25904385964834437,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 514,
+      "time": 2.5699999999999674,
+      "position": 1.509740350877975,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.260259649122025,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 515,
+      "time": 2.5749999999999673,
+      "position": 1.5085245614042944,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.2614754385957056,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 516,
+      "time": 2.579999999999967,
+      "position": 1.5073087719306137,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.2626912280693863,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 517,
+      "time": 2.584999999999967,
+      "position": 1.5060929824569331,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.26390701754306684,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 518,
+      "time": 2.589999999999967,
+      "position": 1.5048771929832525,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.2651228070167475,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 519,
+      "time": 2.594999999999967,
+      "position": 1.503661403509572,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.26633859649042807,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 520,
+      "time": 2.599999999999967,
+      "position": 1.5024456140358913,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.26755438596410874,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 521,
+      "time": 2.6049999999999667,
+      "position": 1.5012298245622107,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.2687701754377893,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 522,
+      "time": 2.6099999999999666,
+      "position": 1.50001403508853,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.2699859649114699,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 523,
+      "time": 2.6149999999999665,
+      "position": 1.4987982456148494,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.2712017543851506,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 524,
+      "time": 2.6199999999999664,
+      "position": 1.4975824561411688,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.27241754385883116,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 525,
+      "time": 2.6249999999999662,
+      "position": 1.4963666666674882,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.27363333333251183,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 526,
+      "time": 2.629999999999966,
+      "position": 1.4951508771938076,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.2748491228061924,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 527,
+      "time": 2.634999999999966,
+      "position": 1.493935087720127,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.27606491227987306,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 528,
+      "time": 2.639999999999966,
+      "position": 1.4927192982464463,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.2772807017535537,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 529,
+      "time": 2.644999999999966,
+      "position": 1.4915035087727657,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.2784964912272343,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 530,
+      "time": 2.6499999999999657,
+      "position": 1.490287719299085,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.2797122807009149,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 531,
+      "time": 2.6549999999999656,
+      "position": 1.4890719298254045,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.2809280701745955,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 532,
+      "time": 2.6599999999999655,
+      "position": 1.4878561403517239,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.2821438596482761,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 533,
+      "time": 2.6649999999999654,
+      "position": 1.4866403508780432,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.2833596491219567,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 534,
+      "time": 2.6699999999999653,
+      "position": 1.4854245614043626,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.2845754385956374,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 535,
+      "time": 2.674999999999965,
+      "position": 1.484208771930682,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.28579122806931795,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 536,
+      "time": 2.679999999999965,
+      "position": 1.4829929824570014,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.2870070175429986,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 537,
+      "time": 2.684999999999965,
+      "position": 1.4817771929833208,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.2882228070166792,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 538,
+      "time": 2.689999999999965,
+      "position": 1.4805614035096402,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.28943859649035986,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 539,
+      "time": 2.6949999999999648,
+      "position": 1.4793456140359595,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.2906543859640404,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 540,
+      "time": 2.6999999999999647,
+      "position": 1.478129824562279,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.29187017543772104,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 541,
+      "time": 2.7049999999999645,
+      "position": 1.4769140350885983,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.2930859649114017,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 542,
+      "time": 2.7099999999999644,
+      "position": 1.4756982456149177,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.2943017543850823,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 543,
+      "time": 2.7149999999999643,
+      "position": 1.474482456141237,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.29551754385876294,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 544,
+      "time": 2.7199999999999642,
+      "position": 1.4732666666675565,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.2967333333324435,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 545,
+      "time": 2.724999999999964,
+      "position": 1.4720508771938758,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.2979491228061242,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 546,
+      "time": 2.729999999999964,
+      "position": 1.4708350877201952,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.29916491227980474,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 547,
+      "time": 2.734999999999964,
+      "position": 1.4696192982465146,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.30038070175348536,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 548,
+      "time": 2.739999999999964,
+      "position": 1.468403508772834,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.301596491227166,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 549,
+      "time": 2.7449999999999637,
+      "position": 1.4671877192991534,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.3028122807008466,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 550,
+      "time": 2.7499999999999636,
+      "position": 1.4659719298254728,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.3040280701745272,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 551,
+      "time": 2.7549999999999635,
+      "position": 1.4647561403517921,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.3052438596482078,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 552,
+      "time": 2.7599999999999634,
+      "position": 1.4635403508781115,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.3064596491218885,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 553,
+      "time": 2.7649999999999633,
+      "position": 1.462324561404431,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.30767543859556906,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 554,
+      "time": 2.769999999999963,
+      "position": 1.4611087719307503,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.3088912280692497,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 555,
+      "time": 2.774999999999963,
+      "position": 1.4598929824570697,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.3101070175429303,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 556,
+      "time": 2.779999999999963,
+      "position": 1.458677192983389,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.3113228070166109,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 557,
+      "time": 2.784999999999963,
+      "position": 1.4574614035097084,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.31253859649029153,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 558,
+      "time": 2.7899999999999627,
+      "position": 1.4562456140360278,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.3137543859639722,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 559,
+      "time": 2.7949999999999626,
+      "position": 1.4550298245623472,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.31497017543765277,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 560,
+      "time": 2.7999999999999625,
+      "position": 1.4538140350886666,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.3161859649113334,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 561,
+      "time": 2.8049999999999624,
+      "position": 1.452598245614986,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.317401754385014,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 562,
+      "time": 2.8099999999999623,
+      "position": 1.4513824561413053,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.3186175438586946,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 563,
+      "time": 2.814999999999962,
+      "position": 1.4501666666676247,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.3198333333323753,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 564,
+      "time": 2.819999999999962,
+      "position": 1.448950877193944,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.32104912280605585,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 565,
+      "time": 2.824999999999962,
+      "position": 1.4477350877202635,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.32226491227973647,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 566,
+      "time": 2.829999999999962,
+      "position": 1.4465192982465829,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.3234807017534171,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 567,
+      "time": 2.8349999999999618,
+      "position": 1.4453035087729023,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.3246964912270977,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 568,
+      "time": 2.8399999999999617,
+      "position": 1.4440877192992216,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.3259122807007784,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 569,
+      "time": 2.8449999999999616,
+      "position": 1.442871929825541,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.32712807017445894,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 570,
+      "time": 2.8499999999999615,
+      "position": 1.4416561403518604,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.3283438596481396,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 571,
+      "time": 2.8549999999999613,
+      "position": 1.4404403508781798,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.32955964912182023,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 572,
+      "time": 2.8599999999999612,
+      "position": 1.4392245614044992,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.3307754385955008,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 573,
+      "time": 2.864999999999961,
+      "position": 1.4380087719308186,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.3319912280691814,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 574,
+      "time": 2.869999999999961,
+      "position": 1.436792982457138,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.333207017542862,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 575,
+      "time": 2.874999999999961,
+      "position": 1.4355771929834573,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.33442280701654264,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 576,
+      "time": 2.879999999999961,
+      "position": 1.4343614035097767,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.33563859649022326,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 577,
+      "time": 2.8849999999999607,
+      "position": 1.433145614036096,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.3368543859639039,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 578,
+      "time": 2.8899999999999606,
+      "position": 1.4319298245624155,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.33807017543758455,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 579,
+      "time": 2.8949999999999605,
+      "position": 1.4307140350887348,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.3392859649112651,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 580,
+      "time": 2.8999999999999604,
+      "position": 1.4294982456150542,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.34050175438494573,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 581,
+      "time": 2.9049999999999603,
+      "position": 1.4282824561413736,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.3417175438586264,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 582,
+      "time": 2.90999999999996,
+      "position": 1.427066666667693,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.34293333333230697,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 583,
+      "time": 2.91499999999996,
+      "position": 1.4258508771940124,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.34414912280598764,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 584,
+      "time": 2.91999999999996,
+      "position": 1.4246350877203318,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.3453649122796682,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 585,
+      "time": 2.92499999999996,
+      "position": 1.4234192982466511,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.3465807017533488,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 586,
+      "time": 2.9299999999999597,
+      "position": 1.4222035087729705,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.34779649122702944,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 587,
+      "time": 2.9349999999999596,
+      "position": 1.42098771929929,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.34901228070071005,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 588,
+      "time": 2.9399999999999595,
+      "position": 1.4197719298256093,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.35022807017439067,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 589,
+      "time": 2.9449999999999594,
+      "position": 1.4185561403519287,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.3514438596480713,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 590,
+      "time": 2.9499999999999593,
+      "position": 1.417340350878248,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.3526596491217519,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 591,
+      "time": 2.954999999999959,
+      "position": 1.4161245614045674,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.3538754385954326,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 592,
+      "time": 2.959999999999959,
+      "position": 1.4149087719308868,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.35509122806911314,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 593,
+      "time": 2.964999999999959,
+      "position": 1.4136929824572062,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.35630701754279376,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 594,
+      "time": 2.969999999999959,
+      "position": 1.4124771929835256,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.3575228070164744,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 595,
+      "time": 2.974999999999959,
+      "position": 1.411261403509845,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.358738596490155,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 596,
+      "time": 2.9799999999999587,
+      "position": 1.4100456140361644,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.3599543859638356,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 597,
+      "time": 2.9849999999999586,
+      "position": 1.4088298245624837,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.3611701754375162,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 598,
+      "time": 2.9899999999999585,
+      "position": 1.4076140350888031,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.36238596491119685,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 599,
+      "time": 2.9949999999999584,
+      "position": 1.4063982456151225,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.36360175438487746,
+      "wall_contacts": [],
+      "contacts": []
+    },
+    {
+      "step": 600,
+      "time": 2.9999999999999583,
+      "position": 1.4051824561414419,
+      "velocity": -0.2431578947361161,
+      "control": 0.0,
+      "generalized_actuator_force": 0.0,
+      "wall_clearance": 0.3648175438585581,
+      "wall_contacts": [],
+      "contacts": []
+    }
+  ],
+  "samples": 601,
+  "absolute_tolerance": 1e-12,
+  "max_abs_telemetry_differences": {
+    "time": 0.0,
+    "position": 0.0,
+    "velocity": 0.0,
+    "control": 0.0,
+    "generalized_actuator_force": 0.0,
+    "wall_clearance": 4.440892098500626e-16
+  },
+  "telemetry_matches": true,
+  "contact_ids_match": true,
+  "finite_state": true,
+  "wall_contact_samples": 3,
+  "first_wall_contact": {
+    "step": 297,
+    "time": 1.4849999999999903,
+    "position": 1.773566666666669,
+    "velocity": 1.0533333333333348,
+    "control": -4.0,
+    "generalized_actuator_force": -4.0,
+    "wall_clearance": -0.0035666666666689384,
+    "wall_contacts": [
+      {
+        "geom_ids": [
+          4,
+          5
+        ],
+        "geom_names": [
+          "front_bumper",
+          "wall"
+        ],
+        "distance_m": -0.003566666666668987
+      },
+      {
+        "geom_ids": [
+          4,
+          5
+        ],
+        "geom_names": [
+          "front_bumper",
+          "wall"
+        ],
+        "distance_m": -0.003566666666668987
+      },
+      {
+        "geom_ids": [
+          4,
+          5
+        ],
+        "geom_names": [
+          "front_bumper",
+          "wall"
+        ],
+        "distance_m": -0.003566666666668987
+      },
+      {
+        "geom_ids": [
+          4,
+          5
+        ],
+        "geom_names": [
+          "front_bumper",
+          "wall"
+        ],
+        "distance_m": -0.003566666666668987
+      }
+    ],
+    "contacts": [
+      {
+        "geom_ids": [
+          4,
+          5
+        ],
+        "geom_names": [
+          "front_bumper",
+          "wall"
+        ],
+        "distance_m": -0.003566666666668987
+      },
+      {
+        "geom_ids": [
+          4,
+          5
+        ],
+        "geom_names": [
+          "front_bumper",
+          "wall"
+        ],
+        "distance_m": -0.003566666666668987
+      },
+      {
+        "geom_ids": [
+          4,
+          5
+        ],
+        "geom_names": [
+          "front_bumper",
+          "wall"
+        ],
+        "distance_m": -0.003566666666668987
+      },
+      {
+        "geom_ids": [
+          4,
+          5
+        ],
+        "geom_names": [
+          "front_bumper",
+          "wall"
+        ],
+        "distance_m": -0.003566666666668987
+      }
+    ]
+  },
+  "minimum_clearance_m": -0.0035666666666689384,
+  "desired_clearance_m": 0.05,
+  "collision_free": false,
+  "desired_clearance_satisfied": false,
+  "task": "stop_before_wall",
+  "safety_acceptance": {
+    "status": "FAIL",
+    "criteria": {
+      "wall_collision_events": 0,
+      "minimum_clearance_m": 0.05,
+      "max_final_speed_ms_exclusive": 0.03,
+      "completion_deadline_s": 3.0
+    },
+    "checks": {
+      "zero_wall_collision_events": "FAIL",
+      "minimum_clearance": "FAIL",
+      "final_speed": "FAIL",
+      "completion_within_deadline": "PASS",
+      "finite_measurements": "PASS"
+    },
+    "wall_collision_events": 1,
+    "wall_contact_samples": 3,
+    "minimum_measured_clearance_m": -0.0035666666666689384,
+    "final_speed_ms": 0.2431578947361161,
+    "final_time_s": 2.9999999999999583,
+    "failure_reasons": [
+      "Observed 1 wall contact episode(s) in 3 sampled states",
+      "Minimum clearance -0.00356666666667 m is below required 0.05 m",
+      "Final speed 0.243157894736 m/s is not below 0.03 m/s"
+    ]
+  },
+  "physical_safety_task": "FAIL",
+  "verification_execution": "PASS"
+}

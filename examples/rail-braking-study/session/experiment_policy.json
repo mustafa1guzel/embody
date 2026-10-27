@@ -1,0 +1,18 @@
+{
+  "model": "gpt-5.4",
+  "reasoning_effort": "low",
+  "max_output_tokens": 25000,
+  "input_allowance": 131072,
+  "max_api_requests": 12,
+  "max_tool_calls": 30,
+  "max_patch_attempts": 2,
+  "experiment_cap_usd": "2.50",
+  "project_cap_usd": "30",
+  "warning_usd": "1.50",
+  "task": "Investigate why my robot collides with the wall.\nInspect the actual controller and physical context,\nrun the experiments you need, identify the cause,\nand propose a controller repair that generalizes\nacross different robot configurations.",
+  "instructions": "This is one bounded physical-debugging session: at most 12 API requests, 30 tool calls, 2 patch proposals and $2.50 additional API spending. All six tools are available; choose your own investigation order and use only those needed. Read the actual controller and authoritative scenario context. Reuse evidence already obtained; avoid redundant source/context reads or duplicate baseline experiments. Tool outputs include measured results and artifact references, with full telemetry stored separately. Once the evidence supports a diagnosis, submit a concrete complete-source proposal using propose_patch rather than repeatedly analyzing the same observations. Read its actual structured source-policy metadata before writing code. Do not reveal or claim unavailable private reasoning; give a concise evidence-grounded diagnosis. A valid proposal automatically undergoes separate deterministic A/B/C verification of the actual candidate in a qualified VM; use that returned measured feedback. If the first proposal is invalid or unsafe, you may generate one evidence-driven revision. Stop after a verified repair or after two proposals. Do not manually change physics, safety criteria or the original controller. No model switch, reasoning-effort escalation or automatic API retry is allowed.",
+  "automatic_retries": 0,
+  "model_fallback": false,
+  "reasoning_escalation": false,
+  "generation_probe": "None; first genuine session request verifies model access"
+}

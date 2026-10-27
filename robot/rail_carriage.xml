@@ -1,0 +1,50 @@
+<mujoco model="embody_single_axis_carriage">
+  <compiler angle="radian" inertiafromgeom="false"/>
+  <option timestep="0.005" gravity="0 0 -9.81" integrator="Euler"/>
+  <default>
+    <geom friction="0 0 0" solref="0.01 1"/>
+  </default>
+  <visual>
+    <global offwidth="1024" offheight="768"/>
+  </visual>
+
+  <asset>
+    <material name="rail_material" rgba="0.25 0.25 0.30 1"/>
+    <material name="carriage_material" rgba="0.90 0.15 0.15 1"/>
+    <material name="obstacle_material" rgba="0.20 0.35 0.90 1"/>
+    <material name="floor_material" rgba="0.90 0.90 0.90 1"/>
+  </asset>
+
+  <worldbody>
+    <light directional="true" diffuse="0.8 0.8 0.8" specular="0.2 0.2 0.2" pos="0 -2 4" dir="0 0 -1"/>
+    <light pos="3 -3 3" dir="-0.5 0.5 -1" diffuse="0.5 0.5 0.5"/>
+    <camera name="demo_camera" pos="1 -5 2.8" xyaxes="1 0 0 0 0.454326 0.890835" fovy="45"/>
+
+    <geom name="floor" type="plane" size="6 6 0.01" material="floor_material"/>
+
+    <!-- The ideal slide joint guides the carriage. Only the decorative rail
+         is non-colliding; carriage, bumper, wall and floor retain collisions. -->
+    <body name="rail">
+      <geom name="rail_base" type="box" size="1.85 0.10 0.04" pos="1.0 0 0.04" material="rail_material" contype="0" conaffinity="0"/>
+      <geom name="rail_track" type="capsule" size="0.03" fromto="-0.8 0 0.14 2.8 0 0.14" rgba="0.65 0.70 0.82 1" contype="0" conaffinity="0"/>
+    </body>
+
+    <body name="carriage" pos="0 0 0.30">
+      <!-- Explicit inertia describes the whole rigid assembly, bumper included. -->
+      <inertial pos="0 0 0" mass="2.0" diaginertia="0.025 0.020 0.030"/>
+      <joint name="x_slide" type="slide" axis="1 0 0" limited="false" damping="0" frictionloss="0" armature="0"/>
+      <geom name="carriage_box" type="box" size="0.13 0.16 0.08" material="carriage_material"/>
+      <geom name="front_bumper" type="box" size="0.025 0.18 0.085" pos="0.155 0 0" rgba="0.95 0.72 0.20 1"/>
+    </body>
+
+    <!-- x=2.0 is the wall center. Its near collision surface is x=1.95. -->
+    <body name="obstacle" pos="2.0 0 0.50">
+      <geom name="wall" type="box" size="0.05 0.50 0.50" material="obstacle_material" mass="0"/>
+    </body>
+  </worldbody>
+
+  <actuator>
+    <!-- Direct force in N: control, scalar force, and joint force share units. -->
+    <motor name="x_motor" joint="x_slide" gear="1" forcelimited="true" forcerange="-4 4" ctrllimited="true" ctrlrange="-4 4"/>
+  </actuator>
+</mujoco>

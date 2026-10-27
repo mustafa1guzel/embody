@@ -1,0 +1,6 @@
+{
+  "status": "legacy manifest; physical values now live only in BODYBASE/WORLDBASE",
+  "bodybase": "bodybase.json",
+  "worldbase": "worldbase.json",
+  "scenarios": "scenarios.json"
+}

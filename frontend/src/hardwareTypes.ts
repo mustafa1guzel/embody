@@ -1,0 +1,12 @@
+import type {FileData} from './types';
+export type Pin={id:string;role:string;position_m:number[];required:boolean;voltage_v:number[]|null;high_min_v:number|null;capabilities:string[];aliases:string[]};
+export type Part={id:string;manufacturer:string;model:string;kind:string;pins:Pin[];size_m:number[];sources:string[];assumptions:string[];properties:Record<string,unknown>;confidence:string;representation:string;mounting:string};
+export type Instance={id:string;part:string;name:string;parent:string;position_m:number[];rotation_rad:number[];roles:Record<string,string>};
+export type Endpoint={component:string;pin:string};
+export type Wire={id:string;net:string;a:Endpoint;b:Endpoint};
+export type Assembly={schema_version:number;id:string;revision:number;catalog_sha256:string;components:Instance[];nets:{id:string;name:string}[];wires:Wire[]};
+export type Electrical={status:string;supported_rules_status:string;assembly_sha256:string;netlist_sha256:string;errors:number;unknowns:number;diagnostics:{code:string;severity:string;message:string;references?:unknown[]}[];calculations:Record<string,unknown>[]};
+export type DeviceSpec={schema_version:number;device_id:string;mechanical:Record<string,any>;sensor:Record<string,any>;logic:Record<string,any>;environment:Record<string,any>;requirements:Record<string,any>};
+export type HardwareBootstrap={catalog:Record<string,Part>;catalog_sha256:string;template:Assembly;device_spec:DeviceSpec;controller_source:FileData;planner_origin:string;live_agent_status:string};
+export type DeviceSample={time_s:number;q_rad:number;qvel_rad_s:number;generalized_torque_nm:number;target_rad:number;state:string;distance_m:number|null;contacts:number;geom_poses:{position:number[];quaternion_wxyz:number[]}[]};
+export type DeviceRun={status:string;assembly_sha256:string;contract_sha256?:string;execution:string;blocked_reason?:string;samples?:DeviceSample[];acceptance?:{failed_requirements:string[];checks:Record<string,boolean>;peak_measured_torque_nm:number;peak_speed_rad_s:number};electrical:Electrical;analytical_guard?:Record<string,unknown>;scene?:{geoms:{id:string;name:string;type:number;size:number[];rgba:number[]}[]};evidence_path:string;independent_reconstruction?:Record<string,unknown>};
