@@ -2,6 +2,10 @@
 
 A local engineering workspace for typed mechanical design, model-directed construction and measured physics.
 
+## AI Experiment Designer · v0.5 planning preview
+
+Ask a rail engineering question, edit and validate a bounded experiment proposal, review it, then transfer a source-checked reference plan into Sweep Lab for separate explicit execution confirmation. Inspect verified saved facts and prepare a separately reviewed deterministic follow-up. **Live AI planning/interpretation is unavailable on this public path**; manual and offline-test authorship is explicit. Open **Simulate → Open AI Experiment Designer**. See [workflow, schema, evidence and limits](docs/AI_EXPERIMENT_DESIGNER.md).
+
 ## Trusted Simulation Engine · v0.4 preview
 
 Configure a bounded rail parameter grid, inspect ideal predictions, then explicitly confirm a new MuJoCo sweep using only the registered **developer-authored velocity brake**. Inspect actual metrics, fresh replay, measured heatmaps, trajectories and portable JSON export. Open **Simulate → Open Parameter Sweep Lab**. Historical/GPT controller source remains excluded from this native route. See [usage, limits, real demonstration and security boundary](docs/PARAMETER_SWEEP_LAB.md).

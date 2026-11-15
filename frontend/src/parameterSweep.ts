@@ -18,7 +18,7 @@ export type Prediction = {kind: 'ANALYTICAL_PREDICTION'; deceleration_mps2: numb
 export type Reference = {scenario: Scenario; parameters: PhysicalParameters; context: Record<string, unknown>; run: RecordedRun};
 export type SweepStudy = {study: Study; references: Reference[]};
 export type SweepCase = {id: string; parameters: PhysicalParameters; prediction: Prediction; execution_status: 'NOT_EXECUTED'; measured: null; savedReference: Reference | null};
-export type Plan = {schema_version: 1; model_id: 'rail_carriage'; controller_revision: Variant; controller_sha256: string; inventory_sha256: string; anchor_scenario: Scenario; initial_context: Record<string, unknown>; axes: Axis[]; fixed_parameters: PhysicalParameters; criteria: Criteria; cases: SweepCase[]};
+export type Plan = {schema_version: 1; model_id: 'rail_carriage'; controller_revision: Variant | 'reference'; controller_sha256: string; inventory_sha256: string; anchor_scenario: Scenario | null; initial_context: Record<string, unknown>; axes: Axis[]; fixed_parameters: PhysicalParameters; criteria: Criteria; cases: SweepCase[]};
 export type CaseState = 'PLANNED' | 'PREDICTED' | 'NOT_EXECUTED' | 'RUNNING' | 'MEASURED_PASS' | 'MEASURED_FAIL' | 'EXECUTION_ERROR' | 'INSUFFICIENT_DATA';
 export const stateLabels: Record<CaseState, string> = {PLANNED: 'Planned', PREDICTED: 'Analytical prediction', NOT_EXECUTED: 'Not executed', RUNNING: 'Running', MEASURED_PASS: 'Measured PASS', MEASURED_FAIL: 'Measured FAIL', EXECUTION_ERROR: 'Execution error', INSUFFICIENT_DATA: 'Insufficient data'};
 export const limitations = [
@@ -133,7 +133,8 @@ export function historicalCellState(c: SweepCase, criteria: Criteria): CaseState
 }
 /** Portable explicit download payload. Historical measurements never populate new execution fields. */
 export function exportPlan(plan: Plan) {
- return {format: 'EMBODY_RAIL_SWEEP_PLAN_V1', schema_version: 1, execution_available: false, model_id: plan.model_id, controller_revision: plan.controller_revision, controller_sha256: plan.controller_sha256, recording_inventory_sha256: plan.inventory_sha256,
+ const reference=plan.controller_revision==='reference';
+ return {format: reference?'EMBODY_REVIEWED_REFERENCE_PLAN_V1':'EMBODY_RAIL_SWEEP_PLAN_V1', schema_version: 1, execution_available: false, model_id: plan.model_id, controller_revision: plan.controller_revision, ...(reference?{trusted_source_sha256:plan.controller_sha256,designer_context_sha256:plan.inventory_sha256,registered_controller_id:plan.initial_context.controller_id}:{controller_sha256:plan.controller_sha256,recording_inventory_sha256:plan.inventory_sha256}),
   anchor_scenario: plan.anchor_scenario, initial_context: plan.initial_context, parameter_units: Object.fromEntries(parameterKeys.map(k => [k, parameters[k].unit])), criteria: plan.criteria,
   criteria_units: {minimumClearance: 'm', maximumFinalSpeed: 'm/s (exclusive)', maximumSettlingTime: 's', maximumContactEpisodes: 'episodes'}, axes: plan.axes, fixed_parameters: plan.fixed_parameters,
   cases: plan.cases.map(c => {const ref = compareReference(c, plan.criteria);return {experiment_id: c.id, parameters: c.parameters, analytical_prediction: c.prediction, execution_status: c.execution_status, measured_results: null,

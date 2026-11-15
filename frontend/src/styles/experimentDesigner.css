@@ -1,0 +1,25 @@
+.designer-layout { display:grid; grid-template-columns:285px minmax(0,1fr); gap:22px; align-items:start; }
+.designer-question,.designer-proposal,.designer-evidence { border:1px solid var(--border); border-radius:5px; padding:18px; background:var(--panel); margin-bottom:18px; min-width:0; }
+.designer-question { display:flex; flex-direction:column; gap:13px; }
+.designer label { display:flex; flex-direction:column; align-items:stretch; gap:7px; font-size:12px; }
+.designer textarea,.designer select { width:100%; min-width:0; padding:9px; border:1px solid var(--border); background:var(--bg); color:var(--fg); border-radius:3px; }
+.designer textarea { resize:vertical; line-height:1.5; }
+.designer textarea[aria-label='Proposal JSON'],.designer textarea[aria-label='Manual interpretation references JSON'] { font-family:'IBM Plex Mono',monospace; font-size:11px; }
+.designer textarea:focus-visible { outline:2px solid var(--trace); outline-offset:2px; }
+.designer pre { overflow:auto; max-height:330px; font-size:11px; line-height:1.5; background:var(--bg); padding:10px; }
+.designer-content { min-width:0; }
+.designer dl > div { display:flex; justify-content:space-between; gap:10px; margin:8px 0; font-size:12px; }
+.designer dt { color:var(--secondary); }.designer dd { margin:0; white-space:nowrap; }
+.designer p { line-height:1.7; }.designer-question p { font-size:12px; margin:0; }
+.designer details > button { display:block; text-align:left; width:100%; white-space:normal; margin-top:8px; }
+.designer-actions { display:flex; gap:10px; flex-wrap:wrap; align-items:end; margin:13px 0 20px; }
+.designer-actions label { min-width:180px; flex:1; }
+.designer-origin { border-left:3px solid var(--trace); background:var(--raised); padding:9px 12px; font-size:12px; }
+.designer-table { width:100%; border-collapse:collapse; font-size:12px; margin:16px 0; }
+.designer-table caption { text-align:left; padding:10px 0; color:var(--secondary); }
+.designer-table th,.designer-table td { text-align:left; padding:10px 8px; border-bottom:1px solid var(--border); vertical-align:top; }
+.designer-table th { font-weight:500; }.designer-table td { font-variant-numeric:tabular-nums; white-space:nowrap; }
+.designer .regression-summary { margin-top:18px; }.designer .regression-summary strong { font-size:18px; }
+.designer-resume { border-top:1px solid var(--border); padding-top:12px; }
+@media(max-width:900px){.designer-layout{grid-template-columns:minmax(0,1fr)}.designer-question{display:grid;grid-template-columns:1fr 1fr}.designer-question>h2,.designer-question>label:first-of-type{grid-column:1/-1}}
+@media(max-width:540px){.designer-question{display:flex}.designer .regression-header{flex-direction:column;align-items:start}}

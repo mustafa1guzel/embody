@@ -173,3 +173,21 @@ was exercised; no new OS/dependency installation qualification is claimed. The
 wall timeout is cooperative, not OS process preemption. Local storage quota needs
 explicit operator preservation/export/maintenance when full. No paid model call,
 new VM, automatic application or broad historical suite is part of this feature.
+
+
+## Reviewed Designer transfers
+
+[AI Experiment Designer](AI_EXPERIMENT_DESIGNER.md) can transfer an exact current,
+human-reviewed developer-reference plan. Sweep Lab rechecks its review/source,
+shows its actual registered controller/context and keeps configuration read-only;
+return to the Designer to edit/review. The existing native confirmation remains
+mandatory, and native admission independently validates every request. A source
+mismatch disables the reviewed run control; it is never silently rebound.
+
+Reference exports use `EMBODY_REVIEWED_REFERENCE_PLAN_V1`, with designer context
+and trusted source identities. They are not historical recording inventories.
+Preview cards are not native execution accounting: inspect the separate saved
+native job and explicitly link it in the Designer to associate actual execution.
+The v0.5 verification read existing v0.4 results only; its consumed native budget
+was not reused. The API adapter source changes, so old records retain their exact
+old identity and are labelled stale relative to current execution.

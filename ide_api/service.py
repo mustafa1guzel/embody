@@ -23,6 +23,12 @@ class IDE:
         self.arm_workflow = Workflow(sessions=ROOT/'artifacts/day9/workflows',family='arm')
 
     @property
+    def experiment_designer(self):
+        from ide_api.experiment_designer import ExperimentDesigner
+        if not hasattr(self,'_experiment_designer'):self._experiment_designer=ExperimentDesigner(self.rail_sweeps)
+        return self._experiment_designer
+
+    @property
     def rail_sweeps(self):
         from ide_api.rail_sweeps import RailSweeps
         if not hasattr(self,'_rail_sweeps'):self._rail_sweeps=RailSweeps()

@@ -143,3 +143,30 @@ build PASS. Test doubles cover error/cancellation/protocol cases and are not
 native evidence. No broad historical suite or VM test batch ran. See the
 [complete feature guide](PARAMETER_SWEEP_LAB.md) for exact bounds, persistence,
 measurement definitions and limitations.
+
+
+## AI Experiment Designer: validated planning, not live AI
+
+The [Designer guide](AI_EXPERIMENT_DESIGNER.md) documents strict proposal validation,
+manual review/transfer and verified saved-fact interpretation. Offline test doubles
+reuse the existing provider abstraction; no genuine provider request or additional
+native rollout was authorized or made. The v0.4 native integration test was not
+rerun. Historical saved results are externally linked, source-labelled evidence,
+not executions of a new manual proposal.
+
+The targeted suites cover proposal/units/limits/stale identity, attempted safety
+weakening, typed mock responses, unavailable/denied model paths, numerical fact
+checks, partial/corrupt records, independent follow-ups, real App transfer, no
+automatic native call and portable exports. Existing qualification paths and
+native admission remain unchanged. The existing oversized-body test's fixture now
+sends only its oversized declared Content-Length: the server must still return400
+before reading a body. This removes the reset race without changing a guard.
+
+Suggested focused checks (exclude the consumed native integration test):
+
+```sh
+.venv/bin/python -B -m pytest -ra -p no:cacheprovider tests/test_experiment_designer.py tests/test_rail_sweeps.py tests/test_ide_api.py::test_host_origin_csrf_and_bounded_strict_json tests/test_ide_api.py::test_bootstrap_does_not_load_credentials_run_physics_or_call_model tests/test_ide_api.py::test_one_expensive_job_at_a_time
+npm --prefix frontend test -- src/AIExperimentDesigner.test.tsx src/TrustedSweepPanel.test.tsx src/parameterSweep.test.ts src/ParameterSweepLab.test.tsx src/physicsRegression.test.ts src/PhysicsRegressionExplorer.test.tsx src/App.test.tsx src/PhysicsPanel.test.tsx src/UnifiedWorkspace.test.tsx src/playback.test.ts
+npm --prefix frontend run typecheck
+npm --prefix frontend run build
+```

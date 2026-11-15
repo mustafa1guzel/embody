@@ -101,6 +101,15 @@ class Handler(BaseHTTPRequestHandler):
                 if set(q)!={name} or len(q[name])!=1:raise ValueError('Invalid query fields')
                 return q[name][0]
             path=route.path;ide=self.server.ide
+            if path=='/api/experiment-designer/context':
+                if q:raise ValueError('Unexpected query')
+                return self.reply(200,ide.experiment_designer.context())
+            if path=='/api/experiment-designer/session':return self.reply(200,ide.experiment_designer.read(one('id')))
+            if path=='/api/experiment-designer/export':return self.reply(200,ide.experiment_designer.export(one('id')))
+            if path=='/api/experiment-designer/evidence':return self.reply(200,ide.experiment_designer.summary(one('id')))
+            if path=='/api/experiment-designer/transfer':
+                if set(q)!={'id','proposal'} or any(len(v)!=1 for v in q.values()):raise ValueError('Exact session/proposal query required')
+                return self.reply(200,ide.experiment_designer.check_transfer(q['id'][0],q['proposal'][0]))
             if path=='/api/rail-sweeps/catalog':
                 if q:raise ValueError('Unexpected query')
                 return self.reply(200,ide.rail_sweeps.catalog())
@@ -218,6 +227,19 @@ class Handler(BaseHTTPRequestHandler):
             route=urlsplit(self.path)
             if route.query:raise ValueError('Unexpected query fields')
             path=route.path;ide=self.server.ide
+            if path.startswith('/api/experiment-designer/'):
+                action=path.removeprefix('/api/experiment-designer/');service=ide.experiment_designer
+                if action=='new':exact(body,['question']);value=service.new(body['question'])
+                elif action=='starter':exact(body,['id']);value=service.starter(body['id'])
+                elif action=='model':exact(body,['id']);value=service.prepare_model(body['id'])
+                elif action=='propose':exact(body,['id','proposal']);value=service.propose(body['id'],body['proposal'])
+                elif action=='review':exact(body,['id','proposal_id','decision']);value=service.review(body['id'],body['proposal_id'],body['decision'])
+                elif action=='transfer':exact(body,['id','proposal_id']);value=service.transfer(body['id'],body['proposal_id'])
+                elif action=='associate':exact(body,['id','sweep_id']);value=service.associate(body['id'],body['sweep_id'])
+                elif action=='interpretation':exact(body,['id','interpretation']);value=service.interpretation(body['id'],body['interpretation'])
+                elif action=='followup':exact(body,['id']);value=service.followup(body['id'])
+                else:raise PermissionError('Designer cannot approve paid calls, run simulation or apply a proposal')
+                return self.reply(200,value)
             if path=='/api/rail-sweeps/start':
                 return self.reply(202,ide.rail_sweeps.start(body,self.server.job))
             if path=='/api/rail-sweeps/cancel':

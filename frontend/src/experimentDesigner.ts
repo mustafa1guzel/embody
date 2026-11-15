@@ -1,0 +1,21 @@
+import {axisValues,predict,type Axis,type PhysicalParameters,type Plan} from './parameterSweep';
+import type {Criteria} from './physicsRegression';
+export type DesignerProposal={schema_version:1;research_question:string;experiment_id:string;controller_id:string;context_sha256:string;units:Record<string,string>;axes:Axis[];fixed_parameters:PhysicalParameters;criteria:Criteria;estimated_cases:number;rationale:string;hypotheses:string[];assumptions:string[]};
+export type ValidatedDesign={proposal_id:string;context_sha256:string;proposal:DesignerProposal;cases:{case_id:string;parameters:PhysicalParameters;kind:string;stopping_distance_m:number;remaining_clearance_m:number;clearance_margin_m:number;stopping_time_s:number}[];criteria:Criteria;case_count:number;status:string};
+export type DesignerCatalog={experiment_id:string;controller_id:string;source_sha256:string;model_id:string;model_template_sha256:string;bounds:Record<string,[number,number]>;units:Record<string,string>;defaults:Criteria;policy:{maximum_cases:number;primary_steps_per_case:number;replay_steps_per_case:number;wall_seconds:number}};
+export type DesignerTransfer={session_id:string;proposal_id:string;validated:ValidatedDesign;catalog:DesignerCatalog;origin:string;execution_authorized:false};
+export type DesignerSession={session_id:string;question:string;context_sha256:string;status:string;proposal_source:string|null;validated:ValidatedDesign|null;review:string;execution:string;stale:boolean;evidence_ref:{sweep_id:string;summary_sha256:string;association:string}|null;model:{status:string;reason:string};followups:{session_id:string;proposal_id:string}[]};
+export type DesignerContext={context_sha256:string;catalog:DesignerCatalog;proposal_schema:unknown;model:{status:string;reason:string;required:string};example_questions:string[];scope:string;analytical_model:string};
+export type Fact={fact_id:string;case_id:string;metric:string;value:number|null;unit:string};
+export type EvidenceSummary={sweep_id:string;sweep_status:string;summary_sha256:string;status:string;counts:Record<string,number>;source_current:boolean;source_sha256:string;controller_id:string;worst_clearance:Fact|null;maximum_final_speed:Fact|null;observed_boundaries:{parameter:string;lower:number;upper:number;from_case_id:string;to_case_id:string}[];facts:Fact[];cases:{case_id:string;parameters:PhysicalParameters;metrics:Record<string,number|null>;verdict:string;mandatory_checks:Record<string,boolean>;selected_checks:Record<string,boolean>;original_reference_acceptance:{status:string;checks:Record<string,string>}}[]};
+/** No historical scenario/revision is invented for a reviewed developer-reference plan. */
+export function referencePlan(transfer:DesignerTransfer):Plan{
+ const v=transfer.validated,p=v.proposal;
+ if(transfer.execution_authorized!==false||v.proposal_id!==transfer.proposal_id||v.case_count<1||v.case_count>25||v.cases.length!==v.case_count||p.controller_id!==transfer.catalog.controller_id||p.experiment_id!==transfer.catalog.experiment_id)throw new Error('Invalid reviewed reference transfer');
+ const xs=axisValues(p.axes[0]),ys=p.axes[1]?axisValues(p.axes[1]):[null];
+ const expected=ys.flatMap(y=>xs.map(x=>({...p.fixed_parameters,[p.axes[0].parameter]:x,...(p.axes[1]&&y!==null?{[p.axes[1].parameter]:y}:{})})));
+ if(JSON.stringify(expected)!==JSON.stringify(v.cases.map(c=>c.parameters))){
+  const same=expected.length===v.cases.length&&expected.every((e,i)=>Object.entries(e).every(([k,n])=>n===v.cases[i].parameters[k as keyof PhysicalParameters]));if(!same)throw new Error('Transferred numerical grid differs from validated design');
+ }
+ return {schema_version:1,model_id:'rail_carriage',controller_revision:'reference',controller_sha256:transfer.catalog.source_sha256,inventory_sha256:p.context_sha256,anchor_scenario:null,initial_context:{kind:'REVIEWED_DEVELOPER_REFERENCE',experiment_id:p.experiment_id,controller_id:p.controller_id,source_sha256:transfer.catalog.source_sha256,model_template_sha256:transfer.catalog.model_template_sha256,proposal_id:v.proposal_id},axes:structuredClone(p.axes),fixed_parameters:{...p.fixed_parameters},criteria:{...v.criteria},cases:v.cases.map(c=>({id:'designer:'+c.case_id,parameters:{...c.parameters},prediction:predict(c.parameters,v.criteria),execution_status:'NOT_EXECUTED',measured:null,savedReference:null}))};
+}

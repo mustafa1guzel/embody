@@ -1,6 +1,19 @@
 # Release notes
 
 
+## v0.5.0 — Unreleased · Validated experiment design preview
+
+- Add a workbench research-question/structured-proposal workflow with exact live-catalog identities, strict schemas, SI bounds, deterministic grids, analytical predictions and mandatory criteria that can only be tightened.
+- Add explicit manual editing, rejection/review and reference-only transfer into the existing Sweep Lab. No alternate simulation endpoint, implicit run or invented historical identity.
+- Add verified saved-evidence facts with case/metric references, partial/error/source-stale distinctions, numeric interpretation checks, independently reviewed deterministic follow-ups and lightweight private sessions/exports.
+- Reuse existing ModelAdapter/Responses interfaces in explicitly offline protocol tests. **Live provider planning and interpretation are unavailable**: legacy paid workflows/accounting do not authorize this rail task. No new provider/spending client or approval bypass is introduced.
+- Keep reference-plan export context separate from historical recording inventory, and preview status separate from native execution accounting.
+- Stabilize the existing oversized-header security test by declaring the oversized Content-Length without racing a body against the early rejection; the HTTP400 assertion and production guard are unchanged.
+
+Validation: 81 focused non-native Python tests, 133 targeted frontend tests, typecheck/build and 13 genuine Chrome checks passed. No paid requests, native rollouts, VMs, installations or applications in this feature verification. Existing v0.4 native measurements were read as historical evidence, not rerun or migrated. Protected source and all117public evidence/fixture files remain unchanged. See [feature guide](docs/AI_EXPERIMENT_DESIGNER.md) for verified scope and live-integration prerequisites.
+
+
+
 ## v0.4.0 — Unreleased · Trusted simulation engine
 
 - Add fixed developer-authored rail reference sweeps: numeric-only admission, source/controller/model identities, maximum 25 serial cases, 600 primary + 600 fresh native replay steps per case and a cooperative 60-second sweep deadline.

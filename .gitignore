@@ -41,6 +41,7 @@ __pycache__/
 !/docs/DEVELOPMENT.md
 !/docs/VERIFICATION.md
 !/docs/PARAMETER_SWEEP_LAB.md
+!/docs/AI_EXPERIMENT_DESIGNER.md
 !/docs/LIMITATIONS.md
 !/docs/assets/
 /docs/assets/*

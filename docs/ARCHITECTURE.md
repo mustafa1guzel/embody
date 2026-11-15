@@ -58,3 +58,24 @@ recorded plot without inventing historical scenario IDs for new cases.
 This is trusted local developer code, not containment for user/AI programs.
 Protected qualification identities, VM workers and model-authored execution gates
 remain unchanged. See [limits and trust model](PARAMETER_SWEEP_LAB.md).
+
+
+## Review-only experiment design (v0.5 preview)
+
+[The planning/evidence layer](../ide_api/experiment_designer.py) reads the trusted
+rail catalog, validates complete exact-schema proposals and associates hash-checked
+saved native evidence. It has no provider client, native runner, candidate import
+or project-apply tool. Existing HTTP guards cover session/review routes; actual
+simulation remains exclusively in the unchanged trusted-sweep service.
+
+Reviewed reference transfers preserve the current source/context, SI grid and
+proposal identity. They use the existing analytical/plot structures without
+inventing historical A/B/C identities. Review is not native or financial consent.
+Saved facts retain exact case/metric identities; external or stale-source records
+are not new current-source verification or proof a proposal executed.
+
+Protected agent/orchestrator/budget code is unchanged. Its provider abstraction is
+reused only in labelled offline tests because the existing paid authorization
+workflow does not support rail design and public historical accounting is absent.
+The manual/deterministic fallback is explicit, not genuine model reasoning. Local
+sessions are ignored; see [schema, workflow and limitations](AI_EXPERIMENT_DESIGNER.md).

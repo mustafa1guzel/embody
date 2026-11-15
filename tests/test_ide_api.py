@@ -177,7 +177,11 @@ def test_host_origin_csrf_and_bounded_strict_json(http):
         response=client.post('/api/review/create',content=raw,headers={'Content-Type':'application/json'})
         if response.status_code==202:assert finish(client,response)['status']=='BLOCKED'
         else:assert response.status_code==400
-    assert client.post('/api/review/create',content=b'x'*(MAX_BODY+1),headers={'Content-Type':'application/json'}).status_code==400
+    # The server rejects the declared size before reading a body. Sending the
+    # oversized body races that early response and can reset the client socket.
+    oversized=client.post('/api/review/create',content=b'',headers={'Content-Type':'application/json','Content-Length':str(MAX_BODY+1)})
+    assert oversized.status_code==400
+    assert oversized.json()['error']=='Request body exceeds limit or is empty'
     assert client.post('/api/review/create',content='x').status_code==400
     assert client.get('/api/experiment?scenario=A&scenario=B').status_code==400
     assert client.get('/api/file?path=.env&extra=x').status_code==400
