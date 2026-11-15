@@ -1,167 +1,175 @@
-# Parameter Sweep Lab · v0.3
+# Parameter Sweep Lab · v0.4
 
-Plan bounded rail-braking experiments, inspect ideal braking predictions and
-compare an exactly matching historical anchor. **New MuJoCo sweep execution is
-unavailable in this release.** A predicted result never becomes a measured PASS.
-
-![Actual Parameter Sweep Lab with a nine-case analytical plan and an exact-anchor saved comparison](assets/product/parameter-sweep-lab.png)
+Configure bounded rail experiments, compare ideal predictions, then explicitly run
+**only the registered developer-authored velocity brake** through the trusted local
+MuJoCo service. Historical original/repair controller source is never executed by
+this route. Analytical preview and saved historical comparisons remain independent.
 
 Open **Simulate → Open Parameter Sweep Lab**, **Advanced workspaces → Parameter
-Sweep Lab**, or **Plan a parameter sweep** inside Physics Regression Explorer.
-Back to workbench preserves the current project. These views use only existing
-read-only experiment requests; no new backend endpoint or execution tool exists.
+Sweep Lab**, or **Plan a parameter sweep** in Physics Regression Explorer.
 
-1. Select rail scenario A, B or C as the geometry/context anchor, then a recorded
-   controller identity. Controller selection binds provenance; it does not make
-   the ideal model reproduce that controller's behavior.
-2. Choose one or two distinct parameters, enter minimum/maximum/positive step,
-   set the remaining fixed values, and optionally adjust acceptance criteria.
-3. Check the proposed count, then explicitly select **Preview analytical plan**.
-   Changing inputs clears the old preview. No edit or preview starts physics.
-4. Select a heatmap cell to inspect parameters, predictions, margins and any
-   exact-anchor saved recording. Switch heatmap modes to inspect historical
-   clearance or derived acceptance over saved measurements.
-5. Use **Export plan JSON** for a portable review document. It is not execution
-   permission or an applied project. Compare recorded controllers opens the
-   existing Regression Explorer.
+## Configure, review, explicitly run
 
-## Parameters and reproducible grids
+1. Select an A/B/C numerical/geometry anchor, one or two distinct parameter axes,
+   minimum/maximum/positive step and fixed values. Preview the analytical plan.
+2. Inspect the count and heatmap. A maximum is an inclusive bound, included only
+   if whole steps reach it. Integer micro-unit stepping prevents accumulated
+   floating-point duplicates; up to six decimals and 25 cases are supported.
+3. In **Run trusted reference simulations**, review the registered developer
+   controller and choose **Run Simulation Sweep**. Confirm the exact case/step
+   bounds. Historical controller selection above remains saved-comparison context;
+   the new request binds a different controller/source identity.
+4. Follow per-case states, inspect measured cells, or request cancellation.
+   Cancellation is cooperative between fixed native steps; completed cases remain.
+   Interrupted/failed requests never retry automatically. Refresh saved sweeps to
+   recover an uncertain admission, then explicitly load its existing record.
+5. Select a measured case for actual trajectories, metrics, criteria, model/source
+   hashes and fresh replay. Export its sweep explicitly as portable JSON.
 
-| Parameter | Inclusive planning bounds | Existing physical mapping |
+Changes to planning inputs clear its analytical preview but do not relabel a prior
+measured request. Run is disabled without a valid preview or while a known job is
+active. No model call, simulation or project application occurs on load/edit/export.
+Back to workbench preserves the authoritative project.
+
+![Actual trusted rail reference results in Parameter Sweep Lab](assets/product/trusted-rail-sweep.png)
+
+## Supported physical parameters
+
+| Parameter | Inclusive range | Fixed model mapping |
 |---|---|---|
-| Robot mass | 1–4 kg | BODYBASE mass; native template scales declared inertia with mass |
+| Robot mass | 1–4 kg | BODYBASE declared moving mass and proportional template inertia |
 | Initial velocity toward wall | 0–1.2 m/s | WORLDBASE initial velocity; BODYBASE initial-speed ceiling |
-| Maximum braking force | 2–6 N | BODYBASE direct motor control/force ranges, gear 1 |
-| Initial surface clearance | 0.35–2.2 m | Wall near face minus initial bumper front; move wall center with its size fixed |
+| Maximum braking force | 2–6 N | Direct gear-1 motor control and force limits |
+| Initial surface clearance | 0.35–2.2 m | Wall near face minus initial bumper front; fixed wall size |
 
-Mass, force and gap bounds follow the existing bounded rail parameter envelope.
-Zero velocity is a stationary analytical case; values below 0.4 m/s are outside
-the historical robustness sampler's speed range. No new measured coverage is
-implied. Initial position, geometry, timestep, duration and gravity stay bound to
-the selected anchor and are not sweep controls. SHAPEBASE geometry is not changed.
+Initial position is fixed at 0 m; bumper front starts at 0.18 m. The wall center is
+`0.18 + gap + 0.05` m. Geometry, vertical gravity, 3-second horizon and 0.005-second
+timestep are not browser-supplied sweep fields. Zero velocity is stationary; it
+extends below the historical robustness sampler's 0.4 m/s floor without claiming
+historical coverage. No arbitrary robot/SHAPEBASE geometry, controller, XML or file
+path can enter this execution route.
 
-Maximum grid size is **25**, including a 5×5 grid; code may select a stricter cap
-from 1–25 but cannot raise the policy ceiling. Inputs are finite and bounded,
-with at most six decimal places. Integer micro-unit steps prevent accumulated
-floating-point duplicates. The upper bound is inclusive, but is included only
-when reachable by whole steps. A zero-width range produces one value. Horizontal
-values vary fastest; vertical values form rows. Stable case IDs bind the rail
-planning version, anchor, exact controller SHA-256 and all four parameter values;
-the plan separately carries the exact recording inventory and numerical context.
+The analytical model remains `a=F/m`, `d=mv²/(2F)`, `t=mv/F`, remaining clearance
+`gap−d`. It assumes immediate constant maximum braking to exact rest, no control
+delay, contact effects or numerical integration. It predicts ideal clearance/time
+only; it is never measured physics or the behavior of a selected historical repair.
 
-The default nine-case plan uses masses 1/2/3 kg, speeds 0.4/0.8/1.2 m/s, force
-4 N and initial surface gap 1.77 m. Its **analytical remaining clearance**, m:
+## Trusted execution and authorization
 
-| Mass ↓ / speed → | 0.4 m/s | 0.8 m/s | 1.2 m/s |
-|---|---:|---:|---:|
-| 1 kg | 1.75 | 1.69 | 1.59 |
-| 2 kg | 1.73 | 1.61 | 1.41 |
-| 3 kg | 1.71 | 1.53 | 1.23 |
+The only registered experiment is `rail_velocity_brake_v1`, controller
+`developer_velocity_brake_v1`. Its new developer source applies force opposing
+current velocity from t=0, bounded by the compiled actuator range, clipping the
+last command to avoid a commanded reversal. It has no wall-proximity trigger and
+is not a model-authored repair. See [service and controller](../ide_api/rail_sweeps.py).
 
-All nine meet the default **ideal clearance/time** limits; the smallest predicted
-clearance margin is 1.18 m. **Zero new cases have executed.** This is not nine
-measured passes and does not predict the selected controller's timing.
+The service reuses unchanged [BODYBASE](../core/bodybase.py),
+[WORLDBASE](../core/worldbase.py), [compiler/runner](../core/simulation.py), fixed
+[rail template](../robot/rail_carriage.xml) and [original acceptance](../core/diagnostics.py).
+A separate fresh MjModel/MjData replay directly steps the same registered controller
+and independently measures state, forces, geometry with `mj_geomDistance` and
+contact IDs. It is independent execution with shared MuJoCo/controller, not a
+second physics engine or formal proof. The historical faulty-controller verifier
+and VM candidate route remain unchanged.
 
-## Analytical prediction and measured definitions
+| Bound | Enforced policy |
+|---|---|
+| Cases | 1–25, validated server-side; serial |
+| Integration | 600 primary + 600 fresh replay steps per case; maximum 30,000 |
+| Samples | 601 per primary/replay trajectory |
+| Horizon | 3 s, timestep 0.005 s |
+| Deadline | 60 s per sweep, cooperatively checked between fixed native steps |
+| Storage | At most 16 retained local sweep directories; no automatic deletion |
+| Request | Exact schema, at most 16,384 bytes, inside the existing bounded JSON API |
+| Responses | Overview ≤65,536 bytes; each full case ≤1,500,000 bytes |
 
-The ideal model is constant maximum braking starting immediately at t=0 and
-ending at rest, with one-dimensional motion and no control delay:
+The service adds existing-style routes to the loopback API:
 
-```text
-a_max = F / m                     [m/s²]
-d_stop = m × v² / (2 × F)          [m]
-t_stop = m × v / F                [s]
-remaining clearance = initial surface gap − d_stop
-clearance margin = remaining clearance − selected minimum clearance
-```
+- GET `rail-sweeps/catalog`, `rail-sweeps/state?id=…`, `rail-sweeps/case?id=…&case=…`
+- POST `rail-sweeps/start` and `rail-sweeps/cancel`
 
-The ideal classification checks only remaining clearance and ideal stopping time.
-Both are inclusive with the existing 1e−12 clearance/time tolerance. The recorded
-speed/contact criteria are not new analytical predictions. Existing shared
-criterion validation and saved-run evaluation retain their strict speed limit,
-contact episodes, missing-data rules and sampled settling definition.
+Writes retain the existing Host/Origin/Sec-Fetch-Site/CSRF/content-type/size guards
+and shared single-expensive-job lock. Requests allow only fixed experiment and
+controller IDs, current source identity, numerical cases/criteria, finite nonce and
+explicit confirmation. Supplied code, imports, executable/model/output paths,
+external XML and historical repairs reject before dispatch. No shell, arbitrary
+module loader or VM bypass is introduced. The source identity binds the controller/
+service, API adapter, model, contexts, numerical engine versions and execution
+policy; source drift blocks admission and subsequent cases. Duplicate nonces never
+resubmit; mismatched reuse rejects. This is a single-operator local workflow, not
+an authenticated remote multi-user service or a sandbox for untrusted programs.
 
-At 2 kg, 1.2 m/s, 4 N and gap 1.77 m, a = 2 m/s², ideal d = 0.36 m,
-ideal t = 0.6 s and remaining gap = 1.41 m. The matching second-repair A recording
-has measured minimum clearance approximately 0.0524 m. The signed difference,
-measured minimum minus ideal remaining gap, is approximately −1.3576 m. The
-original controller at the same anchor remains recorded FAIL despite the ideal
-classification. Immediate maximal braking is an assumption, not an explanation
-of the actual controller's behavior.
+No protected VM/core/physics/configuration identity, qualification protocol,
+baseline, certificate or historical evidence is changed. This trusted developer
+route grants no authority to execute model/user source. Other installations and
+candidate execution still require their existing qualification and approval.
 
-Measured travel to settling uses the first saved position and the first sample
-whose entire remaining speed suffix stays below the selected speed limit. It is
-unavailable when settling or positions are missing. This is **not exact zero-speed
-stopping distance**. Its difference from ideal distance is descriptive; the
-underlying definitions differ. Timing, integration, contacts and assumptions can
-contribute to discrepancies, but the comparison alone proves no specific cause.
+## Measured acceptance and interpretation
 
-## Historical comparison and failure boundaries
+A measured PASS requires **all original fixed rail checks**, selected criteria,
+force/contact audit and fresh replay. Lowering a selected threshold cannot weaken
+the original minimum 0.05 m clearance, final speed strictly below 0.03 m/s, zero
+wall contacts, complete 3-second horizon and finite measurements.
 
-Only a case matching all four parameters of the **selected anchor and controller**
-can attach that anchor's saved recording. Matching other scenarios is deliberately
-not inferred from superficially similar parameter values. The existing reader
-verifies the immutable recording inventory, and the planner checks consistent
-initial context/geometry. All other cases show unavailable measurements.
+Selected native criteria are bounded to clearance 0–2.2 m, positive final-speed
+limit ≤1.2 m/s, settling deadline 0–3 s and integer contact limit 0–600. The planner
+may express other hypothetical criteria, but the native service rejects unsupported
+ones before execution. Clearance/time comparisons use the existing 1e−12 tolerance;
+final speed is strictly exclusive. Sampled settling is the earliest saved sample
+whose entire remaining speed suffix stays below the selected limit. Its travel
+from the initial sample is **not exact continuous stopping distance**.
 
-Historical minimum clearance, immutable verdict, derived selected-criteria result
-and actual trajectory are labelled as saved evidence. New case execution remains
-NOT EXECUTED and new measured results stay null, even where a historical
-comparison exists. Read errors block loading; no fallback study is substituted.
+Measured views show minimum clearance, final/peak speed, force peak, wall-contact
+episodes and samples, sampled settling, duration and 601-point trajectories. Modes
+include clearance, final speed, acceptance and signed measured-minus-ideal clearance.
+Sparse grids show unavailable combinations; requests varying more than two fields
+use case cards. Execution errors and cancelled/unexecuted cases never become PASS.
+A delayed case read withholds the previous case's trajectory rather than showing it
+under a newly selected identity.
 
-Heatmap colors always have accompanying text. Its three modes are analytical
-predicted clearance, historical measured minimum clearance and historical derived
-acceptance. Status documentation distinguishes planned/predicted/not-executed,
-running, measured PASS/FAIL, execution error and insufficient data. This release
-cannot enter new running/measured/error execution states because it has no runner.
+Boundary summaries use adjacent measured PASS/FAIL cases with all other parameters
+fixed. Unexecuted/error gaps do not establish transitions. An analytical bracket
+is separate from an observed physical boundary; neither is a universal safety envelope.
 
-For example, keeping the default mass/speed grid but using 2 N and a 0.35 m gap
-produces four cases within ideal clearance/time limits and five outside. The worst
-predicted remaining gap is −0.73 m, with a −0.78 m clearance margin. Negative ideal
-clearance indicates insufficient ideal stopping space, not a simulated penetration.
-Adjacent classification changes are listed as **analytical sampled brackets**,
-not observed physical failure boundaries. No new observed boundary is claimed.
+## Genuine bounded demonstration
 
-![Actual near-wall analytical grid, explicitly not executed](assets/product/parameter-sweep-boundaries.png)
+The development demonstration used **three distinct cases and three fresh replays**:
+six actual native rollouts, 3,600 total integration steps. No later browser test
+started native physics. Each case completed the fixed/selected checks and replay.
 
-## Why execution is unavailable
+| Case | Mass kg | Speed m/s | Force N | Initial gap m | Ideal stop m | Ideal remaining gap m | Measured minimum gap m | Final speed m/s | Contacts | Verdict |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|
+| Ordinary | 2 | 0.4 | 4 | 1.77 | 0.04 | 1.73 | 1.731 | 0 | 0 | PASS |
+| Heavier / higher speed | 4 | 1.2 | 2 | 2.20 | 1.44 | 0.76 | 0.763 | 0 | 0 | PASS |
+| Near limit / challenge | 4 | 1.2 | 2 | 1.49 | 1.44 | 0.05 | 0.053 | 0 | 0 | PASS |
 
-The audited low-level [rail runner](../core/simulation.py) accepts Python controller
-callbacks. It is not a bounded numeric/controller-allowlist API. Existing repaired
-rail [evaluation](../robustness/evaluator.py) calls source/model qualification and
-requires the VM backend for first rollout and fresh verification. Existing
-[reference controllers](../core/robots/reference.py) operate the planar arm, not
-the rail. World/device simulation routes use different contracts and may commit
-project evidence; they cannot substitute for this review-only rail planner.
+Measured-minus-ideal gap differences were approximately +0.001/+0.003/+0.003 m.
+There was **no measured failure or observed PASS/FAIL boundary** in this small
+sample. The outcome was not forced. Saved state readback can assess numerical
+integration differences; generic timing/contact explanations are not assumed.
+Fresh replay matched state/force/geometry within its recorded tolerance. Full
+new user archives remain ignored local runtime data rather than Git fixtures.
 
-No host import of recorded model-authored controller source, alternate execution
-route, VM launch, certificate change or protected-source change was introduced.
-Before measured rail sweeps can be enabled, a separate review must define an
-allowlisted trusted reference-controller route, numeric admission, serial case
-budgets, independent native verification, preserved error/failure outputs and
-append-only experiment storage outside examples. Any necessary qualification-bound
-changes or VM execution require their own review and explicit authorization.
+![Actual measured near-limit case and native replay evidence](assets/product/trusted-rail-case.png)
 
-## Export and limits
+## Persistence, exports and limits
 
-The explicit browser JSON download uses `EMBODY_RAIL_SWEEP_PLAN_V1`: stable case
-IDs, parameter/criterion units, selected controller/inventory identities, public
-numerical context, axes, criteria, ideal predictions, NOT_EXECUTED status and null
-new measurements. An optional `historical_comparison` is explicitly tagged
-`REUSED_SAVED_RECORDING_NOT_NEW_EXECUTION`. Arbitrary backend metadata, paths,
-provider prompts, credentials and certificates are excluded. Nothing is written
-into reference-study directories or authoritative project heads.
+New requests/states/results live under ignored `.runtime/rail_sweeps/`, outside
+historical examples and authoritative projects. Request and case files are
+write-once; bounded progress state is replaced atomically. Restarted in-flight
+scopes are reported INTERRUPTED and never auto-resumed. Case readers verify saved
+result, model and trajectory hashes. No browser-supplied output path exists.
 
-These bounded mathematical predictions and finite historical recordings do not
-prove real material/contact fidelity, manufacturing feasibility, controller
-robustness outside recorded cases or real-world safety. No general geometry
-sweep, arbitrary code execution, live AI generation or new simulator result is
-included. CSV export and live execution are not implemented.
+The existing `EMBODY_RAIL_SWEEP_PLAN_V1` download remains an analytical/historical
+plan: new measurements are null and its historical-controller execution flag is
+false. The distinct `EMBODY_TRUSTED_RAIL_SWEEP_V1` export contains the exact new
+request, status, actual measured cases/trajectories/replays, criteria, identities,
+engine version and limitations. No private paths, credentials, raw prompts or
+certificates are included. Export performs GET reads only.
 
-Focused checks, without backend changes or a broad historical regression:
-
-```sh
-npm --prefix frontend test -- src/parameterSweep.test.ts src/ParameterSweepLab.test.tsx src/physicsRegression.test.ts src/PhysicsRegressionExplorer.test.tsx src/App.test.tsx src/PhysicsPanel.test.tsx src/UnifiedWorkspace.test.tsx src/playback.test.ts
-npm --prefix frontend run typecheck
-npm --prefix frontend run build
-```
+Both actual measurements and predictions are finite rigid-proxy evidence, not
+real-world safety, calibrated contact/material behavior, manufacturing proof or
+arbitrary-controller robustness. Desktop macOS with existing MuJoCo dependencies
+was exercised; no new OS/dependency installation qualification is claimed. The
+wall timeout is cooperative, not OS process preemption. Local storage quota needs
+explicit operator preservation/export/maintenance when full. No paid model call,
+new VM, automatic application or broad historical suite is part of this feature.

@@ -117,16 +117,29 @@ npm --prefix frontend run build
 ```
 
 
-## Parameter Sweep Lab
+## Parameter Sweep Lab and trusted native execution
 
-The v0.3 planning feature opens through **Simulate → Open Parameter Sweep Lab**,
-Advanced workspaces, or Physics Regression Explorer. It validates a deterministic
-one/two-dimensional numeric grid, capped at 25, and predicts ideal braking using
-F/m, mv²/(2F) and mv/F. **Analytical prediction is not a simulation result.**
-Every new case stays NOT EXECUTED; only exact-anchor saved measurements can appear
-in a separate historical comparison. The export preserves this separation.
+Open **Simulate → Open Parameter Sweep Lab**. Analytical previews remain separate
+from explicit **Run Simulation Sweep → Confirm and run trusted sweep**. Only the
+fixed registered developer velocity brake may run: never a historical/GPT repair,
+uploaded source, supplied XML/module/controller/executable/output path.
 
-See the [complete parameter mappings, definitions, example grids and limitations](PARAMETER_SWEEP_LAB.md).
-New native execution is unavailable because there is no bounded trusted rail-sweep
-API. Protected callback execution/VM qualification routes were not changed or
-bypassed. Existing historical evidence and project heads are unchanged.
+The unchanged rail model/context builder and runner perform 600 primary native
+steps per case; fresh direct native replay performs 600 more. State, geometry,
+forces and contact IDs are checked independently. Hard original rail predicates
+remain mandatory alongside selected criteria. No protected qualification source
+or candidate-execution boundary changes.
+
+The real demonstration passed three cases and fresh replay: ordinary .4 m/s at
+2 kg, heavier/higher-speed 1.2 m/s at 4 kg, and a near-limit challenge with a
+1.49 m initial gap. Minimum measured gaps were 1.731 / .763 / .053 m, final speeds
+zero, no contact samples; all PASS. This consumed six actual native rollouts,
+3,600 total steps. No measured failure boundary was observed. Browser QA uses
+these saved results without additional integration.
+
+Final checks: **34 non-native backend/security tests + 1 separate real-native
+integration test**, **120 targeted frontend tests**, TypeScript and production
+build PASS. Test doubles cover error/cancellation/protocol cases and are not
+native evidence. No broad historical suite or VM test batch ran. See the
+[complete feature guide](PARAMETER_SWEEP_LAB.md) for exact bounds, persistence,
+measurement definitions and limitations.

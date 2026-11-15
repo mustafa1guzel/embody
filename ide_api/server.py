@@ -101,6 +101,13 @@ class Handler(BaseHTTPRequestHandler):
                 if set(q)!={name} or len(q[name])!=1:raise ValueError('Invalid query fields')
                 return q[name][0]
             path=route.path;ide=self.server.ide
+            if path=='/api/rail-sweeps/catalog':
+                if q:raise ValueError('Unexpected query')
+                return self.reply(200,ide.rail_sweeps.catalog())
+            if path=='/api/rail-sweeps/state':return self.reply(200,ide.rail_sweeps.read(one('id')))
+            if path=='/api/rail-sweeps/case':
+                if set(q)!={'id','case'} or any(len(v)!=1 for v in q.values()):raise ValueError('Exact sweep/case query required')
+                return self.reply(200,ide.rail_sweeps.case(q['id'][0],q['case'][0]))
             if path=='/api/health':
                 if q:raise ValueError('Unexpected query')
                 from ide_api.startup import check
@@ -211,6 +218,10 @@ class Handler(BaseHTTPRequestHandler):
             route=urlsplit(self.path)
             if route.query:raise ValueError('Unexpected query fields')
             path=route.path;ide=self.server.ide
+            if path=='/api/rail-sweeps/start':
+                return self.reply(202,ide.rail_sweeps.start(body,self.server.job))
+            if path=='/api/rail-sweeps/cancel':
+                exact(body,['id']);return self.reply(200,ide.rail_sweeps.cancel(body['id']))
             if path=='/api/ramp-review':
                 exact(body,['parameters']);return self.reply(200,ide.ramp.create(body['parameters']))
             if path=='/api/ramp-test':

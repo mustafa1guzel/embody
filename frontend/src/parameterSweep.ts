@@ -25,7 +25,7 @@ export const limitations = [
  'Analytical prediction: ideal one-dimensional motion with constant maximum braking from t=0 until rest; no control delay, reverse acceleration, contact dynamics or numerical integration.',
  'Predicted clearance is initial signed surface gap minus ideal stopping distance. It is not the measured minimum clearance of the selected controller.',
  'Ideal time is exact rest under the ideal model. Measured settling is a sampled low-speed suffix, not exact rest; their definitions differ.',
- 'New rail execution is unavailable: no bounded allowlisted rail-sweep API exists. Historical repaired sources require the qualified VM route, never host import.',
+ 'This historical-controller plan grants no execution authority. A separate explicitly confirmed developer-reference sweep uses its own identities; historical repaired sources still require the qualified VM route, never host import.',
  'Only an exactly matching anchor can attach its saved recording. It remains historical evidence, not execution of a new grid case.',
  'Finite saved observations and ideal predictions do not certify real-world safety or a universal operating envelope.',
 ];

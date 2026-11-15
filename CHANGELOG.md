@@ -1,6 +1,18 @@
 # Release notes
 
 
+## v0.4.0 — Unreleased · Trusted simulation engine
+
+- Add fixed developer-authored rail reference sweeps: numeric-only admission, source/controller/model identities, maximum 25 serial cases, 600 primary + 600 fresh native replay steps per case and a cooperative 60-second sweep deadline.
+- Reuse original model/context/physics acceptance unchanged, with independent native geometry/force/contact/state checks. No historical/GPT source enters the native reference route.
+- Add existing-guarded loopback catalog/start/state/case/cancel routes, consumed-nonce protection, finite storage/output limits, append-only case evidence and interrupted/error/cancelled states without retries.
+- Integrate explicit confirmation, progress, saved-result recovery, measured heatmaps, criteria, actual trajectories, sampled-boundary summaries and JSON export into Parameter Sweep Lab. Withhold old trajectories during asynchronous case switches.
+- Genuine demonstration: three physical cases plus fresh replays (six rollouts / 3,600 steps), all PASS; minimum gaps 1.731 / .763 / .053 m. No observed measured failure boundary or real-world safety claim.
+
+Validation: 34 non-native backend/security tests and one separate real-native integration test passed; 120 targeted frontend tests, TypeScript and production build passed. Genuine Chrome QA used saved native evidence with further integration blocked. Protected identities and immutable examples remain unchanged. No paid calls, VMs, installations, controller applications or publication. See [feature guide](docs/PARAMETER_SWEEP_LAB.md).
+
+
+
 ## v0.3.0 — Unreleased · Parameter Sweep Lab
 
 - Add an integrated review-only rail experiment planner with one/two numeric axes, stable case identities, explicit units, six-decimal integer stepping and a hard 25-case ceiling.

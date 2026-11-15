@@ -155,7 +155,7 @@ export function revisionComparison(runs: RecordedRun[], criteria: Criteria) {
 }
 
 /** Null gaps stay gaps. Never interpolate, resample, normalize each run's time or extend its domain. */
-export function recordedSeries(run: RecordedRun, signal: Signal): {time: number; value: number | null}[] {
+export function recordedSeries(run: Pick<RecordedRun, 'timeValid' | 'samples'>, signal: Signal): {time: number; value: number | null}[] {
  return run.timeValid ? run.samples.map(s => ({time: s.time, value: s[signal]})) : [];
 }
 export function displayNumber(v: number | null): string {

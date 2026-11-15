@@ -47,3 +47,16 @@
 @media(max-width:1400px) { .sweep-review-layout { grid-template-columns:minmax(0,1fr); } .sweep-detail dl { display:grid; grid-template-columns:1fr 1fr; gap:0 22px; } }
 @media(max-width:850px) { .sweep-layout { grid-template-columns:minmax(0,1fr); } .sweep-config { display:grid; grid-template-columns:1fr 1fr; gap:16px; } .sweep-config > h2,.sweep-config > .regression-note,.sweep-config > .sweep-count,.sweep-config > .regression-error { grid-column:1/-1; } .sweep-lab .regression-header { align-items:flex-start; flex-direction:column; } }
 @media(max-width:520px) { .sweep-config { display:flex; } .sweep-lab .regression-summary { grid-template-columns:1fr; } .sweep-detail dl { display:block; } .sweep-export { flex-direction:column; align-items:flex-start; } }
+
+.sweep-native { margin:24px 0; padding:20px; background:var(--panel); border:1px solid var(--border); border-radius:5px; }
+.sweep-native h2 { margin:5px 0 0; }
+.sweep-native p { line-height:1.7; }
+.sweep-native-toolbar { display:flex; align-items:end; gap:12px; flex-wrap:wrap; margin:16px 0; }
+.sweep-native-toolbar label { min-width:180px; flex:1; }
+.sweep-confirm { padding:16px; margin:12px 0; border:2px solid var(--trace); background:var(--raised); }
+.sweep-confirm button { margin-right:12px; }
+.sweep-native progress { width:min(100%,450px); accent-color:var(--trace); }
+.sweep-native > label { max-width:360px; margin:18px 0; }
+.sweep-native-list { display:grid; grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); gap:10px; }
+.sweep-native .sweep-detail { margin:18px 0; }
+.regression-reference { stroke:var(--trace); background:var(--trace); }

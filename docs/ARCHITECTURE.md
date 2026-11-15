@@ -36,3 +36,25 @@ The canvas renders supported geometry and saved measured poses. Scrubbing choose
 Saved-study readers require pinned inputs and hashes. The default [portable rail study](../examples/rail-braking-study/README.md) uses the unchanged reader with a distinct public inventory. A schema-context whitelist derives only path metadata; independent comparison preserves measurements, verdicts, source, XML, traces and saved PNGs. Original archives remain separate and unchanged. Advanced historical studies still need private bundles. No reader root or execution permission was widened.
 
 See [verification](VERIFICATION.md) for what the measurements prove and [limitations](LIMITATIONS.md) for unsupported domains.
+
+
+## Trusted rail sweeps (v0.4)
+
+[The bounded reference service](../ide_api/rail_sweeps.py) reuses unchanged rail
+context construction, model/runner and original acceptance, with a single new
+explicitly registered developer controller. The existing loopback API adapter
+retains its Host/Origin/CSRF/size and single-job guards. The browser sends only
+exact-schema bounded numbers, registered IDs, source hash and confirmation.
+It cannot supply source, XML, arbitrary imports or filesystem output paths.
+
+Primary native stepping and fresh direct replay produce separate traces. The
+service checks compiled mass/force/initial geometry, forces, actual contacts and
+shared fixed/selected acceptance, then stores bounded write-once cases and
+atomically updated progress under ignored `.runtime/rail_sweeps/`. Duplicate or
+interrupted scopes never implicitly retry. The UI keeps historical A/B/C,
+analytical plans and new developer-reference results distinct and reuses the
+recorded plot without inventing historical scenario IDs for new cases.
+
+This is trusted local developer code, not containment for user/AI programs.
+Protected qualification identities, VM workers and model-authored execution gates
+remain unchanged. See [limits and trust model](PARAMETER_SWEEP_LAB.md).

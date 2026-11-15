@@ -2,9 +2,9 @@
 
 A local engineering workspace for typed mechanical design, model-directed construction and measured physics.
 
-## Parameter Sweep Lab · v0.3 preview
+## Trusted Simulation Engine · v0.4 preview
 
-Configure one- or two-parameter rail-braking grids (25 cases maximum), inspect ideal stopping predictions, compare exact-anchor historical measurements and export a portable plan. Open **Simulate → Open Parameter Sweep Lab**. **New sweep execution is unavailable**; predicted results are never measured passes. See [parameters, usage, assumptions and execution prerequisites](docs/PARAMETER_SWEEP_LAB.md).
+Configure a bounded rail parameter grid, inspect ideal predictions, then explicitly confirm a new MuJoCo sweep using only the registered **developer-authored velocity brake**. Inspect actual metrics, fresh replay, measured heatmaps, trajectories and portable JSON export. Open **Simulate → Open Parameter Sweep Lab**. Historical/GPT controller source remains excluded from this native route. See [usage, limits, real demonstration and security boundary](docs/PARAMETER_SWEEP_LAB.md).
 
 ## Physics Regression Explorer · v0.2.1
 

@@ -1,8 +1,10 @@
 import {useEffect, useMemo, useState} from 'react';
-import {displayNumber, recordedSeries, revisionNames, type Criteria, type RecordedRun, type Signal} from './physicsRegression';
+import {displayNumber, recordedSeries, revisionNames, type Criteria, type RecordedRun, type Signal, type Scenario} from './physicsRegression';
 
+type PlotRun = Pick<RecordedRun, 'id' | 'samples' | 'timeValid'> & {scenario?: Scenario; revision: RecordedRun['revision'] | 'reference'; title?: string};
+const nameOf = (r: PlotRun) => r.title || (r.revision === 'reference' ? 'Trusted developer reference' : r.scenario + ' · ' + revisionNames[r.revision]);
 const signals = {wall_clearance: ['Wall clearance', 'm'], velocity: ['Velocity', 'm/s'], position: ['Position', 'm']} as const;
-export default function RecordedTrajectoryPlot({runs, criteria}: {runs: RecordedRun[]; criteria: Criteria | null}) {
+export default function RecordedTrajectoryPlot({runs, criteria}: {runs: PlotRun[]; criteria: Criteria | null}) {
  const [signal, setSignal] = useState<Signal>('wall_clearance'), [index, setIndex] = useState(0);
  const series = useMemo(() => runs.map(run => ({run, points: recordedSeries(run, signal)})), [runs, signal]);
  const times = useMemo(() => [...new Set(series.flatMap(s => s.points.filter(p => p.value !== null).map(p => p.time)))].sort((a, b) => a - b), [series]);
@@ -38,8 +40,8 @@ export default function RecordedTrajectoryPlot({runs, criteria}: {runs: Recorded
     <line className="regression-cursor" x1={x(cursor)} x2={x(cursor)} y1="25" y2="217"/>
    </svg>
    <label className="regression-scrubber">Inspect recorded timestamp<input aria-label="Recorded trajectory timestamp" type="range" min="0" max={times.length - 1} step="1" value={Math.min(index, times.length - 1)} onChange={e => setIndex(Number(e.target.value))}/><output>{displayNumber(cursor)} s</output></label>
-   <ul className="regression-legend">{series.map(({run, points}) => {const sample = points.find(p => p.time === cursor);return <li key={run.id}><span className={'regression-swatch regression-' + run.revision}/><span>{run.scenario} · {revisionNames[run.revision]}</span><span>{sample?.value != null ? displayNumber(sample.value) + ' ' + signals[signal][1] : 'No sample at this timestamp'}</span></li>;})}</ul>
+   <ul className="regression-legend">{series.map(({run, points}) => {const sample = points.find(p => p.time === cursor);return <li key={run.id}><span className={'regression-swatch regression-' + run.revision}/><span>{nameOf(run)}</span><span>{sample?.value != null ? displayNumber(sample.value) + ' ' + signals[signal][1] : 'No sample at this timestamp'}</span></li>;})}</ul>
   </>}
-  <p className="regression-note">Solid: A · dashed: B · dotted: C. Lines connect adjacent saved samples; missing values break the line. Each run keeps its actual time domain. No new samples or extrapolation. Dotted horizontal guides are hypothetical thresholds.</p>
+  <p className="regression-note">{runs.every(r => r.scenario !== undefined) ? 'Solid: A · dashed: B · dotted: C. ' : 'Trusted developer reference recordings. '}Lines connect adjacent saved samples; missing values break the line. Each run keeps its actual time domain. No new samples or extrapolation. Dotted horizontal guides are hypothetical thresholds.</p>
  </section>;
 }

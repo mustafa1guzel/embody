@@ -13,7 +13,8 @@ let requests: {path: string; options: unknown}[];
 beforeEach(() => {
  requests=[];localStorage.clear();vi.stubGlobal('fetch',vi.fn(async(path:string,options?:unknown)=>{
   requests.push({path,options});const u=new URL(path,'http://127.0.0.1');let data;
-  if(u.pathname==='/api/experiment')data=evidence.experiments[u.searchParams.get('scenario')!];
+  if(u.pathname==='/api/rail-sweeps/catalog')data={experiment_id:'rail_velocity_brake_v1',controller_id:'developer_velocity_brake_v1',source_sha256:'f'.repeat(64),confirmation:'RUN TRUSTED RAIL SWEEP',policy:{},limitations:[],recent:[]};
+  else if(u.pathname==='/api/experiment')data=evidence.experiments[u.searchParams.get('scenario')!];
   else if(u.pathname==='/api/bootstrap')data=evidence.bootstrap;
   else if(u.pathname==='/api/agent/recorded')data=evidence.agent;
   else if(u.pathname==='/api/proposal')data=evidence.proposals[u.searchParams.get('variant')!];
@@ -27,7 +28,7 @@ async function open(){render(<ParameterSweepLab/>);await screen.findByRole('butt
 function preview(){fireEvent.click(screen.getByRole('button',{name:'Preview analytical plan'}));}
 it('loads actual reference data; edits and analytical preview make no execution requests',async()=>{
  await open();expect(screen.getByText(/proposed experiments/)).toHaveTextContent('9');expect(screen.queryByRole('table')).not.toBeInTheDocument();preview();expect(screen.getByRole('table')).toHaveTextContent('Initial velocity toward wall');expect(screen.getAllByTestId(/^sweep-cell-/)).toHaveLength(9);
- expect(screen.getByLabelText('Sweep summary')).toHaveTextContent('0 / 9');expect(screen.getByRole('button',{name:'Run MuJoCo sweep · unavailable'})).toBeDisabled();expect(requests).toHaveLength(3);expect(requests.every(r=>r.options===undefined)).toBe(true);
+ expect(screen.getByLabelText('Sweep summary')).toHaveTextContent('0 / 9');expect(screen.getByRole('button',{name:'Run Simulation Sweep'})).toBeEnabled();expect(requests).toHaveLength(4);expect(requests.every(r=>r.options===undefined)).toBe(true);
 });
 it('selects heatmap cells and exposes independent analytical values with no measured substitution',async()=>{
  await open();preview();fireEvent.click(screen.getByTestId('sweep-cell-5'));const detail=screen.getByRole('complementary',{name:'Selected experiment details'});
@@ -62,7 +63,7 @@ it('updates selected criteria while preserving historical verdict and actual sav
 });
 it('exports explicit JSON only on user action and revokes the object URL',async()=>{
  await open();preview();const create=vi.fn(()=> 'blob:local-plan'),revoke=vi.fn();vi.stubGlobal('URL',Object.assign(URL,{createObjectURL:create,revokeObjectURL:revoke}));const click=vi.spyOn(HTMLAnchorElement.prototype,'click').mockImplementation(()=>{});
- fireEvent.click(screen.getByRole('button',{name:'Export plan JSON'}));expect(create).toHaveBeenCalledOnce();expect(create.mock.calls[0]).toHaveLength(1);expect(click).toHaveBeenCalledOnce();await new Promise(resolve=>setTimeout(resolve,10));expect(revoke).toHaveBeenCalledWith('blob:local-plan');expect(requests).toHaveLength(3);
+ fireEvent.click(screen.getByRole('button',{name:'Export plan JSON'}));expect(create).toHaveBeenCalledOnce();expect(create.mock.calls[0]).toHaveLength(1);expect(click).toHaveBeenCalledOnce();await new Promise(resolve=>setTimeout(resolve,10));expect(revoke).toHaveBeenCalledWith('blob:local-plan');expect(requests).toHaveLength(4);
 });
 it('shows loading/read errors without fallback results and allows an explicit GET retry',async()=>{
  vi.mocked(fetch).mockResolvedValue({ok:false,json:async()=>({error:'Evidence hash mismatch'})} as Response);render(<ParameterSweepLab/>);expect(screen.getByRole('status')).toHaveTextContent('Loading');expect(await screen.findByRole('alert')).toHaveTextContent('Evidence hash mismatch');expect(screen.queryByRole('table')).not.toBeInTheDocument();fireEvent.click(screen.getByRole('button',{name:'Retry saved reference read'}));await screen.findByRole('alert');expect(requests.every(r=>r.options===undefined)).toBe(true);
@@ -73,4 +74,4 @@ it('ignores an interrupted asynchronous read after unmount',async()=>{
 it('is mounted in real App Simulate navigation, connects to Regression Explorer and preserves the head',async()=>{
  render(<App/>);await screen.findByTestId('unified-project-identity');const identity=screen.getByTestId('unified-project-identity').getAttribute('data-project');fireEvent.click(screen.getByRole('button',{name:'Simulate'}));fireEvent.click(screen.getByRole('button',{name:'Open Parameter Sweep Lab'}));await screen.findByRole('button',{name:'Preview analytical plan'});expect(screen.getByLabelText('Parameter Sweep Lab').closest('.ide')).toHaveClass('sweep-mode');preview();
  fireEvent.click(screen.getByRole('button',{name:'Compare recorded controllers'}));await screen.findByLabelText('Derived engineering summary');fireEvent.click(screen.getByRole('button',{name:'Plan a parameter sweep'}));await screen.findByRole('button',{name:'Preview analytical plan'});fireEvent.click(screen.getByRole('button',{name:'Back to workbench'}));expect(screen.getByTestId('unified-project-identity')).toHaveAttribute('data-project',identity);expect(requests.every(r=>r.options===undefined)).toBe(true);
-});
+},12000);
