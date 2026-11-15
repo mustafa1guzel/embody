@@ -12,7 +12,7 @@ export type PhysicsReport={scenario_id:string;variant:Variant;contract_sha256:st
  profiler:{metrics:Record<string,Metric>};outside_envelope:Assessment;recorded_independent_verification:string;uncertainty:string[]};
 
 const number=(v:number|undefined)=>v===undefined?'NOT_AVAILABLE':Number(v.toPrecision(8)).toString();
-export default function PhysicsPanel({scenario,variant}:{scenario:string;variant:Variant}){
+export default function PhysicsPanel({scenario,variant,onOpenRegression}:{scenario:string;variant:Variant;onOpenRegression?:()=>void}){
  const [report,setReport]=useState<PhysicsReport|null>(null),[error,setError]=useState('');
  useEffect(()=>{
   let current=true;setReport(null);setError('');
@@ -31,6 +31,7 @@ export default function PhysicsPanel({scenario,variant}:{scenario:string;variant
  if(!report||report.scenario_id!==scenario||report.variant!==variant)return <p className="note">Loading deterministic physics analysis…</p>;
  const c=report.physics_contract,a=report.analytical_feasibility,o=report.observed_physics,onset=report.braking_onset;
  return <section className="physics-panel" aria-label="Physics contract and analysis">
+  <>{onOpenRegression&&<button onClick={onOpenRegression}>Compare recorded scenarios in Physics Regression Explorer</button>}</>
   <p className="note">New deterministic analysis of recorded measurements · scenario {scenario} / {variant} · no new model or simulation execution.</p>
   <div className="physics-verdicts"><span>Task model: <strong>{a.status}</strong></span><span>Recorded safety: <strong className={o.safety_status==='PASS'?'success':'danger'}>{o.safety_status}</strong></span><span>Program proof: <strong>{report.controller_static_assessment.status}</strong></span></div>
   <p>{a.explanation}</p>

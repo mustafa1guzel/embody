@@ -80,3 +80,38 @@ It grants no VM execution authority; another deployment needs its own valid
 installation-bound qualification and explicit approval. No commit, push or
 upload was performed by these checks. Proxy verification never establishes universal or
 real-world safety.
+
+
+## Physics Regression Explorer
+
+![Physics Regression Explorer showing recorded verdicts, hypothetical criteria and actual saved trajectories](assets/product/physics-regression-explorer.png)
+
+The v0.2.1 explorer compares the portable rail study through the existing read-only experiment, file and proposal APIs. Open **Simulate → Open Physics Regression Explorer** in the workbench, **Advanced workspaces → Physics Explorer**, or the comparison button in the legacy **Physics** panel. The view is independent of unavailable private rover/arm archives. Back to workbench retains the existing project and review state.
+
+Select any of scenarios A/B/C and the original controller, first repair or second repair. Each matrix cell keeps two separate results: the **recorded historical verdict**, which is immutable, and a **hypothetical threshold evaluation** of saved measurements. Selecting a cell exposes the recorded independent execution status, original failure reasons, metrics and checksum-matched saved controller source/diff. Source is displayed only; it is never executed or applied.
+
+The original documented defaults are 0.05 m clearance, final speed strictly below 0.03 m/s, a 3 s deadline and zero wall-contact episodes. All three originals and first repairs retain their recorded FAIL; all three second repairs retain recorded PASS. The first repair avoids contact but has insufficient clearance. Lowering a hypothetical clearance limit can change the derived result while its recorded FAIL remains unchanged.
+
+| Quantity | Extraction and boundary meaning |
+|---|---|
+| Minimum wall clearance | Saved acceptance aggregate, checked against all available measured clearance samples. Inclusive requirement with the existing 1e−12 m tolerance. |
+| Final absolute speed | Saved aggregate checked against the absolute last sampled velocity. Strictly below the selected limit; equality fails. |
+| Peak absolute velocity | Maximum absolute measured velocity; unavailable if the complete velocity series is unavailable. No invented peak/force certification. |
+| Wall-contact episodes / samples | Rising edges of the recorded wall-collision signal versus individual contact-bearing samples. The hypothetical episode limit is an inclusive nonnegative integer. |
+| Sampled settling time | New derived analysis: the first saved sample whose whole remaining saved velocity suffix stays strictly below the selected speed limit. Time requirement is inclusive with 1e−12 s tolerance. This is not exact zero-speed stopping time. |
+
+The default settling deadline reuses the original completion deadline numerically. It is a distinct exploratory criterion: the recorded acceptance also checked full-horizon completion and finite measurements. Changing the speed threshold recomputes settling time. If settling is absent and the selected deadline is covered by the recording, that criterion fails. If the deadline extends beyond the available recording, its result is **Insufficient data**. Known failures remain failures even when another selected metric is unavailable. No extrapolation beyond the saved horizon is performed. Missing/invalid metrics stay unavailable; they are never converted to zero. Conflicting aggregate/sample measurements are withheld. Invalid/nonfinite thresholds withhold all hypothetical results while retaining historical results.
+
+The default worst-case ranking uses clearance margin. It can instead rank speed, settling-time or contact-episode headroom. Rankings compare one unit at a time; unlike dimensions are never mixed into a safety score. The interpretation also reports worst observed clearance, selected-run pass/fail/insufficient counts, the most frequently failing criterion and revision-level changes in worst observed clearance. These are deterministic descriptive summaries, not probabilities or universal robustness estimates.
+
+Trajectory overlays use actual saved position, signed velocity and wall-clearance samples. Choose any runs and signal; the cursor selects an actual recorded timestamp. Each run keeps its own domain. Missing values break a line, and a run without a sample at the cursor is reported as such. No resampling or synthetic samples are introduced. SVG chart conventions follow the existing telemetry UI without adding a charting dependency. The existing two-run telemetry component assumes a shared time grid, so the new reusable multi-run plot explicitly handles different domains.
+
+No API model request, VM, new integration, controller application or qualification change is part of this feature. Existing saved independent MuJoCo verification is displayed, not rerun. Passing selected thresholds means only passing those criteria over the available recorded samples. It does not prove real-world safety, arbitrary-program correctness or generalization beyond the three scenarios.
+
+Focused frontend checks (no backend changes):
+
+```sh
+npm --prefix frontend test -- src/physicsRegression.test.ts src/PhysicsRegressionExplorer.test.tsx src/PhysicsPanel.test.tsx src/App.test.tsx src/UnifiedWorkspace.test.tsx src/playback.test.ts
+npm --prefix frontend run typecheck
+npm --prefix frontend run build
+```

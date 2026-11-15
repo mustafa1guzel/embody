@@ -2,6 +2,10 @@
 
 A local engineering workspace for typed mechanical design, model-directed construction and measured physics.
 
+## Physics Regression Explorer · v0.2.1
+
+Compare the nine saved rail-braking experiments, inspect controller revisions and explore hypothetical acceptance criteria without rerunning physics. Open **Simulate → Open Physics Regression Explorer**, or **Advanced workspaces → Physics Explorer**. Recorded verdicts stay fixed while derived threshold results update separately. See [usage, metric definitions and limits](docs/VERIFICATION.md#physics-regression-explorer).
+
 ## Overview
 
 An assembly can look plausible and still be physically wrong. EMBODY connects explicit geometry, mass, joints, actuator limits and circuit interfaces with reviewable engineering operations. It separates a design that compiles from one that has actually passed a supported simulation.

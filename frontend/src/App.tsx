@@ -17,6 +17,7 @@ const Editor=lazy(()=>import('./Editor'));
 const Viewport=lazy(()=>import('./Viewport'));
 const EngineeringWorkspace=lazy(()=>import('./UnifiedWorkspace'));
 const RobustnessPanel=lazy(()=>import('./RobustnessPanel'));
+const PhysicsRegressionExplorer=lazy(()=>import('./PhysicsRegressionExplorer'));
 const DEFAULT_FILE='robot/controller.py';
 const dockTabs=['Timeline','Telemetry','Physics','Console','Verification','Agent Activity','Problems','Output','Tests','Diagnostics'];
 
@@ -31,7 +32,7 @@ function Resize({label,direction,value,onChange}:{label:string;direction:'left'|
 }
 
 export default function App(){
- const [extended,setExtended]=useState<'hardware'|'world'|'robustness'|null>('hardware'),[hardwareOpened,setHardwareOpened]=useState(true);
+ const [extended,setExtended]=useState<'hardware'|'world'|'robustness'|'regression'|null>('hardware'),[hardwareOpened,setHardwareOpened]=useState(true);
  const [theme,setTheme]=useState(()=>localStorage.getItem('embody-theme')||'light');
  useEffect(()=>{document.documentElement.dataset.theme=theme;localStorage.setItem('embody-theme',theme);window.dispatchEvent(new Event('embody-theme-change'));},[theme]);
  const [family,setFamily]=useState<'rail'|'arm'>('rail');
@@ -81,9 +82,10 @@ export default function App(){
  const style={'--left':visibleLeft?`${layout.left}px`:'0px','--right':visibleAgent&&mode!=='agent'?`${layout.right}px`:'0px','--bottom':showDock&&!maximized?`${layout.bottom}px`:'0px'} as React.CSSProperties;
  if(!bootstrap||!recorded)return <main className="startup"><div className="brand">E<span>EMBODY</span></div><p>{error?'Workspace BLOCKED':'Loading verified project evidence…'}</p>{error&&<p role="alert">{error}</p>}<p>No model requests are made on startup.</p></main>;
  if(family==='arm')return <ArmWorkspace mode={mode} onMode={changeMode} onRail={()=>setFamily('rail')}/>;
- const workspaceNav=<nav aria-label="Workspace mode">{(['studio','code','agent'] as Mode[]).filter(m=>!extended||m==='studio').map(m=><button key={m} aria-pressed={!extended&&mode===m} title={`⌘${m==='studio'?1:m==='code'?2:3}`} onClick={()=>changeMode(m)}>{m==='studio'?<Box size={14}/>:m==='code'?<Code2 size={14}/>:<Activity size={14}/>}<span>{m==='agent'?'Agent focus':m[0].toUpperCase()+m.slice(1)}</span></button>)}<button aria-pressed={extended==='hardware'} onClick={()=>{setHardwareOpened(true);setExtended('hardware');}}>Build</button><button aria-pressed={extended==='robustness'} onClick={()=>setExtended('robustness')}>Robustness</button></nav>;
- return <div className={'ide mode-'+mode+(maximized?' maximized':'')+(extended?' extended-mode':'')} style={style}>
-  <header className={'topbar'+(extended==='hardware'||extended==='world'?' studio-shell-topbar':'')}><div className="brand"><span className="brand-symbol">E</span><strong>EMBODY</strong><span className="project-name">/ {extended==='hardware'||extended==='world'?'engineering-project':extended==='robustness'?'robustness':'rail-carriage'}</span></div>
+ const openRegression=()=>{playback.pause();setExtended('regression');};
+ const workspaceNav=<nav aria-label="Workspace mode">{(['studio','code','agent'] as Mode[]).filter(m=>!extended||m==='studio').map(m=><button key={m} aria-pressed={!extended&&mode===m} title={`⌘${m==='studio'?1:m==='code'?2:3}`} onClick={()=>changeMode(m)}>{m==='studio'?<Box size={14}/>:m==='code'?<Code2 size={14}/>:<Activity size={14}/>}<span>{m==='agent'?'Agent focus':m[0].toUpperCase()+m.slice(1)}</span></button>)}<button aria-pressed={extended==='hardware'} onClick={()=>{setHardwareOpened(true);setExtended('hardware');}}>Build</button><button aria-pressed={extended==='robustness'} onClick={()=>setExtended('robustness')}>Robustness</button><button aria-pressed={extended==='regression'} onClick={openRegression}>Physics Explorer</button></nav>;
+ return <div className={'ide mode-'+mode+(maximized?' maximized':'')+(extended?' extended-mode':'')+(extended==='regression'?' regression-mode':'')} style={style}>
+  <header className={'topbar'+(extended==='hardware'||extended==='world'||extended==='regression'?' studio-shell-topbar':'')}><div className="brand"><span className="brand-symbol">E</span><strong>EMBODY</strong><span className="project-name">/ {extended==='hardware'||extended==='world'?'engineering-project':extended==='robustness'?'robustness':extended==='regression'?'recorded physics':'rail-carriage'}</span></div>
    {(extended==='hardware'||extended==='world')?<details className="studio-workspaces-menu"><summary>Advanced workspaces</summary><div className="studio-workspace-options">   {workspaceNav}
 <button onClick={()=>setFamily('arm')}>Planar arm</button></div></details>:<>   {workspaceNav}
 <button onClick={()=>setFamily('arm')}>Planar arm</button></>}
@@ -94,7 +96,8 @@ export default function App(){
    <button title="Reset layout" aria-label="Reset layout" onClick={resetLayout}><Settings2 size={15}/></button>
   </header>
   {error&&<div className="error-banner" role="alert"><strong>BLOCKED</strong> {error}<button onClick={()=>setError('')}>Dismiss</button></div>}
-  {hardwareOpened&&<div className="extended-workspace" style={{display:extended==='hardware'||extended==='world'?'flex':'none'}}><Suspense fallback={<p>Loading unified engineering workspace…</p>}><EngineeringWorkspace visible={extended==='hardware'||extended==='world'}/></Suspense></div>}
+  {hardwareOpened&&<div className="extended-workspace" style={{display:extended==='hardware'||extended==='world'?'flex':'none'}}><Suspense fallback={<p>Loading unified engineering workspace…</p>}><EngineeringWorkspace visible={extended==='hardware'||extended==='world'} onOpenPhysicsRegression={openRegression}/></Suspense></div>}
+  {extended==='regression'&&<div className="extended-workspace"><Suspense fallback={<p>Loading recorded physics explorer…</p>}><PhysicsRegressionExplorer onClose={()=>setExtended('hardware')}/></Suspense></div>}
   {extended==='robustness'&&<div className="extended-workspace"><Suspense fallback={<p>Loading robustness contracts…</p>}><RobustnessPanel/></Suspense></div>}
   <div className="workspace" style={{display:extended?'none':undefined}}>
    {mode!=='agent'&&!maximized&&<ActivityRail view={dockView} onView={view=>{setDockView(view);setShowLeft(true);}}/>}
@@ -129,7 +132,7 @@ export default function App(){
       {dock==='Output'&&<pre className="prose">{recorded.diagnosis}</pre>}
       {dock==='Tests'&&<div><p>RECORDED Day 6 regression: 350 passing tests.</p><p className="note">This is a prior saved result, not a newly executed test run. The IDE has no arbitrary shell/test-command endpoint.</p></div>}
       {dock==='Diagnostics'&&trajectory&&<pre>{JSON.stringify({recorded:true,scenario,source:labels[variant],summary:trajectory.summary,selected_measured_state:current},null,2)}</pre>}
-      {dock==='Physics'&&<PhysicsPanel scenario={scenario} variant={variant}/>}
+      {dock==='Physics'&&<PhysicsPanel scenario={scenario} variant={variant} onOpenRegression={openRegression}/>}
      </div>}
     </section></>}
    </main>
