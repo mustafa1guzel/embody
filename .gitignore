@@ -40,6 +40,7 @@ __pycache__/
 !/docs/ARCHITECTURE.md
 !/docs/DEVELOPMENT.md
 !/docs/VERIFICATION.md
+!/docs/PARAMETER_SWEEP_LAB.md
 !/docs/LIMITATIONS.md
 !/docs/assets/
 /docs/assets/*

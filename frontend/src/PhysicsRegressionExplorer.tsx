@@ -33,7 +33,7 @@ function ControllerSource({run}: {run: RecordedRun}) {
  </details>;
 }
 
-export default function PhysicsRegressionExplorer({onClose}: {onClose?: () => void}) {
+export default function PhysicsRegressionExplorer({onClose, onOpenSweep}: {onClose?: () => void; onOpenSweep?: () => void}) {
  const [study, setStudy] = useState<Study | null>(null), [error, setError] = useState(''), [reload, setReload] = useState(0), [draft, setDraft] = useState<DraftCriteria | null>(null);
  const [selectedScenarios, setSelectedScenarios] = useState<Scenario[]>([...scenarios]), [selectedRevisions, setSelectedRevisions] = useState<Variant[]>([...revisions]);
  const [active, setActive] = useState('A:attempt_2'), [ranking, setRanking] = useState<Criterion>('clearance'), [overlays, setOverlays] = useState(['A:original', 'A:attempt_1', 'A:attempt_2']);
@@ -54,7 +54,7 @@ export default function PhysicsRegressionExplorer({onClose}: {onClose?: () => vo
  const observedWorstClearance = availableClearances.length ? Math.min(...availableClearances) : null;
  function toggle<T>(values: T[], value: T): T[] {return values.includes(value) ? values.filter(x => x !== value) : [...values, value];}
  return <section className="regression-explorer" aria-label="Physics Regression Explorer">
-  <header className="regression-header"><div><span className="regression-eyebrow">Recorded rail-braking study · EMBODY v0.2.1</span><h1>Physics Regression Explorer</h1><p>Compare controller revisions against the same recorded scenarios.</p></div>{onClose && <button onClick={onClose}>Back to workbench</button>}</header>
+  <header className="regression-header"><div><span className="regression-eyebrow">Recorded rail-braking study · EMBODY v0.2.1</span><h1>Physics Regression Explorer</h1><p>Compare controller revisions against the same recorded scenarios.</p></div>{onOpenSweep && <button onClick={onOpenSweep}>Plan a parameter sweep</button>}{onClose && <button onClick={onClose}>Back to workbench</button>}</header>
   <div className="regression-boundary"><strong>Historical verdicts stay fixed.</strong> Thresholds below produce a separate hypothetical evaluation of saved measurements. No new simulation, model call or controller execution.</div>
   {error ? <div role="alert" className="regression-error"><h2>Recorded study unavailable</h2><p>{error}</p><p>No fallback measurements or verdicts were substituted.</p><button onClick={() => setReload(n => n + 1)}>Retry saved-data read</button></div> : !study || !draft ? <p role="status">Loading recorded scenarios A, B and C…</p> : <>
    <div className="regression-toolbar"><fieldset><legend>Recorded scenarios</legend>{scenarios.map(s => <label key={s}><input type="checkbox" checked={selectedScenarios.includes(s)} onChange={() => setSelectedScenarios(v => toggle(v, s))}/>Scenario {s}</label>)}</fieldset><fieldset><legend>Controller revisions</legend>{revisions.map(v => <label key={v}><input type="checkbox" checked={selectedRevisions.includes(v)} onChange={() => setSelectedRevisions(old => toggle(old, v))}/>{revisionNames[v]}</label>)}</fieldset></div>

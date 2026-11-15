@@ -2,6 +2,10 @@
 
 A local engineering workspace for typed mechanical design, model-directed construction and measured physics.
 
+## Parameter Sweep Lab · v0.3 preview
+
+Configure one- or two-parameter rail-braking grids (25 cases maximum), inspect ideal stopping predictions, compare exact-anchor historical measurements and export a portable plan. Open **Simulate → Open Parameter Sweep Lab**. **New sweep execution is unavailable**; predicted results are never measured passes. See [parameters, usage, assumptions and execution prerequisites](docs/PARAMETER_SWEEP_LAB.md).
+
 ## Physics Regression Explorer · v0.2.1
 
 Compare the nine saved rail-braking experiments, inspect controller revisions and explore hypothetical acceptance criteria without rerunning physics. Open **Simulate → Open Physics Regression Explorer**, or **Advanced workspaces → Physics Explorer**. Recorded verdicts stay fixed while derived threshold results update separately. See [usage, metric definitions and limits](docs/VERIFICATION.md#physics-regression-explorer).

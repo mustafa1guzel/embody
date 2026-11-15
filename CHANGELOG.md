@@ -1,5 +1,17 @@
 # Release notes
 
+
+## v0.3.0 — Unreleased · Parameter Sweep Lab
+
+- Add an integrated review-only rail experiment planner with one/two numeric axes, stable case identities, explicit units, six-decimal integer stepping and a hard 25-case ceiling.
+- Predict ideal constant-braking deceleration, stopping distance/time, remaining clearance and sampled analytical transition brackets. Predictions remain separate from measurements.
+- Compare only exactly matching historical anchor recordings with immutable original verdicts; reuse Regression Explorer criteria, metrics and actual timestamped trajectory visualization.
+- Add accessible heatmap selection, input/read-error states, stale-preview clearing, reset and explicit portable JSON export. New case measurements remain null.
+- New measured sweep execution is **unavailable**: no bounded trusted rail-reference API is present. No host candidate import, alternative execution privilege, protected identity change, new simulation, VM or model call is included.
+
+Validation: **108 targeted frontend tests passed** (45 new sweep tests, 63 nearby regressions); TypeScript and production build passed. Genuine installed-Chrome QA passed 12 interaction checks, including JSON download and desktop/narrow layouts. Two actual screenshots are linked in the [feature guide](docs/PARAMETER_SWEEP_LAB.md). Existing bundle-size warnings remain. This is analytical planning plus saved-data comparison, not completed live-sweep integration or a real-world safety claim.
+
+
 ## v0.2.1 — Unreleased
 
 ### Physics Regression Explorer

@@ -115,3 +115,18 @@ npm --prefix frontend test -- src/physicsRegression.test.ts src/PhysicsRegressio
 npm --prefix frontend run typecheck
 npm --prefix frontend run build
 ```
+
+
+## Parameter Sweep Lab
+
+The v0.3 planning feature opens through **Simulate → Open Parameter Sweep Lab**,
+Advanced workspaces, or Physics Regression Explorer. It validates a deterministic
+one/two-dimensional numeric grid, capped at 25, and predicts ideal braking using
+F/m, mv²/(2F) and mv/F. **Analytical prediction is not a simulation result.**
+Every new case stays NOT EXECUTED; only exact-anchor saved measurements can appear
+in a separate historical comparison. The export preserves this separation.
+
+See the [complete parameter mappings, definitions, example grids and limitations](PARAMETER_SWEEP_LAB.md).
+New native execution is unavailable because there is no bounded trusted rail-sweep
+API. Protected callback execution/VM qualification routes were not changed or
+bypassed. Existing historical evidence and project heads are unchanged.
