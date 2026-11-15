@@ -191,3 +191,16 @@ native job and explicitly link it in the Designer to associate actual execution.
 The v0.5 verification read existing v0.4 results only; its consumed native budget
 was not reused. The API adapter source changes, so old records retain their exact
 old identity and are labelled stale relative to current execution.
+
+
+## Research campaign batches
+
+The [Research Workspace](RESEARCH_WORKSPACE.md) can transfer an exact current
+human-reviewed batch, including nonuniform adaptive points. Sweep Lab rereads
+its project/campaign/batch identity and review from the guarded backend, shows
+actual SI cases in a readonly point table, and uses the same TrustedSweepPanel.
+It does not force points into a rectangular grid or attach historical anchors.
+Export retains the explicit reviewed batch as `EMBODY_REVIEWED_RESEARCH_BATCH_V1`.
+Return to Research to edit/review; no new native route or aggregate budget bypass.
+Proposal capacity is not native authorization. Native admission independently
+checks IDs, source, numeric bounds, criteria, nonce, confirmation and job lock.

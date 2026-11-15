@@ -197,3 +197,15 @@ errors, two expected HTTP400 console responses for deliberate validation failure
 and no blocked/external requests. Screenshots are actual manual planning and
 verified historical-evidence views, not live-model output. Instrumented QA guards
 recorded zero provider/native calls; the original v0.4 budget was not reused.
+
+
+## Research Preview integration
+
+[Research Workspace](RESEARCH_WORKSPACE.md) adds independent hypotheses/campaigns,
+deterministic sampling/adaptive proposals, source-checked analysis and graph/report
+exports over the existing catalog and evidence readers. It does not claim a
+v0.5.1 live-provider implementation. Both Designer and Research retain explicit
+manual/deterministic authorship, review and separate native confirmation. Existing
+authorization/accounting must be legitimately extended and separately approved
+before any genuine AI research call. No new client/ledger or approval bypass is
+provided. Historical v0.4 results do not establish current-source verification.

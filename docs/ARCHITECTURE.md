@@ -79,3 +79,37 @@ reused only in labelled offline tests because the existing paid authorization
 workflow does not support rail design and public historical accounting is absent.
 The manual/deterministic fallback is explicit, not genuine model reasoning. Local
 sessions are ignored; see [schema, workflow and limitations](AI_EXPERIMENT_DESIGNER.md).
+
+
+## Physical research (v0.6 deterministic preview)
+
+```mermaid
+flowchart TD
+ W[Engineering workbench] --> R[Research Workspace]
+ R --> D[Typed project / hypothesis / campaign]
+ D --> S[Deterministic sampling and adaptive ranking]
+ S --> V[Catalog and proposal validation]
+ V --> H[Explicit human review]
+ H --> L[Existing Sweep Lab confirmation]
+ L --> N[Existing trusted native service]
+ N --> E[Verified saved evidence reader]
+ I[Immutable historical evidence] --> E
+ E --> A[Boundary / sensitivity / benchmark analysis]
+ A --> G[Evidence graph and exact findings]
+ G --> P[Deterministic report / manifest]
+ O[Optional authorized AI integration: unavailable] -. review only .-> V
+```
+
+[Research modules](../ide_api/research/) separate strict contracts, storage,
+descriptors, sampling, comparability analysis, existing-reader adapters, typed
+provenance, reproducibility and reporting. No research module dispatches native
+runs or provider calls. Import is inert; verified labels are recomputed from
+existing readers. Research snapshots never mutate robot heads. Exact reviewed
+point batches use the existing trusted service through a readonly Sweep Lab view;
+its original admission, job locking, native limits and confirmation remain intact.
+
+Adding guarded API routes changes the source-bound rail catalog identity through
+server.py. Old results remain historical/current-source-stale, never migrated.
+All inventoried qualification-bearing paths remain unchanged. Rover metadata does
+not enable the separate RampService from Research. Candidate registry entries
+are metadata and offline math, not executable plugins. See the [research guide](RESEARCH_WORKSPACE.md).

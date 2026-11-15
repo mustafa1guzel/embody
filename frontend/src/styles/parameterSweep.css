@@ -60,3 +60,8 @@
 .sweep-native-list { display:grid; grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); gap:10px; }
 .sweep-native .sweep-detail { margin:18px 0; }
 .regression-reference { stroke:var(--trace); background:var(--trace); }
+
+/* Reviewed nonuniform research batches are explicit point tables, not heatmaps. */
+.sweep-research-origin{overflow-wrap:anywhere;font-size:11px;line-height:1.6}
+.sweep-research-table{width:100%;border-collapse:collapse;font-size:12px}
+.sweep-research-table th,.sweep-research-table td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--border);font-variant-numeric:tabular-nums;white-space:nowrap}

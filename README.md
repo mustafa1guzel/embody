@@ -2,6 +2,10 @@
 
 A local engineering workspace for typed mechanical design, model-directed construction and measured physics.
 
+## Physical research · v0.6 Research Preview
+
+Create independent research projects and hypotheses, plan bounded campaigns, inspect deterministic adaptive suggestions, trace verified saved measurements through findings and an evidence graph, and export reproducibility manifests/reports. Open **Simulate → Open Research Workspace**. Human review and existing native confirmation remain separate. **Live AI research, new native adaptive demonstrations and Research rover execution are pending separate integration/authorization.** See [research workflow and limits](docs/RESEARCH_WORKSPACE.md).
+
 ## AI Experiment Designer · v0.5 planning preview
 
 Ask a rail engineering question, edit and validate a bounded experiment proposal, review it, then transfer a source-checked reference plan into Sweep Lab for separate explicit execution confirmation. Inspect verified saved facts and prepare a separately reviewed deterministic follow-up. **Live AI planning/interpretation is unavailable on this public path**; manual and offline-test authorship is explicit. Open **Simulate → Open AI Experiment Designer**. See [workflow, schema, evidence and limits](docs/AI_EXPERIMENT_DESIGNER.md).

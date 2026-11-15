@@ -1,6 +1,18 @@
 # Release notes
 
 
+## v0.6.0 — Unreleased · Deterministic Research Preview
+
+- Add independent typed research projects, human hypotheses, bounded campaigns, immutable snapshots, exact-head edits, timeline and archival.
+- Add deterministic uniform/endpoint/near-threshold/seeded space-filling samples, local midpoint refinement and explainable normalized2Dcandidate ranking. Proposals require review; no autonomous simulation.
+- Add comparability-checked sampled intervals, ideal derivatives/elasticities, measured irregular/one-sided differences and safety-constrained Pareto cohorts.
+- Add trusted experiment/controller descriptors; existing rail reference remains the only Research-executable controller. Rover/ramp metadata and three candidate controller definitions are non-executable here.
+- Add reverified evidence graphs/findings, inert manifest import/export/comparison, source-aware reproduction proposals and deterministic Markdown/JSON research reports.
+- Mount Research in the actual workbench and transfer exact nonuniform reviewed batches into existing Sweep Lab confirmation. No protected native/VM/admission/provider change or automatic application.
+- Production live AI remains unavailable: no v0.5.1 integration exists. Existing saved measurements remain historical; no new native rollout or provider request was run for this preview.
+
+See [Research Workspace](docs/RESEARCH_WORKSPACE.md) and [verification](docs/VERIFICATION.md) for tested scope and conditional capabilities.
+
 ## v0.5.0 — Unreleased · Validated experiment design preview
 
 - Add a workbench research-question/structured-proposal workflow with exact live-catalog identities, strict schemas, SI bounds, deterministic grids, analytical predictions and mandatory criteria that can only be tightened.

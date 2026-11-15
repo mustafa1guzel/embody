@@ -101,6 +101,22 @@ class Handler(BaseHTTPRequestHandler):
                 if set(q)!={name} or len(q[name])!=1:raise ValueError('Invalid query fields')
                 return q[name][0]
             path=route.path;ide=self.server.ide
+            if path.startswith('/api/research/'):
+                service=ide.research;action=path.removeprefix('/api/research/')
+                if action=='context':
+                    if q:raise ValueError('Unexpected query')
+                    return self.reply(200,service.context())
+                if action=='projects':
+                    if q:raise ValueError('Unexpected query')
+                    return self.reply(200,{'projects':service.listing()})
+                if action=='project':return self.reply(200,service.read(one('id')))
+                if action=='manifest':
+                    from ide_api.research.reproducibility import export
+                    return self.reply(200,export(service,one('id')))
+                required={'view':{'id','campaign'},'transfer':{'id','campaign','batch'}}.get(action)
+                if required is None or set(q)!=required or any(len(v)!=1 for v in q.values()):raise ValueError('Exact registered Research query required')
+                value=service.view(q['id'][0],q['campaign'][0]) if action=='view' else service.transfer(q['id'][0],q['campaign'][0],q['batch'][0])
+                return self.reply(200,value)
             if path=='/api/experiment-designer/context':
                 if q:raise ValueError('Unexpected query')
                 return self.reply(200,ide.experiment_designer.context())
@@ -227,6 +243,32 @@ class Handler(BaseHTTPRequestHandler):
             route=urlsplit(self.path)
             if route.query:raise ValueError('Unexpected query fields')
             path=route.path;ide=self.server.ide
+            if path.startswith('/api/research/'):
+                action=path.removeprefix('/api/research/');service=ide.research
+                if action=='new':exact(body,['title','question','experiment_id']);value=service.new(**body)
+                elif action=='hypothesis':exact(body,['key','expected','content','hypothesis_id']);value=service.hypothesis(**body)
+                elif action=='note':exact(body,['key','expected','question']);value=service.note(**body)
+                elif action=='campaign':exact(body,['key','expected','config']);value=service.campaign(**body)
+                elif action=='propose':exact(body,['key','expected','campaign_id','method','selected']);value=service.propose(**body)
+                elif action=='review':exact(body,['key','expected','campaign_id','batch_id','decision']);value=service.review(**body)
+                elif action=='transfer':exact(body,['key','expected','campaign_id','batch_id']);value=service.mark_transfer(**body)
+                elif action=='link':exact(body,['key','expected','campaign_id','kind','evidence_id']);value=service.link(**body)
+                elif action=='finding':exact(body,['key','expected','campaign_id','summary_sha256','fact_id']);value=service.finding(**body)
+                elif action=='transition':exact(body,['key','expected','campaign_id','state']);value=service.transition(**body)
+                elif action=='import':
+                    exact(body,['manifest','accept_stale'])
+                    from ide_api.research.reproducibility import import_manifest
+                    value=import_manifest(service,body['manifest'],body['accept_stale'])
+                elif action=='compare':
+                    exact(body,['left','right'])
+                    from ide_api.research.reproducibility import compare
+                    value=compare(service,body['left'],body['right'])
+                elif action=='report':
+                    exact(body,['key','campaign_ids','hypothesis_ids','include_discussion'])
+                    from ide_api.research.reporting import generate
+                    value=generate(service,**body)
+                else:raise PermissionError('Research cannot dispatch models, start native runs, apply proposals or grant authority')
+                return self.reply(200,value)
             if path.startswith('/api/experiment-designer/'):
                 action=path.removeprefix('/api/experiment-designer/');service=ide.experiment_designer
                 if action=='new':exact(body,['question']);value=service.new(body['question'])

@@ -170,3 +170,61 @@ npm --prefix frontend test -- src/AIExperimentDesigner.test.tsx src/TrustedSweep
 npm --prefix frontend run typecheck
 npm --prefix frontend run build
 ```
+
+
+## Research Preview verification scope
+
+New tests in `test_research_algorithms.py`, `test_research_workflow.py` and
+`test_research_http.py` cover strict domain/state/storage/import contracts,
+fixed-condition sampling/adaptive algorithms, boundary and sensitivity semantics,
+constrained Pareto analysis, graph references/DAG, exact facts, report integrity,
+real pinned historical readers, source drift and guarded HTTP/native admission.
+Synthetic lifecycle/algorithm fixtures are explicitly test-only, not physics.
+Provider creation and native stepping are forbidden in new backend fixtures.
+`ResearchWorkspace.test.tsx` covers actual typed UI flow and stale selection races.
+
+The focused non-native regression passed165tests,0fail/skip/deselected. Relevant
+frontend regression passed143tests across11files; production typecheck/build
+passed with the existing chunk-size warning. Full historical/native/VM suites
+were not rerun. Browser screenshots and exact final verification details are
+recorded in the private feature report; no new current-source native adaptive
+result or live AI success is claimed. See [research limitations](RESEARCH_WORKSPACE.md).
+
+```sh
+.venv/bin/python -B -m pytest -ra -p no:cacheprovider tests/test_research_algorithms.py tests/test_research_workflow.py tests/test_research_http.py tests/test_experiment_designer.py tests/test_rail_sweeps.py tests/test_ide_api.py::test_host_origin_csrf_and_bounded_strict_json tests/test_ide_api.py::test_bootstrap_does_not_load_credentials_run_physics_or_call_model tests/test_ide_api.py::test_one_expensive_job_at_a_time
+npm --prefix frontend test -- src/ResearchWorkspace.test.tsx src/AIExperimentDesigner.test.tsx src/TrustedSweepPanel.test.tsx src/parameterSweep.test.ts src/ParameterSweepLab.test.tsx src/physicsRegression.test.ts src/PhysicsRegressionExplorer.test.tsx src/App.test.tsx src/PhysicsPanel.test.tsx src/UnifiedWorkspace.test.tsx src/playback.test.ts
+npm --prefix frontend run typecheck
+npm --prefix frontend run build
+```
+
+Native `test_rail_sweeps_native.py` is intentionally excluded. Its prior budget
+is consumed; a new finite current-source demonstration needs explicit approval.
+
+
+Final genuine Chrome acceptance passed24journey classes with0page errors and
+two expectedHTTP400responses (invalid domain and unknown manifest import).
+The release pass used installedChrome157 with actual local handlers, genuine3saved
+native cases plus9pinned historical runs,0provider/native/apply requests. Independent
+read-back reconstructed the exact12case view,15native metric facts, report and
+browser-serialized manifest without integration. Public screenshots show actual
+manual/deterministic planning and source-labelled historical measurements.
+
+
+### Retained final verification after interruption
+
+The temporary audit directory disappeared before final delivery. Its earlier
+165-backend/143-frontend/24-Chrome PASS outputs were observed during the session,
+but their missing raw logs are not reconstructed here. The eight captured public
+PNGs remain authentic prior captures. Raw private v0.4 three-case records are
+currently unavailable and were not regenerated.
+
+Fresh retained logs under ignored `.runtime/v06_verification/` show165backend
+PASS,0FAIL/SKIP/DESELECTED; typecheck/build PASS; and23genuine Chrome checks over
+the nine pinned public recordings (3PASS/6FAIL). The frontend recovery run had
+141PASS/2existing UI wait failures during concurrent build load; the two affected
+suites then passed24/24alone with no source/assertion changes. Counts overlap.
+No failing result is erased. No new native/provider/VM execution occurred.
+Independent read-back matches the actual nine-case view, manifest, report and27
+sample-derived metric facts. The unavailable private native data cannot currently
+support fresh read-back; current-reference adaptive guidance correctly reports
+insufficient comparable evidence. Synthetic algorithm fixtures remain test-only.

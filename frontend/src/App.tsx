@@ -19,6 +19,7 @@ const EngineeringWorkspace=lazy(()=>import('./UnifiedWorkspace'));
 const RobustnessPanel=lazy(()=>import('./RobustnessPanel'));
 const PhysicsRegressionExplorer=lazy(()=>import('./PhysicsRegressionExplorer'));
 const ParameterSweepLab=lazy(()=>import('./ParameterSweepLab'));
+const ResearchWorkspace=lazy(()=>import('./ResearchWorkspace'));
 const AIExperimentDesigner=lazy(()=>import('./AIExperimentDesigner'));
 const DEFAULT_FILE='robot/controller.py';
 const dockTabs=['Timeline','Telemetry','Physics','Console','Verification','Agent Activity','Problems','Output','Tests','Diagnostics'];
@@ -34,7 +35,8 @@ function Resize({label,direction,value,onChange}:{label:string;direction:'left'|
 }
 
 export default function App(){
- const [extended,setExtended]=useState<'hardware'|'world'|'robustness'|'regression'|'sweep'|'designer'|null>('hardware'),[hardwareOpened,setHardwareOpened]=useState(true);
+ const [extended,setExtended]=useState<'hardware'|'world'|'robustness'|'regression'|'sweep'|'designer'|'research'|null>('hardware'),[hardwareOpened,setHardwareOpened]=useState(true);
+ const [researchTransfer,setResearchTransfer]=useState<import('./research/types').Locator|null>(null);
  const [designTransfer,setDesignTransfer]=useState<import('./experimentDesigner').DesignerTransfer|null>(null);
  const [theme,setTheme]=useState(()=>localStorage.getItem('embody-theme')||'light');
  useEffect(()=>{document.documentElement.dataset.theme=theme;localStorage.setItem('embody-theme',theme);window.dispatchEvent(new Event('embody-theme-change'));},[theme]);
@@ -86,11 +88,12 @@ export default function App(){
  if(!bootstrap||!recorded)return <main className="startup"><div className="brand">E<span>EMBODY</span></div><p>{error?'Workspace BLOCKED':'Loading verified project evidence…'}</p>{error&&<p role="alert">{error}</p>}<p>No model requests are made on startup.</p></main>;
  if(family==='arm')return <ArmWorkspace mode={mode} onMode={changeMode} onRail={()=>setFamily('rail')}/>;
  const openRegression=()=>{playback.pause();setExtended('regression');};
- const openSweep=()=>{playback.pause();setDesignTransfer(null);setExtended('sweep');};
+ const openSweep=()=>{playback.pause();setDesignTransfer(null);setResearchTransfer(null);setExtended('sweep');};
+ const openResearch=()=>{playback.pause();setExtended('research');};
  const openDesigner=()=>{playback.pause();setExtended('designer');};
- const workspaceNav=<nav aria-label="Workspace mode">{(['studio','code','agent'] as Mode[]).filter(m=>!extended||m==='studio').map(m=><button key={m} aria-pressed={!extended&&mode===m} title={`⌘${m==='studio'?1:m==='code'?2:3}`} onClick={()=>changeMode(m)}>{m==='studio'?<Box size={14}/>:m==='code'?<Code2 size={14}/>:<Activity size={14}/>}<span>{m==='agent'?'Agent focus':m[0].toUpperCase()+m.slice(1)}</span></button>)}<button aria-pressed={extended==='hardware'} onClick={()=>{setHardwareOpened(true);setExtended('hardware');}}>Build</button><button aria-pressed={extended==='robustness'} onClick={()=>setExtended('robustness')}>Robustness</button><button aria-pressed={extended==='regression'} onClick={openRegression}>Physics Explorer</button><button aria-pressed={extended==='sweep'} onClick={openSweep}>Parameter Sweep Lab</button><button aria-pressed={extended==='designer'} onClick={openDesigner}>AI Experiment Designer</button></nav>;
- return <div className={'ide mode-'+mode+(maximized?' maximized':'')+(extended?' extended-mode':'')+(['regression','sweep','designer'].includes(extended||'')?' regression-mode':'')+(extended==='sweep'?' sweep-mode':'')} style={style}>
-  <header className={'topbar'+(extended==='hardware'||extended==='world'||extended==='regression'||extended==='sweep'||extended==='designer'?' studio-shell-topbar':'')}><div className="brand"><span className="brand-symbol">E</span><strong>EMBODY</strong><span className="project-name">/ {extended==='hardware'||extended==='world'?'engineering-project':extended==='robustness'?'robustness':extended==='regression'?'recorded physics':extended==='sweep'?'parameter planning':extended==='designer'?'experiment design':'rail-carriage'}</span></div>
+ const workspaceNav=<nav aria-label="Workspace mode">{(['studio','code','agent'] as Mode[]).filter(m=>!extended||m==='studio').map(m=><button key={m} aria-pressed={!extended&&mode===m} title={`⌘${m==='studio'?1:m==='code'?2:3}`} onClick={()=>changeMode(m)}>{m==='studio'?<Box size={14}/>:m==='code'?<Code2 size={14}/>:<Activity size={14}/>}<span>{m==='agent'?'Agent focus':m[0].toUpperCase()+m.slice(1)}</span></button>)}<button aria-pressed={extended==='hardware'} onClick={()=>{setHardwareOpened(true);setExtended('hardware');}}>Build</button><button aria-pressed={extended==='robustness'} onClick={()=>setExtended('robustness')}>Robustness</button><button aria-pressed={extended==='regression'} onClick={openRegression}>Physics Explorer</button><button aria-pressed={extended==='sweep'} onClick={openSweep}>Parameter Sweep Lab</button><button aria-pressed={extended==='designer'} onClick={openDesigner}>AI Experiment Designer</button><button aria-pressed={extended==='research'} onClick={openResearch}>Research</button></nav>;
+ return <div className={'ide mode-'+mode+(maximized?' maximized':'')+(extended?' extended-mode':'')+(['regression','sweep','designer','research'].includes(extended||'')?' regression-mode':'')+(extended==='sweep'?' sweep-mode':'')} style={style}>
+  <header className={'topbar'+(extended==='hardware'||extended==='world'||extended==='regression'||extended==='sweep'||extended==='designer'||extended==='research'?' studio-shell-topbar':'')}><div className="brand"><span className="brand-symbol">E</span><strong>EMBODY</strong><span className="project-name">/ {extended==='hardware'||extended==='world'?'engineering-project':extended==='robustness'?'robustness':extended==='regression'?'recorded physics':extended==='sweep'?'parameter planning':extended==='designer'?'experiment design':extended==='research'?'research workspace':'rail-carriage'}</span></div>
    {(extended==='hardware'||extended==='world')?<details className="studio-workspaces-menu"><summary>Advanced workspaces</summary><div className="studio-workspace-options">   {workspaceNav}
 <button onClick={()=>setFamily('arm')}>Planar arm</button></div></details>:<>   {workspaceNav}
 <button onClick={()=>setFamily('arm')}>Planar arm</button></>}
@@ -101,10 +104,11 @@ export default function App(){
    <button title="Reset layout" aria-label="Reset layout" onClick={resetLayout}><Settings2 size={15}/></button>
   </header>
   {error&&<div className="error-banner" role="alert"><strong>BLOCKED</strong> {error}<button onClick={()=>setError('')}>Dismiss</button></div>}
-  {hardwareOpened&&<div className="extended-workspace" style={{display:extended==='hardware'||extended==='world'?'flex':'none'}}><Suspense fallback={<p>Loading unified engineering workspace…</p>}><EngineeringWorkspace visible={extended==='hardware'||extended==='world'} onOpenPhysicsRegression={openRegression} onOpenParameterSweep={openSweep} onOpenExperimentDesigner={openDesigner}/></Suspense></div>}
+  {hardwareOpened&&<div className="extended-workspace" style={{display:extended==='hardware'||extended==='world'?'flex':'none'}}><Suspense fallback={<p>Loading unified engineering workspace…</p>}><EngineeringWorkspace visible={extended==='hardware'||extended==='world'} onOpenPhysicsRegression={openRegression} onOpenParameterSweep={openSweep} onOpenExperimentDesigner={openDesigner} onOpenResearch={openResearch}/></Suspense></div>}
   {extended==='regression'&&<div className="extended-workspace"><Suspense fallback={<p>Loading recorded physics explorer…</p>}><PhysicsRegressionExplorer onClose={()=>setExtended('hardware')} onOpenSweep={openSweep}/></Suspense></div>}
-  {extended==='designer'&&<div className="extended-workspace"><Suspense fallback={<p>Loading experiment design…</p>}><AIExperimentDesigner onClose={()=>setExtended('hardware')} onTransfer={value=>{setDesignTransfer(value);setExtended('sweep');}}/></Suspense></div>}
-  {extended==='sweep'&&<div className="extended-workspace"><Suspense fallback={<p>Loading parameter planning…</p>}><ParameterSweepLab designerTransfer={designTransfer} onOpenDesigner={openDesigner} onClose={()=>setExtended('hardware')} onOpenRegression={openRegression}/></Suspense></div>}
+  {extended==='research'&&<div className="extended-workspace"><Suspense fallback={<p>Loading bounded research workspace…</p>}><ResearchWorkspace onClose={()=>setExtended('hardware')} onTransfer={value=>{setDesignTransfer(null);setResearchTransfer(value);setExtended('sweep');}}/></Suspense></div>}
+  {extended==='designer'&&<div className="extended-workspace"><Suspense fallback={<p>Loading experiment design…</p>}><AIExperimentDesigner onClose={()=>setExtended('hardware')} onTransfer={value=>{setResearchTransfer(null);setDesignTransfer(value);setExtended('sweep');}}/></Suspense></div>}
+  {extended==='sweep'&&<div className="extended-workspace"><Suspense fallback={<p>Loading parameter planning…</p>}><ParameterSweepLab designerTransfer={designTransfer} researchTransfer={researchTransfer} onOpenResearch={openResearch} onOpenDesigner={openDesigner} onClose={()=>setExtended('hardware')} onOpenRegression={openRegression}/></Suspense></div>}
   {extended==='robustness'&&<div className="extended-workspace"><Suspense fallback={<p>Loading robustness contracts…</p>}><RobustnessPanel/></Suspense></div>}
   <div className="workspace" style={{display:extended?'none':undefined}}>
    {mode!=='agent'&&!maximized&&<ActivityRail view={dockView} onView={view=>{setDockView(view);setShowLeft(true);}}/>}
