@@ -113,3 +113,13 @@ server.py. Old results remain historical/current-source-stale, never migrated.
 All inventoried qualification-bearing paths remain unchanged. Rover metadata does
 not enable the separate RampService from Research. Candidate registry entries
 are metadata and offline math, not executable plugins. See the [research guide](RESEARCH_WORKSPACE.md).
+
+## Durable research layer
+
+`ide_api/research/artifacts.py` owns bounded content-addressed objects and immutable
+receipts; `bundles.py` captures only existing registered verified readers;
+`readback.py` independently recomputes saved arithmetic without native integration.
+`benchmarks.py` separates history-only selection from bounded analytical/synthetic
+oracles. Existing Research storage, typed contracts and API guards remain owners
+of campaigns. No duplicate native executor, controller or financial ledger exists.
+See [evidence trust](RESEARCH_EVIDENCE.md).

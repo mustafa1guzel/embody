@@ -228,3 +228,10 @@ Independent read-back matches the actual nine-case view, manifest, report and27
 sample-derived metric facts. The unavailable private native data cannot currently
 support fresh read-back; current-reference adaptive guidance correctly reports
 insufficient comparable evidence. Synthetic algorithm fixtures remain test-only.
+
+## v0.6.1 non-native research checks
+
+The [serial research verification command](RESEARCH_RELEASE.md) adds independent
+saved-data arithmetic, strict package negative tests and bounded analytical/synthetic
+algorithm benchmarks. It forbids native/provider/VM/application entry points.
+A native demonstration needs a new exact current-source approval.

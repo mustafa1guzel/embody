@@ -2,9 +2,11 @@
 
 A local engineering workspace for typed mechanical design, model-directed construction and measured physics.
 
-## Physical research · v0.6 Research Preview
+## Physical research · v0.6.1 / v0.6.2 adaptive preview
 
-Create independent research projects and hypotheses, plan bounded campaigns, inspect deterministic adaptive suggestions, trace verified saved measurements through findings and an evidence graph, and export reproducibility manifests/reports. Open **Simulate → Open Research Workspace**. Human review and existing native confirmation remain separate. **Live AI research, new native adaptive demonstrations and Research rover execution are pending separate integration/authorization.** See [research workflow and limits](docs/RESEARCH_WORKSPACE.md).
+Preserve selected genuine saved measurements in bounded write-once evidence bundles, independently re-read trajectory metrics, verify external packages without promoting their origin, and compare uniform, seeded-stratified and adaptive queries in explicitly analytical/synthetic environments. Create independent research projects and hypotheses, plan bounded campaigns, inspect deterministic adaptive suggestions, trace verified saved measurements through findings and an evidence graph, and export reproducibility manifests/reports. Open **Simulate → Open Research Workspace**. Human review and existing native confirmation remain separate. **Live AI research, new native adaptive demonstrations and Research rover execution are pending separate integration/authorization.** See [research workflow and limits](docs/RESEARCH_WORKSPACE.md).
+
+See [evidence bundles](docs/RESEARCH_EVIDENCE.md), [offline efficiency benchmarks](docs/EXPERIMENT_EFFICIENCY.md) and [serial non-native release verification](docs/RESEARCH_RELEASE.md). New current-source native experiments remain pending exact explicit approval.
 
 ## AI Experiment Designer · v0.5 planning preview
 

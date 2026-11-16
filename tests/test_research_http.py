@@ -45,3 +45,23 @@ def test_native_admission_remains_independent_of_research(http):
  assert request('rail-sweeps/start',base)[0]==400
  base['controller_id']=rail.CONTROLLER;base['experiment_id']='unknown';assert request('rail-sweeps/start',base)[0]==400
  assert not ide.rail_sweeps.root.exists()
+
+
+def test_evidence_and_benchmark_http_exact_guards_and_no_authority(http):
+ request,ide=http
+ from test_research_workflow import config as config_fixture
+ from ide_api import rail_sweeps as rail
+ read=request('research/new',{'title':'Evidence checks','question':'Which outcomes have available raw data?','experiment_id':rail.EXPERIMENT})[1];pid=read['project']['id']
+ cfg={'experiment_id':rail.EXPERIMENT,'controller_id':rail.CONTROLLER,'objective':'Study gap','type':'adaptive_1d','axes':[{'parameter':'gap_m','minimum':1.4,'maximum':1.6}],'fixed_parameters':{'mass_kg':4,'speed_mps':1.2,'force_n':2,'gap_m':1.49},'criteria':rail.DEFAULT_CRITERIA,'strategy':'uniform','count':3,'seed':1,'minimum_spacing':.001,'proposal_budget':8,'hypothesis_ids':[]}
+ read=request('research/campaign',{'key':pid,'expected':read['sha256'],'config':cfg})[1];cid=read['project']['campaigns'][0]['id']
+ value={'project_id':pid,'campaign_id':cid,'config':{'environment':'single_transition','budget':12,'seed':1,'resolution':.005}}
+ assert request('research-benchmarks/run',value,False)[0]==403
+ status,out=request('research-benchmarks/run',value);assert status==200 and out['native_integration_steps']==0
+ assert request('research-benchmarks/run?id='+out['id'])[1]==out
+ assert request('research-benchmarks/run',{**value,'execute':True})[0]==400
+ assert request('research-evidence/catalog')[1]['historical_missing'][0]['availability']=='MISSING'
+ for route in ('attest','execute','apply','approve'):
+  assert request('research-evidence/'+route,{'id':'a'*32})[0]==403
+ cap={'project_id':pid,'campaign_id':cid,'expected':'0'*64,'kind':'recorded','evidence_id':'portable_rail_study','case_ids':[]}
+ assert request('research-evidence/capture',cap)[0]==400
+ assert not ide.rail_sweeps.root.exists()

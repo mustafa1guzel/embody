@@ -101,6 +101,21 @@ class Handler(BaseHTTPRequestHandler):
                 if set(q)!={name} or len(q[name])!=1:raise ValueError('Invalid query fields')
                 return q[name][0]
             path=route.path;ide=self.server.ide
+            if path.startswith('/api/research-evidence/'):
+                service=ide.research.bundles;action=path.removeprefix('/api/research-evidence/')
+                if action=='catalog':
+                    if q:raise ValueError('Unexpected query')
+                    return self.reply(200,service.catalog())
+                if action=='bundle':return self.reply(200,service.inspect(one('id')))
+                if action=='export':return self.reply(200,service.store.package(one('id')))
+                raise ValueError('Unknown evidence read operation')
+            if path.startswith('/api/research-benchmarks/'):
+                service=ide.research.benchmarks;action=path.removeprefix('/api/research-benchmarks/')
+                if action=='catalog':
+                    if q:raise ValueError('Unexpected query')
+                    return self.reply(200,service.catalog())
+                if action=='run':return self.reply(200,service.read(one('id')))
+                raise ValueError('Unknown offline benchmark read')
             if path.startswith('/api/research/'):
                 service=ide.research;action=path.removeprefix('/api/research/')
                 if action=='context':
@@ -243,6 +258,26 @@ class Handler(BaseHTTPRequestHandler):
             route=urlsplit(self.path)
             if route.query:raise ValueError('Unexpected query fields')
             path=route.path;ide=self.server.ide
+            if path.startswith('/api/research-evidence/'):
+                service=ide.research.bundles;action=path.removeprefix('/api/research-evidence/')
+                if action=='capture':
+                    exact(body,['project_id','campaign_id','expected','kind','evidence_id','case_ids'])
+                    read=ide.research.read(body['project_id'])
+                    if read['sha256']!=body['expected']:raise ValueError('Research head changed')
+                    ide.research._campaign(read['project'],body['campaign_id'])
+                    from ide_api.research.reproducibility import export
+                    from ide_api.research.reporting import generate
+                    value=service.capture(body['kind'],body['evidence_id'],body['case_ids'],body['project_id'],body['campaign_id'],export(ide.research,body['project_id']),generate(ide.research,body['project_id'],[body['campaign_id']],[],True))
+                elif action=='upload-begin':exact(body,['size','sha256','purpose']);value=service.store.begin_upload(**body)
+                elif action=='upload-chunk':exact(body,['key','index','data']);value=service.store.upload_chunk(**body)
+                elif action=='upload-complete':exact(body,['key']);value=service.store.finish_upload(body['key'])
+                elif action=='link':
+                    exact(body,['key','expected','campaign_id','bundle_id','batch_id']);value=ide.research.link(body['key'],body['expected'],body['campaign_id'],'bundle',body['bundle_id'],body['batch_id'])
+                else:raise PermissionError('Evidence tools cannot execute, approve, apply or attest imported physics')
+                return self.reply(200,value)
+            if path=='/api/research-benchmarks/run':
+                exact(body,['project_id','campaign_id','config']);p=ide.research.read(body['project_id']);ide.research._campaign(p['project'],body['campaign_id'])
+                return self.reply(200,ide.research.benchmarks.run(body['config'],body['project_id'],body['campaign_id']))
             if path.startswith('/api/research/'):
                 action=path.removeprefix('/api/research/');service=ide.research
                 if action=='new':exact(body,['title','question','experiment_id']);value=service.new(**body)

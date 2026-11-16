@@ -63,3 +63,17 @@ missing/error cases, spacing/precision, budgets and2Ddeterminism. These are
 algorithm fixtures, not MuJoCo measurements. Genuine saved v0.4 evidence has
 three PASS cases; its gap-compatible pair supports coverage guidance, not an
 observed PASS/FAIL boundary. No native adaptive campaign has yet executed.
+
+## Current hardening
+
+Comparability also requires explicit experiment, model and measurement-definition
+identities. Conflicting repeated outcomes stop refinement. Out-of-domain or
+different fixed-condition rows cannot contribute brackets. Each midpoint retains
+its parent interval, supporting cases, expected half-width if a valid comparable
+measurement is obtained and requested SI resolution. Optional `resolution_target`
+applies only to one axis; no default is inserted into historical documents.
+Stop when all observed brackets meet the target, while unobserved regions remain
+unknown. Available matching results are displayed by reviewed batch, not invented
+execution timestamps. Old private three-PASS raw data remain unavailable; the
+paragraph above records the former observation, not current independent access.
+See [fair offline comparisons](EXPERIMENT_EFFICIENCY.md).

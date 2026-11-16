@@ -9,7 +9,7 @@ def cfg():return {'experiment_id':rail.EXPERIMENT,'controller_id':rail.CONTROLLE
 
 def record(x,y=None,verdict=None,**params):
  p={'mass_kg':4.,'speed_mps':1.2,'force_n':2.,'gap_m':x,**params};y=x if y is None else y
- return {'id':rail.digest({'synthetic_point':p,'y':y}),'status':'MEASURED','verified':True,'parameters':p,'verdict':verdict or ('PASS' if y>=.05 else 'FAIL'),'metrics':{'minimum_clearance_m':y,'maximum_actuator_force_n':2.},'controller_id':rail.CONTROLLER,'source_current':False,'comparison':{'measured_minus_ideal_clearance_m':.003},'compatibility':{'physics':'SYNTHETIC_ALGORITHM_ONLY','source':'test_source','controller':'test_controller','criteria':'test_criteria','simulation':'test_simulation'}}
+ return {'id':rail.digest({'synthetic_point':p,'y':y}),'status':'MEASURED','verified':True,'parameters':p,'verdict':verdict or ('PASS' if y>=.05 else 'FAIL'),'metrics':{'minimum_clearance_m':y,'maximum_actuator_force_n':2.},'controller_id':rail.CONTROLLER,'source_current':False,'comparison':{'measured_minus_ideal_clearance_m':.003},'compatibility':{'physics':'SYNTHETIC_ALGORITHM_ONLY','experiment':'synthetic','model':'synthetic','measurements':'synthetic','source':'test_source','controller':'test_controller','criteria':'test_criteria','simulation':'test_simulation'}}
 
 @pytest.mark.parametrize('strategy,n,dimension',[('uniform',3,1),('uniform',9,2),('endpoints',4,2),('space_filling',7,2),('near_threshold',3,1)])
 def test_initial_reproducible_bounded(cfg,strategy,n,dimension):

@@ -59,3 +59,11 @@ strings, arrays and objects retain distinct tags. Thus browser4.0→4 and expone
 spelling changes preserve identity without accepting true as1. All bounded integer
 fields are below2^53. Existing native/evidence/source digests are unchanged.
 A browser-numeric round-trip is tested independently; import still resets review.
+
+## Durable evidence and release receipts
+
+See [bundles and external trust](RESEARCH_EVIDENCE.md),
+[completed-command receipts](RESEARCH_RELEASE.md) and
+[reproducible offline benchmarks](EXPERIMENT_EFFICIENCY.md).
+Ignored persistent storage is not a backup; old missing native raw records stay
+missing. No reconstructed trajectory or retroactive receipt replaces them.

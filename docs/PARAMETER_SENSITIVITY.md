@@ -31,3 +31,13 @@ one-sided clearance-versus-gap estimate. Its actual result values come from the
 verified reader. Historical/current source status remains visible. Select the
 reference case in the dashboard; use a separately reviewed sensitivity campaign
 to obtain missing neighbors. Zero new native rollouts were run for this analysis.
+
+## Residuals and discrete idealization
+
+Each verified saved case exposes measured minimum gap minus continuous ideal
+remaining gap, signed/absolute residual and signed relative residual normalized by
+absolute predicted gap. Zero predicted gap makes relative residual undefined.
+A 600-update clipped-velocity Euler arithmetic prediction is explicitly analytical,
+not MuJoCo, and excludes contact/delay/damping. Historical trigger controllers
+need not satisfy those assumptions. Residuals alone establish no causal timing,
+discretization or contact explanation. Braking ratio is d_stop / initial gap.

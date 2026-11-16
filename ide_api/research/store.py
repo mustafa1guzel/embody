@@ -13,6 +13,15 @@ def uid():return uuid4().hex
 
 class Research:
  def __init__(self,designer,root=None):self.designer=designer;self.root=Path(root) if root else ROOT/'.runtime/research';self.lock=threading.RLock()
+ @property
+ def bundles(self):
+  from .bundles import EvidenceBundles
+  if not hasattr(self,'_bundles'):self._bundles=EvidenceBundles(self.designer,ROOT/'.runtime/evidence_store' if self.root==ROOT/'.runtime/research' else self.root.parent/'evidence_store')
+  return self._bundles
+ @property
+ def benchmarks(self):
+  from .benchmarks import Benchmarks
+  return Benchmarks(self.bundles.store.root)
  def context(self):
   ctx=self.designer.context();descriptors=registry.descriptors(ctx)
   code={p.name:__import__('hashlib').sha256(p.read_bytes()).hexdigest() for p in sorted(Path(__file__).parent.glob('*.py'))}
@@ -129,16 +138,18 @@ class Research:
   records={};summaries=[];errors=[]
   for ref in v['evidence']:
    try:
-    s=evidence.load(self.designer,ref['kind'],ref['id'])
+    s=self.bundles.summary(ref['id']) if ref['kind']=='bundle' else evidence.load(self.designer,ref['kind'],ref['id'])
     if s['summary_sha256']!=ref['summary_sha256']:raise ValueError('Evidence summary changed; relink authentic current state')
     summaries.append(s)
-    for r in s['records']:records[r['id']]=r
+    for r in s['records']:
+     if r['id'] in records and rail.digest(records[r['id']])!=rail.digest(r):raise ValueError('Conflicting repeated case identity; no silent last-writer selection')
+     records[r['id']]=r
    except (ValueError,OSError,KeyError) as exc:errors.append({'reference':ref['id'],'status':'UNVERIFIED','error':type(exc).__name__})
   return list(records.values()),summaries,errors
- def link(self,key,expected,campaign_id,kind,evidence_id):
-  s=evidence.load(self.designer,kind,evidence_id)
+ def link(self,key,expected,campaign_id,kind,evidence_id,batch_id=None):
+  s=self.bundles.summary(evidence_id) if kind=='bundle' else evidence.load(self.designer,kind,evidence_id)
   def edit(p):
-   v=self._campaign(p,campaign_id);self._active(v);batch=next((b for b in v['batches'] if b['status'] in ('REVIEWED','TRANSFERRED') and s['request'] and b['cases']==s['request']['cases'] and s['request']['experiment_id']==rail.EXPERIMENT and s['request']['controller_id']==rail.CONTROLLER and v['config']['criteria']==s['request']['criteria'] and s['request']['source_sha256']==self.context()['catalog']['source_sha256']),None)
+   v=self._campaign(p,campaign_id);self._active(v);batch=next((b for b in v['batches'] if b['id']==batch_id and b['context_sha256']==self.context()['context_sha256'] and b['status'] in ('REVIEWED','TRANSFERRED') and s['request'] and b['cases']==s['request']['cases'] and s['request']['experiment_id']==rail.EXPERIMENT and s['request']['controller_id']==rail.CONTROLLER and v['config']['criteria']==s['request']['criteria'] and s['request']['source_sha256']==self.context()['catalog']['source_sha256']),None)
    ref={'kind':kind,'id':evidence_id,'summary_sha256':s['summary_sha256'],'association':'MATCHING_REVIEWED_BATCH' if batch else 'EXTERNAL_REFERENCE','batch_id':batch['id'] if batch else None}
    v['evidence']=[r for r in v['evidence'] if (r['kind'],r['id'])!=(kind,evidence_id)]+[ref]
    if batch:v['status']='MEASURED' if s['counts']['measured']==len(batch['cases']) else 'PARTIAL'
@@ -174,4 +185,9 @@ class Research:
    findings.append({**f,'status':'VERIFIED' if fact else 'UNVERIFIED','fact':fact})
   valid=[r for r in records if r['verified']];cfg=v['config'];previous=[p for b in v['batches'] for p in b['cases']];remaining=cfg['proposal_budget']-len({rail.digest(p) for p in previous})
   budgets={'proposed':len({rail.digest(x) for x in previous}),'reviewed':sum(len(b['cases']) for b in v['batches'] if b['status'] in ('REVIEWED','TRANSFERRED')),'submitted':sum(s['counts']['planned'] for s in summaries if any(ref['summary_sha256']==s['summary_sha256'] and ref['association']=='MATCHING_REVIEWED_BATCH' for ref in v['evidence'])),'measured_reference_cases':len(valid),'physical_fail':sum(r['verdict']=='FAIL' for r in valid),'execution_errors':sum(s['counts']['execution_error'] for s in summaries),'cancelled':sum(s['counts']['cancelled'] for s in summaries),'remaining_proposal_capacity':remaining,'authorized_execution_capacity':0,'meaning':'Proposal capacity is not native authorization. External reference measurements do not count as campaign execution.'}
-  return {**read,'campaign':v,'budgets':budgets,'records':records,'summaries':[{k:v for k,v in s.items() if k not in ('records','request')} for s in summaries],'evidence_errors':errors,'boundary':analysis.boundaries(records,[a['parameter'] for a in cfg['axes']]),'sensitivity':{'analytical':analysis.analytical(cfg['fixed_parameters']),'measured':{r['id']:analysis.finite_differences(records,r['id']) for r in valid}},'benchmark':analysis.pareto(records),'adaptive':sampling.adaptive(cfg,[r for r in records if r['controller_id']==cfg['controller_id']],previous,remaining),'findings':findings,'graph':graph.build(p,v,summaries,findings),'completion_verified':v['status']=='COMPLETED' and not errors}
+  result={**read,'campaign':v,'budgets':budgets,'records':records,'summaries':[{k:v for k,v in s.items() if k not in ('records','request')} for s in summaries],'evidence_errors':errors,'boundary':analysis.boundaries(records,[a['parameter'] for a in cfg['axes']]),'sensitivity':{'analytical':analysis.analytical(cfg['fixed_parameters']),'measured':{r['id']:analysis.finite_differences(records,r['id']) for r in valid}},'benchmark':analysis.pareto(records),'adaptive':sampling.adaptive(cfg,[r for r in records if r['controller_id']==cfg['controller_id']],previous,remaining),'findings':findings,'graph':graph.build(p,v,summaries,findings),'completion_verified':v['status']=='COMPLETED' and not errors}
+
+  from .physical_math import residuals
+  from .benchmarks import retrospective
+  result.update(evidence_completeness=self.bundles.completeness(result),resolution_history=analysis.resolution_history(v,summaries),residuals=[residuals(r) for r in valid],retrospective=retrospective(records))
+  return result

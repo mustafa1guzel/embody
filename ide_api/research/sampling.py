@@ -51,11 +51,14 @@ def adaptive(cfg,records,previous,remaining):
  def available(p):return rail.digest(p) not in used and all(distance(p,r['parameters'])>=spacing-1e-12 for r in valid) and all(distance(p,q)>=spacing-1e-12 for q in previous)
  candidates=[]
  if d==1:
-  axis=axes[0];name=axis['parameter'];brackets=boundaries(valid,[name])['intervals']
+  axis=axes[0];name=axis['parameter'];relevant=[r for r in records if all(a['minimum']<=r['parameters'][a['parameter']]<=a['maximum'] for a in axes) and all(r['parameters'][k]==cfg['fixed_parameters'][k] for k in PARAMS if k!=name)];detected=boundaries(relevant,[name]);brackets=detected['intervals']
+  if detected['conflicts']:return {'algorithm':'midpoint_v2','points':[],'termination':'CONFLICTING_REPEATED_OUTCOMES'}
+  target=cfg.get('resolution_target',0.)
+  if brackets and all(b['width']<=target+1e-12 for b in brackets):return {'algorithm':'midpoint_v2','points':[],'termination':'TARGET_INTERVAL_RESOLUTION_REACHED'}
   for b in brackets:
-   if b['width']/(axis['maximum']-axis['minimum'])<=2*spacing:continue
+   if b['width']<=target+1e-12 or b['width']/(axis['maximum']-axis['minimum'])<=2*spacing:continue
    p={**cfg['fixed_parameters'],name:round((b['lower']+b['upper'])/2,6)}
-   if available(p):candidates.append({'parameters':p,'score':b['width']/(axis['maximum']-axis['minimum']),'reason':'Midpoint of verified adjacent sampled PASS/FAIL interval; not an exact boundary','neighbors':b['case_ids']})
+   if available(p):candidates.append({'parameters':p,'score':b['width']/(axis['maximum']-axis['minimum']),'reason':'Midpoint of verified adjacent sampled PASS/FAIL interval; not an exact boundary','neighbors':b['case_ids'],'parent_interval':b,'expected_interval_width_if_valid_comparable_outcome':b['width']/2,'requested_resolution':target,'selection_basis':'VERIFIED_MEASURED_BRACKET'})
   if brackets and not candidates:return {'algorithm':'midpoint_v1','points':[],'termination':'RESOLUTION_REACHED_OR_NO_NEW_VALID_MIDPOINT'}
   if not brackets:
    xs=sorted({axis['minimum'],axis['maximum'],*[r['parameters'][name] for r in valid]})
@@ -73,7 +76,7 @@ def adaptive(cfg,records,previous,remaining):
    margin=min(abs(r['metrics']['minimum_clearance_m']-cfg['criteria']['minimumClearance']) for r in neighbors)/max(.001,cfg['criteria']['minimumClearance'])
    discrepancy=max(abs(r['comparison']['measured_minus_ideal_clearance_m']) for r in neighbors)/max(.001,next((a['maximum']-a['minimum'] for a in axes if a['parameter']=='gap_m'),1.))
    components={'outcome_disagreement':4*int(disagreement),'clearance_proximity':2/(1+margin),'normalized_discrepancy':min(1,discrepancy),'normalized_coverage_distance':nearest}
-   candidates.append({'parameters':p,'score':sum(components.values()),'reason':'Heuristic v1 '+str(components)+'; not calibrated uncertainty','neighbors':[r['id'] for r in neighbors]})
+   candidates.append({'parameters':p,'score':sum(components.values()),'reason':'Heuristic v1 '+str(components)+'; not calibrated uncertainty','neighbors':[r['id'] for r in neighbors],'score_components':components,'selection_basis':'VERIFIED_MEASURED_LOCAL_HEURISTIC'})
  candidates.sort(key=lambda r:(-r['score'],rail.digest(r['parameters'])))
  selected=[]
  for item in candidates:

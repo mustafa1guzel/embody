@@ -119,3 +119,31 @@ evidence, but that private temporary raw bundle is now unavailable. Do not treat
 those screenshots as portable raw verification. Retained final QA uses the nine
 public pinned runs; current-controller adaptive guidance remains unavailable
 without suitable native records or a separately approved new experiment.
+
+## v0.6.1 / v0.6.2 adaptive preview
+
+Evidence Completeness captures selected genuine pinned data into durable bundles;
+package verification/import preserves external-origin status. Efficiency Benchmarks
+compares three algorithms using bounded analytical/synthetic oracles, with actual
+query counts and no physics execution. Sensitivity adds measured/ideal residuals;
+Adaptive Design shows available matching measured results by reviewed batch,
+otherwise NOT_ESTABLISHED. Optional 1D resolution is in the axis's SI unit.
+
+The current preparation performs zero new native steps. Three new rail cases
+(1.44/1.49/1.54 m gap) require fresh exact approval; no measured transition or
+adaptive native efficiency advantage is claimed. See [evidence](RESEARCH_EVIDENCE.md),
+[offline benchmarks](EXPERIMENT_EFFICIENCY.md) and [release checks](RESEARCH_RELEASE.md).
+
+## Durable evidence and offline benchmark views
+
+These are genuine final Chrome captures over the pinned historical study and
+computed analytical/synthetic benchmarks. None claims new native dynamics.
+
+![Actual evidence completeness and historical source labels](assets/product/research-evidence-integrity.png)
+
+![Computed offline query efficiency, not measured physics](assets/product/experiment-efficiency-summary.png)
+
+[Oracle query and bracket curves](assets/product/experiment-efficiency-benchmark.png),
+[unexecuted native round](assets/product/adaptive-research-progress.png),
+[saved measured/ideal residuals](assets/product/analytical-measured-comparison.png) and
+[actual report](assets/product/reproducible-research-report.png) remain separately labelled.

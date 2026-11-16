@@ -28,7 +28,7 @@ async function open(){render(<ParameterSweepLab/>);await screen.findByRole('butt
 function preview(){fireEvent.click(screen.getByRole('button',{name:'Preview analytical plan'}));}
 it('loads actual reference data; edits and analytical preview make no execution requests',async()=>{
  await open();expect(screen.getByText(/proposed experiments/)).toHaveTextContent('9');expect(screen.queryByRole('table')).not.toBeInTheDocument();preview();expect(screen.getByRole('table')).toHaveTextContent('Initial velocity toward wall');expect(screen.getAllByTestId(/^sweep-cell-/)).toHaveLength(9);
- expect(screen.getByLabelText('Sweep summary')).toHaveTextContent('0 / 9');expect(screen.getByRole('button',{name:'Run Simulation Sweep'})).toBeEnabled();expect(requests).toHaveLength(4);expect(requests.every(r=>r.options===undefined)).toBe(true);
+ expect(screen.getByLabelText('Sweep summary')).toHaveTextContent('0 / 9');expect(await screen.findByRole('button',{name:'Run Simulation Sweep'})).toBeEnabled();expect(requests).toHaveLength(4);expect(requests.every(r=>r.options===undefined)).toBe(true);
 });
 it('selects heatmap cells and exposes independent analytical values with no measured substitution',async()=>{
  await open();preview();fireEvent.click(screen.getByTestId('sweep-cell-5'));const detail=screen.getByRole('complementary',{name:'Selected experiment details'});

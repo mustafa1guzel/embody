@@ -20,9 +20,10 @@ CRITERIA['properties']['maximumContactEpisodes']={'type':'integer'}
 PHYSICAL=obj({k:NUM for k in PARAMS})
 AXIS=obj({'parameter':{'enum':list(PARAMS)},'minimum':NUM,'maximum':NUM})
 CONFIG=obj({'experiment_id':{'const':rail.EXPERIMENT},'controller_id':{'const':rail.CONTROLLER},'objective':STRING,'type':{'enum':list(TYPES)},'axes':{**arr(AXIS,2),'minItems':1},'fixed_parameters':PHYSICAL,'criteria':CRITERIA,'strategy':{'enum':list(STRATEGIES)},'count':{'type':'integer','minimum':1,'maximum':25},'seed':{'type':'integer','minimum':0,'maximum':2147483647},'minimum_spacing':{'type':'number','minimum':.000001,'maximum':1},'proposal_budget':{'type':'integer','minimum':1,'maximum':100},'hypothesis_ids':arr(ID,16)})
+CONFIG['properties']['resolution_target']={'type':'number','minimum':.000001,'maximum':4.}
 HYPOTHESIS=obj({'statement':STRING,'relationship':STRING,'variables':{**arr({'enum':list(PARAMS)},4),'minItems':1,'uniqueItems':True},'direction':{'enum':['increase','decrease','unspecified']},'assumptions':arr(STRING,5),'evaluation':STRING})
 BATCH=obj({'id':SHA,'cases':{**arr(PHYSICAL),'minItems':1},'rationales':arr(STRING),'strategy':STRING,'context_sha256':SHA,'parent_summary_sha256':{'anyOf':[SHA,{'type':'null'}]},'status':{'enum':['AWAITING_REVIEW','REVIEWED','REJECTED','TRANSFERRED']}})
-REF=obj({'kind':{'enum':['native','recorded']},'id':{'type':'string','pattern':'^(?:[a-f0-9]{32}|portable_rail_study)$'},'summary_sha256':SHA,'association':{'enum':['EXTERNAL_REFERENCE','MATCHING_REVIEWED_BATCH']},'batch_id':{'anyOf':[SHA,{'type':'null'}]}})
+REF=obj({'kind':{'enum':['native','recorded','bundle']},'id':{'type':'string','pattern':'^(?:[a-f0-9]{32}|portable_rail_study)$'},'summary_sha256':SHA,'association':{'enum':['EXTERNAL_REFERENCE','MATCHING_REVIEWED_BATCH']},'batch_id':{'anyOf':[SHA,{'type':'null'}]}})
 CAMPAIGN=obj({'id':ID,'config':CONFIG,'context_sha256':SHA,'status':{'enum':['DRAFT','AWAITING_REVIEW','REVIEWED','TRANSFERRED','PARTIAL','MEASURED','COMPLETED','CANCELLED','ARCHIVED']},'batches':arr(BATCH,16),'evidence':arr(REF,8),'created_at':STRING})
 HYP_STORED=obj({'id':ID,'content':HYPOTHESIS,'status':{'enum':['PROPOSED','UNDER_INVESTIGATION']}})
 FINDING=obj({'id':ID,'campaign_id':ID,'summary_sha256':SHA,'fact_id':STRING})
@@ -53,6 +54,7 @@ def config(v,catalog):
   lo,hi=catalog['bounds'][a['parameter']]
   if not lo<=a['minimum']<a['maximum']<=hi:raise ValueError('Ordered nondegenerate domain within catalog required')
   for n in [a['minimum'],a['maximum']]:rail.parameters({**v['fixed_parameters'],a['parameter']:n})
+ if 'resolution_target' in v and (len(axes)!=1 or v['resolution_target']>axes[0]['maximum']-axes[0]['minimum']):raise ValueError('Resolution target must fit one SI parameter domain')
  if v['count']>v['proposal_budget']:raise ValueError('Initial count exceeds campaign proposal budget')
  if v['type']=='adaptive_1d' and len(axes)!=1:raise ValueError('One-dimensional campaign requires one axis')
  if v['type']=='adaptive_2d' and len(axes)!=2:raise ValueError('Two-dimensional campaign requires two axes')

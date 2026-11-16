@@ -1,6 +1,20 @@
 # Release notes
 
 
+## v0.6.1 — Unreleased · Durable research evidence
+
+- Add bounded content-addressed, immutable local evidence bundles, completed-command verification receipts, independently recomputed saved trajectory metrics and strict portable package verification.
+- Preserve missing/corrupt/historical/external distinctions. Imports never establish measured origin or execution authority; missing support downgrades findings.
+- Add evidence completeness, package export/chunked verification/import, reproducibility and report tables to the actual Research Workspace.
+- Add serial offline release verification with native/provider/VM/application denial instrumentation. No installation or security-baseline migration.
+
+## v0.6.2 — Unreleased adaptive algorithm preview; native demonstration pending approval
+
+- Add one-dimensional SI resolution targets, conflicting-outcome rejection, explicit parent intervals and measured-by-batch resolution history.
+- Add history-only adaptive versus outcome-blind uniform and seeded stratified comparisons in seven bounded analytical/synthetic environments. Count all initial queries; report missed known transitions only after selection.
+- Add continuous/discrete analytical comparisons and signed/absolute/relative measured residuals without inferring causation or electrical efficiency.
+- No new current-source native campaign, measured adaptive efficiency advantage, live AI research or Research rover execution is claimed.
+
 ## v0.6.0 — Unreleased · Deterministic Research Preview
 
 - Add independent typed research projects, human hypotheses, bounded campaigns, immutable snapshots, exact-head edits, timeline and archival.

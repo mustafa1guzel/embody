@@ -6,14 +6,14 @@ from .registry import METRICS
 
 def compatible(a,b,vary=(),benchmark=False):
  if not a.get('verified') or not b.get('verified') or a['status']!='MEASURED' or b['status']!='MEASURED':return False
- keys=['physics','source','criteria','simulation']+([] if benchmark else ['controller'])
- return all(a['compatibility'][k]==b['compatibility'][k] for k in keys) and all(a['parameters'][k]==b['parameters'][k] for k in PARAMS if k not in vary)
+ keys=['physics','source','criteria','simulation','experiment','model','measurements']+([] if benchmark else ['controller'])
+ return all(a['compatibility'].get(k) is not None and a['compatibility'].get(k)==b['compatibility'].get(k) for k in keys) and all(a['parameters'][k]==b['parameters'][k] for k in PARAMS if k not in vary)
 
 def is_measured(r):
  return bool(r.get('verified') and r.get('status')=='MEASURED' and r.get('verdict') in ('PASS','FAIL') and all(type(r.get('parameters',{}).get(k)) in (int,float) and math.isfinite(r['parameters'][k]) for k in PARAMS) and type(r.get('metrics',{}).get('minimum_clearance_m')) in (int,float) and math.isfinite(r['metrics']['minimum_clearance_m']))
 
 def boundaries(records,axes):
- valid=[r for r in records if is_measured(r)];intervals=[];excluded=len(records)-len(valid)
+ valid=[r for r in records if is_measured(r)];intervals=[];conflicts=[];excluded=len(records)-len(valid)
  for key in axes:
   groups={}
   for r in valid:
@@ -22,16 +22,17 @@ def boundaries(records,axes):
   for group in groups.values():
    ordered=sorted(group,key=lambda r:(r['parameters'][key],r['id']));values={}
    for r in ordered:values.setdefault(r['parameters'][key],[]).append(r)
-   if any(len({r['verdict'] for r in same})>1 for same in values.values()):continue
+   if any(len({r['verdict'] for r in same})>1 for same in values.values()):
+    conflicts.append({'parameter':key,'case_ids':[r['id'] for r in group],'reason':'CONFLICTING_REPEATED_OUTCOMES'});continue
    ordered=[values[x][0] for x in sorted(values)]
    for left,right in zip(ordered,ordered[1:]):
     lo,hi=left['parameters'][key],right['parameters'][key]
     if left['verdict']==right['verdict']:continue
     if any(compatible(left,{**x,'verified':True,'status':'MEASURED'},[key]) and lo<x['parameters'][key]<hi for x in records):continue
-    intervals.append({'parameter':key,'lower':lo,'upper':hi,'width':hi-lo,'unit':rail.UNITS[key],'case_ids':[left['id'],right['id']],'outcomes':[left['verdict'],right['verdict']],'fixed_parameters':{k:v for k,v in left['parameters'].items() if k!=key},'compatibility':left['compatibility'],'kind':'OBSERVED_SAMPLED_TRANSITION_INTERVAL'})
+    intervals.append({'parameter':key,'lower':lo,'upper':hi,'width':hi-lo,'unit':rail.UNITS[key],'case_ids':[left['id'],right['id']],'outcomes':[left['verdict'],right['verdict']],'fixed_parameters':{k:v for k,v in left['parameters'].items() if k!=key},'endpoint_metrics':[left['metrics'],right['metrics']],'compatibility':left['compatibility'],'kind':'OBSERVED_SAMPLED_TRANSITION_INTERVAL'})
  outcomes={r['verdict'] for r in valid}
- reason='OBSERVED_INTERVALS' if intervals else 'No measured PASS/FAIL transition has been observed.' if outcomes=={'PASS'} else 'No measured passing case has been observed in the sampled domain.' if outcomes=={'FAIL'} else 'INSUFFICIENT_COMPARABLE_EVIDENCE'
- return {'status':reason,'intervals':intervals,'excluded_unverified_or_unexecuted':excluded,'limitations':['Intervals are local sampled brackets, never exact/global failure boundaries.','Different sources, controllers, criteria, configuration or fixed parameters cannot form a bracket.']}
+ reason='INCONSISTENT_REPEATED_EVIDENCE' if conflicts else 'OBSERVED_INTERVALS' if intervals else 'No measured PASS/FAIL transition has been observed.' if outcomes=={'PASS'} else 'No measured passing case has been observed in the sampled domain.' if outcomes=={'FAIL'} else 'INSUFFICIENT_COMPARABLE_EVIDENCE'
+ return {'status':reason,'intervals':intervals,'conflicts':conflicts,'excluded_unverified_or_unexecuted':excluded,'limitations':['Intervals are local sampled brackets, never exact/global failure boundaries.','Different sources, controllers, criteria, configuration or fixed parameters cannot form a bracket.']}
 
 def analytical(p):
  p=rail.parameters(p);m,v,f,g=(p[k] for k in PARAMS);d=m*v*v/(2*f)
@@ -74,3 +75,23 @@ def pareto(records,objectives=None):
   controllers={b['controller_id'] for b in peers}
   rows.append({'case_id':a['id'],'controller_id':a['controller_id'],'objectives':{k:a['metrics'][k] for k in objectives},'non_dominated':not any(dominates(b) for b in peers),'comparable_cases':[b['id'] for b in peers],'distinct_controllers':len(controllers),'source_current':a['source_current']})
  return {'status':'CONTROLLED_SAMPLED_COMPARISON' if any(r['distinct_controllers']>1 for r in rows) else 'INSUFFICIENT_MATCHED_CONTROLLER_PAIRS','objectives':objectives,'rows':rows,'excluded':len(records)-len(eligible),'limitations':['Safety is a constraint: failed/unverified/missing-metric points excluded.','Non-dominated only within eligible identical-configuration set; not global optimum.','Source and physical contract differences prevent fair comparison.']}
+
+
+def incompatibility(a,b,vary=()):
+ reasons=[]
+ if not is_measured(a) or not is_measured(b):reasons.append('UNVERIFIED_OR_NOT_MEASURED')
+ for k in ['physics','source','controller','criteria','simulation','experiment','model','measurements']:
+  if a.get('compatibility',{}).get(k) is None or a.get('compatibility',{}).get(k)!=b.get('compatibility',{}).get(k):reasons.append('DIFFERENT_OR_MISSING_'+k.upper())
+ for k in PARAMS:
+  if k not in vary and a.get('parameters',{}).get(k)!=b.get('parameters',{}).get(k):reasons.append('DIFFERENT_FIXED_'+k)
+ return reasons
+
+def resolution_history(campaign,summaries):
+ rows=[];cfg=campaign['config'];axes=[a['parameter'] for a in cfg['axes']];seen=[]
+ for index,batch in enumerate(campaign['batches']):
+  # Reconstruct available evidence for explicitly associated rounds only. This is not invented execution chronology.
+  references=[ref for ref in campaign['evidence'] if ref['association']=='MATCHING_REVIEWED_BATCH' and ref['batch_id']==batch['id']]
+  records=[r for summary in summaries if any(ref['summary_sha256']==summary['summary_sha256'] for ref in references) for r in summary['records'] if is_measured(r)]
+  seen.extend(records);unique={r['id']:r for r in seen};intervals=boundaries(list(unique.values()),axes)['intervals']
+  rows.append({'round':index+1,'batch_id':batch['id'],'proposed_points':batch['cases'],'actually_measured_cases':[{'case_id':r['id'],'parameters':r['parameters'],'verdict':r['verdict']} for r in records],'intervals':intervals,'smallest_observed_width':min((v['width'] for v in intervals),default=None),'execution':'VERIFIED_MATCHING_RESULTS' if records else 'NOT_ESTABLISHED','requested_resolution':cfg.get('resolution_target'),'meaning':'Current independently available evidence by reviewed batch; not a fabricated execution timestamp.'})
+ return rows

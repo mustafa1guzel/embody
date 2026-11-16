@@ -144,9 +144,9 @@ def test_real_completion_requires_matching_current_results_only(service,read,con
  # Explicit synthetic lifecycle fixture. It tests transitions, never physics or real measurement claims.
  read,cid=create(service,read,config);key=read['project']['id'];b=read['project']['campaigns'][0]['batches'][0];read=service.review(key,read['sha256'],cid,b['id'],'accept');ctx=service.context()['catalog'];request={'cases':b['cases'],'criteria':config['criteria'],'experiment_id':rail.EXPERIMENT,'controller_id':rail.CONTROLLER,'source_sha256':ctx['source_sha256']}
  s={'kind':'native','id':'1'*32,'summary_sha256':'d'*64,'records':[],'facts':[],'counts':{'planned':3,'measured':1},'request':request}
- monkeypatch.setattr(evidence,'load',lambda *a,**kw:copy.deepcopy(s));read=service.link(key,read['sha256'],cid,'native','1'*32);assert read['project']['campaigns'][0]['status']=='PARTIAL'
+ monkeypatch.setattr(evidence,'load',lambda *a,**kw:copy.deepcopy(s));read=service.link(key,read['sha256'],cid,'native','1'*32,b['id']);assert read['project']['campaigns'][0]['status']=='PARTIAL'
  with pytest.raises(ValueError):service.transition(key,read['sha256'],cid,'COMPLETED')
- s['counts']['measured']=3;read=service.link(key,read['sha256'],cid,'native','1'*32);read=service.transition(key,read['sha256'],cid,'COMPLETED');assert read['project']['campaigns'][0]['status']=='COMPLETED'
+ s['counts']['measured']=3;read=service.link(key,read['sha256'],cid,'native','1'*32,b['id']);read=service.transition(key,read['sha256'],cid,'COMPLETED');assert read['project']['campaigns'][0]['status']=='COMPLETED'
  with pytest.raises(ValueError):service.propose(key,read['sha256'],cid,'initial')
 
 

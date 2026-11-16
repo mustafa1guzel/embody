@@ -38,3 +38,7 @@ it('carries the reviewed native source identity through existing confirmation an
 it('traces a selected hypothesis through incoming campaign relationships',async()=>{
  const v=view({...base,project:{...base.project,campaigns:[campaign()]}});v.graph={nodes:[{id:'hypothesis',type:'hypothesis',label:'Human expectation',reference:null},{id:'campaign',type:'campaign',label:'Bounded experiment',reference:null}],edges:[{from:'campaign',to:'hypothesis',type:'investigates'}]};render(<GraphPanel view={v}/>);await userEvent.selectOptions(screen.getByLabelText('Node type'),'hypothesis');await userEvent.click(screen.getByText('hypothesis',{selector:'strong'}).closest('summary')!);expect(screen.getByText(/investigates ← campaign/)).toBeInTheDocument();
 });
+
+it('starts the selected section at its own visible beginning',async()=>{
+ await setup();await create();const root=screen.getByRole('region',{name:'Research Workspace'});root.scrollTop=400;fireEvent.click(screen.getByRole('button',{name:'Hypotheses'}));expect(root.scrollTop).toBe(0);expect(screen.getByRole('heading',{name:'Research hypotheses'})).toBeInTheDocument();
+});
