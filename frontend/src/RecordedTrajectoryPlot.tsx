@@ -4,11 +4,12 @@ import {displayNumber, recordedSeries, revisionNames, type Criteria, type Record
 type PlotRun = Pick<RecordedRun, 'id' | 'samples' | 'timeValid'> & {scenario?: Scenario; revision: RecordedRun['revision'] | 'reference'; title?: string};
 const nameOf = (r: PlotRun) => r.title || (r.revision === 'reference' ? 'Trusted developer reference' : r.scenario + ' · ' + revisionNames[r.revision]);
 const signals = {wall_clearance: ['Wall clearance', 'm'], velocity: ['Velocity', 'm/s'], position: ['Position', 'm']} as const;
-export default function RecordedTrajectoryPlot({runs, criteria}: {runs: PlotRun[]; criteria: Criteria | null}) {
- const [signal, setSignal] = useState<Signal>('wall_clearance'), [index, setIndex] = useState(0);
+export default function RecordedTrajectoryPlot({runs, criteria,cursorIndex,onCursorIndex}: {runs: PlotRun[]; criteria: Criteria | null;cursorIndex?:number;onCursorIndex?:(value:number)=>void}) {
+ const [signal, setSignal] = useState<Signal>('wall_clearance'), [localIndex, setLocalIndex] = useState(0);
+ const index=cursorIndex??localIndex,setIndex=onCursorIndex??setLocalIndex;
  const series = useMemo(() => runs.map(run => ({run, points: recordedSeries(run, signal)})), [runs, signal]);
  const times = useMemo(() => [...new Set(series.flatMap(s => s.points.filter(p => p.value !== null).map(p => p.time)))].sort((a, b) => a - b), [series]);
- useEffect(() => setIndex(0), [runs, signal]);
+ useEffect(() => {if(cursorIndex===undefined)setLocalIndex(0);}, [runs, signal]);
  const values = series.flatMap(s => s.points.flatMap(p => p.value === null ? [] : [p.value]));
  const threshold = criteria ? signal === 'wall_clearance' ? criteria.minimumClearance : signal === 'velocity' ? criteria.maximumFinalSpeed : null : null;
  const cursor = times[Math.min(index, times.length - 1)];

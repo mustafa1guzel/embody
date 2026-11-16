@@ -1,5 +1,16 @@
 # Release notes
 
+## v0.7 — Unreleased · Integrated product workflow foundation
+
+- Add a real Product Home, named typed rail numerical plans and recent-project reopening. Reuse existing validated snapshot persistence; no applied robot head is replaced.
+- Connect Design, read-only Program, saved Simulate, Physical Debugger and Verify around the same rail project/result/draft. Keep the existing mechanical/circuit/research tools as explicitly separate Advanced contexts.
+- Explain actual clearance/speed/contact/force/settling checks, distinguish observation/interpretation/analytical hypothesis/action, and prepare bounded improvements without fabricated verification.
+- Synchronize genuine recorded sample playback and charts; compare only compatible saved inputs. Preserve the measured v0.6.2 four-case/eight-rollout/4,800-step demonstration and its 50-to-25 mm local interval.
+- Add strict preparation-only product routes, contextual asynchronous-response guards, read-only controller source, a command palette, local guide and light/dark responsive layout. No paid calls, new native rollouts, VMs, installs or automatic applications.
+- Adding non-protected server routes changes the native source identity; all older execution evidence remains source-bound historical evidence, with no renewed approval.
+- Scope remains rail-focused: rename/duplicate, arbitrary import/controller execution and a unified applied mechanical/rail project format are not implemented. See [Product Alpha scope](docs/PRODUCT_ALPHA.md) and [Quickstart](docs/QUICKSTART.md).
+
+
 ## v0.6.2 — Prepared release · Verified adaptive physical debugging
 
 - Complete a genuine current-source rail-braking demonstration: four distinct parameter cases, eight native MuJoCo rollouts and 4,800 integration steps. All fresh replays and independent saved-sample verifications passed.

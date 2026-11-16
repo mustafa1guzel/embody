@@ -1,10 +1,67 @@
-# EMBODY
+# EMBODY — Build physical intelligence.
 
-A local engineering workspace for typed mechanical design, model-directed construction and measured physics.
+Design, inspect controllers, replay simulations and debug physical failures in a
+local engineering workspace. **v0.7 introduces a working, rail-focused product
+workflow foundation**, with the existing mechanical, circuit and research tools
+retained under Advanced Analysis.
 
-## Verified adaptive physical debugging · v0.6.2
+![Product Alpha: real saved carriage geometry and numerical inspector](docs/assets/product/alpha-workspace.png)
 
-Find physical failure conditions, preserve the evidence, and choose an informative follow-up test. In a real MuJoCo rail-braking demonstration, EMBODY measured four cases, replayed each in a fresh native rollout, and independently checked the saved samples: **4 cases · 8 rollouts · 4,800 integration steps**.
+**Create → Design → Program → Simulate → Debug → Verify → Iterate**
+
+Open a real example, inspect its physical structure and controller, scrub saved
+native motion, understand a failed requirement, and prepare a bounded change.
+Measurements keep their original input/source identity. A proposed improvement
+stays **verification pending**; review never silently runs physics or applies it.
+
+## Quickstart
+
+Verified locally on macOS Apple Silicon with Python 3.12 and the existing Node
+and pinned dependencies. From a reviewed environment:
+
+```sh
+npm --prefix frontend run build
+.venv/bin/python -m tools.start --check
+.venv/bin/python -m tools.start
+```
+
+Open http://127.0.0.1:8765. No API key or account is needed. The launcher never
+installs dependencies, calls models, launches VMs or runs physics. If setup is
+incomplete, see [Quickstart](docs/QUICKSTART.md) and the declared
+[Python dependencies](requirements.txt) / [frontend lockfile](frontend/package-lock.json).
+Installations remain an explicit operator decision, not a startup side effect.
+
+## Start with a supported example
+
+| Entry | What actually works | Execution scope |
+|---|---|---|
+| Rail braking | Saved compiled 3D geometry, read-only controller, sample-linked playback, numerical drafts, physical debugger, comparison and adaptive guidance | New execution preparation only; separate explicit approval required |
+| Controller debugging | Nine genuine public original/repair recordings in the existing Physics Regression Explorer | Historical source inspection and saved-data comparison only |
+| Mechanical & circuit studio | Existing typed geometry, environment, SHAPEBASE, CIRCUITBASE and construction review | Independent mechanical project context; no new controller or native model admission |
+
+**New Project** persists a named typed rail numerical plan through the existing
+project/campaign store. Recent projects are actual records. The rail plan is not
+an applied robot assembly. Rename/duplicate, arbitrary robot templates and a
+single merged mechanical/rail project format are not implemented in this foundation.
+[Product scope and workflow](docs/PRODUCT_ALPHA.md) distinguishes these boundaries.
+
+## Debug from physical evidence
+
+![Physical Debugger with a genuine measured clearance failure](docs/assets/product/alpha-debugger.png)
+
+The debugger reads the actual measurement and its frozen requirement. It separates
+**observation, interpretation, analytical hypothesis and recommended action**.
+For the selected recorded case, a carriage stopped without wall contact but retained
+only 3 mm instead of the required 50 mm: a 47 mm clearance deficit. Replay PASS
+means the failure reproduced, not that the physical requirement passed.
+
+Supported checks cover clearance, final speed, contact episodes, peak force and
+sampled settling. Missing evidence stays unavailable. An analytical stopping
+prediction is never relabelled as a simulator result. Parameter edits remain
+local drafts until explicitly saved as a numerical plan; they never change the
+original evidence or authoritative mechanical head.
+
+## Genuine native adaptive demonstration · v0.6.2 preserved
 
 | Initial clearance | Minimum measured clearance | Physical verdict |
 |---:|---:|---|
@@ -13,125 +70,75 @@ Find physical failure conditions, preserve the evidence, and choose an informati
 | 1.490 m | 0.053 m | PASS |
 | 1.540 m | 0.103 m | PASS |
 
-At fixed 4 kg, 1.2 m/s and 2 N braking authority, every case stopped with zero wall contacts. The two failures still missed the mandatory 50 mm clearance. From the initial measured FAIL/PASS pair, the deterministic engine selected **1.465 m**; its separately approved native result narrowed the observed interval from **[1.440, 1.490] m to [1.465, 1.490] m — 50 mm to 25 mm (50%)**. All fresh replays and independent saved-sample verifications passed.
+Four distinct cases, eight native MuJoCo rollouts and 4,800 integration steps.
+All fresh replays and independent saved-sample verifications passed; every case
+finished at zero speed without wall contact. The deterministic engine selected
+1.465 m from measured evidence, reducing the observed local interval from
+**50 mm to 25 mm (50%)**. This is a sampled transition interval, not an exact
+safety boundary or measured superiority over uniform sampling. **1.4775 m
+remains unapproved and unexecuted.** No new simulation runs in this v0.7 work.
 
-![Actual saved measurements and the narrowed local transition interval](docs/assets/product/v062-measured-transition.png)
+[Demonstration](docs/ADAPTIVE_PHYSICAL_DEBUGGING.md) ·
+[Portable evidence and readback](examples/adaptive-rail-study/README.md) ·
+[Verification scope](docs/VERIFICATION.md)
 
-This is a sampled local interval, not an exact safety boundary. The next proposed point, **1.4775 m**, is unapproved and unexecuted. This demonstration uses the trusted developer-authored brake and deterministic selection; it makes no live AI research, hardware-safety or measured sampling-superiority claim.
+The new server routes change the source-bound native identity. Those measurements
+remain verified saved evidence for their original source, not validation of this
+modified application. Consumed approvals and old certificates grant no authority.
 
-Read the [demonstration](docs/ADAPTIVE_PHYSICAL_DEBUGGING.md), inspect the [portable evidence](examples/adaptive-rail-study/README.md), or open **Simulate → Open Research Workspace**. Public packages verify saved bytes and arithmetic; they grant no local trust or execution authority. Human review and native confirmation remain separate. See [research workflow](docs/RESEARCH_WORKSPACE.md), [evidence rules](docs/RESEARCH_EVIDENCE.md) and [verification](docs/VERIFICATION.md#v062-verified-native-adaptive-refinement).
+## Program and simulation
 
-This closes the current adaptive research milestone. **v0.7 Product Alpha** is the next development milestone; no v0.7 implementation is included.
+Program reuses Monaco to display the actual trusted velocity-brake source excerpt
+read-only. Force authority is configured through validated numeric inputs. This
+is not arbitrary Python editing/execution, a terminal or controller installation.
 
-## AI Experiment Designer · v0.5 planning preview
+Simulate links real saved sample timestamps, compiled geometry and measurement
+charts. A request preview validates the existing exact native schema, unchanged
+requirements and 600+600 step scope. **The Product Alpha route cannot dispatch,
+approve, retry or apply a simulation.** Actual new execution needs a separate
+valid source-bound scope. No live AI research is claimed; contextual assistance
+is deterministic and does not make provider calls.
 
-Ask a rail engineering question, edit and validate a bounded experiment proposal, review it, then transfer a source-checked reference plan into Sweep Lab for separate explicit execution confirmation. Inspect verified saved facts and prepare a separately reviewed deterministic follow-up. **Live AI planning/interpretation is unavailable on this public path**; manual and offline-test authorship is explicit. Open **Simulate → Open AI Experiment Designer**. See [workflow, schema, evidence and limits](docs/AI_EXPERIMENT_DESIGNER.md).
+## Technical depth remains available
 
-## Trusted Simulation Engine · v0.4 preview
+Advanced Analysis retains [Parameter Sweep Lab](docs/PARAMETER_SWEEP_LAB.md),
+[Physics Regression Explorer](docs/VERIFICATION.md#physics-regression-explorer),
+[Experiment Designer](docs/AI_EXPERIMENT_DESIGNER.md),
+[Research Workspace](docs/RESEARCH_WORKSPACE.md), adaptive selection, sensitivity,
+controller comparison, evidence graphs, reports and reproducibility.
+Returning preserves the rail project, draft and selected evidence. The legacy
+workspace retains its own independent project context and pauses hidden playback.
 
-Configure a bounded rail parameter grid, inspect ideal predictions, then explicitly confirm a new MuJoCo sweep using only the registered **developer-authored velocity brake**. Inspect actual metrics, fresh replay, measured heatmaps, trajectories and portable JSON export. Open **Simulate → Open Parameter Sweep Lab**. Historical/GPT controller source remains excluded from this native route. See [usage, limits, real demonstration and security boundary](docs/PARAMETER_SWEEP_LAB.md).
+BODYBASE/WORLDBASE supply physical inputs; SHAPEBASE derives bounded geometry and
+explicit proxies; CIRCUITBASE checks supported static electrical interfaces.
+[Architecture](docs/ARCHITECTURE.md) maps the reused code and trust boundaries.
 
-## Physics Regression Explorer · v0.2.1
+## Verification and limitations
 
-Compare the nine saved rail-braking experiments, inspect controller revisions and explore hypothetical acceptance criteria without rerunning physics. Open **Simulate → Open Physics Regression Explorer**, or **Advanced workspaces → Physics Explorer**. Recorded verdicts stay fixed while derived threshold results update separately. See [usage, metric definitions and limits](docs/VERIFICATION.md#physics-regression-explorer).
+Run the supported guarded non-native checks with existing dependencies:
 
-## Overview
-
-An assembly can look plausible and still be physically wrong. EMBODY connects explicit geometry, mass, joints, actuator limits and circuit interfaces with reviewable engineering operations. It separates a design that compiles from one that has actually passed a supported simulation.
-
-The current prototype combines a React/Three.js studio, a Python engineering API, bounded AI tools and native MuJoCo verification. Model proposals remain copies until a separate human decision. Opening a project or recorded study does not call a model or start physics.
-
-## What it does
-
-- Inspect assemblies, select parts and propose bounded dimensional changes in a shared 3D workspace.
-- Generate supported parametric parts with real display holes, named attachment frames and explicit collision proxies.
-- Validate complete typed construction plans, including identities, parentage, mounts, mass allocation and actuator bounds.
-- Review reference electronics through typed components, pins, nets and static electrical diagnostics.
-- Use approved model sessions to propose bounded rover constructions or actuator-command repairs.
-- Inspect saved native trajectories, contacts, forces, independent replay and separate failure/repair verdicts.
-
-## Product preview
-
-![EMBODY studio with a saved rover and selected component properties](docs/assets/product/studio-overview.png)
-
-Saved model-authored rover geometry in a disposable review copy. This is a historical design view, not a newly applied project or a hardware test.
-
-![Typed reconstruction of a genuine model-authored rover plan](docs/assets/product/ai-construction.png)
-
-An explanatory historical reconstruction of one preserved model plan, using validated operation prefixes and the existing viewport. The recording-only read adapter is not a new live incremental-build feature. The displayed proposal is unapplied.
-
-![Reference components and circuit connections](docs/assets/product/circuit-context.png)
-
-Reference electronic context. Graph connectivity does not establish that the circuit powers the rover's numeric simulation commands.
-
-More genuine views: [component editing](docs/assets/product/mechanical-editing.png), [parametric holes and frames](docs/assets/product/shapebase-geometry.png), [signal connections](docs/assets/product/circuit-signal-path.png), [saved AI workflow](docs/assets/product/ai-request-workflow.png), [native verification](docs/assets/product/physics-verification.png) and a [separate reference-ramp test](docs/assets/product/reference-ramp.png).
-
-## Engineering workflow
-
-Natural-language task → structured engineering context → typed operations → validation → copied 3D geometry → explicitly requested native verification, where supported → human review.
-
-An assembly proposal can be rejected before simulation. A compiled design can still fail measured requirements. A successful replay is finite evidence for its own inputs, not permission to apply a proposal.
-
-One saved model-authored rover passed its original proxy checks but moved **−0.018516 m**, failing the required **+0.005 m** forward travel. A separate model-authored rear-command repair measured **+0.018516 m**. The initial failure remains a failure; both designs remain unapplied. See [verification](docs/VERIFICATION.md) and the [compact evidence summary](docs/assets/product/verification-summary.json).
-
-## Architecture
-
-| Area | Actual source |
-|---|---|
-| Physical contexts and native verification | [core](core/), [physics](physics/), [robot](robot/) |
-| World topology and MuJoCo compilation | [world](world/) |
-| Parametric parts and attachment constraints | [shapebase](shapebase/) |
-| Circuit catalog, graph and static checks | [hardware](hardware/) |
-| Typed actions, project persistence and assembly validation | [engineering](engineering/) |
-| Local API, authorization bridge and review read models | [ide_api](ide_api/) |
-| Model adapters, budgets and execution boundaries | [core/agent](core/agent/) |
-| Interactive studio and tests | [frontend](frontend/), [tests](tests/) |
-
-BODYBASE and WORLDBASE supply explicit physical inputs; SHAPEBASE derives bounded display geometry and declared proxies; CIRCUITBASE checks supported electrical interfaces. [Architecture](docs/ARCHITECTURE.md) explains the boundaries.
-
-## Setup
-
-The verified environment is macOS on Apple Silicon, Python 3.12 and Node 22.11, with dependencies declared in [requirements.txt](requirements.txt), the optional requirements files and [frontend/package-lock.json](frontend/package-lock.json).
-
-Dependency setup for a reviewed release bundle:
-
-~~~sh
-python3.12 -m venv .venv
-.venv/bin/python -m pip install -r requirements.txt
-# Required for model-adapter integration and its offline protocol tests:
-.venv/bin/python -m pip install -r requirements-openai.txt
-npm --prefix frontend ci
-~~~
-
-These are setup instructions; this cleanup did not install or download dependencies. The optional `requirements-workspace.txt` is for the legacy Streamlit workspace. Installation alone does not resolve the recording portability gate below.
-
-With the reviewed dependencies and preserved recording bundle available:
-
-~~~sh
-npm --prefix frontend run build
-.venv/bin/python -m tools.start --check
-.venv/bin/python -m tools.start
-~~~
-
-Open http://127.0.0.1:8765. Stop the owned server with Ctrl+C. No API key is required for saved review. The launcher does not install packages, run models, launch VMs or execute simulations.
-
-The [portable rail-braking study](examples/rail-braking-study/README.md) supplies the default saved A/B/C evidence and native frames. It is an explicitly derived metadata package, with original source identities and unchanged measurements. The original archives stay private. Advanced saved rover, arm and robustness views require their separate historical archives.
-
-**Security qualification:** these exact worker and qualifier sources passed all 32 containment assertions and trusted A/B/C parity in a separately approved private installation (17 serial attempts, 27 October 2026). This public source tree contains no private runtime, baseline records or certificate and has no VM execution authority. Any local deployment requires its own valid installation-bound qualification and explicit execution approval. [Verification](docs/VERIFICATION.md) separates portable-reader checks from full-workspace regression and release approval.
-
-## Testing
-
-~~~sh
-.venv/bin/python -m pytest -ra -m "not live_vm"
+```sh
+python -B -m tools.research_release_verify
+python -B -m pytest -ra -p no:cacheprovider -p tools.non_native_guards tests/test_product_alpha.py
 npm --prefix frontend test
-npm --prefix frontend run typecheck
-npm --prefix frontend run build
-~~~
+```
 
-The full Python command is for the preserved workspace and includes trusted native regression fixtures; live VMs are explicitly excluded. Some historical integration tests need private archives. The portable saved-data suite is `tests/test_public_recording.py`; it performs no new dynamics. Exact checks and limitations are in [Verification](docs/VERIFICATION.md).
+The serial runner includes typecheck/build and excludes live integration/VM tests.
+The full historical Python suite needs private archives and includes native
+fixtures; it is not the no-execution Product Alpha acceptance command.
 
-## Development and limits
+[Limitations](docs/LIMITATIONS.md): finite rigid-proxy physics is not hardware,
+materials or manufacturing certification. Circuit connectivity is not SPICE or a
+coupled powertrain. No arbitrary robot import, native rover admission, cloud
+collaboration, automatic application or unrestricted AI is added. Public package
+verification establishes integrity/arithmetic, not independently signed origin.
+Private runtime folders, approvals, credentials and certificates are not published.
 
-[Development](docs/DEVELOPMENT.md) follows engineering milestones, with genuine original images and explicitly labelled reconstructions. The categories describe technical work, not an invented calendar or coding diary.
+## Roadmap and license
 
-Support is bounded: no general CAD kernel, certified material/manufacturing model, autonomous vehicle, complete electronic powertrain or real-hardware safety proof. Untrusted source execution remains blocked without valid separately approved containment. Read the [limitations](docs/LIMITATIONS.md) before interpreting a simulation PASS.
+Next, [v0.8 Robotics Developer Toolkit](docs/PRODUCT_ROADMAP.md) should improve
+actual model/import/controller/test support. v0.9 targets separately authorized
+intelligent engineering; v1.0 targets a coherent installable bounded product.
+No customer-acquisition or commercialization work is part of these milestones.
+The repository currently has no license grant file; licensing remains the owner's
+decision. No commit, tag, push or release is created automatically.

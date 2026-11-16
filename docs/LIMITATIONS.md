@@ -13,3 +13,16 @@ EMBODY is a bounded local engineering prototype.
 - **Publication/security:** this publication copy uses two fixed, independently created real host canaries. The changed worker and qualification definition passed the complete separately approved private-installation qualification on 27 October 2026. That installation-bound certificate is not distributed and cannot authorize a different deployment. A fresh clone cannot repeat this historical containment qualification from public files alone: the pinned predecessor/versioned inventory and matching original protected files must be provisioned through a separate reviewed process, followed by fresh explicit execution approval. A synthetic test path is intentionally retained; no live credential was identified by the performed scan.
 
 The publication audit must not be mistaken for authorization to spend API credits, requalify VMs, execute untrusted code or apply a design. Licensing and any future public distribution remain the owner's decisions; this task does not publish anything.
+
+## Product Alpha foundation
+
+The default product is a working rail debugging and preparation workflow. Named
+rail plans reuse existing validated Research persistence; they do not create or
+apply a robot assembly. Mechanical/circuit projects remain independent behind
+Advanced tools. Rename/duplicate, generic robot creation/import, editable-controller
+execution and native rover integration are not implemented in this foundation.
+The simulation action prepares and validates an exact request; it cannot authorize
+or dispatch one. All displayed dynamics are genuine retained samples. New server
+routes change native source identity, so old passing cases remain historical
+source-bound evidence and do not validate this modified application or draft.
+See [implemented scope](PRODUCT_ALPHA.md) and [current verification](VERIFICATION.md).

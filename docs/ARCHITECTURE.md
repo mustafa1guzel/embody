@@ -123,3 +123,34 @@ receipts; `bundles.py` captures only existing registered verified readers;
 oracles. Existing Research storage, typed contracts and API guards remain owners
 of campaigns. No duplicate native executor, controller or financial ledger exists.
 See [evidence trust](RESEARCH_EVIDENCE.md).
+
+## Product Alpha composition
+
+`frontend/src/main.tsx` mounts ProductAlpha. Its Home and five engineering views
+share exact rail project/head, saved result, selection, draft and playback state.
+`ide_api/product_alpha.py` composes existing Research project persistence, strict
+public package verification, saved-state kinematics and deterministic selection.
+It does not create an alternative simulation, geometry or financial engine.
+
+```mermaid
+flowchart LR
+ Home --> Context[Exact rail project / result / numerical draft]
+ Context --> Design
+ Context --> Program
+ Context --> Simulate[Saved playback / preparation only]
+ Context --> Debug[Measured issue / analytical explanation]
+ Context --> Verify[Compatible saved evidence]
+ Context --> Advanced[Independent existing mechanical / research tools]
+```
+
+Read-only native geometry compiles the exact pinned saved XML and forwards saved
+state without integration. Five physical issue checks use the original record's
+criteria/metrics. Public package origin and imported integrity remain distinct.
+`/api/product/*` can inspect, persist numerical plans, compare, investigate or
+prepare a strict request; it cannot execute, approve, apply or call providers.
+Original Host/Origin/CSRF and native admission remain authoritative. Server-route
+changes alter the native source identity and cannot inherit old execution approval.
+
+Legacy App stays available behind Advanced with visibility-bound replay; mechanical
+heads and rail plans remain independent rather than silently sharing incompatible
+state. See [scope and extension points](PRODUCT_ALPHA.md).

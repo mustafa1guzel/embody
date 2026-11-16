@@ -34,8 +34,9 @@ function Resize({label,direction,value,onChange}:{label:string;direction:'left'|
   onPointerUp={()=>{drag.current=null;}} onLostPointerCapture={()=>{drag.current=null;}}/>;
 }
 
-export default function App(){
+export default function App({visible=true,requestedView}:{visible?:boolean;requestedView?:{feature:'regression'|'hardware';id:number}}={}){
  const [extended,setExtended]=useState<'hardware'|'world'|'robustness'|'regression'|'sweep'|'designer'|'research'|null>('hardware'),[hardwareOpened,setHardwareOpened]=useState(true);
+ useEffect(()=>{if(requestedView)setExtended(requestedView.feature);},[requestedView?.id]);
  const [researchTransfer,setResearchTransfer]=useState<import('./research/types').Locator|null>(null);
  const [designTransfer,setDesignTransfer]=useState<import('./experimentDesigner').DesignerTransfer|null>(null);
  const [theme,setTheme]=useState(()=>localStorage.getItem('embody-theme')||'light');
@@ -64,17 +65,17 @@ export default function App(){
  },[scenario,reportError]);
  useEffect(()=>{localStorage.setItem('embody-layout',JSON.stringify(layout));},[layout]);
  const changeMode=useCallback((next:Mode)=>{setExtended(null);if(next==='agent'&&mode!=='agent')setPriorMode(mode);setMode(next);setMaximized(false);},[mode]);
- useEffect(()=>{if(extended)playback.pause();},[extended]);
+ useEffect(()=>{if(extended||!visible)playback.pause();},[extended,visible]);
  const focusAgent=useCallback(()=>changeMode(mode==='agent'?priorMode:'agent'),[changeMode,mode,priorMode]);
  useEffect(()=>{const handler=(event:KeyboardEvent)=>{
-  if(family==='arm'||extended)return; // Never advance a hidden replay.
+  if(!visible||family==='arm'||extended)return; // Never advance a hidden replay.
   const target=event.target as HTMLElement;const editing=['INPUT','TEXTAREA','SELECT'].includes(target.tagName)||target.isContentEditable||!!target.closest('.monaco-editor');
   if((event.metaKey||event.ctrlKey)&&['1','2','3'].includes(event.key)){event.preventDefault();changeMode(({1:'studio',2:'code',3:'agent'} as Record<string,Mode>)[event.key]);}
   else if(!editing&&event.code==='Space'&&samples.length){event.preventDefault();playback.toggle();}
   else if(!editing&&event.key==='ArrowRight'&&samples.length){event.preventDefault();playback.seek(index+1);}
   else if(!editing&&event.key==='ArrowLeft'&&samples.length){event.preventDefault();playback.seek(index-1);}
   else if(event.key==='Escape')setMaximized(false);
- };window.addEventListener('keydown',handler);return()=>window.removeEventListener('keydown',handler);},[changeMode,index,playback,samples.length,family,extended]);
+ };window.addEventListener('keydown',handler);return()=>window.removeEventListener('keydown',handler);},[changeMode,index,playback,samples.length,family,extended,visible]);
  function resize(direction:'left'|'right'|'bottom',value:number){setLayout(l=>{const room=window.innerWidth-292-(direction==='left'?(showAgent?l.right:0):(showLeft?l.left:0));return {...l,[direction]:Math.min(direction==='bottom'?460:Math.max(direction==='left'?160:260,Math.min(direction==='left'?380:540,room)),Math.max(direction==='bottom'?150:direction==='left'?160:260,value))};});}
  function review(id:string){setResumeId(id);setDock('Verification');setShowDock(true);if(mode==='agent')changeMode('code');setLog(l=>[...l,'Review journal: '+id]);}
  function resetLayout(){setLayout({left:232,right:340,bottom:200});setShowLeft(true);setShowAgent(true);setShowDock(true);setMaximized(false);}
@@ -86,7 +87,7 @@ export default function App(){
  const editorDiff=useMemo(()=>diff&&proposal?(reviewDiff||{original:files[DEFAULT_FILE]?.content||'',modified:proposal.source}):undefined,[diff,proposal,reviewDiff,files[DEFAULT_FILE]?.content]);
  const style={'--left':visibleLeft?`${layout.left}px`:'0px','--right':visibleAgent&&mode!=='agent'?`${layout.right}px`:'0px','--bottom':showDock&&!maximized?`${layout.bottom}px`:'0px'} as React.CSSProperties;
  if(!bootstrap||!recorded)return <main className="startup"><div className="brand">E<span>EMBODY</span></div><p>{error?'Workspace BLOCKED':'Loading verified project evidence…'}</p>{error&&<p role="alert">{error}</p>}<p>No model requests are made on startup.</p></main>;
- if(family==='arm')return <ArmWorkspace mode={mode} onMode={changeMode} onRail={()=>setFamily('rail')}/>;
+ if(family==='arm')return <ArmWorkspace visible={visible} mode={mode} onMode={changeMode} onRail={()=>setFamily('rail')}/>;
  const openRegression=()=>{playback.pause();setExtended('regression');};
  const openSweep=()=>{playback.pause();setDesignTransfer(null);setResearchTransfer(null);setExtended('sweep');};
  const openResearch=()=>{playback.pause();setExtended('research');};
@@ -104,7 +105,7 @@ export default function App(){
    <button title="Reset layout" aria-label="Reset layout" onClick={resetLayout}><Settings2 size={15}/></button>
   </header>
   {error&&<div className="error-banner" role="alert"><strong>BLOCKED</strong> {error}<button onClick={()=>setError('')}>Dismiss</button></div>}
-  {hardwareOpened&&<div className="extended-workspace" style={{display:extended==='hardware'||extended==='world'?'flex':'none'}}><Suspense fallback={<p>Loading unified engineering workspace…</p>}><EngineeringWorkspace visible={extended==='hardware'||extended==='world'} onOpenPhysicsRegression={openRegression} onOpenParameterSweep={openSweep} onOpenExperimentDesigner={openDesigner} onOpenResearch={openResearch}/></Suspense></div>}
+  {hardwareOpened&&<div className="extended-workspace" style={{display:extended==='hardware'||extended==='world'?'flex':'none'}}><Suspense fallback={<p>Loading unified engineering workspace…</p>}><EngineeringWorkspace visible={visible&&(extended==='hardware'||extended==='world')} onOpenPhysicsRegression={openRegression} onOpenParameterSweep={openSweep} onOpenExperimentDesigner={openDesigner} onOpenResearch={openResearch}/></Suspense></div>}
   {extended==='regression'&&<div className="extended-workspace"><Suspense fallback={<p>Loading recorded physics explorer…</p>}><PhysicsRegressionExplorer onClose={()=>setExtended('hardware')} onOpenSweep={openSweep}/></Suspense></div>}
   {extended==='research'&&<div className="extended-workspace"><Suspense fallback={<p>Loading bounded research workspace…</p>}><ResearchWorkspace onClose={()=>setExtended('hardware')} onTransfer={value=>{setDesignTransfer(null);setResearchTransfer(value);setExtended('sweep');}}/></Suspense></div>}
   {extended==='designer'&&<div className="extended-workspace"><Suspense fallback={<p>Loading experiment design…</p>}><AIExperimentDesigner onClose={()=>setExtended('hardware')} onTransfer={value=>{setResearchTransfer(null);setDesignTransfer(value);setExtended('sweep');}}/></Suspense></div>}
@@ -115,7 +116,7 @@ export default function App(){
    {visibleLeft&&<><ProjectDock view={dockView} files={bootstrap.files} active={active} dirty={Object.keys(drafts).filter(p=>drafts[p]!==files[p]?.content)} scene={experiment?.scene} selection={selection} onSelect={selectObject} onFile={path=>{void openFile(path);changeMode('code');}} onReset={resetLayout} draftObject={draftObject} onDraftObject={setDraftObject}/><Resize label="Resize explorer" direction="left" value={layout.left} onChange={v=>resize('left',v)}/></>}
    <main className="main-workspace" hidden={mode==='agent'}>
     <div className="main-content"><div className="content-title"><span>{mode==='studio'?'Single-axis carriage':diff?'Original ↔ proposal':'Project source'}</span><span className="spacer"/><button aria-label="Maximize or restore main panel" onClick={()=>setMaximized(v=>!v)}>{maximized?<Minimize2 size={13}/>:<Maximize2 size={13}/>}</button></div>
-     <div className="studio-content" hidden={mode!=='studio'}>{!extended&&experiment&&current?<Suspense fallback={<p>Loading 3D renderer…</p>}><Viewport scene={experiment.scene} sample={current} selection={selection} onSelect={selectObject} visible={mode==='studio'} cameraMemory={camera} scenario={scenario} minimumClearance={experiment.context.minimum_clearance_m}/></Suspense>:<div className="empty-state">Loading actual scenario geometry and measured states…</div>}
+     <div className="studio-content" hidden={mode!=='studio'}>{!extended&&experiment&&current?<Suspense fallback={<p>Loading 3D renderer…</p>}><Viewport scene={experiment.scene} sample={current} selection={selection} onSelect={selectObject} visible={visible&&mode==='studio'} cameraMemory={camera} scenario={scenario} minimumClearance={experiment.context.minimum_clearance_m}/></Suspense>:<div className="empty-state">Loading actual scenario geometry and measured states…</div>}
       {experiment&&current&&<><div className="measurement-strip"><div><small>Position</small><strong data-testid="scene-position">{current.position.toFixed(4)}<em>m</em></strong></div><div><small>Velocity</small><strong>{current.velocity.toFixed(4)}<em>m/s</em></strong></div><div><small>Surface gap</small><strong className={current.wall_clearance<experiment.context.minimum_clearance_m?'danger':''}>{current.wall_clearance.toFixed(4)}<em>m</em></strong></div><div><small>Force</small><strong>{current.generalized_actuator_force.toFixed(2)}<em>N</em></strong></div><div><small>Contact</small><strong className={current.wall_collision?'danger':''}>{current.wall_collision?'DETECTED':'NONE'}</strong></div></div>
       <div className="physical-context"><span>{experiment.context.mass_kg} kg</span><span>±{experiment.context.braking_force_n} N</span><span>v₀ {experiment.context.initial_velocity_ms} m/s</span><span>Wall center {experiment.context.wall_center_x_m} m · face {experiment.context.wall_near_x} m</span><span>Gap ≥ {experiment.context.minimum_clearance_m} m · |v final| &lt; {experiment.context.max_final_speed_ms} m/s · ≤ {experiment.context.completion_deadline_s} s</span></div></>}
      </div>

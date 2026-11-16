@@ -148,6 +148,16 @@ class Handler(BaseHTTPRequestHandler):
             if path=='/api/rail-sweeps/case':
                 if set(q)!={'id','case'} or any(len(v)!=1 for v in q.values()):raise ValueError('Exact sweep/case query required')
                 return self.reply(200,ide.rail_sweeps.case(q['id'][0],q['case'][0]))
+            if path.startswith('/api/product/'):
+                from ide_api.product_alpha import ProductAlpha
+                if not hasattr(ide,'_product_alpha'):ide._product_alpha=ProductAlpha(ide.experiment_designer)
+                service=ide._product_alpha;action=path.removeprefix('/api/product/')
+                if action=='catalog':
+                    if q:raise ValueError('Unexpected query')
+                    return self.reply(200,service.catalog())
+                if action=='case':return self.reply(200,service.case(one('id')))
+                if action=='project':return self.reply(200,service.project(one('id')))
+                raise ValueError('Unknown Product Alpha read')
             if path=='/api/health':
                 if q:raise ValueError('Unexpected query')
                 from ide_api.startup import check
@@ -316,6 +326,17 @@ class Handler(BaseHTTPRequestHandler):
                 elif action=='interpretation':exact(body,['id','interpretation']);value=service.interpretation(body['id'],body['interpretation'])
                 elif action=='followup':exact(body,['id']);value=service.followup(body['id'])
                 else:raise PermissionError('Designer cannot approve paid calls, run simulation or apply a proposal')
+                return self.reply(200,value)
+            if path.startswith('/api/product/'):
+                from ide_api.product_alpha import ProductAlpha
+                if not hasattr(ide,'_product_alpha'):ide._product_alpha=ProductAlpha(ide.experiment_designer)
+                service=ide._product_alpha;action=path.removeprefix('/api/product/')
+                if action=='new':exact(body,['title']);value=service.new(body['title'])
+                elif action=='save':exact(body,['id','expected','parameters']);value=service.save(body['id'],body['expected'],body['parameters'])
+                elif action=='prepare':exact(body,['parameters']);value=service.prepare(body['parameters'])
+                elif action=='compare':exact(body,['baseline','candidate']);value=service.compare(body['baseline'],body['candidate'])
+                elif action=='investigate':exact(body,['minimum','maximum','budget']);value=service.investigate(body['minimum'],body['maximum'],body['budget'])
+                else:raise PermissionError('Product Alpha cannot execute, approve, apply or call providers')
                 return self.reply(200,value)
             if path=='/api/rail-sweeps/start':
                 return self.reply(202,ide.rail_sweeps.start(body,self.server.job))

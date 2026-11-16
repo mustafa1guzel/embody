@@ -2,6 +2,70 @@
 
 A schema-valid proposal, compiled geometry, successful replay and physical requirement PASS are different results.
 
+## v0.7 product workflow foundation
+
+The new default Home connects a rail-focused Design / Program / Simulate /
+Physical Debugger / Verify journey. Existing specialized mechanical/circuit/
+research tools remain accessible in an explicitly independent project context.
+This is the [working bounded foundation](PRODUCT_ALPHA.md), not unrestricted
+robot execution or the completion of every all-model Product Alpha objective.
+
+| Actually executed check | Pass | Fail | Skip | Deselected |
+|---|---:|---:|---:|---:|
+| Existing serial non-native backend | 218 | 0 | 0 | 0 |
+| New Product Alpha backend/API suite, final | 31 | 0 | 0 | 0 |
+| Full frontend regression, 45 files | 299 | 0 | 0 | 0 |
+| Final affected Product Alpha UI suite | 12 | 0 | 0 | 0 |
+| Final TypeScript / production build | PASS | 0 | — | — |
+| Final genuine Chrome workflow | 32 checks | 0 | — | — |
+
+Counts overlap: the focused UI suite is part of the full frontend count, not
+12 additional passing tests. The full frontend run preceded only the final direct
+shortcut/comparison-state/source-status refinements; the final affected suite,
+typecheck/build and Chrome delivery pass cover those changes. Existing 149-test
+focused frontend verification also passed separately and is not added to 299.
+Native integration and VM suites were explicitly excluded, not silently marked PASS.
+The serial runner and focused Python tests instrument native/provider/VM/application
+entry points; all attempted-execution counters were zero.
+
+Tests cover real public package/replay/readback, stale exact-head saves, bounded
+numerical preparation, invalid IDs/fields/numbers, unknown execution/approval
+operations, actual loopback Origin/CSRF behavior, corrupt evidence withholding,
+missing measurements, synthetic negative requirement edges, distinct compatible
+comparison, existing adaptive selection, UI draft/context retention, late-response
+rejection, readonly code, linked chart/3D timestamp, scroll reset and real navigation.
+Synthetic negative metrics and DOM mock responses are labelled tests, never new
+native or AI evidence.
+
+Installed Chrome 157 at 1440×960, 1000×800 and 720×900 exercised the genuine built
+application. Delivery passed 32 checks with zero page/console errors and zero
+external requests. All non-GET requests were numerical project/planning actions;
+there was no model/native/apply request. Earlier real project creation/save QA
+remains preserved; later passes reused that exact plan instead of duplicating it.
+Six selected public PNGs are byte-identical genuine captures and were visually
+and privacy reviewed. They show real saved MuJoCo geometry through Three.js,
+not fresh physics or a native renderer claim. Setup readiness passed without
+running physics. Existing oversized editor-chunk warnings remain.
+
+The non-protected server gained preparation/read-only product routes, so the
+native source identity changed. Exactly **one of the 46 old execution-source
+files differs: ide_api/server.py**. The native runner/controller/model, physical
+predicates and 58 protected committed files remain unchanged, as do 125 existing
+public fixtures. Original-workspace preservation uses the retained scoped inventory
+of 460 entries, including 104 heads; dependency/build caches are outside that claim.
+No old approval, result, project head or certificate is renewed or migrated.
+
+Public native packages remain unchanged and pass strict saved-data verification.
+Their old capture's source-current flag is recomputed as false in the new read
+model. The old example's exact historical-source assertion intentionally fails
+on this modified server; package integrity/arithmetic still passes. This is source
+binding working correctly, not a justification to relax its reader.
+
+The observed v0.6.2 study remains 4 cases / 8 rollouts / 4,800 steps, all saved
+fresh replay/readback PASS, two physical FAIL/two PASS, 50→25 mm local interval.
+No integration step, paid API call, VM, installation or controller application
+was added. The proposed 1.4775 m refinement remains unapproved and unexecuted.
+
 ## v0.6.2 verified native adaptive refinement
 
 The completed [adaptive physical debugging demonstration](ADAPTIVE_PHYSICAL_DEBUGGING.md)
