@@ -1,0 +1,98 @@
+{
+  "format": "EMBODY_PUBLIC_EVIDENCE_EXPORT_PROVENANCE_V1",
+  "provenance": "DERIVED_EXPORT_INVENTORY",
+  "packages": [
+    {
+      "file": "initial-evidence.json",
+      "bytes": 1219575,
+      "file_sha256": "5635ab67a4d45e472aa169514ed031c56490908eceba5616c786a6552246ce9b",
+      "bundle_id": "42b272a6a1774ba1e8ba749dd482fe8a",
+      "package_sha256": "ffbf7e96d37c275cab88f4e4daf29a85a58bc11dae4091cf89b4e2ec04b732c1",
+      "captured_base_commit": "68b4c14efd523d1fad267d1d01d458bfb04a3b82",
+      "case_count": 3,
+      "verification_status": "INTEGRITY_VALID_EXTERNAL_UNVERIFIED",
+      "saved_arithmetic": {
+        "status": "SAVED_ARITHMETIC_MATCH_EXTERNAL_UNVERIFIED",
+        "cases": 3,
+        "native_steps": 0
+      }
+    },
+    {
+      "file": "refinement-evidence.json",
+      "bytes": 427462,
+      "file_sha256": "84066bc129de61f72e1261ca2d97312d939d4c74ea4933e4a284016678d098c0",
+      "bundle_id": "35c96ab99bf798b327e365eb6541687c",
+      "package_sha256": "c8aaa7afeecb788ec944ef5f570fe1738d95f9864b4d59d1e74a2e360b7e559e",
+      "captured_base_commit": "2fca35e8e56b3b63271e6bcbf033ff59fad3b916",
+      "case_count": 1,
+      "verification_status": "INTEGRITY_VALID_EXTERNAL_UNVERIFIED",
+      "saved_arithmetic": {
+        "status": "SAVED_ARITHMETIC_MATCH_EXTERNAL_UNVERIFIED",
+        "cases": 1,
+        "native_steps": 0
+      }
+    }
+  ],
+  "total_cases": 4,
+  "authenticity": "Native origin is reported by the publisher from retained execution records. Portable verification establishes byte integrity and saved arithmetic, not an independent signature of origin.",
+  "exports": "Existing complete locally verified-reader bundle exports; original manifests, artifacts and trajectories are unchanged.",
+  "excluded": [
+    "consent and approval documents",
+    "private certificates and local attestations",
+    "operator logs and receipts",
+    "private runtime directories",
+    "personal host paths",
+    "credentials"
+  ],
+  "automatic_import_or_execution": false,
+  "screenshots": [
+    {
+      "file": "docs/assets/product/v062-measured-cases.png",
+      "sha256": "7870baace5ec551f7c333ad2daf5b684d7e70a841294f7179626771e608a6790",
+      "bytes": 200477,
+      "width": 1600,
+      "height": 1100,
+      "provenance": "UNCHANGED_GENUINE_LOCAL_CHROME_CAPTURE",
+      "visual_review": "PASS_NO_PERSONAL_HOST_PATH_OR_CREDENTIAL_VISIBLE",
+      "capture_browser": "157.0.8103.78",
+      "capture_workflow_checks": 13,
+      "capture_limitations": "Existing preview labels and unrelated draft controls remain visible; measured result fields identify their own exact inputs."
+    },
+    {
+      "file": "docs/assets/product/v062-measured-transition.png",
+      "sha256": "eac2454c13e2946ca6ce26e4b6f1a4aec469366999387e1a483eb01574af042e",
+      "bytes": 166455,
+      "width": 1600,
+      "height": 1100,
+      "provenance": "UNCHANGED_GENUINE_LOCAL_CHROME_CAPTURE",
+      "visual_review": "PASS_NO_PERSONAL_HOST_PATH_OR_CREDENTIAL_VISIBLE",
+      "capture_browser": "157.0.8103.78",
+      "capture_workflow_checks": 13,
+      "capture_limitations": "Existing preview labels and unrelated draft controls remain visible; measured result fields identify their own exact inputs."
+    },
+    {
+      "file": "docs/assets/product/v062-adaptive-progress.png",
+      "sha256": "ae4fe721f5710a7f7a8bef5151a0fad56479c95871e7dd55dca72b619735d5f3",
+      "bytes": 193615,
+      "width": 1600,
+      "height": 1100,
+      "provenance": "UNCHANGED_GENUINE_LOCAL_CHROME_CAPTURE",
+      "visual_review": "PASS_NO_PERSONAL_HOST_PATH_OR_CREDENTIAL_VISIBLE",
+      "capture_browser": "157.0.8103.78",
+      "capture_workflow_checks": 13,
+      "capture_limitations": "Existing preview labels and unrelated draft controls remain visible; measured result fields identify their own exact inputs."
+    },
+    {
+      "file": "docs/assets/product/v062-failure-replay.png",
+      "sha256": "794e2153376d5077941dc9575a04d218bdfd5d57075bf3e7e7ae01d63854a8d4",
+      "bytes": 176254,
+      "width": 1600,
+      "height": 1100,
+      "provenance": "UNCHANGED_GENUINE_LOCAL_CHROME_CAPTURE",
+      "visual_review": "PASS_NO_PERSONAL_HOST_PATH_OR_CREDENTIAL_VISIBLE",
+      "capture_browser": "157.0.8103.78",
+      "capture_workflow_checks": 13,
+      "capture_limitations": "Existing preview labels and unrelated draft controls remain visible; measured result fields identify their own exact inputs."
+    }
+  ]
+}

@@ -22,7 +22,10 @@ All measured FAIL: **No measured passing case has been observed in the sampled
 domain.** Other insufficient/mixed conditions remain inconclusive. Ideal
 clearance equations are analytical expectations, not native outcomes.
 
-The v0.4 saved native demonstration contains three PASS cases. v0.6 preserves
-those source-bound results without new stepping. No new current-source physical
-boundary is claimed. Separate new bounded native authorization is required to
-investigate whether near-threshold samples actually reveal one.
+The earlier v0.4 native demonstration had only three PASS cases. The separate
+completed v0.6.2 native study measured minimum gaps 0.003/0.028/0.053/0.103 m
+from initial gaps 1.440/1.465/1.490/1.540 m. Its two FAIL/two PASS results
+share the same 4 kg/1.2 m/s/2 N contract. The original 50 mm local bracket
+[1.440, 1.490] m narrowed to 25 mm [1.465, 1.490] m after one actual measured
+refinement. No continuous safe/unsafe region or exact boundary is inferred.
+See [measurements, provenance and limits](ADAPTIVE_PHYSICAL_DEBUGGING.md).

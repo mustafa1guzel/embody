@@ -2,6 +2,68 @@
 
 A schema-valid proposal, compiled geometry, successful replay and physical requirement PASS are different results.
 
+## v0.6.2 verified native adaptive refinement
+
+The completed [adaptive physical debugging demonstration](ADAPTIVE_PHYSICAL_DEBUGGING.md)
+contains **four physical parameter cases, eight native MuJoCo rollouts and 4,800
+integration steps**. All four fresh replays and independent saved-sample
+verifications passed. Replay PASS means reproducibility; the physical outcomes
+remain two clearance FAIL and two PASS.
+
+| Initial clearance | Minimum measured clearance | Physical verdict |
+|---:|---:|---|
+| 1.440 m | 0.003 m | FAIL |
+| 1.465 m | 0.028 m | FAIL |
+| 1.490 m | 0.053 m | PASS |
+| 1.540 m | 0.103 m | PASS |
+
+All cases use 4 kg, 1.2 m/s and 2 N, finish at zero speed and have zero wall
+contacts. Mandatory minimum clearance remains 0.05 m. From the initial measured
+bracket, the deterministic engine chose 1.465 m. That separately approved native
+failure narrows the sampled interval **50 mm → 25 mm (50%)**. The interval is
+[1.465, 1.490] m; neither its exact interior nor real-world safety is established.
+The next 1.4775 m proposal remains unapproved/unexecuted; the 5 mm target is unmet.
+
+The [public evidence package](../examples/adaptive-rail-study/README.md) includes
+unchanged primary/replay samples, XML, original check dictionaries, result/model/
+trajectory identities and exact derived measurements. Its two complete exports
+are independently accepted by the existing strict package verifier as
+`INTEGRITY_VALID_EXTERNAL_UNVERIFIED`, with four saved-arithmetic matches and
+zero integration. No local attestations, private receipts, consent documents,
+certificates or personal paths are distributed. Hashes/arithmetic establish
+integrity, not independently signed MuJoCo origin or execution authority.
+
+Retained execution audits verify 46 frozen source identities, the actual counted
+rollouts/steps, source/criteria continuity and association to the reviewed campaign.
+Fresh replay uses the same MuJoCo engine, not a second physics engine. Public
+source identities record execution history; a later documentation commit is not
+a new execution base or a renewal of consumed approval.
+
+Source-unchanged preparation results remain **218 focused backend tests, 149
+focused frontend tests, typecheck and production build PASS**. The completed
+refinement's genuine Chrome QA passed **13 workflow checks** at 1600×1100, with
+zero page/console errors and zero external requests. Selected PNGs are unchanged
+copies of those captures; release preparation performs saved-data/publication
+checks, not a new native or browser experiment. Full historical regression and
+VM tests are not rerun for these documentation/export changes.
+
+Known frozen UI/report wording remains: the transferred-plan caption and report
+boilerplate can still describe an unexecuted preview, and adaptive stop text can
+mean a midpoint is already pending rather than the resolution target being met.
+The actual case/round tables and measured numbers are authoritative. The sweep's
+selected result has its own inputs; unrelated draft form values did not execute.
+No source or evidence is rewritten to hide these limitations.
+
+Publication-only checks also passed: **21 existing evidence/security tests**
+(0 fail, skip or deselected), strict readback of the two public packages (3+1
+cases), recomputation of both recorded adaptive selections and the 25 mm interval,
+and comparison of all 46 source identities. Instrumented native/provider/VM/apply
+attempt counts are all zero. These checks use saved data; no physical rollout
+was repeated. The public evidence README contains the exercised readback command.
+
+The earlier sections below retain the separate historical release/check scopes.
+Their former pending-native statements do not describe this completed v0.6.2 run.
+
 ## Saved measured comparison
 
 The [machine-readable summary](assets/product/verification-summary.json) describes two genuine, separate model-authored experiments:

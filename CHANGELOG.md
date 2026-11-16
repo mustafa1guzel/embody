@@ -1,5 +1,16 @@
 # Release notes
 
+## v0.6.2 — Prepared release · Verified adaptive physical debugging
+
+- Complete a genuine current-source rail-braking demonstration: four distinct parameter cases, eight native MuJoCo rollouts and 4,800 integration steps. All fresh replays and independent saved-sample verifications passed.
+- Preserve two clearance failures and two passes: initial gaps 1.440 / 1.465 / 1.490 / 1.540 m produced minimum gaps 0.003 / 0.028 / 0.053 / 0.103 m. Every case stopped without wall contact; required clearance remains 0.05 m.
+- Select 1.465 m using the initial verified measured bracket. After separate explicit approval, its actual result narrows the observed local interval from [1.440, 1.490] m to [1.465, 1.490] m: 50 mm → 25 mm, a 50% width reduction. This is not an exact/global safety boundary; the 5 mm target is not reached.
+- Publish-ready documentation includes two compact unchanged evidence exports, exact measurement/source identities, saved-data verification instructions and four genuine application screenshots. Private runtime directories, approvals, certificates and operator logs stay excluded.
+- Retain bounded one-dimensional resolution targets, source/comparability and conflicting-outcome checks, measured-by-round history, and continuous/discrete analytical residual diagnostics.
+- Retain existing offline analytical/synthetic strategy comparisons as separate evidence. No measured superiority over uniform sampling, live AI research or universal physical safety is claimed.
+- Keep 1.4775 m as an unapproved, unexecuted next proposal. No frozen native source, acceptance predicate, controller or security boundary changed during release preparation; no new simulation or paid call ran.
+
+See the [public demonstration](docs/ADAPTIVE_PHYSICAL_DEBUGGING.md), [portable evidence](examples/adaptive-rail-study/README.md) and [draft GitHub release](docs/RELEASE_v0.6.2.md). This milestone prepares for v0.7 Product Alpha; publication and v0.7 development have not occurred.
 
 ## v0.6.1 — Unreleased · Durable research evidence
 
@@ -7,13 +18,6 @@
 - Preserve missing/corrupt/historical/external distinctions. Imports never establish measured origin or execution authority; missing support downgrades findings.
 - Add evidence completeness, package export/chunked verification/import, reproducibility and report tables to the actual Research Workspace.
 - Add serial offline release verification with native/provider/VM/application denial instrumentation. No installation or security-baseline migration.
-
-## v0.6.2 — Unreleased adaptive algorithm preview; native demonstration pending approval
-
-- Add one-dimensional SI resolution targets, conflicting-outcome rejection, explicit parent intervals and measured-by-batch resolution history.
-- Add history-only adaptive versus outcome-blind uniform and seeded stratified comparisons in seven bounded analytical/synthetic environments. Count all initial queries; report missed known transitions only after selection.
-- Add continuous/discrete analytical comparisons and signed/absolute/relative measured residuals without inferring causation or electrical efficiency.
-- No new current-source native campaign, measured adaptive efficiency advantage, live AI research or Research rover execution is claimed.
 
 ## v0.6.0 — Unreleased · Deterministic Research Preview
 

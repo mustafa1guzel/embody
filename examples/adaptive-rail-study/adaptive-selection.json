@@ -1,0 +1,343 @@
+{
+  "format": "EMBODY_PUBLIC_ADAPTIVE_SELECTION_RECORD_V1",
+  "provenance": "RECORDED_DETERMINISTIC_ENGINE_OUTPUT_NOT_LIVE_AI",
+  "campaign_config": {
+    "axes": [
+      {
+        "maximum": 1.54,
+        "minimum": 1.44,
+        "parameter": "gap_m"
+      }
+    ],
+    "controller_id": "developer_velocity_brake_v1",
+    "count": 3,
+    "criteria": {
+      "maximumContactEpisodes": 0,
+      "maximumFinalSpeed": 0.03,
+      "maximumSettlingTime": 3.0,
+      "minimumClearance": 0.05
+    },
+    "experiment_id": "rail_velocity_brake_v1",
+    "fixed_parameters": {
+      "force_n": 2.0,
+      "gap_m": 1.49,
+      "mass_kg": 4.0,
+      "speed_mps": 1.2
+    },
+    "hypothesis_ids": [
+      "4ef51b09384e43a0aad9a8e1e726c620",
+      "0b325dd4c37f4b3ea40102ba689fd4f1",
+      "6ae59a4a28e14aaba0d5231a8d4a7bc6"
+    ],
+    "minimum_spacing": 0.001,
+    "objective": "Localize an observed clearance-requirement transition, if present",
+    "proposal_budget": 8,
+    "resolution_target": 0.005,
+    "seed": 1,
+    "strategy": "uniform",
+    "type": "adaptive_1d"
+  },
+  "after_initial": {
+    "algorithm": "midpoint_v1",
+    "points": [
+      {
+        "parameters": {
+          "force_n": 2.0,
+          "gap_m": 1.465,
+          "mass_kg": 4.0,
+          "speed_mps": 1.2
+        },
+        "score": 0.5,
+        "reason": "Midpoint of verified adjacent sampled PASS/FAIL interval; not an exact boundary",
+        "neighbors": [
+          "051ebd240d19477836ab3b769ab1dd2d0a1e0b22ccb268140ded17d38d325274",
+          "7be7d26f56866aa2fbb48740dddbe18bf374b2a2bc4a76394177197334620b5c"
+        ],
+        "parent_interval": {
+          "parameter": "gap_m",
+          "lower": 1.44,
+          "upper": 1.49,
+          "width": 0.050000000000000044,
+          "unit": "m",
+          "case_ids": [
+            "051ebd240d19477836ab3b769ab1dd2d0a1e0b22ccb268140ded17d38d325274",
+            "7be7d26f56866aa2fbb48740dddbe18bf374b2a2bc4a76394177197334620b5c"
+          ],
+          "outcomes": [
+            "FAIL",
+            "PASS"
+          ],
+          "fixed_parameters": {
+            "force_n": 2.0,
+            "mass_kg": 4.0,
+            "speed_mps": 1.2
+          },
+          "endpoint_metrics": [
+            {
+              "absolute_impulse_ns": 4.795000000000001,
+              "duration_s": 2.9999999999999583,
+              "final_speed_mps": 0.0,
+              "maximum_actuator_force_n": 2.0,
+              "maximum_speed_mps": 1.2,
+              "minimum_clearance_m": 0.0029999999999745786,
+              "sample_count": 601,
+              "sampled_settling_time_s": 2.344999999999972,
+              "sampled_settling_travel_m": 1.4363125000000245,
+              "signed_work_j": -2.8800000000000305,
+              "wall_contact_episodes": 0,
+              "wall_contact_samples": 0
+            },
+            {
+              "absolute_impulse_ns": 4.795000000000001,
+              "duration_s": 2.9999999999999583,
+              "final_speed_mps": 0.0,
+              "maximum_actuator_force_n": 2.0,
+              "maximum_speed_mps": 1.2,
+              "minimum_clearance_m": 0.05299999999997462,
+              "sample_count": 601,
+              "sampled_settling_time_s": 2.344999999999972,
+              "sampled_settling_travel_m": 1.4363125000000245,
+              "signed_work_j": -2.8800000000000305,
+              "wall_contact_episodes": 0,
+              "wall_contact_samples": 0
+            }
+          ],
+          "compatibility": {
+            "controller": "developer_velocity_brake_v1",
+            "criteria": "217f506a6ccd49976da673e8058ec73b89ed1cb09be20f31051bde7b1bd22f17",
+            "experiment": "rail_velocity_brake_v1",
+            "measurements": "RAIL_SAMPLED_MEASUREMENTS_V1",
+            "model": "rail_carriage",
+            "physics": "rail_native_template_v1",
+            "simulation": "77510e7b567727c693dab77752fd39c24142a68daefa14fe3f3bd681f87efb84",
+            "source": "b3070a8ccadc0897b5981cca6ea9aab54f56c12f53ebebeea8ff7c3500c0ed29"
+          },
+          "kind": "OBSERVED_SAMPLED_TRANSITION_INTERVAL"
+        },
+        "expected_interval_width_if_valid_comparable_outcome": 0.025000000000000022,
+        "requested_resolution": 0.005,
+        "selection_basis": "VERIFIED_MEASURED_BRACKET"
+      }
+    ],
+    "termination": "BATCH_READY",
+    "origin": "DETERMINISTIC_MEASURED_GUIDANCE_NOT_AI"
+  },
+  "after_refinement": {
+    "algorithm": "midpoint_v1",
+    "points": [
+      {
+        "parameters": {
+          "force_n": 2.0,
+          "gap_m": 1.4775,
+          "mass_kg": 4.0,
+          "speed_mps": 1.2
+        },
+        "score": 0.2499999999999989,
+        "reason": "Midpoint of verified adjacent sampled PASS/FAIL interval; not an exact boundary",
+        "neighbors": [
+          "6df61af4746ab643113dcdea543a5117bd8a1af32e55569e4f39972b028c13ff",
+          "7be7d26f56866aa2fbb48740dddbe18bf374b2a2bc4a76394177197334620b5c"
+        ],
+        "parent_interval": {
+          "parameter": "gap_m",
+          "lower": 1.465,
+          "upper": 1.49,
+          "width": 0.02499999999999991,
+          "unit": "m",
+          "case_ids": [
+            "6df61af4746ab643113dcdea543a5117bd8a1af32e55569e4f39972b028c13ff",
+            "7be7d26f56866aa2fbb48740dddbe18bf374b2a2bc4a76394177197334620b5c"
+          ],
+          "outcomes": [
+            "FAIL",
+            "PASS"
+          ],
+          "fixed_parameters": {
+            "force_n": 2.0,
+            "mass_kg": 4.0,
+            "speed_mps": 1.2
+          },
+          "endpoint_metrics": [
+            {
+              "absolute_impulse_ns": 4.795000000000001,
+              "duration_s": 2.9999999999999583,
+              "final_speed_mps": 0.0,
+              "maximum_actuator_force_n": 2.0,
+              "maximum_speed_mps": 1.2,
+              "minimum_clearance_m": 0.027999999999974712,
+              "sample_count": 601,
+              "sampled_settling_time_s": 2.344999999999972,
+              "sampled_settling_travel_m": 1.4363125000000245,
+              "signed_work_j": -2.8800000000000305,
+              "wall_contact_episodes": 0,
+              "wall_contact_samples": 0
+            },
+            {
+              "absolute_impulse_ns": 4.795000000000001,
+              "duration_s": 2.9999999999999583,
+              "final_speed_mps": 0.0,
+              "maximum_actuator_force_n": 2.0,
+              "maximum_speed_mps": 1.2,
+              "minimum_clearance_m": 0.05299999999997462,
+              "sample_count": 601,
+              "sampled_settling_time_s": 2.344999999999972,
+              "sampled_settling_travel_m": 1.4363125000000245,
+              "signed_work_j": -2.8800000000000305,
+              "wall_contact_episodes": 0,
+              "wall_contact_samples": 0
+            }
+          ],
+          "compatibility": {
+            "controller": "developer_velocity_brake_v1",
+            "criteria": "217f506a6ccd49976da673e8058ec73b89ed1cb09be20f31051bde7b1bd22f17",
+            "experiment": "rail_velocity_brake_v1",
+            "measurements": "RAIL_SAMPLED_MEASUREMENTS_V1",
+            "model": "rail_carriage",
+            "physics": "rail_native_template_v1",
+            "simulation": "77510e7b567727c693dab77752fd39c24142a68daefa14fe3f3bd681f87efb84",
+            "source": "b3070a8ccadc0897b5981cca6ea9aab54f56c12f53ebebeea8ff7c3500c0ed29"
+          },
+          "kind": "OBSERVED_SAMPLED_TRANSITION_INTERVAL"
+        },
+        "expected_interval_width_if_valid_comparable_outcome": 0.012499999999999956,
+        "requested_resolution": 0.005,
+        "selection_basis": "VERIFIED_MEASURED_BRACKET"
+      }
+    ],
+    "termination": "BATCH_READY",
+    "origin": "DETERMINISTIC_MEASURED_GUIDANCE_NOT_AI"
+  },
+  "interval_update": {
+    "status": "OBSERVED_INTERVAL_REDUCED",
+    "previous": {
+      "case_ids": [
+        "051ebd240d19477836ab3b769ab1dd2d0a1e0b22ccb268140ded17d38d325274",
+        "7be7d26f56866aa2fbb48740dddbe18bf374b2a2bc4a76394177197334620b5c"
+      ],
+      "compatibility": {
+        "controller": "developer_velocity_brake_v1",
+        "criteria": "217f506a6ccd49976da673e8058ec73b89ed1cb09be20f31051bde7b1bd22f17",
+        "experiment": "rail_velocity_brake_v1",
+        "measurements": "RAIL_SAMPLED_MEASUREMENTS_V1",
+        "model": "rail_carriage",
+        "physics": "rail_native_template_v1",
+        "simulation": "77510e7b567727c693dab77752fd39c24142a68daefa14fe3f3bd681f87efb84",
+        "source": "b3070a8ccadc0897b5981cca6ea9aab54f56c12f53ebebeea8ff7c3500c0ed29"
+      },
+      "endpoint_metrics": [
+        {
+          "absolute_impulse_ns": 4.795000000000001,
+          "duration_s": 2.9999999999999583,
+          "final_speed_mps": 0.0,
+          "maximum_actuator_force_n": 2.0,
+          "maximum_speed_mps": 1.2,
+          "minimum_clearance_m": 0.0029999999999745786,
+          "sample_count": 601,
+          "sampled_settling_time_s": 2.344999999999972,
+          "sampled_settling_travel_m": 1.4363125000000245,
+          "signed_work_j": -2.8800000000000305,
+          "wall_contact_episodes": 0,
+          "wall_contact_samples": 0
+        },
+        {
+          "absolute_impulse_ns": 4.795000000000001,
+          "duration_s": 2.9999999999999583,
+          "final_speed_mps": 0.0,
+          "maximum_actuator_force_n": 2.0,
+          "maximum_speed_mps": 1.2,
+          "minimum_clearance_m": 0.05299999999997462,
+          "sample_count": 601,
+          "sampled_settling_time_s": 2.344999999999972,
+          "sampled_settling_travel_m": 1.4363125000000245,
+          "signed_work_j": -2.8800000000000305,
+          "wall_contact_episodes": 0,
+          "wall_contact_samples": 0
+        }
+      ],
+      "fixed_parameters": {
+        "force_n": 2.0,
+        "mass_kg": 4.0,
+        "speed_mps": 1.2
+      },
+      "kind": "OBSERVED_SAMPLED_TRANSITION_INTERVAL",
+      "lower": 1.44,
+      "outcomes": [
+        "FAIL",
+        "PASS"
+      ],
+      "parameter": "gap_m",
+      "unit": "m",
+      "upper": 1.49,
+      "width": 0.050000000000000044
+    },
+    "current": {
+      "parameter": "gap_m",
+      "lower": 1.465,
+      "upper": 1.49,
+      "width": 0.02499999999999991,
+      "unit": "m",
+      "case_ids": [
+        "6df61af4746ab643113dcdea543a5117bd8a1af32e55569e4f39972b028c13ff",
+        "7be7d26f56866aa2fbb48740dddbe18bf374b2a2bc4a76394177197334620b5c"
+      ],
+      "outcomes": [
+        "FAIL",
+        "PASS"
+      ],
+      "fixed_parameters": {
+        "force_n": 2.0,
+        "mass_kg": 4.0,
+        "speed_mps": 1.2
+      },
+      "endpoint_metrics": [
+        {
+          "absolute_impulse_ns": 4.795000000000001,
+          "duration_s": 2.9999999999999583,
+          "final_speed_mps": 0.0,
+          "maximum_actuator_force_n": 2.0,
+          "maximum_speed_mps": 1.2,
+          "minimum_clearance_m": 0.027999999999974712,
+          "sample_count": 601,
+          "sampled_settling_time_s": 2.344999999999972,
+          "sampled_settling_travel_m": 1.4363125000000245,
+          "signed_work_j": -2.8800000000000305,
+          "wall_contact_episodes": 0,
+          "wall_contact_samples": 0
+        },
+        {
+          "absolute_impulse_ns": 4.795000000000001,
+          "duration_s": 2.9999999999999583,
+          "final_speed_mps": 0.0,
+          "maximum_actuator_force_n": 2.0,
+          "maximum_speed_mps": 1.2,
+          "minimum_clearance_m": 0.05299999999997462,
+          "sample_count": 601,
+          "sampled_settling_time_s": 2.344999999999972,
+          "sampled_settling_travel_m": 1.4363125000000245,
+          "signed_work_j": -2.8800000000000305,
+          "wall_contact_episodes": 0,
+          "wall_contact_samples": 0
+        }
+      ],
+      "compatibility": {
+        "controller": "developer_velocity_brake_v1",
+        "criteria": "217f506a6ccd49976da673e8058ec73b89ed1cb09be20f31051bde7b1bd22f17",
+        "experiment": "rail_velocity_brake_v1",
+        "measurements": "RAIL_SAMPLED_MEASUREMENTS_V1",
+        "model": "rail_carriage",
+        "physics": "rail_native_template_v1",
+        "simulation": "77510e7b567727c693dab77752fd39c24142a68daefa14fe3f3bd681f87efb84",
+        "source": "b3070a8ccadc0897b5981cca6ea9aab54f56c12f53ebebeea8ff7c3500c0ed29"
+      },
+      "kind": "OBSERVED_SAMPLED_TRANSITION_INTERVAL"
+    },
+    "previous_width_m": 0.050000000000000044,
+    "new_width_m": 0.02499999999999991,
+    "relative_width_reduction": 0.5000000000000022,
+    "percent_width_reduction": 50.00000000000022,
+    "actual_new_case_verdict": "FAIL",
+    "actual_new_case_id": "6df61af4746ab643113dcdea543a5117bd8a1af32e55569e4f39972b028c13ff",
+    "algorithm": "Existing comparability/adjacency boundary engine; no manual bracket substitution"
+  },
+  "next_point_status": "UNAPPROVED_NOT_EXECUTED"
+}

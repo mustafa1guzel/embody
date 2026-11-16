@@ -2,11 +2,26 @@
 
 A local engineering workspace for typed mechanical design, model-directed construction and measured physics.
 
-## Physical research · v0.6.1 / v0.6.2 adaptive preview
+## Verified adaptive physical debugging · v0.6.2
 
-Preserve selected genuine saved measurements in bounded write-once evidence bundles, independently re-read trajectory metrics, verify external packages without promoting their origin, and compare uniform, seeded-stratified and adaptive queries in explicitly analytical/synthetic environments. Create independent research projects and hypotheses, plan bounded campaigns, inspect deterministic adaptive suggestions, trace verified saved measurements through findings and an evidence graph, and export reproducibility manifests/reports. Open **Simulate → Open Research Workspace**. Human review and existing native confirmation remain separate. **Live AI research, new native adaptive demonstrations and Research rover execution are pending separate integration/authorization.** See [research workflow and limits](docs/RESEARCH_WORKSPACE.md).
+Find physical failure conditions, preserve the evidence, and choose an informative follow-up test. In a real MuJoCo rail-braking demonstration, EMBODY measured four cases, replayed each in a fresh native rollout, and independently checked the saved samples: **4 cases · 8 rollouts · 4,800 integration steps**.
 
-See [evidence bundles](docs/RESEARCH_EVIDENCE.md), [offline efficiency benchmarks](docs/EXPERIMENT_EFFICIENCY.md) and [serial non-native release verification](docs/RESEARCH_RELEASE.md). New current-source native experiments remain pending exact explicit approval.
+| Initial clearance | Minimum measured clearance | Physical verdict |
+|---:|---:|---|
+| 1.440 m | 0.003 m | FAIL |
+| 1.465 m | 0.028 m | FAIL |
+| 1.490 m | 0.053 m | PASS |
+| 1.540 m | 0.103 m | PASS |
+
+At fixed 4 kg, 1.2 m/s and 2 N braking authority, every case stopped with zero wall contacts. The two failures still missed the mandatory 50 mm clearance. From the initial measured FAIL/PASS pair, the deterministic engine selected **1.465 m**; its separately approved native result narrowed the observed interval from **[1.440, 1.490] m to [1.465, 1.490] m — 50 mm to 25 mm (50%)**. All fresh replays and independent saved-sample verifications passed.
+
+![Actual saved measurements and the narrowed local transition interval](docs/assets/product/v062-measured-transition.png)
+
+This is a sampled local interval, not an exact safety boundary. The next proposed point, **1.4775 m**, is unapproved and unexecuted. This demonstration uses the trusted developer-authored brake and deterministic selection; it makes no live AI research, hardware-safety or measured sampling-superiority claim.
+
+Read the [demonstration](docs/ADAPTIVE_PHYSICAL_DEBUGGING.md), inspect the [portable evidence](examples/adaptive-rail-study/README.md), or open **Simulate → Open Research Workspace**. Public packages verify saved bytes and arithmetic; they grant no local trust or execution authority. Human review and native confirmation remain separate. See [research workflow](docs/RESEARCH_WORKSPACE.md), [evidence rules](docs/RESEARCH_EVIDENCE.md) and [verification](docs/VERIFICATION.md#v062-verified-native-adaptive-refinement).
+
+This closes the current adaptive research milestone. **v0.7 Product Alpha** is the next development milestone; no v0.7 implementation is included.
 
 ## AI Experiment Designer · v0.5 planning preview
 

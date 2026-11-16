@@ -48,9 +48,13 @@ verified case/metric and summary/result/trajectory digests. Hypotheses and futur
 recommendations are not measurements. Report generation makes no automatic AI call.
 
 The original v0.4 native source identity is historical after API route changes;
-new verification must create new evidence. v0.6 performed read-back only. Future
-native demonstration and live AI research assistance require separate exact
-source-bound authorization; old approvals are consumed/unusable.
+new verification must create new evidence. The original v0.6 preview performed
+read-back only. Subsequently, separately
+approved current-source v0.6.2 native runs produced four cases/eight rollouts/4,800
+steps and one measured refinement. [Two public exports](../examples/adaptive-rail-study/README.md)
+retain their separate original capture/source identities and unchanged case bytes.
+No import or documentation update renews their consumed authority. Any further
+native point or live AI integration requires separate exact approval.
 
 
 Research-only manifest and batch identities use tagged semantic JSON values:

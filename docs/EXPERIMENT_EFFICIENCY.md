@@ -40,3 +40,12 @@ hidden outcomes are substituted. There is no measured efficiency advantage claim
 
 See [adaptive selection](ADAPTIVE_EXPERIMENT_DESIGN.md),
 [sensitivity](PARAMETER_SENSITIVITY.md), [evidence](RESEARCH_EVIDENCE.md).
+
+## Separate measured refinement
+
+The [v0.6.2 native demonstration](ADAPTIVE_PHYSICAL_DEBUGGING.md) used three
+initial measured cases and one history-selected midpoint to reduce one observed
+local interval from 50 to 25 mm. This is genuine measured refinement, not a
+paired native comparison against uniform or seeded sampling. The offline
+benchmarks above remain analytical/synthetic; no measured strategy-superiority
+claim follows from this single refinement.

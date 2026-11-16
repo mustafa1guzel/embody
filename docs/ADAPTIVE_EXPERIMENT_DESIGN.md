@@ -62,7 +62,15 @@ Synthetic tests cover known brackets, multiple transitions, mixed identities,
 missing/error cases, spacing/precision, budgets and2Ddeterminism. These are
 algorithm fixtures, not MuJoCo measurements. Genuine saved v0.4 evidence has
 three PASS cases; its gap-compatible pair supports coverage guidance, not an
-observed PASS/FAIL boundary. No native adaptive campaign has yet executed.
+observed PASS/FAIL boundary in that earlier demonstration. The later v0.6.2
+campaign measured both outcomes and executed one separately approved midpoint:
+
+The initial [1.440, 1.490] m bracket selected 1.465 m from verified records.
+Its measured clearance FAIL narrowed the interval to [1.465, 1.490] m, width
+25 mm versus 50 mm. All four cases and fresh replays are preserved in the
+[public demonstration](ADAPTIVE_PHYSICAL_DEBUGGING.md). The next midpoint
+1.4775 m is unapproved/unexecuted; the 5 mm target is not achieved. This
+establishes one real measured refinement, not a sampling-efficiency advantage.
 
 ## Current hardening
 

@@ -1,4 +1,4 @@
-# Research Workspace — v0.6 Research Preview
+# Research Workspace — v0.6.2 verified adaptive physical debugging
 
 Open **Simulate → Open Research Workspace**, or **Advanced workspaces → Research**.
 This is a deterministic research workflow. Production live AI planning, hypotheses,
@@ -17,8 +17,10 @@ are authoritative. Generate initial samples, inspect ideal predictions, then
 explicitly review or reject a batch. Transfer the exact reviewed batch into
 Parameter Sweep Lab. Nonuniform batches use a read-only point table; no fictitious
 rectangular grid or historical scenario is substituted. Its existing native
-confirmation remains a separate decision. **No new simulation was run for this
-release.** New experiments require separate execution authority.
+confirmation remains a separate decision. The completed v0.6.2 demonstration
+measured three initial cases and one separately approved refinement, with a fresh
+replay per case. [Measured results and limits](ADAPTIVE_PHYSICAL_DEBUGGING.md) are
+public; any additional experiment still needs separate execution authority.
 
 Link a saved local native job or the public pinned nine-run rail study. Existing
 readers verify hashes and contracts. External references are not execution of a
@@ -94,7 +96,7 @@ See [adaptive algorithms](ADAPTIVE_EXPERIMENT_DESIGN.md),
 and [reproducibility](RESEARCH_REPRODUCIBILITY.md).
 
 
-## Actual product views
+## Earlier preview product views
 
 The captures are genuine local Chrome UI. Plans and adaptive suggestions are
 explicitly deterministic; measurements are existing saved evidence, never new
@@ -118,7 +120,10 @@ three-case native reference and combined12case views are genuine observed saved
 evidence, but that private temporary raw bundle is now unavailable. Do not treat
 those screenshots as portable raw verification. Retained final QA uses the nine
 public pinned runs; current-controller adaptive guidance remains unavailable
-without suitable native records or a separately approved new experiment.
+without suitable native records or a separately approved new experiment. Those
+earlier missing v0.4 records remain missing. The new v0.6.2 study has separate
+retained raw evidence and [public exports](../examples/adaptive-rail-study/README.md);
+it is not a reconstruction or replacement of the old missing run.
 
 ## v0.6.1 / v0.6.2 adaptive preview
 
@@ -129,9 +134,12 @@ query counts and no physics execution. Sensitivity adds measured/ideal residuals
 Adaptive Design shows available matching measured results by reviewed batch,
 otherwise NOT_ESTABLISHED. Optional 1D resolution is in the axis's SI unit.
 
-The current preparation performs zero new native steps. Three new rail cases
-(1.44/1.49/1.54 m gap) require fresh exact approval; no measured transition or
-adaptive native efficiency advantage is claimed. See [evidence](RESEARCH_EVIDENCE.md),
+The earlier preview performed zero native steps. The subsequent separately
+approved initial 1.44/1.49/1.54 m cases and measured-guided 1.465 m refinement
+are now complete: four cases/eight rollouts/4,800 steps, all replay/readback PASS.
+The observed interval narrowed from 50 to 25 mm; no native efficiency advantage
+is claimed. See the [completed demonstration](ADAPTIVE_PHYSICAL_DEBUGGING.md),
+[evidence](RESEARCH_EVIDENCE.md),
 [offline benchmarks](EXPERIMENT_EFFICIENCY.md) and [release checks](RESEARCH_RELEASE.md).
 
 ## Durable evidence and offline benchmark views

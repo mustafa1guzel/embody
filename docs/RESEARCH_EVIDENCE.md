@@ -54,3 +54,21 @@ entry, sampled suffix and continuous ideal stopping time are distinct. Missing
 replay/model/source/measurement definitions reject. No native integration occurs.
 
 See [workflow](RESEARCH_WORKSPACE.md) and [verification runner](RESEARCH_RELEASE.md).
+
+## Public v0.6.2 demonstration exports
+
+The [adaptive rail study](../examples/adaptive-rail-study/README.md) exports two
+complete existing verified-reader captures: three initial cases and one refinement.
+The existing exporter and strict package checker accept both without redacting
+or altering original manifests, XML, samples, checks, verdicts or replay bytes.
+Four case readbacks pass. Decoded artifacts and metadata were privacy-reviewed;
+no consent/approval documents, local attestations, certificates, operator logs,
+credentials or personal host paths are included. These are selected public
+scientific exports, not a published private runtime directory.
+
+`original_request.json` is the consumed numerical service request, retained by
+the export format for reproducibility. Its nonce/confirmation marker is not user
+approval or an execution token. Public result/source summaries are explicitly
+derived projections, never replacements for sealed original evidence. External
+verification remains INTEGRITY_VALID_EXTERNAL_UNVERIFIED; import cannot promote
+origin, local trust, reviewed state or execution/application authority.

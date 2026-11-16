@@ -34,12 +34,18 @@ Browser QA remains a separate real installed-browser interaction and must have
 its own observed results, screenshots and counter evidence. A unit-test pass is
 not browser QA or native physical validation.
 
-Current-source adaptive native demonstration is a separate unexecuted scope:
-three cases, three fresh replays, at most 3,600 steps, only the registered trusted
-rail controller and unchanged acceptance predicates. A source-bound exact consent
-must be explicitly approved before native execution. Later measured-bracket
-midpoints require new approval; an eight-case campaign ceiling is planning only.
-The old unapproved consent cannot authorize changed source.
+The separately approved v0.6.2 native demonstration is complete: three initial
+cases plus one measured-guided refinement, four fresh replays, 4,800 actual
+steps. It used only the registered trusted rail controller and unchanged
+acceptance predicates. The observed interval narrowed from 50 to 25 mm;
+[public evidence and saved-data checks](../examples/adaptive-rail-study/README.md)
+are available without executing physics. Preparation regressions are retained,
+not needlessly rerun for the documentation release.
+
+All execution scopes are consumed. The next 1.4775 m point remains unapproved
+and unexecuted. Each additional exact midpoint requires fresh explicit approval;
+an eight-case campaign ceiling is planning only. An old approval never authorizes
+changed source/base, expired scope, consumed nonce or another execution.
 
 ## Preparing the separate native request
 
