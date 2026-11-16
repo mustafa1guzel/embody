@@ -1,4 +1,20 @@
-# Product Alpha quickstart
+# Robotics toolkit quickstart
+
+For the rover: choose **New Project → Rover / inclined surface**, enter a name,
+then inspect Design, Program, Simulate, Debug and Verify. Enter bounded numbers,
+**Preview configuration**, then explicitly **Save robot configuration**. Preview
+compiles the typed model but never integrates it. Debug/Verify remain unmeasured
+until a separately approved run produces compatible evidence. **Prepare model
+simulation** opens an exact 200+200-step review; cancel before execution.
+
+**Export saved robot project** downloads a bounded JSON declaration. Return Home
+and **Import robot project → Load local JSON → Validate & import robot**. This
+creates a new numeric project and preserves model/controller/configuration, never
+an applied World head or a physical PASS. Try the [reviewed starters](../examples/robot-projects/README.md).
+Optional XML inspection is topology-only and cannot register/execute models.
+See the [toolkit guide](MULTI_MODEL_TOOLKIT.md) before any qualification.
+
+The steps below retain the genuine historical rail workflow.
 
 Use the existing reviewed Python 3.12/macOS Apple Silicon environment. Dependency
 sources are requirements.txt, optional requirements files and the frontend lockfile.

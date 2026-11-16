@@ -8,11 +8,11 @@ issues; review-only improvements/preparation; existing specialized tools retaine
 General mechanical and rail project models remain separate. This is a working
 bounded foundation, not the completion of every all-model Product Alpha objective.
 
-## v0.8 — Robotics Developer Toolkit
+## v0.8 — Robotics Developer Toolkit · implemented, native qualification pending
 
-- Introduce an explicitly versioned common engineering project descriptor without
+- Implemented: explicitly versioned numeric model project descriptors without
   silently migrating applied heads or attaching unrelated passing evidence.
-- Review additional real model/import contracts: supported URDF/MJCF structure,
+- Implemented bounded rover construction/controller and declarative import; read-only XML inspection. Further model/import contracts require review: supported URDF/MJCF structure,
   assets, joints, limits and bounded native admission. Parsing is not execution.
 - Add genuinely supported controller configuration/development and source-aware
   revision comparisons; no arbitrary execution or controller installation bypass.

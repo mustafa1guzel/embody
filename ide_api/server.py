@@ -148,6 +148,20 @@ class Handler(BaseHTTPRequestHandler):
             if path=='/api/rail-sweeps/case':
                 if set(q)!={'id','case'} or any(len(v)!=1 for v in q.values()):raise ValueError('Exact sweep/case query required')
                 return self.reply(200,ide.rail_sweeps.case(q['id'][0],q['case'][0]))
+            if path.startswith('/api/toolkit/'):
+                from ide_api.toolkit import Toolkit
+                if not hasattr(ide,'_toolkit'):ide._toolkit=Toolkit()
+                service=ide._toolkit;action=path.removeprefix('/api/toolkit/')
+                if action=='catalog':
+                    if q:raise ValueError('Unexpected query')
+                    return self.reply(200,service.catalog())
+                if action=='project':return self.reply(200,service.read(one('id')))
+                if action=='export':return self.reply(200,service.export(one('id')))
+                if action=='results':return self.reply(200,service.results(one('id')))
+                if action=='result':
+                    if set(q)!={'id','sweep','case'} or any(len(v)!=1 for v in q.values()):raise ValueError('Exact project/sweep/case required')
+                    return self.reply(200,service.result(q['id'][0],q['sweep'][0],q['case'][0]))
+                raise ValueError('Unknown toolkit read')
             if path.startswith('/api/product/'):
                 from ide_api.product_alpha import ProductAlpha
                 if not hasattr(ide,'_product_alpha'):ide._product_alpha=ProductAlpha(ide.experiment_designer)
@@ -326,6 +340,19 @@ class Handler(BaseHTTPRequestHandler):
                 elif action=='interpretation':exact(body,['id','interpretation']);value=service.interpretation(body['id'],body['interpretation'])
                 elif action=='followup':exact(body,['id']);value=service.followup(body['id'])
                 else:raise PermissionError('Designer cannot approve paid calls, run simulation or apply a proposal')
+                return self.reply(200,value)
+            if path.startswith('/api/toolkit/'):
+                from ide_api.toolkit import Toolkit
+                from ide_api.robot_import import template,inspect_xml
+                if not hasattr(ide,'_toolkit'):ide._toolkit=Toolkit()
+                service=ide._toolkit;action=path.removeprefix('/api/toolkit/')
+                if action=='new':exact(body,['title','model_id']);value=service.create(template(body['model_id'],body['title']))
+                elif action=='import':exact(body,['declaration']);value=service.create(body['declaration'])
+                elif action=='save':exact(body,['id','expected','declaration']);value=service.save(body['id'],body['expected'],body['declaration'])
+                elif action=='design':exact(body,['declaration']);value=service.design(body['declaration'])
+                elif action=='prepare':exact(body,['declaration']);value=service.prepare(body['declaration'])
+                elif action=='inspect-xml':exact(body,['content']);value=inspect_xml(body['content'])
+                else:raise PermissionError('Toolkit cannot approve, execute, apply or call a provider')
                 return self.reply(200,value)
             if path.startswith('/api/product/'):
                 from ide_api.product_alpha import ProductAlpha

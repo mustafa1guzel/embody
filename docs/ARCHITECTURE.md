@@ -154,3 +154,28 @@ changes alter the native source identity and cannot inherit old execution approv
 Legacy App stays available behind Advanced with visibility-bound replay; mechanical
 heads and rail plans remain independent rather than silently sharing incompatible
 state. See [scope and extension points](PRODUCT_ALPHA.md).
+
+## v0.8 registered model extension
+
+The [multi-model toolkit](MULTI_MODEL_TOOLKIT.md) extends this product without a
+second executor or geometry mutation engine:
+
+```text
+Home / actual model project
+→ fixed model descriptor + versioned numeric declaration
+→ existing typed construction / native compile (no integration)
+→ model-aware Design / readonly Program / Simulate / Debug / Verify
+→ exact request preparation / separate explicit approval
+→ same RailSweeps lifecycle + global Server.job admission
+→ registered rail or rover implementation / fresh native replay
+→ strict model-specific saved readback / durable raw records / external export
+```
+
+The rover uses existing `rover_plan`, typed `execute_copy`, flat structural checks,
+RampService placement and native world compiler. Its PD controller observes real
+pose/velocity and derives wheel direction from axes. All-model declarations are
+numeric source-bound projects; import does not replace applied World heads or
+migrate old rail Research snapshots. Optional URDF/MJCF topology inspection cannot
+register/compile imported executable XML. V2 rover evidence is explicit and separate
+from the unchanged strict historical rail package format. Both implementations
+remain pending separately authorized current-source native qualification.

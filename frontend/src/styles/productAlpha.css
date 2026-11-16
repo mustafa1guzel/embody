@@ -8,3 +8,10 @@
 .alpha-scene .scene-label,.alpha-scene .gap-overlay{color:#e4eeeb}.alpha-scene .viewport-caption{color:#bdcfca}.alpha-scene .gap-overlay.danger{color:#ffb9a9}
 
 .alpha-context{flex-wrap:wrap}.alpha-context>small{font-size:10px}
+
+/* Registered model workspace uses the same product grid, independent scroll areas. */
+.alpha-model-workspace{height:calc(100vh - 54px);display:flex;flex-direction:column;min-height:0}.alpha-model-workspace>.alpha-workspace{flex:1;min-height:0}.alpha-model-workspace .alpha-scene{min-height:340px;height:52vh}.alpha-model-workspace .world-viewport{height:100%}.alpha-model-workspace pre{font-size:11px;white-space:pre-wrap;overflow-wrap:anywhere}.alpha-model-workspace .alpha-inline{padding:12px 20px}.alpha-overlay textarea{width:100%;min-height:120px;font-family:var(--font-mono,monospace);font-size:12px}.alpha-overlay section{max-height:86vh;overflow:auto}.alpha-model-workspace .alpha-explorer nav{max-height:50vh;overflow:auto}.alpha-model-workspace .alpha-code{height:350px;min-height:250px}
+@media(max-width:900px){.alpha-model-workspace{height:auto;min-height:calc(100vh - 54px)}.alpha-model-workspace>.alpha-workspace{overflow:visible}.alpha-model-workspace .alpha-scene{height:48vh}.alpha-model-workspace .alpha-view-tabs strong{display:none}}
+.alpha-model-workspace .world-canvas{height:100%;display:flex;flex-direction:column}.alpha-model-workspace .world-canvas>.canvas-host{flex:1;min-height:240px}.alpha-model-workspace .alpha-explorer button{overflow-wrap:anywhere;text-align:left}
+.alpha-model-workspace .world-canvas .viewport-caption{color:#e4eceb}.alpha-model-workspace .alpha-code code{overflow-wrap:anywhere}
+.alpha-model-workspace .world-canvas>.note{background:#f0f3f1;color:#425b56;margin:0;padding:10px 12px}[data-theme=dark] .alpha-model-workspace .world-canvas>.note{background:#212b2a;color:#e0eeeb}

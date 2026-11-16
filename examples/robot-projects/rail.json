@@ -1,0 +1,18 @@
+{
+  "controller_id": "developer_velocity_brake_v1",
+  "format": "EMBODY_ROBOT_PROJECT_V1",
+  "model_id": "rail_carriage",
+  "parameters": {
+    "mass_kg": 2.0,
+    "speed_mps": 0.4,
+    "force_n": 4.0,
+    "gap_m": 1.77
+  },
+  "requirements": {
+    "minimumClearance": 0.05,
+    "maximumFinalSpeed": 0.03,
+    "maximumSettlingTime": 3.0,
+    "maximumContactEpisodes": 0
+  },
+  "title": "Rail numerical starter"
+}

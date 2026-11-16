@@ -2,6 +2,67 @@
 
 A schema-valid proposal, compiled geometry, successful replay and physical requirement PASS are different results.
 
+## v0.8 multi-model toolkit · native qualification pending
+
+The registered rail/rover implementations, declaration import/export, actual typed
+compilation and product integration are implemented. **No new native integration
+was authorized or run.** Rover physical performance and current-source rail
+qualification remain pending separate exact approval; historical rail outcomes
+are preserved with incompatible-source labels.
+
+| Executed check | Pass | Fail | Skip | Deselected |
+|---|---:|---:|---:|---:|
+| Existing unchanged non-native backend release policy | 218 | 0 | 0 | 0 |
+| Final affected toolkit backend suite | 80 | 0 | 0 | 0 |
+| Earlier toolkit + rail + product compatibility pass | 139 | 0 | 0 | 0 |
+| Full frontend regression, 46 files | 309 | 0 | 0 | 0 |
+| Final affected model/product frontend | 24 | 0 | 0 | 0 |
+| Final descriptor/source/history preparation checks | 3 | 0 | 0 | 0 |
+| Final typecheck / production build | PASS | 0 | — | — |
+| Real Chrome complete multi-model journey | 20 checks | 0 | — | — |
+| Final built-UI read-back | 4 checks | 0 | — | — |
+
+These are overlapping runs, not a summed suite. The full frontend run precedes
+only the final coupled-wheel/loading-label/contrast changes, covered by the final
+affected tests, typecheck/build and real browser read-back. The 139-test pass
+contains older versions of the new toolkit tests plus 31 existing product and
+31 rail tests. The final 80-test suite covers backend, admission,
+geometry, controller and qualification changes; a final metadata-only correction exposes actual measurement field names/units and passes three descriptor/source/history checks. The unchanged backend policy also
+includes rail/security/evidence/research coverage. Native/VM integration suites
+are excluded by the existing explicit-file policy, not counted as passes.
+
+Guards on native stepping, provider clients, VM commands and engineering apply
+observed zero attempts. Actual MuJoCo compile/forward checks verify axes, mass,
+inertia, dimensions and clipped/generalized forces without stepping. Synthetic
+repeated-state reader negatives exist only in labelled tests, never in product
+evidence. They establish rejection/integrity behavior, not measured native origin.
+
+Installed Chrome 157 at 1440×960 and 1000×800 exercised real rail failure review,
+rover creation, typed parameter editing/rejection, geometry preview, exact-head
+save, registered readonly controller, requirements, unmeasured debugger, bounded
+request review/cancellation, actual JSON download/file re-import and context
+isolation. The complete pass recorded zero page/console errors and zero external
+requests. Final read-back creates/saves/imports no project; its only POST is
+compilation. Selected public screenshots were opened and visually/privacy reviewed.
+The first browser diagnostic stopped after 16 checks because an unscoped selector
+also matched a hidden retained workspace; the visible selector correction passes.
+Screenshot review separately caught and fixed the model loading label and proxy
+caption contrast. Failed diagnostic evidence is retained privately.
+
+Protected native/security source and 125 existing public fixture bytes remain
+unchanged. Original-workspace checks use the retained 460-entry inventory including
+104 heads. The modified non-protected rail job/server source and new registered
+implementation change current native identities; no old evidence, approval,
+certificate or project is silently migrated. Both new current-source scopes freeze
+270 source identities. They require separate fresh approval: rail 2 cases / 4
+rollouts / 2,400 steps; rover 2 cases / 4 rollouts / 800 steps, 600 seconds each,
+zero retries. All proposed cases were compiled/forward-checked only. Outcomes are
+unknown; no 1.4775 m refinement is included. See [qualification procedure](MULTI_MODEL_TOOLKIT.md#current-source-qualification-approval-gates).
+
+Existing large editor/chunk build warnings remain. This is a bounded implemented
+model toolkit awaiting native verification, not unrestricted robot/controller
+execution, calibrated vehicle behavior, live AI or real-world safety proof.
+
 ## v0.7 product workflow foundation
 
 The new default Home connects a rail-focused Design / Program / Simulate /

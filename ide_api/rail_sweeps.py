@@ -48,7 +48,8 @@ def identifier(v):
 def source_identity():
     files = [Path(__file__), ROOT/'ide_api/server.py', ROOT/'core/simulation.py', ROOT/'core/bodybase.py',
              ROOT/'core/worldbase.py', ROOT/'core/diagnostics.py', ROOT/'core/context_validation.py',
-             ROOT/'configs/bodybase.json', ROOT/'configs/worldbase.json', DEFAULT_MODEL_PATH]
+             ROOT/'configs/bodybase.json', ROOT/'configs/worldbase.json', DEFAULT_MODEL_PATH,
+             ROOT/'ide_api/native_models.py', ROOT/'ide_api/rover_reference.py', ROOT/'ide_api/model_evidence.py']
     return digest({'files': {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in files},
                    'engine': mujoco.__version__, 'numpy': np.__version__, 'policy': POLICY, 'controller': CONTROLLER})
 
@@ -187,6 +188,13 @@ def write_once(path, value, maximum):
 
 def read_json(root, name):return decode_json(bounded_read(root,name))
 
+def registered_implementation(request):
+    """Fixed admission only; no imports selected by caller-controlled module/path."""
+    from ide_api.native_models import implementation
+    if not isinstance(request,dict):raise ValueError('Registered native request required')
+    return implementation(request.get('experiment_id'))
+
+
 class RailSweeps:
     def __init__(self, root=None):
         self.root=Path(root) if root is not None else ROOT/'.runtime/rail_sweeps'
@@ -201,14 +209,14 @@ class RailSweeps:
         return {**catalog(),'recent':recent[:16]}
     def _folder(self, key):return self.root/identifier(key)
     def start(self, value, submit):
-        request=validate(value);key=request['nonce'];folder=self._folder(key)
+        backend=registered_implementation(value);request=backend.validate(value);key=request['nonce'];folder=self._folder(key)
         with self.guard:
             if folder.exists():
                 if read_json(folder,'request.json')!=request:raise ValueError('Consumed nonce belongs to different inputs')
                 return {'sweep_id':key,'reused':True}
             self.root.mkdir(parents=True,exist_ok=True)
             if len(list(self.root.iterdir()))>=POLICY['retained_jobs']:raise ValueError('Local retained-job quota reached; preserve/export results before operator maintenance')
-            folder.mkdir();write_once(folder/'request.json',request,POLICY['maximum_request_bytes'])
+            folder.mkdir();write_once(folder/'request.json',request,backend.POLICY['maximum_request_bytes'])
             self.controls[key]={'cancel':threading.Event()};self._state(key,'QUEUED',[])
             try:job=submit(lambda:self.execute(key))
             except Exception:
@@ -226,13 +234,16 @@ class RailSweeps:
         with self.guard:
             if state['status'] in ('QUEUED','RUNNING') and key not in self.controls:
                 state={**state,'status':'INTERRUPTED','error':'Previous process stopped; scope is consumed and will not retry'}
-        return {**state,'request':request,'policy':POLICY,'catalog_identity':request['source_sha256'],'limitations':LIMITATIONS}
+        return {**state,'request':request,'policy':registered_implementation(request).POLICY,'catalog_identity':request['source_sha256'],'limitations':registered_implementation(request).LIMITATIONS}
     def case(self,key,case_id):
         if not isinstance(case_id,str) or re.fullmatch('[a-f0-9]{64}',case_id) is None:raise ValueError('Invalid case identity')
         result=read_json(self._folder(key),case_id+'.json');state=self.read(key)
         entry=next((c for c in state['cases'] if c['case_id']==case_id),None)
         if entry is None or entry.get('result_sha256')!=digest(result):raise ValueError('Saved case integrity mismatch')
         if result['case_id']!=case_id or digest(result['samples'])!=result['trajectory_sha256'] or hashlib.sha256(result['model_xml'].encode()).hexdigest()!=result['effective_model_sha256'] or digest(result['replay']['samples'])!=result['replay']['trajectory_sha256']:raise ValueError('Saved trajectory/model integrity mismatch')
+        if result.get('experiment_id')!=EXPERIMENT:
+            from ide_api.model_evidence import verify_result
+            verify_result(result)
         return result
     def cancel(self,key):
         with self.guard:
@@ -246,26 +257,26 @@ class RailSweeps:
             if key in self.active or key not in self.controls:raise ValueError('Scope already consumed or unavailable')
             if self.read(key)['status']!='QUEUED':raise ValueError('Scope already started')
             self.active.add(key);control=self.controls[key];self._state(key,'RUNNING',[])
-        records=[];status='COMPLETED';error=None;request=read_json(folder,'request.json');deadline=time.monotonic()+60
+        records=[];status='COMPLETED';error=None;request=read_json(folder,'request.json');backend=registered_implementation(request);deadline=time.monotonic()+backend.POLICY['wall_seconds']
         try:
-            validate(request)
+            backend.validate(request)
             for p in request['cases']:
-                case_id=digest({'source':request['source_sha256'],'experiment':EXPERIMENT,'controller':CONTROLLER,'parameters':p,'criteria':request['criteria']})
+                case_id=digest({'source':request['source_sha256'],'experiment':backend.EXPERIMENT,'controller':backend.CONTROLLER,'parameters':p,'criteria':request['criteria']})
                 item={'case_id':case_id,'parameters':p,'execution_status':'QUEUED'};records.append(item)
             self._state(key,'RUNNING',records)
             for index,item in enumerate(records):
                 if control['cancel'].is_set():status='CANCELLED';break
                 if time.monotonic()>=deadline:status='EXECUTION_ERROR';error='Wall deadline reached before next case';break
-                if request['source_sha256']!=source_identity():raise ValueError('Source identity changed before case')
+                if request['source_sha256']!=backend.source_identity():raise ValueError('Source identity changed before case')
                 item['execution_status']='RUNNING';self._state(key,'RUNNING',records)
-                _local.context={'cancel':control['cancel'],'deadline':deadline,'calls':0}
+                backend._local.context={'cancel':control['cancel'],'deadline':deadline,'calls':0}
                 try:
-                    result=simulate_case(item['parameters'],request['criteria'],folder)
-                    if request['source_sha256']!=source_identity():raise ValueError('Source identity changed during case')
-                    result={**result,'case_id':item['case_id'],'experiment_id':EXPERIMENT,'controller_id':CONTROLLER,
+                    result=backend.simulate_case(item['parameters'],request['criteria'],folder)
+                    if request['source_sha256']!=backend.source_identity():raise ValueError('Source identity changed during case')
+                    result={**result,'case_id':item['case_id'],'experiment_id':backend.EXPERIMENT,'controller_id':backend.CONTROLLER,
                             'source_sha256':request['source_sha256'],'parameters':item['parameters'],'criteria':request['criteria'],
-                            'simulation_configuration':{'duration_s':3.,'timestep_s':.005,'initial_position_m':0.}}
-                    write_once(folder/(item['case_id']+'.json'),result,POLICY['maximum_case_bytes'])
+                            'simulation_configuration':{'duration_s':backend.POLICY['duration_s'],'timestep_s':backend.POLICY['timestep_s'],'initial_position_m':0.}}
+                    write_once(folder/(item['case_id']+'.json'),result,backend.POLICY['maximum_case_bytes'])
                     item['result_sha256']=digest(result)
                     item.update({k:result[k] for k in ['execution_status','verdict','metrics','checks','failure_reasons','comparison','effective_model_sha256']})
                 except Cancelled:
@@ -273,7 +284,7 @@ class RailSweeps:
                 except Exception as exc:
                     item.update(execution_status='EXECUTION_ERROR',error='Native execution/verification failed: '+type(exc).__name__)
                     status='PARTIAL';error='A case failed execution; remaining cases were not run. No retry.';break
-                finally:_local.context=None
+                finally:backend._local.context=None
                 self._state(key,'RUNNING',records)
         except Exception:
             status='EXECUTION_ERROR';error='Admission/source integrity failed; no further execution'

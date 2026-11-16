@@ -1,9 +1,10 @@
 # EMBODY — Build physical intelligence.
 
 Design, inspect controllers, replay simulations and debug physical failures in a
-local engineering workspace. **v0.7 introduces a working, rail-focused product
-workflow foundation**, with the existing mechanical, circuit and research tools
-retained under Advanced Analysis.
+local engineering workspace. **v0.8 adds registered rail and rover/ramp models,
+bounded robot import/export and model-specific engineering views.** The rover
+implementation is awaiting separately approved native verification; no measured
+rover performance is claimed. Existing advanced tools remain available.
 
 ![Product Alpha: real saved carriage geometry and numerical inspector](docs/assets/product/alpha-workspace.png)
 
@@ -36,14 +37,16 @@ Installations remain an explicit operator decision, not a startup side effect.
 | Entry | What actually works | Execution scope |
 |---|---|---|
 | Rail braking | Saved compiled 3D geometry, read-only controller, sample-linked playback, numerical drafts, physical debugger, comparison and adaptive guidance | New execution preparation only; separate explicit approval required |
+| Rover / inclined surface | Actual typed nine-part assembly, editable bounded configuration, registered PD controller, requirements, compilation and exact simulation preparation | Native implementation present; current-source qualification NOT RUN |
 | Controller debugging | Nine genuine public original/repair recordings in the existing Physics Regression Explorer | Historical source inspection and saved-data comparison only |
 | Mechanical & circuit studio | Existing typed geometry, environment, SHAPEBASE, CIRCUITBASE and construction review | Independent mechanical project context; no new controller or native model admission |
 
-**New Project** persists a named typed rail numerical plan through the existing
-project/campaign store. Recent projects are actual records. The rail plan is not
-an applied robot assembly. Rename/duplicate, arbitrary robot templates and a
-single merged mechanical/rail project format are not implemented in this foundation.
-[Product scope and workflow](docs/PRODUCT_ALPHA.md) distinguishes these boundaries.
+**New Project** selects Rail braking or Rover / inclined surface. Rover and imported
+rail/rover declarations use versioned numeric model projects with exact-head saves;
+the earlier rail-plan store remains readable. These are engineering configurations,
+not applied mechanical heads. Export/re-import preserves supported numbers and
+registered identities without evidence, execution authority or private data.
+[Toolkit guide](docs/MULTI_MODEL_TOOLKIT.md) · [configuration examples](examples/robot-projects/README.md).
 
 ## Debug from physical evidence
 
@@ -76,7 +79,7 @@ finished at zero speed without wall contact. The deterministic engine selected
 1.465 m from measured evidence, reducing the observed local interval from
 **50 mm to 25 mm (50%)**. This is a sampled transition interval, not an exact
 safety boundary or measured superiority over uniform sampling. **1.4775 m
-remains unapproved and unexecuted.** No new simulation runs in this v0.7 work.
+remains unapproved and unexecuted.** No new simulation runs in v0.7 or this v0.8 implementation.
 
 [Demonstration](docs/ADAPTIVE_PHYSICAL_DEBUGGING.md) ·
 [Portable evidence and readback](examples/adaptive-rail-study/README.md) ·
@@ -88,13 +91,14 @@ modified application. Consumed approvals and old certificates grant no authority
 
 ## Program and simulation
 
-Program reuses Monaco to display the actual trusted velocity-brake source excerpt
-read-only. Force authority is configured through validated numeric inputs. This
+Program reuses Monaco to display the actual registered controller read-only. Rail
+uses the unchanged velocity brake; rover uses bounded target PD with native wheel-axis
+direction. Authority is configured through validated numeric inputs. This
 is not arbitrary Python editing/execution, a terminal or controller installation.
 
 Simulate links real saved sample timestamps, compiled geometry and measurement
 charts. A request preview validates the existing exact native schema, unchanged
-requirements and 600+600 step scope. **The Product Alpha route cannot dispatch,
+requirements and a model-specific primary/fresh replay budget (rail 600+600; rover 200+200). **The Product Alpha route cannot dispatch,
 approve, retry or apply a simulation.** Actual new execution needs a separate
 valid source-bound scope. No live AI research is claimed; contextual assistance
 is deterministic and does not make provider calls.
@@ -119,7 +123,7 @@ Run the supported guarded non-native checks with existing dependencies:
 
 ```sh
 python -B -m tools.research_release_verify
-python -B -m pytest -ra -p no:cacheprovider -p tools.non_native_guards tests/test_product_alpha.py
+python -B -m pytest -ra -p no:cacheprovider -p tools.non_native_guards tests/test_product_alpha.py tests/test_robot_toolkit.py
 npm --prefix frontend test
 ```
 
@@ -129,15 +133,15 @@ fixtures; it is not the no-execution Product Alpha acceptance command.
 
 [Limitations](docs/LIMITATIONS.md): finite rigid-proxy physics is not hardware,
 materials or manufacturing certification. Circuit connectivity is not SPICE or a
-coupled powertrain. No arbitrary robot import, native rover admission, cloud
-collaboration, automatic application or unrestricted AI is added. Public package
+coupled powertrain. No arbitrary robot/XML admission, cloud collaboration, automatic
+application or unrestricted AI is added. The fixed rover reference is implemented
+but requires separate current-source native qualification. Public package
 verification establishes integrity/arithmetic, not independently signed origin.
 Private runtime folders, approvals, credentials and certificates are not published.
 
 ## Roadmap and license
 
-Next, [v0.8 Robotics Developer Toolkit](docs/PRODUCT_ROADMAP.md) should improve
-actual model/import/controller/test support. v0.9 targets separately authorized
+[v0.8 Robotics Developer Toolkit](docs/PRODUCT_ROADMAP.md) implements bounded model/import/controller contracts; native qualification is pending. v0.9 targets separately authorized
 intelligent engineering; v1.0 targets a coherent installable bounded product.
 No customer-acquisition or commercialization work is part of these milestones.
 The repository currently has no license grant file; licensing remains the owner's

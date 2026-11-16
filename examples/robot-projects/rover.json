@@ -1,0 +1,22 @@
+{
+  "controller_id": "developer_rover_target_pd_v1",
+  "format": "EMBODY_ROBOT_PROJECT_V1",
+  "model_id": "bounded_rover_ramp_v1",
+  "parameters": {
+    "chassis_mass_kg": 0.15,
+    "length_m": 0.18,
+    "width_m": 0.12,
+    "wheel_radius_m": 0.03,
+    "angle_deg": 5.0,
+    "friction": 0.9,
+    "torque_nm": 0.012,
+    "target_m": 0.04
+  },
+  "requirements": {
+    "minimumProgress": 0.005,
+    "maximumTargetError": 0.035,
+    "maximumFinalSpeed": 0.1,
+    "minimumUpDot": 0.7071067811865476
+  },
+  "title": "Rover ramp numerical starter"
+}

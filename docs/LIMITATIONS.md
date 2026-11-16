@@ -26,3 +26,22 @@ or dispatch one. All displayed dynamics are genuine retained samples. New server
 routes change native source identity, so old passing cases remain historical
 source-bound evidence and do not validate this modified application or draft.
 See [implemented scope](PRODUCT_ALPHA.md) and [current verification](VERIFICATION.md).
+
+## v0.8 current multi-model scope
+
+The new rover/ramp native implementation and registered controller exist, with
+real typed construction and offline compilation checks. Native qualification
+has **not run**. The earlier Product Alpha statement about no rover admission
+describes v0.7; v0.8 adds only the fixed bounded reference described in the
+[toolkit guide](MULTI_MODEL_TOOLKIT.md), not arbitrary rover or XML execution.
+No new physical performance or universal safety claim is made. No rail equation
+or passing rail record is assigned to a rover/imported project. Physical debug
+stays unmeasured until exact compatible native evidence exists.
+
+Declarative imports are small registered numeric plans, not general robot CAD or
+applied assemblies. URDF/MJCF support is bounded read-only topology/primitive
+metadata inspection, without external assets, execution or full semantic support.
+Model project export omits evidence, source, private paths and authority. Existing
+mechanical/circuit projects and older rail plans remain distinct. Controller code
+is registered developer source only; arbitrary editing, installation, firmware,
+coupled motor electronics, steering, terrain and autonomy remain unsupported.

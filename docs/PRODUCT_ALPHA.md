@@ -1,4 +1,16 @@
-# Product Alpha — integrated rail workflow foundation
+# Product Alpha — registered multi-model foundation
+
+## v0.8 current implementation
+
+The default product now includes a registered rover/ramp numeric project alongside
+the preserved rail workflow. See the [multi-model toolkit guide](MULTI_MODEL_TOOLKIT.md)
+for exact editable parameters, controllers, requirement meanings, import/export,
+source compatibility and native qualification gates. Rover geometry compiles
+through the actual typed engine; there are no new measured rover results. New
+rail/rover native verification is pending separate explicit approval. Existing
+applied mechanical heads and prior rail-plan snapshots are not migrated.
+
+## v0.7 preserved baseline and remaining boundaries
 
 The default product entry is Home, followed by Design / Program / Simulate /
 Debug / Verify. The completed scope is a focused, functional rail engineering

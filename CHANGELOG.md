@@ -1,5 +1,14 @@
 # Release notes
 
+## v0.8 — Unreleased · Multi-model robotics toolkit
+
+- Register bounded rail and rover/ramp model capabilities, exact numeric/controller/requirement contracts and current-source status. Preserve historical rail evidence and mandatory predicates.
+- Implement a developer-authored target PD rover using the existing nine-part typed construction, ramp placement and native compiler; extend the existing serial native job lifecycle through a fixed two-model allowlist. Native rover performance remains unverified.
+- Add versioned declarative robot projects, exact-head saves, JSON export/re-import and inspection-only bounded URDF/MJCF topology. Reject source/assets/entities, unsupported IDs, weakened criteria and unsafe inputs.
+- Adapt Design, Program, Simulate, Debug and Verify to the selected model. Show compiled geometry separately from measured trajectories. Never copy rail PASS to rover or imported projects.
+- Add strict rover V2 saved-state/force/contact/replay evidence checks without relaxing the historical rail package reader. External integrity verification is not an origin attestation.
+- Prepare separate exact current-source rail/rover qualification scopes; no native runs, paid calls, VMs or applications occur in this development milestone.
+
 ## v0.7 — Unreleased · Integrated product workflow foundation
 
 - Add a real Product Home, named typed rail numerical plans and recent-project reopening. Reuse existing validated snapshot persistence; no applied robot head is replaced.
