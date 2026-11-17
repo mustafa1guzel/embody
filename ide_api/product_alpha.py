@@ -68,15 +68,26 @@ class ProductAlpha:
  def catalog(self):
   records,_=self.records();current=rail.catalog()
   return {'version':'0.8.2 Integrated Results','catalog':current,'examples':[{'id':'adaptive-rail','title':'Rail braking · measured adaptive study','model':'Single-axis carriage','capability':'Saved native playback, physical debugger and bounded numerical planning','native_execution':'PREPARATION_ONLY_SEPARATE_APPROVAL_REQUIRED','origin':'GENUINE_SAVED_NATIVE_PUBLISHER_ORIGIN_EXTERNAL_INTEGRITY_VERIFIED'}],'records':[{k:v for k,v in r.items() if k not in ('samples',)} for r in records],'projects':self.listing(),'controller':{'id':rail.CONTROLLER,'file':'ide_api/rail_sweeps.py','content':inspect.getsource(rail.reference_controller),'sha256':hashlib.sha256(inspect.getsource(rail.reference_controller).encode()).hexdigest(),'editable':False,'execution':'REGISTERED_TRUSTED_REFERENCE_ONLY'},'evidence_status':'PUBLISHER_RECORDED_NATIVE; external integrity/readback verified, no imported local attestation','adaptive_history':self.history(),'bounds':rail.BOUNDS,'provider':'UNAVAILABLE_NO_PAID_CALLS','model_limitations':rail.LIMITATIONS,'qualification':qualification([r for r in records if r.get('origin')=='LOCAL_SAVED_REGISTERED_JOB']),'unavailable_results':self.native.discover('rail_carriage')['unavailable']}
- def case(self,key):
+ def read_result(self,key):
+  """Selected verified record only: no scene generation or unrelated catalog scan.
+
+  Public bytes still pass the existing pinned package/sample/replay reader. Its
+  immutable in-process cache rehashes the actual complete package before reuse.
+  Native IDs still go through the unchanged strict NativeResults.load contract.
+  """
   if isinstance(key,str) and key.startswith('native_'):
    record,result=self.native.load(key)
    if record['model_id']!='rail_carriage':raise ValueError('Rail project cannot load rover results')
-   return {'record':record,'result':result,'scene':scene(result),'diagnosis':diagnosis(record),'source_compatible_with_current':record['source_current'],'verification_scope':'Exact saved input only; source/application qualification and draft verification are separate.'}
-  records,results=self.records()
+   return {'record':record,'result':result}
+  if not isinstance(key,str):raise ValueError('Exact saved public result identity required')
+  records,results=self._historical_records()
   if key not in results:raise ValueError('Unknown saved result identity')
-  record=next(r for r in records if r['id']==key);result=results[key]
-  return {'record':record,'result':result,'scene':scene(result),'diagnosis':diagnosis(record),'source_compatible_with_current':record['source_sha256']==rail.source_identity(),'verification_scope':'Saved exact input only. This result does not verify a new project or draft.'}
+  record=copy.deepcopy(next(r for r in records if r['id']==key))
+  record.update(origin='PINNED_PUBLIC_HISTORICAL',replay_status='PASS',independent_verification='SAVED_SAMPLE_READBACK_PASS',trajectory_available=True,provenance={'recorded_git_base':None,'recorded_at':None,'application_source_compatible':False})
+  return {'record':record,'result':copy.deepcopy(results[key])}
+ def case(self,key):
+  selected=self.read_result(key);record,result=selected['record'],selected['result']
+  return {**selected,'scene':scene(result),'diagnosis':diagnosis(record),'source_compatible_with_current':record['source_current'],'verification_scope':'Exact saved input only; source/application qualification and draft verification are separate.'}
  def config(self,p):
   return {'experiment_id':rail.EXPERIMENT,'controller_id':rail.CONTROLLER,'objective':'Prepare and verify supported rail behavior','type':'adaptive_1d','axes':[{'parameter':'gap_m','minimum':.35,'maximum':2.2}],'fixed_parameters':rail.parameters(p),'criteria':copy.deepcopy(rail.DEFAULT_CRITERIA),'strategy':'uniform','count':1,'seed':1,'minimum_spacing':.001,'proposal_budget':8,'hypothesis_ids':[]}
  def new(self,title):

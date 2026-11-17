@@ -93,7 +93,7 @@ def test_wrong_usage_or_model_stops_after_recording_genuine_mock_payload(live):
  s,key,d,a=live;c=OfflineClient([response(0,[function()],model='wrong-model')]);v=s.execute(key,a,offline_client=c);assert v['status']=='BUDGET_EXHAUSTED_OR_USAGE_INVALID';assert len(c.calls)==1
 
 def test_source_head_or_accounting_drift_blocks_before_credentials(live,monkeypatch):
- s,key,d,a=live;s.agent.product.case(d['context_input']['result_id'])
+ s,key,d,a=live;s.agent.product.read_result(d['context_input']['result_id'])
  monkeypatch.setattr(s,'history',lambda exclude=None:{**d['history'],'accounted':'100'})
  with pytest.raises(ValueError,match='accounting'):s.gate(key,a)
  assert not (s._folder(key)/'consumed.json').exists()
@@ -130,7 +130,7 @@ def test_proposal_scope_uses_actual_validator_and_preserves_model_authorship(liv
  assert out['status']=='COMPLETED',out
  proposal=out['state']['proposals'][0]['proposal'];assert proposal['authorship']=='OFFLINE_TRANSPORT_FIXTURE_NOT_AI' and not proposal['applied']
  assert proposal['provider_provenance']['call_id']=='proposal_call'
- assert s.agent.product.case(ctx['result_id'])['record']['verdict']=='FAIL'
+ assert s.agent.product.read_result(ctx['result_id'])['record']['verdict']=='FAIL'
 
 def test_configuration_missing_history_fails_closed_before_approval(agent,tmp_path):
  a,c=agent;s=EngineeringAgentLive(a,tmp_path/'unconfigured');assert s.availability()['status']=='PROVIDER_UNAVAILABLE_ACCOUNTING_ADMISSION'
@@ -181,13 +181,18 @@ def test_supervised_worker_hard_deadline_retains_unknown_outcome(agent,live,tmp_
  import subprocess
  import ide_api.engineering_agent_live as module
  a,c=agent;root=tmp_path/'.runtime/engineering_agent_live';s=EngineeringAgentLive(a,root);old,old_key,_,_=live;key=s.requests.put(old.requests.get(old_key))
- monkeypatch.setattr(module,'ROOT',tmp_path);monkeypatch.setattr(s,'approval',lambda key:{'offline_fixture':True});monkeypatch.setattr(s,'gate',lambda *args:{'policy':{'window_seconds':.01}})
+ monkeypatch.setattr(module,'ROOT',tmp_path);monkeypatch.setattr(s,'approval',lambda key:{'offline_fixture':True});monkeypatch.setattr(s,'gate',lambda *args:{'policy':{'window_seconds':.01,'freeze_validity_seconds':86400},'frozen_unix':time.time()})
+ from tests.test_agent_reliability import FakeClocks,install_clocks
+ clock=FakeClocks();install_clocks(monkeypatch,clock)
  f=s._folder(key);f.mkdir(parents=True);events=[]
  class ProcessDouble:
   def __enter__(self):return self
   def __exit__(self,*args):pass
+  returncode=None
+  def poll(self):return None
   def wait(self,timeout=None):
-   if timeout is not None:raise subprocess.TimeoutExpired('fixed-worker-fixture',timeout)
+   if timeout is not None:
+    clock.advance(.02);raise subprocess.TimeoutExpired('fixed-worker-fixture',timeout)
    return -9
   def kill(self):events.append('killed')
  def spawn(command,**kwargs):
@@ -216,5 +221,10 @@ def test_missing_credentials_is_not_mislabelled_as_provider_response(live,monkey
  s,key,d,a=live
  def absent():raise CredentialsMissing('Explicit offline missing-credentials fixture; no actual key read')
  monkeypatch.setattr('core.agent.credentials.create_openai_client',absent)
+ from ide_api.agent_deadline import SharedDeadline
+ from ide_api.rail_sweeps import write_once
+ f=s._folder(key);f.mkdir(parents=True,exist_ok=True)
+ deadline=SharedDeadline.start(d['policy']['window_seconds'],d['frozen_unix']+d['policy']['freeze_validity_seconds'])
+ write_once(f/'worker_begin.json',{'request_id':key,'hard_deadline_seconds':d['policy']['window_seconds'],'deadline':deadline.stamp},2048)
  out=s.execute(key,a);assert out['status']=='PROVIDER_NOT_CONFIGURED' and out['state']['origin']=='NO_PROVIDER_RESPONSE'
  assert not out['state']['usage']['requests']

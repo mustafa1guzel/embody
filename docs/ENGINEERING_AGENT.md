@@ -109,7 +109,7 @@ real-world material safety and live Agent-to-Physics are unsupported. SHAPEBASE,
 CIRCUITBASE and the original mechanical studio retain their separate typed review
 contracts. New simulation requires its own exact explicit authorization.
 
-## Live provider bridge · v0.9.1
+## Live provider bridge · v0.9.2.1
 
 `EngineeringAgentLive` uses the existing `EngineeringAI.gate` validation, immutable
 request Store, `DevelopmentBudget`, `BudgetedOpenAIAdapter` and pinned credential
@@ -121,7 +121,8 @@ and never become genuine provider charges or physical measurements.
 
 | Frozen profile | Model requests | Tool calls | Input reservation/request | Output/request | Hard USD cap | Maximum reservation |
 |---|---:|---:|---:|---:|---:|---:|
-| Inspect | 2 | 4 maximum | 49,152 | 4,096 | $0.40 | $0.36864 |
+| Inspect rail | 2 | 1 | 32,768 | 4,096 | $0.30 | $0.28672 |
+| Inspect rover | 2 | 1 | 49,152 | 4,096 | $0.40 | $0.36864 |
 | Analyze / Propose | 3 | 4 maximum | 65,536 | 4,096 | $0.70 | $0.67584 |
 
 Inspect offers only `inspect_result`: context already contains exact project/model,
@@ -138,8 +139,9 @@ Only one serial tool call per provider response is accepted. Versioned strict
 schemas and existing model validators check arguments independently. Each turn
 binds current head/draft/selection/evidence/source/Git/dependencies/history and a
 24-hour freeze. Requests reject critical context or output overflow rather than
-truncating it. Total actual token ceilings are 106,496 / 208,896, respectively;
-reasoning tokens are included in output cost. Tool outputs total at most 10 KB,
+truncating it. Total actual token ceilings are 73,728 (rail Inspect), 106,496 (rover Inspect)
+and 208,896 (Analyze/Propose);
+reasoning tokens are included in output cost. Tool outputs total at most 5 KB for rail Inspect and 10 KB for other profiles,
 context at most 12 KB. The existing budget independently reserves before dispatch,
 checks actual returned model/tier/usage, and retains unknown charges.
 
@@ -172,7 +174,9 @@ Pricing was checked against the official
 [GPT-5.4 model page](https://developers.openai.com/api/docs/models/gpt-5.4):
 $2.50 input, $0.25 cached input and $15 output per million tokens for the bounded
 standard-tier context used here. These match the installed approved policy, not a
-new pricing implementation. Account access and live behavior remain untested.
+new pricing implementation. The retained first genuine response proved account/model access for that request;
+the final explanation timed out and remains unqualified. Current policy rates must
+be rechecked when preparing a future consent; this update makes no paid request.
 The tool envelope follows the documented
 [Responses function-calling flow](https://developers.openai.com/api/docs/guides/function-calling).
 
@@ -186,9 +190,11 @@ consent; this is the existing trusted local-operator boundary, not a remote sign
 service. No HTTP approval or client/transport injection endpoint exists.
 
 Only that registered approval can unlock Start, which rechecks all gates and uses
-the existing `Server.job` exclusion. A fixed trusted Python worker has a **180-second
-supervised process deadline**; its parent kills an overrun and preserves unknown
-usage rather than retrying. Provider calls have a 30-second timeout; tool checks
+the existing `Server.job` exclusion. A fixed trusted Python worker shares its parent's **single 180-second monotonic
+deadline**, including context verification. Immutable approval expiry also applies;
+a wall/monotonic difference above one second stops further dispatch. The parent
+kills its owned worker on cancellation or overrun and preserves unknown usage.
+Provider calls use the smaller of 30 seconds and remaining shared authority; tool checks
 have a cooperative 20-second limit inside that hard worker boundary. No model can
 change these limits. This is a single-operator loopback workflow, not distributed
 multi-user/cloud billing enforcement.
@@ -200,8 +206,9 @@ frozen scope and fresh approval. Switching contexts abandons/cancels an unfinish
 panel scope and prevents old model outputs becoming new-project actions. Saved
 results stay immutable. Clearing the panel preserves the original request/evidence.
 
-Model explanations link back to the current selected Verify and actual saved
-trajectory views. Local deterministic evidence is displayed separately from model
+Actual validated tool evidence links back to the current selected Verify and
+actual saved trajectory views even when no model explanation completed. Partial
+outcomes show deterministic evidence separately, never a fabricated final answer. Local deterministic evidence is displayed separately from model
 interpretation. A compiled model-selected proposal still requires human review and
 fresh, separately authorized physics. This release authorizes and performs neither
 new paid calls nor native rollouts. The prepared minimal Inspect qualification is
@@ -219,3 +226,22 @@ does not restore its panel request ID after a full browser reload. Refresh is an
 explicit bounded read, not streaming model activity. Historical accounting must be
 legitimately admitted before live preparation; a clean checkout without the private
 account history keeps live reasoning unavailable while deterministic tools work.
+
+
+### Retained qualification and next approval
+
+The genuine v0.9.2 run completed one model-selected `inspect_result({})` and then
+observed a continuation transport timeout. Known reported token cost was $0.003500;
+$0.184320 remains reserved for unknown usage, giving $0.187820 accounted exposure,
+not a confirmed invoice. The old approval is consumed. No final explanation,
+provider cancellation, second-request billing outcome or clock-anomaly cause is
+inferred. Existing ledgers and receipts remain unchanged.
+
+The new trace records admission/dispatch/response, tool start/end, continuation
+readiness, usage settlement and terminal status with PID, UTC and shared monotonic
+remaining time. Each future transport gets a random public `X-Client-Request-Id`
+for support correlation; it is unrelated to approval nonces or project identities.
+No exception body, secret or authorization header is logged. Provider storage
+remains `store:true` and server-side continuation remains in use. The Inspect
+continuation disables further tool selection after the actual required inspection.
+See the [reliability report and post-commit freeze procedure](LIVE_AGENT_RELIABILITY.md).

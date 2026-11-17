@@ -532,3 +532,25 @@ approval; no previous approval, API key, test fixture or prepared file authorize
 The broader application binding changes; old native results do not qualify new
 provider/app code. No new physics, provider request or certificate refresh occurred.
 See [Engineering Agent configuration and limits](ENGINEERING_AGENT.md).
+
+## v0.9.2.1 reliability verification
+
+The established supported non-native backend file policy plus the new injected-clock
+and recovery tests passed **466 tests**, with zero failures/skips/deselections.
+The focused 55-test run overlaps that total. Full frontend passed **335 tests in
+49 files**; typecheck and production build passed. Native integration and VM suites
+were not selected by this explicit file policy. Saved-state MuJoCo checks were
+separately bounded and approved; no new integration or paid provider call occurred.
+
+Installed Chrome verified genuine saved rail/rover evidence, diagnostics/playback,
+context isolation, separate native authorization and the real assistant's handling
+of explicitly labelled offline continuation timeout/cancellation. Actual successful
+tool evidence stays visible after timeout, without a fabricated model explanation;
+unknown accounting remains explicit. Final browser runs passed with no page or
+external-request errors. The expected deliberate stale-project HTTP 400 remains.
+
+Both native identities and protected adapter/credential/accounting code remain
+unchanged. The genuine earlier live qualification remains PARTIAL, with its second
+request's provider outcome/billing and clock discrepancy unresolved. Application
+source changed and does not inherit old qualification. See the
+[reliability findings and next approval procedure](LIVE_AGENT_RELIABILITY.md).

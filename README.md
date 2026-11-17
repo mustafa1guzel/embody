@@ -1,7 +1,7 @@
 # EMBODY — Build physical intelligence.
 
 Design, inspect controllers, replay simulations and debug physical failures in a
-local engineering workspace. **v0.9.1 adds an approval-gated model bridge; v0.8.2 connects saved native results directly to
+local engineering workspace. **v0.9.2.1 hardens the approval-gated model bridge; v0.8.2 connects saved native results directly to
 Design → Simulate → Debug → Verify.** Select a measured rail result in the main
 workspace, replay its actual motion, inspect the failed requirement and prepare
 a supported change. Rover keeps its model-specific native playback. Existing
@@ -84,8 +84,14 @@ authorized verification request. Nothing is applied or simulated automatically.
 bridge through the existing budgeted Responses adapter, recovered accounting and
 explicit approval gate. Prepare a request and review its exact transmitted context,
 tools and spending ceiling. The browser cannot approve it. A trusted operator must
-record fresh approval before a bounded worker may run. **No genuine model test has
-yet qualified this bridge.** Offline tools require no API key. [Workflow, tools and boundaries](docs/ENGINEERING_AGENT.md).
+record fresh approval before a bounded worker may run. **The first genuine GPT tool call succeeded, but its continuation timed out;
+a complete live engineering explanation remains unqualified.** Offline tools require no API key. [Workflow, tools and boundaries](docs/ENGINEERING_AGENT.md).
+
+The reliability update preserves real tool evidence after a failed explanation,
+uses one shared execution deadline, and retains uncertain cost reservations.
+Public recorded-result inspection avoids unrelated native catalog/scene work
+while preserving complete pinned evidence validation. Offline protocol tests and
+Chrome QA are not a new live-model success. [Reliability findings](docs/LIVE_AGENT_RELIABILITY.md).
 
 ## Genuine native adaptive demonstration · v0.6.2 preserved
 

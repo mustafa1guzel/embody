@@ -57,7 +57,9 @@ class EngineeringAgent:
   if any(p.is_symlink() for p in (self.root,*self.root.parents)):raise ValueError('Symlink assistant storage refused')
  def _selected(self,c):
   if not c['result_id']:return None
-  if c['model_id']==models.RAIL:return self.product.case(c['result_id'])['record']
+  if c['model_id']==models.RAIL:
+   if c['kind']=='public_example' and not re.fullmatch('[a-f0-9]{64}',c['result_id']):raise ValueError('Public context requires a public evidence digest, not a native locator')
+   return self.product.read_result(c['result_id'])['record']
   record,_=self.toolkit.native.load(c['result_id'])
   return record
  def context(self,value):
@@ -130,7 +132,7 @@ class EngineeringAgent:
     data={'component':component,'model_id':ctx['model_id'],'representation':'COMPILED_PROXY_NOT_MEASURED_MATERIAL_SAFETY'}
    elif name=='compare_results':
     if record is None:raise ValueError('Select measured evidence before comparison')
-    other=self.product.case(arguments['baseline_id'])['record'] if ctx['model_id']==models.RAIL else self.toolkit.native.load(arguments['baseline_id'])[0]
+    other=self.product.read_result(arguments['baseline_id'])['record'] if ctx['model_id']==models.RAIL else self.toolkit.native.load(arguments['baseline_id'])[0]
     if record.get('compatibility') and other.get('compatibility'):data=compare_records(other,record)
     elif ctx['model_id']==models.RAIL:data=self.product.compare(other['id'],record['id'])
     else:raise ValueError('Unsupported evidence cohort')

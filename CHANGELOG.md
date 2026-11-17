@@ -1,5 +1,20 @@
 # Release notes
 
+## v0.9.2.1 — live agent reliability (live explanation still unqualified)
+
+- Preserve and display actual deterministic tool evidence and evidence links after
+  a model continuation fails; explicitly show incomplete reasoning and unresolved
+  reservations. Recover bounded, validated tool receipts after worker interruption.
+- Share one monotonic deadline between supervisor and worker; clamp HTTP timeouts
+  to remaining authority and stop on clock discontinuity or immutable expiry.
+- Add safe per-request correlation and lifecycle timing to the existing trace.
+  A local timeout/cancellation never establishes provider cancellation or no charge.
+- Inspect selected public evidence without unrelated native catalog or 3D scene
+  calculations; full pinned-package/sample/replay validation remains unchanged.
+- Verify offline continuation, cancellation, accounting and context negatives;
+  retain the genuine prior PARTIAL result and unknown second-request exposure.
+  No new paid request, integration, VM, dependency or automatic application.
+
 
 ## v0.9.1 — accountable live engineering bridge (model test pending)
 
