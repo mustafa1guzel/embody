@@ -29,6 +29,7 @@ SYSTEM=('You are EMBODY engineering agent. Use only the frozen registered tools 
 'Physical verdicts belong to deterministic evidence. Distinguish observation, requirement, interpretation, hypothesis, proposed action and missing future verification. '
 'Never invent a measurement, result ID, timestamp, root cause or successful repair. Do not assert slip/traction loss/saturation without actual evidence. '
 'First inspect the selected result. Return final structured references only to evidence actually inspected. '
+'Requirement references use exact keys of evidence.checks in requirements[].check. Diagnostic IDs, labels, metrics and criteria are not check IDs. '
 'All model text is generated interpretation, not verification. Proposed parameters require human review and separately approved future physics.')
 POLICY={'model':'gpt-5.4','reasoning_effort':'low','endpoint':'https://api.openai.com/v1/responses','max_requests':2,'max_tool_calls':1,'max_output_tokens':4096,'input_token_bound':32768,'maximum_total_tokens':73728,'maximum_tool_output_bytes':5000,'maximum_context_bytes':12000,'hard_cap_usd':'0.30','maximum_reservation_usd':str(cost(32768,0,4096,policy=GPT54_POLICY)*2),'window_seconds':180,'transport_timeout_seconds':30,'tool_cooperative_seconds':20,'freeze_validity_seconds':86400,'native_previews':0,'native_steps':0,'vm_launches':0,'applications':0,'retries':0,'fallbacks':0,'provider_response_storage':True,'deadline_policy':'SHARED_MONOTONIC_WALL_DRIFT_STOP_V1','clock_drift_tolerance_seconds':1.0,'public_correlation_header':'X-Client-Request-Id_RANDOM_NON_AUTHORITY_UUID'}
 # Inspect: two complete uncached reservations = .28672; output includes reasoning.
@@ -49,7 +50,9 @@ def tool_schemas(ctx,mode):
  names=['inspect_result'] if mode=='inspect' else list(READ)+['compare_results','calculate_physics']
  result=[]
  for n in names:
-  result.append({'type':'function','name':n,'description':'Version 1. '+next(s['description'] for s in ctx['tools'] if s['name']==n),'parameters':copy.deepcopy(INPUTS[n]),'strict':True})
+  description='Version 1. '+next(s['description'] for s in ctx['tools'] if s['name']==n)
+  if n=='inspect_result':description+=' Use literal evidence.checks keys for requirements[].check; labels are not IDs.'
+  result.append({'type':'function','name':n,'description':description,'parameters':copy.deepcopy(INPUTS[n]),'strict':True})
  if mode=='propose':result.append({'type':'function','name':'propose_parameter','description':'Version 1: one model-selected supported SI parameter/value. Maps explicitly to existing propose_parameters; no apply/verification authority.','parameters':obj({'parameter':{'type':'string','enum':list(ctx['fields'])},'value':{'type':'number'},'rationale':string(1000)}),'strict':True})
  return result
 
@@ -59,11 +62,24 @@ def compact(ctx):
  if len(rail.canonical(value))>POLICY['maximum_context_bytes']:raise ValueError('Exact context exceeds limit; no silent truncation')
  return json.loads(rail.canonical(value))
 
-def final_schema():
- return obj({'observations':{'type':'array','minItems':1,'maxItems':8,'items':obj({'result_id':string(110),'metric':string(80),'value':{'type':'number'}})},'requirements':{'type':'array','maxItems':12,'items':obj({'result_id':string(110),'check':string(100),'passed':{'type':'boolean'}})},'interpretation':string(2000),'hypotheses':{'type':'array','maxItems':4,'items':string(500)},'proposed_action':string(1000),'verification_required':string(1000),'proposal_id':{'type':['string','null'],'pattern':'^[a-f0-9]{64}$'}})
+def final_schema(records=None):
+ # IDs come only from the verified checks maps; never derive them from labels or
+ # maintain a second registry. The semantic validator still checks result/ID/flag.
+ reference=obj({'result_id':string(110),'check':string(100),'passed':{'type':'boolean'}})
+ reference['properties']['check']['description']='Exact key in inspected evidence.checks; never a display label, diagnostic ID, metric or criterion.'
+ requirements={'type':'array','maxItems':12,'items':reference}
+ if records is not None:
+  records=[r for r in records if r is not None]
+  ids=sorted({key for r in records for key in r.get('checks',{})})
+  if ids:
+   reference['properties']['check']['enum']=ids
+   reference['properties']['result_id']['enum']=sorted({r['id'] for r in records})
+  else:requirements['maxItems']=0 # No canonical IDs supplied: no invented references.
+ return obj({'observations':{'type':'array','minItems':1,'maxItems':8,'items':obj({'result_id':string(110),'metric':string(80),'value':{'type':'number'}})},'requirements':requirements,'interpretation':string(2000),'hypotheses':{'type':'array','maxItems':4,'items':string(500)},'proposed_action':string(1000),'verification_required':string(1000),'proposal_id':{'type':['string','null'],'pattern':'^[a-f0-9]{64}$'}})
 
-def body_for(d,previous=None,outputs=None):
- b={'model':d['policy']['model'],'reasoning':{'effort':d['policy']['reasoning_effort']},'max_output_tokens':d['policy']['max_output_tokens'],'service_tier':'default','store':True,'parallel_tool_calls':False,'instructions':SYSTEM,'tools':d['tools'],'text':{'format':{'type':'json_schema','name':'engineering_explanation_v1','strict':True,'schema':final_schema()}},'input':[{'role':'user','content':rail.canonical({'question':d['task'],'engineering_context':d['compact_context']}).decode()}]}
+def body_for(d,previous=None,outputs=None,*,observed=None):
+ schema=final_schema(list(observed.values())) if observed is not None else copy.deepcopy(d['output_schema'])
+ b={'model':d['policy']['model'],'reasoning':{'effort':d['policy']['reasoning_effort']},'max_output_tokens':d['policy']['max_output_tokens'],'service_tier':'default','store':True,'parallel_tool_calls':False,'instructions':SYSTEM,'tools':d['tools'],'text':{'format':{'type':'json_schema','name':'engineering_explanation_v1','strict':True,'schema':schema}},'input':[{'role':'user','content':rail.canonical({'question':d['task'],'engineering_context':d['compact_context']}).decode()}]}
  if previous is not None:
   b.update(previous_response_id=previous,input=outputs)
   if d['mode']=='inspect':b['tool_choice']='none' # Inspection is complete; only a final answer remains authorized.
@@ -110,7 +126,7 @@ class EngineeringAgentLive(EngineeringAI):
   if ctx['result'] is None:raise ValueError('Select actual verified evidence before live qualification')
   from tools.model_qualification import sources
   from ide_api.research.bundles import repo_base
-  d={'format':'EMBODY_ENGINEERING_AGENT_LIVE_V1','task':task,'mode':mode,'context_input':copy.deepcopy(context),'context_sha256':expected,'compact_context':compact(ctx),'project_sha256':ctx['project']['sha256'] or expected,'project_revision':self._revision(context),'policy':profile,'source_manifest':sources(),'git_base':repo_base(),'installed_versions':{p:version(p) for p in ('openai','mujoco','numpy','jsonschema')},'tools':tool_schemas(ctx,mode),'output_schema':final_schema(),'history':history,'frozen_unix':time.time(),'approval':'FRESH_EXPLICIT_HUMAN_APPROVAL_REQUIRED','native_execution':'NOT_AUTHORIZED'}
+  d={'format':'EMBODY_ENGINEERING_AGENT_LIVE_V1','task':task,'mode':mode,'context_input':copy.deepcopy(context),'context_sha256':expected,'compact_context':compact(ctx),'project_sha256':ctx['project']['sha256'] or expected,'project_revision':self._revision(context),'policy':profile,'source_manifest':sources(),'git_base':repo_base(),'installed_versions':{p:version(p) for p in ('openai','mujoco','numpy','jsonschema')},'tools':tool_schemas(ctx,mode),'output_schema':final_schema([ctx['result']]),'history':history,'frozen_unix':time.time(),'approval':'FRESH_EXPLICIT_HUMAN_APPROVAL_REQUIRED','native_execution':'NOT_AUTHORIZED'}
   d['allowed_result_ids']=self.comparison_scope(context,mode);d['compact_context']['available_comparison_ids']=d['allowed_result_ids']
   d['first_request']=body_for(d)
   first=len(json.dumps(d['first_request'],ensure_ascii=True).encode())+4096
@@ -138,7 +154,7 @@ class EngineeringAgentLive(EngineeringAI):
   ctx=self.agent.context(d['context_input'])
   if ctx['context_sha256']!=d['context_sha256']:raise ValueError('Project/selection/source/evidence context changed')
   expected=compact(ctx);expected['available_comparison_ids']=self.comparison_scope(d['context_input'],d['mode'])
-  if any(rail.canonical(left)!=rail.canonical(right) for left,right in ((d['compact_context'],expected),(d['tools'],tool_schemas(ctx,d['mode'])),(d['output_schema'],final_schema()),(d['first_request'],body_for(d)))) or d['native_execution']!='NOT_AUTHORIZED':raise ValueError('Frozen exact request, context, tools or authority differs')
+  if any(rail.canonical(left)!=rail.canonical(right) for left,right in ((d['compact_context'],expected),(d['tools'],tool_schemas(ctx,d['mode'])),(d['output_schema'],final_schema([ctx['result']])),(d['first_request'],body_for(d)))) or d['native_execution']!='NOT_AUTHORIZED':raise ValueError('Frozen exact request, context, tools or authority differs')
   if self.comparison_scope(d['context_input'],d['mode'])!=d['allowed_result_ids']:raise ValueError('Authorized evidence cohort changed')
   current=self.history(exclude=self._folder(key)/'api_cost_ledger.json')
   if current!=d['history']:raise ValueError('New or changed accounting exposure requires fresh approval')
@@ -311,7 +327,6 @@ class EngineeringAgentLive(EngineeringAI):
      self._guard(key,d,deadline)
      if name=='inspect_result':
       summary=copy.deepcopy(output['data']['evidence'])
-      if 'checks' not in summary:summary['checks']={i['id']:i['status']=='PASS' for i in output['data']['analysis']['issues'] if i['status'] in ('PASS','FAIL')}
       observed[summary['id']]=summary
      if name=='compare_results':
       other=self.agent.product.read_result(args['baseline_id'])['record'] if d['context_input']['model_id']=='rail_carriage' else self.agent.toolkit.native.load(args['baseline_id'])[0]
@@ -325,7 +340,7 @@ class EngineeringAgentLive(EngineeringAI):
      outputs.append({'type':'function_call_output','call_id':cid,'output':encoded})
     if outputs:
      if texts:raise ValueError('Mixed final/tool response is not supported')
-     body=body_for(d,raw['id'],outputs);note('continuation_ready',response_id=raw['id'],next_request_index=turn+1,remaining_requests=d['policy']['max_requests']-turn-1,tool_output_bytes=toolbytes);continue
+     body=body_for(d,raw['id'],outputs,observed=observed);note('continuation_ready',response_id=raw['id'],next_request_index=turn+1,remaining_requests=d['policy']['max_requests']-turn-1,tool_output_bytes=toolbytes);continue
     if not texts:raise ValueError('Provider returned no final explanation')
     answer=decode_json('\n'.join(texts).encode());self.validate_answer(answer,observed,proposals)
     note('final_answer_validated',response_id=raw['id'])

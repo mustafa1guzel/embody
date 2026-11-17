@@ -1,0 +1,60 @@
+{
+  "observations": [
+    {
+      "result_id": "051ebd240d19477836ab3b769ab1dd2d0a1e0b22ccb268140ded17d38d325274",
+      "metric": "minimum_clearance_m",
+      "value": 0.0029999999999745786
+    },
+    {
+      "result_id": "051ebd240d19477836ab3b769ab1dd2d0a1e0b22ccb268140ded17d38d325274",
+      "metric": "wall_contact_episodes",
+      "value": 0
+    },
+    {
+      "result_id": "051ebd240d19477836ab3b769ab1dd2d0a1e0b22ccb268140ded17d38d325274",
+      "metric": "final_speed_mps",
+      "value": 0
+    },
+    {
+      "result_id": "051ebd240d19477836ab3b769ab1dd2d0a1e0b22ccb268140ded17d38d325274",
+      "metric": "sampled_settling_time_s",
+      "value": 2.344999999999972
+    },
+    {
+      "result_id": "051ebd240d19477836ab3b769ab1dd2d0a1e0b22ccb268140ded17d38d325274",
+      "metric": "maximum_actuator_force_n",
+      "value": 2
+    }
+  ],
+  "requirements": [
+    {
+      "result_id": "051ebd240d19477836ab3b769ab1dd2d0a1e0b22ccb268140ded17d38d325274",
+      "check": "minimum clearance >= 0.05 m",
+      "passed": false
+    },
+    {
+      "result_id": "051ebd240d19477836ab3b769ab1dd2d0a1e0b22ccb268140ded17d38d325274",
+      "check": "wall contact episodes <= 0",
+      "passed": true
+    },
+    {
+      "result_id": "051ebd240d19477836ab3b769ab1dd2d0a1e0b22ccb268140ded17d38d325274",
+      "check": "final speed < 0.03 m/s",
+      "passed": true
+    },
+    {
+      "result_id": "051ebd240d19477836ab3b769ab1dd2d0a1e0b22ccb268140ded17d38d325274",
+      "check": "settling time <= 3.0 s",
+      "passed": true
+    }
+  ],
+  "interpretation": "The recorded run failed because the measured minimum clearance was about 0.003 m, below the 0.05 m requirement by about 0.047 m. The same evidence shows the carriage stopped fully, had zero recorded wall-contact episodes, and settled within the allowed time. So the physical requirement that failed was minimum clearance, not final speed, contact count, or settling time. A supported parameter change to investigate is reducing speed_mps from 1.2 m/s, because the inspected analysis explicitly notes that ideal braking distance increases with speed squared and decreases with force; lowering initial speed is therefore directionally consistent with increasing retained clearance. This is only a proposal for future testing, not a verified fix.",
+  "hypotheses": [
+    "The braking maneuver in this recorded case left too little residual distance to the wall even though no wall contact was recorded.",
+    "Given the inspected deterministic analysis, the combination of mass 4.0 kg, speed 1.2 m/s, and force 2.0 N may require more stopping distance than allowed by the 1.44 m gap to preserve 0.05 m clearance.",
+    "Reducing initial speed may increase minimum clearance while potentially preserving the already-passing final-speed and contact outcomes, but this has not been verified on a new run."
+  ],
+  "proposed_action": "Investigate one parameter change: lower speed_mps from 1.2 m/s to a smaller value within the allowed bounds, then perform a separate approved verification run to check whether minimum_clearance_m reaches at least 0.05 m without breaking the currently passing requirements.",
+  "verification_required": "Required. Any proposed parameter change remains unverified until a new deterministic simulation or equivalent approved verification confirms minimum clearance >= 0.05 m and re-checks final speed, contact episodes, settling time, and actuator-force compliance.",
+  "proposal_id": null
+}
