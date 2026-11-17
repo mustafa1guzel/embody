@@ -32,10 +32,31 @@ class EngineeringHandler(Handler):
     if not hasattr(ide,'_product_alpha'):ide._product_alpha=ProductAlpha(ide.experiment_designer)
     if not hasattr(ide,'_engineering_agent'):ide._engineering_agent=EngineeringAgent(ide._product_alpha,ide._toolkit)
    service=ide._engineering_agent
-   if route.path=='/api/engineering-agent/context':exact(body,['context']);result=service.context(body['context'])
+   from ide_api.engineering_agent_live import EngineeringAgentLive
+   with self.server.jobs_guard:
+    if not hasattr(ide,'_engineering_agent_live'):ide._engineering_agent_live=EngineeringAgentLive(service)
+   live=ide._engineering_agent_live
+   if route.path=='/api/engineering-agent/live-availability':exact(body,[]);result=live.availability()
+   elif route.path=='/api/engineering-agent/live-prepare':
+    exact(body,['context','expected_context','task','mode']);result=live.prepare(body['context'],body['expected_context'],body['task'],body['mode'])
+   elif route.path in ('/api/engineering-agent/live-read','/api/engineering-agent/live-start'):
+    exact(body,['request_id','context','expected_context']);ctx=service.context(body['context']);stored=live.requests.get(body['request_id'])['definition']
+    if ctx['context_sha256']!=body['expected_context'] or stored['context_sha256']!=ctx['context_sha256']:raise ValueError('Live request belongs to a different or stale context')
+    if route.path.endswith('live-start'):
+     live.approval(body['request_id']);result=self.server.job(lambda:live.run_worker(body['request_id']))
+     if not hasattr(self.server,'engineering_live_jobs'):self.server.engineering_live_jobs={}
+     self.server.engineering_live_jobs[body['request_id']]=result['job_id'];return self.reply(202,result)
+    result=live.read(body['request_id'])
+    jid=getattr(self.server,'engineering_live_jobs',{}).get(body['request_id'])
+    with self.server.jobs_guard:activity=self.server.jobs.get(jid,{})
+    result['active']=activity.get('status')=='RUNNING'
+    if result['active']:result['status']='RUNNING'
+   elif route.path=='/api/engineering-agent/live-cancel':
+    exact(body,['request_id']);v=live.cancel(body['request_id']);result={k:v[k] for k in ('request_id','status','applied','native_steps')}
+   elif route.path=='/api/engineering-agent/context':exact(body,['context']);result=service.context(body['context'])
    elif route.path=='/api/engineering-agent/tool':
     exact(body,['context','expected_context','name','arguments']);result=service.dispatch(body['context'],body['expected_context'],body['name'],body['arguments'],human=body['name']=='review_proposal')
-   else:raise PermissionError('No provider, approval, execution, save or apply endpoint exists in this namespace')
+   else:raise PermissionError('No browser approval, native execution, save or apply endpoint exists in this namespace')
    return self.reply(200,result)
   except PermissionError:self.reply(403,{'error':'Explicit same-origin human authority required; no action executed'})
   except (OSError,KeyError):self.reply(400,{'error':'Registered context, proposal or evidence is unavailable; no path lookup or fallback is permitted','status':'REJECTED_NO_EXECUTION'})

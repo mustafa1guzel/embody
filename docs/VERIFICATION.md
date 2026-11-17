@@ -497,3 +497,38 @@ both registered native identities and the genuine prior FAIL/PASS pair for each
 model. The modified broader application remains unqualified by a new native run.
 General provider reasoning and Agent-to-Physics execution are not demonstrated;
 see [the tool and approval boundary](ENGINEERING_AGENT.md).
+
+
+## v0.9.1 live-provider integration verification
+
+The final supported **non-native** backend policy plus product/startup/toolkit,
+saved-result readers, engineering tools, live bridge and existing budget negatives
+passed **448 tests** (0 failures, 0 skips, 0 deselected). Native and VM suites were
+outside this explicit file policy; they are not counted as passes. The final full
+frontend run passed **333 tests in 49 files**. Typecheck and production build passed;
+the existing large-bundle warning remains. Focused counts overlap these totals.
+
+Installed Chrome exercised 24 requested journey classes at 1440×1000: genuine saved
+rail/rover failures, contexts, deterministic tools, actual evidence links/playback,
+unapplied typed proposals, separate physics-authorization preparation, cross-project
+rejection, free live-scope preparation/cancellation and disabled unapproved dispatch.
+Explicitly labelled offline transport fixtures exercised timeout/unknown accounting,
+in-flight cancellation, actual tool dispatch and cross-checked final references.
+They are not genuine model reasoning or paid receipts. Twenty real screenshots
+were visually inspected, including loaded specialized tools. The main trace recorded
+zero page errors or external/blocked requests and one expected HTTP 400 for the
+intentional stale-project negative. The supplementary loaded-view check also passed.
+
+The test guards recorded zero native stepping, paid-provider, VM or application
+attempts. Protected provider/accounting/credential modules, both registered native
+source identities, original project heads and retained evidence remain unchanged.
+Saved-state readback and `mj_forward` are not new rollouts. Earlier test diagnostics
+are retained, including a canonical serialization mismatch fixed before the final
+448-pass run; no validator or physical predicate was weakened.
+
+The production bridge is implemented but **genuine live reasoning is unqualified**.
+The new source-bound read-only qualification proposal requires fresh exact explicit
+approval; no previous approval, API key, test fixture or prepared file authorizes it.
+The broader application binding changes; old native results do not qualify new
+provider/app code. No new physics, provider request or certificate refresh occurred.
+See [Engineering Agent configuration and limits](ENGINEERING_AGENT.md).

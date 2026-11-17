@@ -1,7 +1,7 @@
 # EMBODY — Build physical intelligence.
 
 Design, inspect controllers, replay simulations and debug physical failures in a
-local engineering workspace. **v0.9 adds contextual engineering tools; v0.8.2 connects saved native results directly to
+local engineering workspace. **v0.9.1 adds an approval-gated model bridge; v0.8.2 connects saved native results directly to
 Design → Simulate → Debug → Verify.** Select a measured rail result in the main
 workspace, replay its actual motion, inspect the failed requirement and prepare
 a supported change. Rover keeps its model-specific native playback. Existing
@@ -72,7 +72,7 @@ prediction is never relabelled as a simulator result. Parameter edits remain
 local drafts until explicitly saved as a numerical plan; they never change the
 original evidence or authoritative mechanical head.
 
-## Investigate with engineering tools · v0.9 foundation
+## Investigate with engineering tools · v0.9.1
 
 Open **Engineering assistant** inside a rail or rover inspector. Inspect the
 active project and actual saved failure, calculate supported rail predictions,
@@ -80,10 +80,12 @@ and validate numerical proposals through the existing typed engine and native
 compiler. Review old/new values, retain or reject, then prepare a separately
 authorized verification request. Nothing is applied or simulated automatically.
 
-**Local tool output is deterministic, not live AI.** General model-backed
-investigation remains unavailable pending a reviewed extension of the existing
-accounted provider workflow and fresh explicit approval. No new provider path
-or paid request is introduced. [Workflow, tools and boundaries](docs/ENGINEERING_AGENT.md).
+**Local commands remain deterministic.** Live reasoning now has a source-bound
+bridge through the existing budgeted Responses adapter, recovered accounting and
+explicit approval gate. Prepare a request and review its exact transmitted context,
+tools and spending ceiling. The browser cannot approve it. A trusted operator must
+record fresh approval before a bounded worker may run. **No genuine model test has
+yet qualified this bridge.** Offline tools require no API key. [Workflow, tools and boundaries](docs/ENGINEERING_AGENT.md).
 
 ## Genuine native adaptive demonstration · v0.6.2 preserved
 

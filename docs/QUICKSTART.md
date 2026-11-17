@@ -110,5 +110,20 @@ Use `python -m tools.start` for the assistant-enabled product server. The existi
 `ide_api.server` module remains the legacy handler. In the current rail or rover
 inspector, open **Engineering assistant**, select a local engineering command,
 and inspect actual saved evidence. Numerical proposals require explicit review;
-verification preparation grants no execution. General live AI is unavailable.
+verification preparation grants no execution. The live bridge is disabled without fresh exact operator-recorded approval; no genuine provider qualification is claimed.
 See the [engineering assistant guide](ENGINEERING_AGENT.md).
+
+## Prepare a model turn without spending
+
+Use `python -m tools.start`, select real saved evidence, and open the same assistant.
+The **Live AI reasoning** section discloses local bridge availability. Free
+preparation freezes the actual context, tools, model, limits and canonical digest.
+The Run control stays disabled without separately recorded exact approval. No
+API key is required for ordinary deterministic commands or saved playback.
+
+A clean public checkout lacks private accounting history. The trusted operator
+can run `python -m tools.engineering_agent_live admit-history --history-root
+<reviewed-original-workspace>` using the existing genuine accounting anchor.
+This is read-only recovery, not spending consent or an empty ledger baseline.
+Never copy keys, receipts or private runtime data into Git. See the
+[provider and approval guide](ENGINEERING_AGENT.md#live-provider-bridge--v091).

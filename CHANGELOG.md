@@ -1,6 +1,20 @@
 # Release notes
 
 
+## v0.9.1 — accountable live engineering bridge (model test pending)
+
+- Compose the existing protected approval gate, DevelopmentBudget and budgeted
+  Responses adapter with versioned engineering tools and compact exact-context turns.
+- Reconcile existing genuine historical leaf ledgers; missing or changed history
+  blocks before credentials. No empty production accounting reset.
+- Fixed read-only/analysis/proposal profiles, structured evidence reference checks,
+  serial tool calls, no retries and a deadline-supervised trusted worker.
+- Same assistant supports free preparation, separate operator approval, actual
+  tool/model status, cancellation and explicitly labelled offline test responses.
+- No paid provider call, new native rollout, VM, installation or application in
+  implementation verification. Genuine model reasoning remains unqualified.
+
+
 ## v0.9 — engineering agent foundation
 
 - Contextual engineering assistant in the existing rail and rover inspectors:

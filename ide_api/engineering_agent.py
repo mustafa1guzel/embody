@@ -16,7 +16,7 @@ from ide_api.native_results import compare_records
 from ide_api.research.physical_math import predictions
 from workspace.data import bounded_read,decode_json
 
-PROVIDER={'status':'UNAVAILABLE_GENERAL_ENGINEERING_SCOPE','mode':'DETERMINISTIC_ENGINEERING_TOOLS_NOT_LIVE_AI','paid_calls':0,'reason':'Existing accounted provider workflows cover controller review or mechanical assembly/command repair, not general registered-model investigation. No approved provider scope exists for these tools.','required':'Reviewed extension of existing provider orchestration and DevelopmentBudget, historical accounting reconciliation, exact frozen context/tool/source/token/cost limits and fresh explicit approval. No alternate client is available here.'}
+PROVIDER={'status':'UNAVAILABLE_GENERAL_ENGINEERING_SCOPE','mode':'DETERMINISTIC_ENGINEERING_TOOLS_NOT_LIVE_AI','paid_calls':0,'reason':'No exact approved general investigation scope is active for these local tools. The separate source-bound live bridge requires operator-recorded approval; an API key is not consent.','required':'Use the existing accounted live bridge with reconciled history, a frozen context/tool/source/token/cost scope and fresh explicit approval. Local deterministic tools remain available without credentials.'}
 
 def obj(properties):return {'type':'object','properties':properties,'required':list(properties),'additionalProperties':False}
 def string(limit=160):return {'type':'string','minLength':1,'maxLength':limit}
@@ -104,9 +104,12 @@ class EngineeringAgent:
   rail.exact(value,['proposal_id','decision','context_sha256','applied'])
   if value['proposal_id']!=key or value['decision'] not in ('RETAINED','REJECTED') or value['applied'] is not False:raise ValueError('Invalid review record')
   return value['decision']
- def dispatch(self,context,expected,name,arguments,*,human=False):
+ def dispatch(self,context,expected,name,arguments,*,human=False,provenance=None):
   if name not in INPUTS:raise ValueError('Unsupported engineering tool; no source, terminal, apply, provider or execute tool')
   validate(INPUTS[name],arguments)
+  if provenance is not None:
+   rail.exact(provenance,['origin','request_id','response_id','call_id'])
+   if provenance['origin'] not in ('GENUINE_PROVIDER_RESPONSE','OFFLINE_TRANSPORT_FIXTURE_NOT_AI'):raise ValueError('Unsupported trusted call provenance')
   with self.lock:
    ctx=self.context(context)
    if ctx['context_sha256']!=expected:raise ValueError('Stale engineering context; refresh exact project/head/source/evidence')
@@ -138,7 +141,7 @@ class EngineeringAgent:
     if set(arguments['changes'])-set(ctx['fields']):raise ValueError('Unknown model-specific parameters')
     target={**ctx['parameters'],**arguments['changes']};d=self._declaration(ctx,target);d=robot_import.validate(d)
     compiled=self.toolkit.design(d) # real deterministic typed compilation; zero integration
-    p={'format':'EMBODY_NUMERIC_ENGINEERING_PROPOSAL_V1','context_sha256':expected,'project':ctx['project'],'model_id':ctx['model_id'],'controller_id':ctx['controller_id'],'native_source':ctx['source']['native_source'],'before':ctx['parameters'],'proposed':d['parameters'],'changes':{k:{'before':ctx['parameters'][k],'after':d['parameters'][k],'unit':ctx['fields'][k]['unit'],'bounds':ctx['fields'][k]['bounds']} for k in arguments['changes']},'rationale':arguments['rationale'],'supporting_evidence':None if record is None else self._summary(record),'requirements':ctx['requirements'],'validation':'TYPED_AND_NATIVE_COMPILED_NOT_PHYSICALLY_VERIFIED','fresh_verification_required':True,'applied':False,'authorship':'USER_SUPPLIED_TOOL_ARGUMENTS_NOT_LIVE_AI','declaration':d}
+    p={'format':'EMBODY_NUMERIC_ENGINEERING_PROPOSAL_V1','context_sha256':expected,'project':ctx['project'],'model_id':ctx['model_id'],'controller_id':ctx['controller_id'],'native_source':ctx['source']['native_source'],'before':ctx['parameters'],'proposed':d['parameters'],'changes':{k:{'before':ctx['parameters'][k],'after':d['parameters'][k],'unit':ctx['fields'][k]['unit'],'bounds':ctx['fields'][k]['bounds']} for k in arguments['changes']},'rationale':arguments['rationale'],'supporting_evidence':None if record is None else self._summary(record),'requirements':ctx['requirements'],'validation':'TYPED_AND_NATIVE_COMPILED_NOT_PHYSICALLY_VERIFIED','fresh_verification_required':True,'applied':False,'authorship':provenance['origin'] if provenance else 'USER_SUPPLIED_TOOL_ARGUMENTS_NOT_LIVE_AI','provider_provenance':copy.deepcopy(provenance),'declaration':d}
     folder=self.root/'proposals'
     if folder.exists() and len(list(islice(folder.iterdir(),64)))>=64:raise ValueError('Proposal retention limit; no automatic deletion')
     key=Store(folder).put(p);data={'proposal_id':key,'proposal':p,'review_state':self._review(key),'compiled':compiled['verification']}
