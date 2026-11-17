@@ -103,3 +103,12 @@ Edit a supported numeric value to prepare an improvement. **Modified configurati
 — verification required** keeps the old result scoped to its recorded inputs.
 Preview/prepare validates bounds and shows an exact new request, but does not run
 it. A separate explicit source-bound execution approval is always required.
+
+## Contextual engineering tools
+
+Use `python -m tools.start` for the assistant-enabled product server. The existing
+`ide_api.server` module remains the legacy handler. In the current rail or rover
+inspector, open **Engineering assistant**, select a local engineering command,
+and inspect actual saved evidence. Numerical proposals require explicit review;
+verification preparation grants no execution. General live AI is unavailable.
+See the [engineering assistant guide](ENGINEERING_AGENT.md).

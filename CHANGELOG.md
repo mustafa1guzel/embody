@@ -1,5 +1,20 @@
 # Release notes
 
+
+## v0.9 — engineering agent foundation
+
+- Contextual engineering assistant in the existing rail and rover inspectors:
+  actual project/head, registered controller, selected evidence and numeric draft.
+- Strict inspect/analyze/propose tools reuse existing saved readers, model-specific
+  diagnostics, rail predictions, validators and real native compilation.
+- Immutable numeric proposals with before/after values, units, evidence, explicit
+  retain/reject and separate verification preparation; no automatic application.
+- Source/head/evidence/selection binding and stale response rejection; restored
+  tab-local conversation never becomes fresh verified evidence.
+- Explicit general-provider unavailability. Existing accounted controller and
+  assembly workflows are unchanged; no paid call or new native rollout.
+
+
 ## 0.8.2 — Current-source result integration
 
 - Main rail simulation history, Physical Debugger, Verify and 3D playback select

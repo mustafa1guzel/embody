@@ -5,7 +5,7 @@ from ide_api.startup import check
 def main():
     try:check()
     except ValueError as exc:raise SystemExit('Cannot start EMBODY: '+str(exc)) from None
-    from ide_api.server import main as serve
+    from ide_api.engineering_agent_http import main as serve
     serve()
 
 if __name__=='__main__':main()

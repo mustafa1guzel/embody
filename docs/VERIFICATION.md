@@ -471,3 +471,29 @@ were visually inspected; two privacy-reviewed captures appear in the README.
 These are saved-result integration checks, not new physics or live AI evidence.
 Earlier timeout and test-script diagnostics remain in the private audit trail;
 final passing checks did not relax an engineering predicate.
+
+## v0.9 engineering-agent foundation verification
+
+The established non-native backend policy plus Product Alpha/startup/toolkit/native
+readers, new agent tools and existing API-budget negatives passed **411 tests**
+(0 failures/skips/deselected). Native and VM suites are outside this explicit
+file policy and are not counted as passes. The final frontend suite passed
+**328 tests in 48 files**; typecheck and production build passed. Earlier focused
+counts overlap and are not added. The final frontend-only correction distinguishes
+read-only example display IDs from actual persisted head hashes.
+
+Actual installed-Chrome QA verified retained rail/rover findings, project context,
+review-only numeric proposals, explicit retention, zero-step verification preparation,
+backend rejection of an old proposal after switching projects, provider unavailability,
+existing playback, public historical examples and advanced tools. Twelve final
+1440×1000 captures and a complete trace remain in the private release audit. There
+were zero page errors/external requests and one expected HTTP 400 for the deliberate
+cross-project rejection. No response was fabricated and no new integration occurred.
+
+Actual native/provider/VM/application entry points were instrumented and recorded
+zero attempts. Pure budget tests use existing explicit transport doubles; simulated
+usage is not a new provider charge. Independent saved-state readback preserves
+both registered native identities and the genuine prior FAIL/PASS pair for each
+model. The modified broader application remains unqualified by a new native run.
+General provider reasoning and Agent-to-Physics execution are not demonstrated;
+see [the tool and approval boundary](ENGINEERING_AGENT.md).

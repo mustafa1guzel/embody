@@ -1,6 +1,6 @@
 import {render,screen,fireEvent,waitFor,within} from '@testing-library/react';
 import {beforeEach,it,expect,vi} from 'vitest';
-import ProductAlpha from './ProductAlpha';
+import ProductAlpha,{railAssistantContext} from './ProductAlpha';
 import initial from '../../examples/adaptive-rail-study/initial-evidence.json';
 import summary from '../../examples/adaptive-rail-study/results.json';
 vi.mock('./Viewport',()=>({default:({sample}:any)=><div data-testid="actual-viewport-props">{sample.time}</div>}));
@@ -46,4 +46,13 @@ it('propagates an explicit offline native-response fixture into the existing rai
  const native={...records[0],id:'native_'+'a'.repeat(32)+'_'+records[0].id,origin:'LOCAL_SAVED_REGISTERED_JOB',source_current:true,provenance:{application_source_compatible:false}};
  const old=globalThis.fetch;vi.stubGlobal('fetch',vi.fn(async(path:any,options?:RequestInit)=>{const u=new URL(String(path),'http://localhost');if(u.pathname==='/api/product/catalog')return {ok:true,json:async()=>({catalog:{defaults:summary.criteria},records:[...records,native],projects:[],controller:{id:'developer_velocity_brake_v1',content:'readonly reference',sha256:'c'.repeat(64)},qualification:{status:'VERIFIED_RECORDED_SOURCE',verified_cases:1,native_compatible_cases:1,application_compatible_cases:0,physical_pass:0,physical_fail:1}})};if(u.pathname==='/api/product/case'&&u.searchParams.get('id')===native.id)return {ok:true,json:async()=>({...recorded,record:native,source_compatible_with_current:true})};return old(path,options);}));
  render(<ProductAlpha/>);fireEvent.click(await screen.findByRole('button',{name:'Open native rail results'}));await waitFor(()=>expect(screen.getByLabelText('Saved simulation result')).toBeInTheDocument());fireEvent.change(screen.getByLabelText('Saved simulation result'),{target:{value:native.id}});await screen.findByTestId('actual-viewport-props');tab('Debug');expect(screen.getByText(/0.047 m/)).toBeVisible();tab('Simulate');fireEvent.change(screen.getByLabelText('Product recorded timestamp'),{target:{value:'300'}});expect(screen.getByTestId('actual-viewport-props')).toHaveTextContent('1.499');expect(screen.getAllByText(/application qualification/).length).toBeGreaterThan(0);expect(requests.every(r=>r.body===null)).toBe(true);
+});
+
+it('never supplies display-only example hashes as authoritative assistant project identities',()=>{
+ const p={mass_kg:4,speed_mps:1.2,force_n:2,gap_m:1.44},r={minimumClearance:.05};
+ const historical=railAssistantContext({example:true,project:{id:'adaptive-rail'},sha256:'public-evidence-reference'},p,r,'saved-id','body:2');
+ expect(historical.kind).toBe('public_example');expect(historical.project_id).toBeNull();expect(historical.project_sha256).toBeNull();
+ const native=railAssistantContext({example:true,nativeLibrary:true,project:{id:'native-rail-library'},sha256:'read-only-result-library'},p,r,'native-id','body:2');
+ expect(native.kind).toBe('native_study');expect(native.project_sha256).toBeNull();
+ const persisted=railAssistantContext({project:{id:'a'.repeat(32)},sha256:'b'.repeat(64)},p,r,null,null);expect(persisted.kind).toBe('rail_plan');expect(persisted.project_sha256).toBe('b'.repeat(64));
 });
