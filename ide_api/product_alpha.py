@@ -13,6 +13,7 @@ from ide_api.research.artifacts import ArtifactStore,finite_json
 from ide_api.research.store import Research
 from ide_api.research import sampling,physical_math,analysis
 from workspace.data import bounded_read
+from ide_api.native_results import NativeResults,qualification,compare_records
 
 PACKAGES={'initial-evidence.json':'5635ab67a4d45e472aa169514ed031c56490908eceba5616c786a6552246ce9b','refinement-evidence.json':'84066bc129de61f72e1261ca2d97312d939d4c74ea4933e4a284016678d098c0'}
 
@@ -43,8 +44,8 @@ def scene(result):
 
 class ProductAlpha:
  def __init__(self,designer,root=None,evidence_root=None):
-  self.research=Research(designer,Path(root) if root else ROOT/'.runtime/product_alpha/projects');self.evidence_root=Path(evidence_root) if evidence_root else ROOT/'examples/adaptive-rail-study';self._cached=None
- def records(self):
+  self.research=Research(designer,Path(root) if root else ROOT/'.runtime/product_alpha/projects');self.evidence_root=Path(evidence_root) if evidence_root else ROOT/'examples/adaptive-rail-study';self._cached=None;self.native=NativeResults(designer.rail)
+ def _historical_records(self):
   contents=[bounded_read(self.evidence_root,n) for n in PACKAGES]
   if any(hashlib.sha256(raw).hexdigest()!=h for raw,h in zip(contents,PACKAGES.values())):raise ValueError('Pinned public demonstration bytes changed; evidence withheld')
   if self._cached is None:
@@ -56,10 +57,22 @@ class ProductAlpha:
    self._cached=(records,results)
   records,results=self._cached;current=rail.source_identity()
   return [{**r,'source_current':r['source_sha256']==current} for r in records],results
+ def records(self):
+  records,results=self._historical_records();records=copy.deepcopy(records);results=dict(results)
+  for r in records:
+   r.update(origin='PINNED_PUBLIC_HISTORICAL',replay_status='PASS',independent_verification='SAVED_SAMPLE_READBACK_PASS',trajectory_available=True,provenance={'recorded_git_base':None,'recorded_at':None,'application_source_compatible':False})
+  discovered=self.native.discover('rail_carriage')
+  for record in discovered['records']:
+   _,result=self.native.load(record['id']);records.append(record);results[record['id']]=result
+  return records,results
  def catalog(self):
   records,_=self.records();current=rail.catalog()
-  return {'version':'0.7 Product Alpha','catalog':current,'examples':[{'id':'adaptive-rail','title':'Rail braking · measured adaptive study','model':'Single-axis carriage','capability':'Saved native playback, physical debugger and bounded numerical planning','native_execution':'PREPARATION_ONLY_SEPARATE_APPROVAL_REQUIRED','origin':'GENUINE_SAVED_NATIVE_PUBLISHER_ORIGIN_EXTERNAL_INTEGRITY_VERIFIED'}],'records':[{k:v for k,v in r.items() if k not in ('samples',)} for r in records],'projects':self.listing(),'controller':{'id':rail.CONTROLLER,'file':'ide_api/rail_sweeps.py','content':inspect.getsource(rail.reference_controller),'sha256':hashlib.sha256(inspect.getsource(rail.reference_controller).encode()).hexdigest(),'editable':False,'execution':'REGISTERED_TRUSTED_REFERENCE_ONLY'},'evidence_status':'PUBLISHER_RECORDED_NATIVE; external integrity/readback verified, no imported local attestation','adaptive_history':self.history(),'bounds':rail.BOUNDS,'provider':'UNAVAILABLE_NO_PAID_CALLS','model_limitations':rail.LIMITATIONS}
+  return {'version':'0.8.2 Integrated Results','catalog':current,'examples':[{'id':'adaptive-rail','title':'Rail braking · measured adaptive study','model':'Single-axis carriage','capability':'Saved native playback, physical debugger and bounded numerical planning','native_execution':'PREPARATION_ONLY_SEPARATE_APPROVAL_REQUIRED','origin':'GENUINE_SAVED_NATIVE_PUBLISHER_ORIGIN_EXTERNAL_INTEGRITY_VERIFIED'}],'records':[{k:v for k,v in r.items() if k not in ('samples',)} for r in records],'projects':self.listing(),'controller':{'id':rail.CONTROLLER,'file':'ide_api/rail_sweeps.py','content':inspect.getsource(rail.reference_controller),'sha256':hashlib.sha256(inspect.getsource(rail.reference_controller).encode()).hexdigest(),'editable':False,'execution':'REGISTERED_TRUSTED_REFERENCE_ONLY'},'evidence_status':'PUBLISHER_RECORDED_NATIVE; external integrity/readback verified, no imported local attestation','adaptive_history':self.history(),'bounds':rail.BOUNDS,'provider':'UNAVAILABLE_NO_PAID_CALLS','model_limitations':rail.LIMITATIONS,'qualification':qualification([r for r in records if r.get('origin')=='LOCAL_SAVED_REGISTERED_JOB']),'unavailable_results':self.native.discover('rail_carriage')['unavailable']}
  def case(self,key):
+  if isinstance(key,str) and key.startswith('native_'):
+   record,result=self.native.load(key)
+   if record['model_id']!='rail_carriage':raise ValueError('Rail project cannot load rover results')
+   return {'record':record,'result':result,'scene':scene(result),'diagnosis':diagnosis(record),'source_compatible_with_current':record['source_current'],'verification_scope':'Exact saved input only; source/application qualification and draft verification are separate.'}
   records,results=self.records()
   if key not in results:raise ValueError('Unknown saved result identity')
   record=next(r for r in records if r['id']==key);result=results[key]
@@ -73,7 +86,8 @@ class ProductAlpha:
   return self.project(p['project']['id'])
  def project(self,key):
   p=self.research.read(key);campaign=p['project']['campaigns'][-1] if p['project']['campaigns'] else None
-  return {**p,'configuration':campaign['config']['fixed_parameters'] if campaign else None,'revision':len(p['project']['events']),'verification':'NOT_VERIFIED','kind':'PERSISTED_TYPED_RAIL_PLAN_NOT_APPLIED_ROBOT_HEAD'}
+  available=self.native.discover('rail_carriage')['records'];configuration=campaign['config']['fixed_parameters'] if campaign else None
+  return {**p,'available_results':[r for r in available if not p.get('stale') and r['source_current'] and r['parameters']==configuration and r['criteria']==rail.DEFAULT_CRITERIA],'configuration':campaign['config']['fixed_parameters'] if campaign else None,'revision':len(p['project']['events']),'verification':'NOT_VERIFIED','kind':'PERSISTED_TYPED_RAIL_PLAN_NOT_APPLIED_ROBOT_HEAD'}
  def listing(self):
   return [{**r,'updated_at':self.research.read(r['id'])['project']['updated_at'],'verification':'NOT_VERIFIED'} for r in self.research.listing()]
  def save(self,key,expected,p):
@@ -85,14 +99,14 @@ class ProductAlpha:
   if a==b:raise ValueError('Select two distinct compatible saved results')
   records,_=self.records();ra=next((r for r in records if r['id']==a),None);rb=next((r for r in records if r['id']==b),None)
   if not ra or not rb or ra['compatibility']!=rb['compatibility']:raise ValueError('Only exact compatible saved source/controller/criteria/simulation cohorts compare')
-  return {'status':'COMPATIBLE_SAVED_RESULTS','baseline':a,'candidate':b,'changed_parameters':{k:{'before':ra['parameters'][k],'after':rb['parameters'][k]} for k in rail.BOUNDS if ra['parameters'][k]!=rb['parameters'][k]},'minimum_clearance_delta_m':rb['metrics']['minimum_clearance_m']-ra['metrics']['minimum_clearance_m'],'verdicts':[ra['verdict'],rb['verdict']],'meaning':'Physical parameter comparison, not controller-code repair or verification of your draft.'}
+  return compare_records(ra,rb)
  def history(self):
-  records,_=self.records();initial=records[:3];cfg=self.config(initial[0]['parameters']);cfg.update(axes=[{'parameter':'gap_m','minimum':min(r['parameters']['gap_m'] for r in records),'maximum':max(r['parameters']['gap_m'] for r in records)}],resolution_target=.005)
+  records,_=self._historical_records();initial=records[:3];cfg=self.config(initial[0]['parameters']);cfg.update(axes=[{'parameter':'gap_m','minimum':min(r['parameters']['gap_m'] for r in records),'maximum':max(r['parameters']['gap_m'] for r in records)}],resolution_target=.005)
   before=analysis.boundaries(initial,['gap_m'])['intervals'];after=analysis.boundaries(records,['gap_m'])['intervals']
   chosen=sampling.adaptive(cfg,initial,[r['parameters'] for r in initial],1)
   return {'initial_intervals':before,'updated_intervals':after,'initial_selection':chosen,'measured_followup':[r['id'] for r in records[3:] if any(p['parameters']==r['parameters'] for p in chosen['points'])],'next_selection':sampling.adaptive(cfg,records,[r['parameters'] for r in records],1),'meaning':'Recorded comparison and deterministic measured guidance; not current project verification or live AI.'}
  def investigate(self,minimum,maximum,budget):
   minimum=rail.number(minimum,.35,2.2);maximum=rail.number(maximum,.35,2.2)
   if minimum>=maximum or type(budget) is not int or not 1<=budget<=8:raise ValueError('Ordered valid range and integer budget 1–8 required')
-  records,_=self.records();cfg=self.config(records[0]['parameters']);cfg.update(axes=[{'parameter':'gap_m','minimum':minimum,'maximum':maximum}],resolution_target=min(.005,maximum-minimum))
+  records,_=self._historical_records();cfg=self.config(records[0]['parameters']);cfg.update(axes=[{'parameter':'gap_m','minimum':minimum,'maximum':maximum}],resolution_target=min(.005,maximum-minimum))
   return {**sampling.adaptive(cfg,records,[r['parameters'] for r in records],budget),'execution_authorized':False,'native_steps':0}

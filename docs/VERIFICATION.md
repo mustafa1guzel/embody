@@ -422,3 +422,52 @@ The [serial research verification command](RESEARCH_RELEASE.md) adds independent
 saved-data arithmetic, strict package negative tests and bounded analytical/synthetic
 algorithm benchmarks. It forbids native/provider/VM/application entry points.
 A native demonstration needs a new exact current-source approval.
+
+## v0.8.2 integration verification boundary
+
+This release reads retained genuine v0.8.1 data and performs **zero native
+integration**. Fresh replay means a replay recorded during that approved run;
+current saved-state arithmetic/kinematics uses `mj_forward`, not a new rollout.
+The same MuJoCo engine is not an independent second physics engine.
+
+`ide_api/native_results.py` bounds job/result enumeration and validates registered
+source/model/controller/input/criteria identities, effective numeric geometry,
+force/contact state, complete trajectories, hashes, saved replay and physical
+checks. It extends existing ProductAlpha/Toolkit readers rather than installing
+another evidence ledger. Missing/corrupt evidence has no physical PASS/FAIL;
+unexecuted plans and analytical predictions never become measurements. Local
+hash/readback checks do not prove external origin or grant execution authority.
+
+The 13-file rail and 134-file rover native closures remain unchanged. Read-only
+adapters, UI and broader application bindings change. Old measured results remain
+valid for their original execution identity; they do not qualify changed app code.
+Source/base metadata comes only from a matching canonical retained binding, stays
+explicitly non-authorizing, and supplies no invented execution timestamp.
+
+Use the supported non-native policy suite plus result-integration tests with
+`-p tools.non_native_guards`, frontend tests, typecheck/build, HTTP authorization,
+privacy/protected-file checks and actual installed-Chrome saved-result QA. Keep
+native/VM suites outside this zero-rollout verification policy; never count them
+as passes. Preserve the earlier eight rollouts / 3,200 steps unchanged. Any later
+native qualification requires its own new frozen scope and explicit approval.
+
+
+### Retained v0.8.2 release checks
+
+The final established non-native backend release policy, plus Product Alpha,
+startup, toolkit and result-reader suites, passed **364 tests** (0 failures,
+0 skipped, 0 deselected). Native/VM suites were not selected by this explicit
+file policy and are not counted as passes. Instrumented native stepping,
+provider creation, VM commands and engineering application recorded zero attempts.
+Full frontend: **320 tests in 47 files**, 0 failures; typecheck and production
+build passed. The existing large-bundle warning remains.
+
+Installed Chrome exercised retained genuine rail/rover results at 1440 × 1000:
+main history/debugger, actual saved samples/playback, measured requirements,
+compatible comparisons, source provenance, project isolation, pending change
+review and separate historical examples. The complete final journey passed with
+zero page/console errors or external requests. Seventeen genuine screenshots
+were visually inspected; two privacy-reviewed captures appear in the README.
+These are saved-result integration checks, not new physics or live AI evidence.
+Earlier timeout and test-script diagnostics remain in the private audit trail;
+final passing checks did not relax an engineering predicate.

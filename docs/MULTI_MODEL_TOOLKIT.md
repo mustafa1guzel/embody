@@ -1,20 +1,20 @@
-# Multi-model robotics toolkit · v0.8
+# Multi-model robotics toolkit · v0.8.2
 
 The product has two fixed registered model implementations. A 3D model, valid JSON
 or compiled proxy alone never establishes executable performance or physical PASS.
 No new native integration, paid request, VM, installation or application is part
-of this implementation. Current-source qualification needs fresh explicit approval.
+of this implementation. A future qualification of the modified application needs fresh explicit approval.
 
 | Capability | Rail carriage | Bounded rover/ramp |
 |---|---|---|
 | Model ID | `rail_carriage` | `bounded_rover_ramp_v1` |
 | Native experiment | `rail_velocity_brake_v1` | `rover_ramp_target_v1` |
 | Controller | `developer_velocity_brake_v1` | `developer_rover_target_pd_v1` |
-| Native implementation | Existing registered reference, semantics preserved | New bounded implementation using existing typed rover/ramp/compiler |
-| Current-source measured qualification | Pending; v0.6.2 saved data remain historical | Pending; no genuine new rover measurements |
+| Native implementation | Existing registered reference, semantics preserved | Existing bounded implementation using typed rover/ramp/compiler |
+| Recorded native qualification | v0.8.1 clearance FAIL/PASS; application changes need qualification | v0.8.1 nominal PASS / heavy-incline FAIL; application changes need qualification |
 | Editable context | Mass, initial speed, force, clearance | Chassis mass/length/width, wheel radius, slope, friction, torque authority, target |
 | Analysis | Existing labelled ideal braking | No rail equations or claimed rover analytical performance |
-| Playback | Four actual saved rail cases | Native pose/wheel/velocity/force replay implemented; no samples to display yet |
+| Playback | Registered native results in main workspace; historical public examples separate | Exact saved native pose/wheel/velocity playback and model-specific checks |
 | Research | Existing compatible rail/adaptive engine preserved | Research's older ramp descriptor remains metadata-only; no research dispatch |
 
 ## Registration and execution
@@ -161,9 +161,9 @@ Proposed rail regression: 4 kg, 1.2 m/s, 2 N at 1.440/1.490 m initial clearance;
 Total if both are separately approved: 4 new cases, 8 rollouts, 3,200 steps.
 No outcome is predeclared. No 1.4775 m refinement is included or authorized.
 
-## Genuine current application views
+## Historical v0.8 prequalification captures
 
-These are actual Chrome captures over an explicitly QA-created numeric rover
+These preserved v0.8 captures predate the later v0.8.1 qualification. They show an explicitly QA-created numeric rover
 project. The model is compiled, not simulated or applied. No physical PASS is
 presented; the displayed controller is registered developer code, not live AI.
 
@@ -171,11 +171,10 @@ presented; the displayed controller is registered developer code, not live AI.
 
 ![Registered readonly rover controller](assets/product/toolkit-rover-controller.png)
 
-![Rover requirements remain NOT RUN](assets/product/toolkit-rover-requirements.png)
+![Historical v0.8 rover requirements before qualification: NOT RUN](assets/product/toolkit-rover-requirements.png)
 
-The V2 backend comparator can validate two compatible rover results; a general
-cross-configuration rover comparison UI is not added before genuine results
-exist. The product currently loads only exact current-input results. Full robot
+v0.8.2 now exposes compatible measured comparisons and exact-input results in the
+common workspace. Related parameter studies remain separate from project verification. Full robot
 CAD/import, controller source execution and merged mechanical/circuit projects
 remain outside this bounded toolkit.
 
@@ -183,3 +182,28 @@ At very early startup an import can receive a legitimate same-origin token
 refusal before bootstrap finishes. Wait for the normal catalog/readiness state
 and retry the local import; the server does not accept a missing token. This
 remaining startup UX limitation does not grant execution or weaken authorization.
+
+## v0.8.2 saved-result integration
+
+The initial implementation status above is historical. Genuine v0.8.1 qualification
+subsequently measured two cases per registered model: eight total primary/fresh
+rollouts and 3,200 steps. Rail gaps 1.440/1.490 m measured 0.003 m FAIL / 0.053 m
+PASS. The nominal 0.15 kg chassis, level rover passed its frozen contract with
++0.0164926485 m progress and 0.0235073515 m error relative to a 0.04 m target;
+it did not reach that target exactly. The 0.60 kg, 10° case measured
+−0.0995898755 m and failed progress, target error and wheel-joint ranges.
+All four required fresh replays and saved-sample verifications passed. Zero
+prohibited rover contacts does not mean zero legitimate wheel/surface contacts.
+
+The mounted rail debugger/3D playback can now select native job evidence through
+existing ProductAlpha routes. Numeric imported rail projects use the same strict
+reader. Rover preserves actual world poses, quaternions and wheel motion in its
+existing WorldViewport. Project/source/controller/parameters/requirements matching
+prevents unrelated evidence inheriting PASS. Compatible comparisons explicitly
+show changed physical conditions, not a controlled controller-only benchmark.
+
+Descriptors presented by Toolkit derive evidence availability from bounded saved
+readers. Native compatibility, complete application qualification, numerical
+configuration status and physical verdict remain separate. This release performs
+no new native rollout or paid call and does not change native controllers/models.
+A new execution always requires fresh exact approval; both v0.8.1 scopes are consumed.

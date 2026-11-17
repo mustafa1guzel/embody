@@ -1,5 +1,26 @@
 # Release notes
 
+## 0.8.2 — Current-source result integration
+
+- Main rail simulation history, Physical Debugger, Verify and 3D playback select
+  actual registered saved native results; historical public examples stay separate.
+- Existing rover saved pose playback and model-specific checks are preserved, with
+  source provenance and compatible measured-parameter comparison.
+- Evidence-derived labels separate native compatibility, recorded source,
+  application qualification, physical verdict and modified drafts awaiting verification.
+- Bounded read-only discovery/validation rejects unsafe paths, corrupt records and
+  invalid project associations. Native controllers/models/admission are unchanged.
+- No new native integration, paid model call or automatic application is performed.
+
+## v0.8.1 — Recorded native qualification
+
+- Execute two rail and two rover cases under separate exact approvals: eight
+  primary/fresh rollouts and 3,200 actual steps. All replays/readbacks passed.
+- Preserve rail clearance FAIL/PASS and rover nominal PASS / heavy-incline FAIL.
+  Nominal target tolerance passed; exact target attainment is not claimed.
+- Keep raw private evidence, source bindings, receipts and consumed approvals
+  unchanged. No new execution is authorized by documentation or saved playback.
+
 ## v0.8 — Unreleased · Multi-model robotics toolkit
 
 - Register bounded rail and rover/ramp model capabilities, exact numeric/controller/requirement contracts and current-source status. Preserve historical rail evidence and mandatory predicates.

@@ -1,13 +1,14 @@
 # Product Alpha — registered multi-model foundation
 
-## v0.8 current implementation
+## Current v0.8.2 workflow
 
 The default product now includes a registered rover/ramp numeric project alongside
 the preserved rail workflow. See the [multi-model toolkit guide](MULTI_MODEL_TOOLKIT.md)
 for exact editable parameters, controllers, requirement meanings, import/export,
 source compatibility and native qualification gates. Rover geometry compiles
-through the actual typed engine; there are no new measured rover results. New
-rail/rover native verification is pending separate explicit approval. Existing
+through the actual typed engine. Retained v0.8.1 rail and rover results now feed
+source-aware history, saved playback, Debug and Verify; new execution still needs
+separate explicit approval. Full application qualification is distinct. Existing
 applied mechanical heads and prior rail-plan snapshots are not migrated.
 
 ## v0.7 preserved baseline and remaining boundaries
@@ -123,3 +124,27 @@ project events; its authoritative identity is the exact immutable snapshot SHA.
 It is not an applied World/robot revision. Generic legacy trajectory chart wording
 still calls guides hypothetical; in this product view their values are supplied
 from the selected record's frozen criteria. No measurement or threshold is changed.
+
+## v0.8.2: results in the engineering loop
+
+**Design → Simulate → Debug → Verify** now uses one explicitly selected saved rail
+result across scene, playback, measurements, debugger and requirements. Home's
+native-results study reads registered saved jobs; the historical example remains
+separate. An actual persisted rail plan receives only exact configuration/source/
+controller/criteria matches. Selection never writes an existing project head.
+
+The source-aware history distinguishes measured physical FAIL, missing/invalid
+records and unexecuted jobs. Fresh replay and independent saved-state verification
+are separate from physical compliance. Recorded Git-base binding is metadata,
+not approval; absent execution timestamps/package references remain absent.
+
+The native reader verifies the registered numeric model, saved samples, native
+force/contact state, fresh replay hashes and unchanged acceptance. It accepts no
+user path or arbitrary JSON/XML execution. Read-only UI integration does not add
+an executor or grant use of a consumed consent.
+
+v0.8.1's native hashes remain unchanged by this integration. The wider application
+binding changes, so the UI says **Verified recorded source · application
+qualification required** rather than claiming that old runs qualify the modified
+app. Historical source evidence retains its own verified measurements. See
+[verification scope](VERIFICATION.md) and [multi-model behavior](MULTI_MODEL_TOOLKIT.md).

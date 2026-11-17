@@ -27,13 +27,13 @@ it('prepares exact source-bound request and cancels before execution',async()=>{
  renderModel('Simulate');await screen.findByText('No current-source native results. There is no rover playback or physical PASS to show.');fireEvent.click(screen.getByRole('button',{name:'Prepare model simulation'}));const dialog=await screen.findByRole('dialog',{name:'Review model native request'});expect(within(dialog).getByRole('button',{name:/Run model simulation/})).toBeDisabled();expect(dialog).toHaveTextContent('200 primary + 200 fresh');fireEvent.click(within(dialog).getByRole('button',{name:'Cancel model execution preparation'}));expect(screen.queryByRole('dialog')).not.toBeInTheDocument();expect(requests.some(r=>/start|execute|approve|apply/.test(r.path))).toBe(false);
 });
 it('shows registered readonly controller and rejects invented analytical support',async()=>{
- renderModel('Program');const code=await screen.findByLabelText('Controller fixture');expect(code).toHaveAttribute('readonly');expect(screen.getByText(/No steering or slip estimator/)).toBeVisible();expect(screen.getByText(/Current-source native verification pending/)).toBeVisible();
+ renderModel('Program');const code=await screen.findByLabelText('Controller fixture');expect(code).toHaveAttribute('readonly');expect(screen.getByText(/No steering or slip estimator/)).toBeVisible();expect(screen.getByText(/Native source compatibility and full application qualification are separate/)).toBeVisible();
 });
 it('keeps missing measurement debug state separate from physical failure',async()=>{
  renderModel('Debug');expect(await screen.findByText('UNVERIFIED — NO MEASUREMENTS')).toBeVisible();expect(screen.getByText(/No torque, slip or traction cause/)).toBeVisible();expect(screen.queryByText('REQUIREMENTS_PASS')).not.toBeInTheDocument();
 });
 it('tightened requirements preserve mandatory bounds and remain unmeasured',async()=>{
- renderModel('Verify');fireEvent.click(screen.getByText('Requirement thresholds'));fireEvent.change(screen.getByLabelText('Requirement minimumProgress'),{target:{value:'0'}});expect(screen.getByRole('alert')).toHaveTextContent('never weaken');expect(screen.getByText('NOT VERIFIED — no authorized native rollout')).toBeVisible();
+ renderModel('Verify');fireEvent.click(screen.getByText('Requirement thresholds'));fireEvent.change(screen.getByLabelText('Requirement minimumProgress'),{target:{value:'0'}});expect(screen.getByRole('alert')).toHaveTextContent('never weaken');expect(screen.getByText('NOT VERIFIED — no saved result selected')).toBeVisible();
 });
 it('uses explicit exact-head save and export only saved declaration',async()=>{
  const {onProject,onExport}=renderModel();await screen.findByTestId('typed-design');fireEvent.change(screen.getByLabelText('Chassis mass model parameter'),{target:{value:'.2'}});fireEvent.click(screen.getByRole('button',{name:'Save robot configuration'}));await waitFor(()=>expect(onProject).toHaveBeenCalled());const call=requests.find(r=>r.path==='/api/toolkit/save')!;expect(call.body.expected).toBe(project.sha256);expect(call.body.declaration.parameters.chassis_mass_kg).toBe(.2);fireEvent.click(screen.getByRole('button',{name:'Export saved robot project'}));expect(onExport).toHaveBeenCalledWith(project.declaration);
@@ -56,4 +56,11 @@ it('rejects coupled wheel overlap instead of silently resizing another field',as
 
 it('never labels a loading rover as a rail configuration',()=>{
  renderModel('Verify');expect(screen.getByRole('button',{name:'Registered Rover / inclined surface configuration'})).toBeVisible();expect(screen.queryByRole('button',{name:'Registered rail configuration'})).not.toBeInTheDocument();
+});
+
+it('ignores a late saved-result response after a draft changes',async()=>{
+ // Explicit protocol fixture; two synthetic presentation samples are not physics evidence.
+ let finish!:(v:any)=>void;const pending=new Promise(resolve=>finish=resolve);const row={id:'native-fixture',case_id:'a'.repeat(64),sweep_id:'c'.repeat(32),verdict:'PASS',parameters:project.declaration.parameters,metrics:{},criteria:descriptor.requirements,source_sha256:descriptor.source_sha256};const original=globalThis.fetch;
+ vi.stubGlobal('fetch',vi.fn(async(path:any,options?:RequestInit)=>{const u=new URL(String(path),'http://localhost');if(u.pathname==='/api/toolkit/results')return {ok:true,json:async()=>({results:[row],related_results:[row]})};if(u.pathname==='/api/toolkit/result')return {ok:true,json:async()=>await pending};return original(path,options);}));
+ renderModel('Simulate');fireEvent.click(await screen.findByRole('button',{name:'Load saved PASS · '+row.case_id.slice(0,10)}));fireEvent.change(screen.getByLabelText('Chassis mass model parameter'),{target:{value:'.2'}});finish({record:{case_id:row.case_id,source_sha256:descriptor.source_sha256,samples:[]}});await waitFor(()=>expect(screen.getByRole('status')).toHaveTextContent('Modified configuration — verification required'));expect(screen.queryByText('Play saved rover')).not.toBeInTheDocument();
 });

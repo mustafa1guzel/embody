@@ -80,3 +80,26 @@ round trip within the same browser session. Named plan snapshots persist across
 reloads. Not every unsaved UI selection/draft is restored after a full reload.
 See [scope](PRODUCT_ALPHA.md), [verification](VERIFICATION.md) and
 [architecture](ARCHITECTURE.md).
+
+## Inspect saved native results (v0.8.2)
+
+From Home, choose **Open native rail results**, then select an exact saved run in
+Simulation history. Design/Simulate renders its actual saved model and samples;
+Debug explains the measured requirement failure; Verify shows every saved check,
+replay/readback and source provenance. Use the minimum-clearance sample button
+or scrub recorded time. Historical public examples remain under **Rail braking**.
+
+An authored rail plan lists only results matching its saved numerical inputs,
+controller, requirements and compatible native source. The read-only native study
+is a separate evidence library, not proof that an unrelated project executed.
+Select a compatible comparison explicitly; physical conditions may differ.
+
+Open either retained rover review project to load its exact nominal or incline
+result. Rover pose playback remains model-specific. Passing the target-error
+**tolerance** does not mean the exact target was reached. No sample is generated
+when you play, select, compare or inspect saved evidence.
+
+Edit a supported numeric value to prepare an improvement. **Modified configuration
+— verification required** keeps the old result scoped to its recorded inputs.
+Preview/prepare validates bounds and shows an exact new request, but does not run
+it. A separate explicit source-bound execution approval is always required.

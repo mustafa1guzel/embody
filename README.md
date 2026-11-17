@@ -1,12 +1,16 @@
 # EMBODY — Build physical intelligence.
 
 Design, inspect controllers, replay simulations and debug physical failures in a
-local engineering workspace. **v0.8 adds registered rail and rover/ramp models,
-bounded robot import/export and model-specific engineering views.** The rover
-implementation is awaiting separately approved native verification; no measured
-rover performance is claimed. Existing advanced tools remain available.
+local engineering workspace. **v0.8.2 connects saved native results directly to
+Design → Simulate → Debug → Verify.** Select a measured rail result in the main
+workspace, replay its actual motion, inspect the failed requirement and prepare
+a supported change. Rover keeps its model-specific native playback. Existing
+advanced tools remain available.
 
-![Product Alpha: real saved carriage geometry and numerical inspector](docs/assets/product/alpha-workspace.png)
+![v0.8.2: actual retained native rail samples in the main workspace](docs/assets/product/native-rail-playback.png)
+
+Actual Chrome capture: retained v0.8.1 motion in an isolated numerical review plan;
+no new simulation or authoritative application.
 
 **Create → Design → Program → Simulate → Debug → Verify → Iterate**
 
@@ -37,7 +41,7 @@ Installations remain an explicit operator decision, not a startup side effect.
 | Entry | What actually works | Execution scope |
 |---|---|---|
 | Rail braking | Saved compiled 3D geometry, read-only controller, sample-linked playback, numerical drafts, physical debugger, comparison and adaptive guidance | New execution preparation only; separate explicit approval required |
-| Rover / inclined surface | Actual typed nine-part assembly, editable bounded configuration, registered PD controller, requirements, compilation and exact simulation preparation | Native implementation present; current-source qualification NOT RUN |
+| Rover / inclined surface | Actual typed nine-part assembly, editable bounded configuration, registered PD controller, requirements, compilation and exact simulation preparation | Saved v0.8.1 nominal PASS and challenging incline FAIL; new execution requires separate approval |
 | Controller debugging | Nine genuine public original/repair recordings in the existing Physics Regression Explorer | Historical source inspection and saved-data comparison only |
 | Mechanical & circuit studio | Existing typed geometry, environment, SHAPEBASE, CIRCUITBASE and construction review | Independent mechanical project context; no new controller or native model admission |
 
@@ -48,9 +52,13 @@ not applied mechanical heads. Export/re-import preserves supported numbers and
 registered identities without evidence, execution authority or private data.
 [Toolkit guide](docs/MULTI_MODEL_TOOLKIT.md) · [configuration examples](examples/robot-projects/README.md).
 
+Private local qualification jobs are not distributed with this repository. A clean
+checkout retains the public historical examples; native history stays empty until
+legitimate local results exist. Screenshots show retained local qualification data.
+
 ## Debug from physical evidence
 
-![Physical Debugger with a genuine measured clearance failure](docs/assets/product/alpha-debugger.png)
+![Physical Debugger with a genuine measured clearance failure](docs/assets/product/native-rail-debugger.png)
 
 The debugger reads the actual measurement and its frozen requirement. It separates
 **observation, interpretation, analytical hypothesis and recommended action**.
@@ -79,15 +87,30 @@ finished at zero speed without wall contact. The deterministic engine selected
 1.465 m from measured evidence, reducing the observed local interval from
 **50 mm to 25 mm (50%)**. This is a sampled transition interval, not an exact
 safety boundary or measured superiority over uniform sampling. **1.4775 m
-remains unapproved and unexecuted.** No new simulation runs in v0.7 or this v0.8 implementation.
+remains unapproved and unexecuted.** The separate v0.8.1 qualification is described below. No new native integration runs during v0.8.2.
 
 [Demonstration](docs/ADAPTIVE_PHYSICAL_DEBUGGING.md) ·
 [Portable evidence and readback](examples/adaptive-rail-study/README.md) ·
 [Verification scope](docs/VERIFICATION.md)
 
-The new server routes change the source-bound native identity. Those measurements
-remain verified saved evidence for their original source, not validation of this
-modified application. Consumed approvals and old certificates grant no authority.
+Historical measurements retain their original source identity. The v0.8.2
+read-only integration preserves the v0.8.1 native execution hashes while changing
+the wider application binding. Recorded evidence does not qualify changed app
+code. Consumed approvals and old certificates grant no new execution authority.
+
+## Recorded multi-model qualification · v0.8.1
+
+The two rail cases at initial gaps 1.440/1.490 m measured 0.003 m FAIL / 0.053 m
+PASS. The nominal level rover moved **+16.493 mm** and passed the frozen contract;
+its **23.507 mm** error satisfies the 35 mm tolerance for a 40 mm target, rather
+than reaching that target exactly. The heavier 10° case moved **−99.590 mm** and
+failed progress, target error and wheel-joint ranges. No slip cause is inferred.
+
+Four cases, eight primary/fresh rollouts and 3,200 steps were recorded under the
+v0.8.1 source. All fresh replays and independent saved-state checks passed. A
+verified physical failure is useful engineering evidence, not a crashed job or
+permission to claim arbitrary robots safe. New runtime records remain private;
+the public historical example works without private qualification files.
 
 ## Program and simulation
 
@@ -141,8 +164,26 @@ Private runtime folders, approvals, credentials and certificates are not publish
 
 ## Roadmap and license
 
-[v0.8 Robotics Developer Toolkit](docs/PRODUCT_ROADMAP.md) implements bounded model/import/controller contracts; native qualification is pending. v0.9 targets separately authorized
+[v0.8 Robotics Developer Toolkit](docs/PRODUCT_ROADMAP.md) implements bounded model/import/controller contracts. Recorded v0.8.1 native
+qualification remains verified; modified application qualification is separate. v0.9 targets separately authorized
 intelligent engineering; v1.0 targets a coherent installable bounded product.
 No customer-acquisition or commercialization work is part of these milestones.
 The repository currently has no license grant file; licensing remains the owner's
 decision. No commit, tag, push or release is created automatically.
+
+### Follow the measured engineering loop
+
+**Design → Simulate → Debug → Verify.** Open native rail results, select an actual
+saved simulation, replay its recorded motion and inspect the exact failed physical
+requirement in the main workspace. Historical examples remain separately labelled.
+Rover projects retain their model-specific saved 3D playback and requirements.
+
+Compare compatible measured configurations, prepare a bounded change, and review
+the next verification request without automatically executing it. A physical FAIL
+is useful measured evidence; replay/readback PASS is not the same as robot safety.
+Native-source compatibility is distinct from qualification of changed application
+code. New execution always requires separate explicit approval.
+
+See the [quickstart](docs/QUICKSTART.md), [product workflow](docs/PRODUCT_ALPHA.md)
+and [verification boundaries](docs/VERIFICATION.md). No live AI or unrestricted
+robot/controller execution is claimed.

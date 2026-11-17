@@ -8,12 +8,19 @@ from ide_api import native_models as models,rail_sweeps as rail,rover_reference 
 from ide_api import robot_import
 from ide_api.model_evidence import diagnose
 from workspace.data import bounded_read,decode_json
+from ide_api.native_results import NativeResults,locator
 MAX_PROJECTS=16
 
 class Toolkit:
-    def __init__(self,root=None):
-        self.root=Path(root) if root else ROOT/'.runtime/model_projects';self.lock=threading.RLock()
-    def catalog(self):return {'version':1,'models':models.descriptors(),'projects':self.listing(),'declarative_format':robot_import.FORMAT,'native_runs':0,'execution_authorized':False}
+    def __init__(self,root=None,native=None):
+        self.root=Path(root) if root else ROOT/'.runtime/model_projects';self.lock=threading.RLock();self.native=native if native is not None else NativeResults()
+    def catalog(self):
+        descriptors=models.descriptors()
+        for descriptor in descriptors:
+            status=self.native.discover(descriptor['id'])
+            descriptor['qualification']=status['qualification'];descriptor['verification']=status['qualification']['status']
+        return {'version':1,'models':descriptors,'projects':self.listing(),'declarative_format':robot_import.FORMAT,'native_runs':0,'execution_authorized':False}
+
     def _folder(self,key):return self.root/rail.identifier(key)
     def listing(self):
         if not self.root.exists():return []
@@ -71,21 +78,15 @@ class Toolkit:
         return {'shape_parts':library(project)['parts'],'world':project['world'],'roles':roles,'compiled_contract':contract,'model_xml_sha256':hashlib.sha256(xml.encode()).hexdigest(),'total_dynamic_mass_kg':float(model.body_mass.sum()),'proof':proof,'simulation':'NOT_RUN','verification':'COMPILED_NOT_PHYSICALLY_VERIFIED','diagnosis':diagnose(None),'selection_ids':[o['id'] for o in project['world']['objects']],'origin':'DEVELOPER_AUTHORED_TYPED_PROXY_NOT_AI','limitations':rover.LIMITATIONS}
 
     def results(self,key):
-        p=self.read(key);d=p['declaration'];module=models.for_model(d['model_id']);rows=[]
-        service=rail.RailSweeps()
-        if service.root.exists():
-            for folder in sorted(service.root.iterdir()):
-                if not re.fullmatch('[a-f0-9]{32}',folder.name):continue
-                state=service.read(folder.name);r=state['request']
-                if r['experiment_id']!=module.EXPERIMENT or r['controller_id']!=module.CONTROLLER or r['source_sha256']!=module.source_identity() or r['criteria']!=d['requirements']:continue
-                for case in state['cases']:
-                    if case['parameters']==d['parameters'] and case.get('execution_status')=='MEASURED':rows.append({'sweep_id':folder.name,'case_id':case['case_id'],'verdict':case['verdict']})
-        return {'results':rows,'verification':'NOT_VERIFIED' if not rows else 'EXACT_CURRENT_INPUT_RECORDS_AVAILABLE'}
+        p=self.read(key);d=p['declaration'];discovery=self.native.discover(d['model_id'])
+        records=discovery['records'];matching=[r for r in records if not p['stale'] and r['source_current'] and r['parameters']==d['parameters'] and r['criteria']==d['requirements'] and r['controller_id']==d['controller_id']]
+        return {'results':matching,'related_results':records,'unavailable':discovery['unavailable'],'qualification':discovery['qualification'],'verification':'EXACT_CURRENT_INPUT_RECORDS_AVAILABLE' if matching else 'NOT_VERIFIED','association':'Exact native source/controller/configuration/requirements only; related parameter studies do not verify this project.'}
     def result(self,key,sweep,case):
         matches=self.results(key)['results']
         if not any(v['sweep_id']==sweep and v['case_id']==case for v in matches):raise ValueError('Result does not belong to exact current project configuration/source')
-        value=rail.RailSweeps().case(sweep,case)
-        if value['experiment_id']!=rover.EXPERIMENT:raise ValueError('Use historical rail reader for rail trajectories')
-        from ide_api.model_evidence import verify_result,diagnose
-        checked=verify_result(value)
-        return {**checked,'diagnosis':diagnose(value)}
+        record,value=self.native.load(locator(sweep,case))
+        if value['experiment_id']==rover.EXPERIMENT:
+            from ide_api.model_evidence import diagnose
+            return {'record':value,'summary':record,'diagnosis':diagnose(value),'saved_readback':'PASS','saved_replay':'PASS','status':'INTEGRITY_VALID_EXTERNAL_UNVERIFIED'}
+        from ide_api.product_alpha import diagnosis,scene
+        return {'record':value,'summary':record,'scene':scene(value),'diagnosis':diagnosis(record),'saved_readback':'PASS','saved_replay':'PASS','status':'SAVED_RAIL_READBACK_PASS'}

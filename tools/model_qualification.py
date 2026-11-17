@@ -17,7 +17,7 @@ FORMAT='EMBODY_MULTI_MODEL_CURRENT_SOURCE_QUALIFICATION_V1'
 
 def sources():
     names=set(rover.source_manifest())|{'tools/model_qualification.py','ide_api/toolkit.py','ide_api/robot_import.py',
-         'ide_api/product_alpha.py','frontend/package.json','frontend/package-lock.json',
+         'ide_api/product_alpha.py','ide_api/native_results.py','frontend/package.json','frontend/package-lock.json',
          'frontend/src/ProductAlpha.tsx','frontend/src/ModelWorkspace.tsx','frontend/src/styles/productAlpha.css'}
     # Rendering/controller inspection is bound as well; only source/data, never private runtime.
     names|={str(p.relative_to(ROOT)) for p in (ROOT/'frontend/src').rglob('*') if p.suffix in ('.ts','.tsx','.css')}
