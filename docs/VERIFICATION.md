@@ -1,5 +1,46 @@
 # Verification
 
+## v1.1 generalized physical engineering core
+
+The final supported public backend selection passed **664 tests**, with zero
+failures/skips/deselections, in 268.18 seconds. This includes 31 existing
+source-controller tests, 28 existing workbench tests and 29 new physical-core
+tests. The prior 635-backend v1.0 baseline remains documented below.
+Archival-only/private-fixture and live-VM suites are outside this selection;
+they are not reported as passing or skipped.
+
+Final frontend: **360 passed across 52 files**, zero failed/skipped, in 41.20 s.
+Typecheck and final production build passed; the existing large-chunk warning
+remains. Final frontend includes regression coverage for project-tab reset and
+initial-view loading that could otherwise overwrite a selected saved pose.
+
+The core was frozen before four held-out tasks were generated/evaluated.
+Two reference families show actual native FAIL → PASS, not simulated UI claims.
+Held-out rover parameter/environment/initial-state/requirement changes and a
+different asymmetric-actuation failure transferred without core/controller edits.
+The held-out rail controller retained a force-requirement failure, and stricter
+rover accuracy retained a measured failure. No failed result was tuned away.
+
+Across the reference, held-out and real-browser journeys, independent read-back
+checked **15 case evaluations, 30 native rollouts and 10,800 recorded integration
+steps**. Read-back recompiles registered models and forwards saved states; it
+adds zero integration steps. Regression fixtures run additional trusted native
+cases separately and their guard counters are not added to this table.
+
+The first full run retained one source-drift rejection (663 passes, one failure):
+a frontend fix occurred while an offline qualification fixture was source-bound.
+The saved manifest identifies both changed frontend files. Its isolated rerun
+passed, and the stable-source full run above passed without changing a validator.
+Subsequent frontend-only loading/race corrections do not change the backend or
+frozen native implementation; their final frontend/browser checks are recorded
+in the local v1.1 report.
+
+No new provider request, credential access, reservation, VM, installation,
+hardware test or live GPT qualification occurred. Existing failed qualification,
+17 historical heads, 22 accounting leaves and 134 native identities are preserved.
+See [the versioned contract](GENERALIZED_PHYSICAL_CORE.md).
+
+
 ## Source-bound Rail DSL workflow
 
 Final supported backend: **635 passed**, 0 failed/skipped/deselected,240.47 s.

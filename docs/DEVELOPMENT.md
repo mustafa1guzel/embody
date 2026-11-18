@@ -51,3 +51,25 @@ Wheel-axis direction, torque commands, contacts and signed motion supplied actio
 Original separate repair experiment: measured forward travel, wheel-ground contact and fresh native replay. The earlier failure was preserved, and application remained a separate human decision.
 
 [Reference-ramp evidence](assets/product/reference-ramp.png) tests another bounded fixture, not the same model-directed rover. [Verification](VERIFICATION.md) summarizes the measured comparison; [limitations](LIMITATIONS.md) prevent extrapolating it to general locomotion or hardware safety.
+
+## Shared physical-core development
+
+With the installed environment run:
+
+~~~sh
+PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=. python -B tools/verify_local_release.py --output .runtime/local-public-check-new
+~~~
+
+Use a new output directory; never replace evidence. This fixed public selection
+includes shared-contract and real native tests. Archival tests requiring private
+historical fixtures and live-VM tests remain separate. No network is needed.
+
+New families require reviewed native model/observation adapters, not another
+controller evaluator, verifier or agent. Tasks within supported families change
+validated project data/source through review. Freeze the native/source closure
+and examples before held-out evaluation. Record failures before any revision.
+
+The public controller examples are explicit developer data. Offline supplied
+plans establish protocol compatibility, not autonomous language understanding.
+The two-DOF arm remains unsupported by this new contract until its native adapter,
+units, requirements and evidence are integrated. Legacy arm views are unaffected.

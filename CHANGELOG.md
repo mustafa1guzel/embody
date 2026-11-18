@@ -1,3 +1,15 @@
+## 1.1.0-dev — generalized physical engineering core
+
+- Add versioned project/observation/actuator/task/requirement contracts for rail
+  and differential-drive native models. Retain v1.0 source identities and routes.
+- Share bounded dimensional source compilation, inspect/validate/propose tools,
+  explicit review/apply, revision history, native rollout/replay and verification.
+- Integrate one workspace with compiled geometry and actual saved native states.
+- Freeze the native core before held-out parameters, initial-state, geometry,
+  threshold and asymmetric-actuation tests. Preserve failures without tuning.
+- Keep deterministic source plans distinct from genuine AI. No provider, VM,
+  credential, installation or historical accounting authority is introduced.
+
 # Changelog
 
 ## Source-bound Rail DSL controller engineering (local review)

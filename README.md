@@ -3,11 +3,40 @@
 A local engineering workspace for inspecting robot context, reviewing configuration
 changes, running supported MuJoCo verification, and understanding measured failures.
 
-**v1.0.0-rc1 is a bounded local release-candidate workstream. Live GPT qualification
-remains pending.** The default workbench uses deterministic engineering tools;
-it does not present them as model reasoning. No API key is needed for the local loop.
+**v1.1 generalized physical core — local development candidate.** One versioned
+project, bounded controller language, tool workflow and native verifier support
+rail braking and a differential-drive rover. Genuine GPT remains unqualified;
+offline source plans are explicitly developer-authored. No API key is needed.
 
-## The local debugging loop
+## Shared physical engineering workflow
+
+1. Create an independent **rail** or **differential_rover** project.
+2. Inspect actual compiled geometry, observations, SI actuator limits and
+   project-defined canonical requirements.
+3. Edit bounded controller source or physical definition. Review the exact diff
+   through shared inspect → validate → propose tools.
+4. Approve that exact project/source revision separately. Compilation is not PASS.
+5. Explicitly run native verification: 600 rail or 200 rover steps, plus a fresh
+   equal-length replay. Inspect actual saved states, numerical checks and exact
+   source/artifact/model identities; compare revisions or export a report.
+
+Initial programs deliberately fail. Corrections in
+[the public example data](examples/physical-engineering/controller_examples.json)
+are labelled developer-authored, never presented as GPT reasoning or selected
+automatically by an agent. Verification uses rigid collision proxies.
+
+Both reference families show measured FAIL → PASS. A prospectively frozen-core
+evaluation transferred the rover controller to new mass, slope, geometry,
+initial state and task requirements without code changes. Two failures remain:
+a rail force requirement tighter than its actuator envelope and an over-demanding
+rover accuracy requirement. Finite transfer is not universal safety. See
+[the shared contract and measured limits](docs/GENERALIZED_PHYSICAL_CORE.md).
+
+## v1.0 compatibility debugging loop
+
+The header's **v1.0 rail compatibility workspace** retains both the original
+numerical workflow below and the source-bound Rail DSL workflow.
+
 
 1. Create an independent **rail project**. The starter is developer-authored.
 2. Inspect mass, speed, actuator authority, initial wall clearance, fixed requirements,

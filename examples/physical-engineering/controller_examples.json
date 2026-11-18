@@ -1,0 +1,13 @@
+{
+  "format": "EXPLICIT_DEVELOPER_CONTROLLER_EXAMPLES_NOT_AI",
+  "examples": {
+    "rail": {
+      "initial_source": "physical_controller 1\nforce_n = -mass_kg * velocity_mps / dt_s if clearance_m <= 0.25 else 0\n",
+      "corrected_source": "physical_controller 1\nforce_n = -mass_kg * velocity_mps / dt_s if clearance_m <= stopping_distance_m + margin_m or speed_mps < 0.03 else 0\n"
+    },
+    "differential_rover": {
+      "initial_source": "physical_controller 1\nleft_nm = 0.012\nright_nm = 0.012\n",
+      "corrected_source": "physical_controller 1\nleft_nm = axis_left * radius_m * (gravity_force_n + position_gain * (target_m - progress_m) - speed_gain * forward_speed_mps) / 2\nright_nm = axis_right * radius_m * (gravity_force_n + position_gain * (target_m - progress_m) - speed_gain * forward_speed_mps) / 2\n"
+    }
+  }
+}

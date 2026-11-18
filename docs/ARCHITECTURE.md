@@ -179,3 +179,25 @@ migrate old rail Research snapshots. Optional URDF/MJCF topology inspection cann
 register/compile imported executable XML. V2 rover evidence is explicit and separate
 from the unchanged strict historical rail package format. Both implementations
 remain pending separately authorized current-source native qualification.
+
+## v1.1 shared physical engineering core
+
+The default GeneralWorkbench uses the existing loopback Workbench server and
+transaction store. physical_core/service.py owns one project/source snapshot,
+tool protocol, review/apply decision and native-job lifecycle. It does not select
+a repair program from the family name. The caller supplies an explicit plan.
+
+contracts.py validates project data, dimensional requirement expressions and
+mandatory family floors. language.py compiles bounded arithmetic into JSON data.
+engine.py runs and independently audits the exact source artifact, actual forces,
+contacts, saved states, canonical requirements and fresh replay in one path.
+
+adapters.py supplies native models, environment setup, observations, actuator
+mappings and views: rail uses existing physical contexts/compiler; rover uses
+actual typed World/SHAPEBASE construction and its compiler. These are legitimate
+dynamics adapters, not separate agents or verifiers. Constants and requirements
+are project data; model-specific safety floors cannot be relaxed through edits.
+
+Existing v1.0 routes and historical bindings remain unchanged. The new contract
+is versioned rather than silently migrating old projects/evidence. See
+[the contract](GENERALIZED_PHYSICAL_CORE.md) for limits and held-out failures.

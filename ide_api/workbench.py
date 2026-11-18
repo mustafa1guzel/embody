@@ -54,6 +54,13 @@ class Workbench:
   product=ProductAlpha(designer,self.root/'research');product.native=native
   self.agent=EngineeringAgent(product,self.toolkit,self.root/'assistant')
  @property
+ def physical(self):
+  with self.guard:
+   if not hasattr(self,'_physical'):
+    from physical_core.service import PhysicalEngineering
+    self._physical=PhysicalEngineering(self)
+   return self._physical
+ @property
  def controllers(self):
   with self.guard:
    if not hasattr(self,'_controllers'):
