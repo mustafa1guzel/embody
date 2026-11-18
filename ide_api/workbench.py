@@ -53,6 +53,13 @@ class Workbench:
   designer=ExperimentDesigner(self.rail,self.root/'designer')
   product=ProductAlpha(designer,self.root/'research');product.native=native
   self.agent=EngineeringAgent(product,self.toolkit,self.root/'assistant')
+ @property
+ def controllers(self):
+  with self.guard:
+   if not hasattr(self,'_controllers'):
+    from ide_api.controller_engineering import ControllerEngineering
+    self._controllers=ControllerEngineering(self)
+   return self._controllers
  def _safe(self):
   if any(p.is_symlink() for p in (self.root,*self.root.parents)):raise ValueError('Unsafe local workspace')
  def _path(self,*parts):
@@ -83,7 +90,7 @@ class Workbench:
   with self.transaction():p=self.toolkit.create(d)
   return self.read(p['id'])
  def read(self,key):
-  p=self._project(key);return {**p,'source':pretty(p['declaration']),'design':self.toolkit.design(p['declaration']),'runs':self.runs(key),'reviews':self.reviews(key),'controller':__import__('inspect').getsource(rail.reference_controller),'provider':'OFFLINE_DETERMINISTIC_NOT_AI'}
+  p=self._project(key);return {**p,'source':pretty(p['declaration']),'design':self.toolkit.design(p['declaration']),'runs':self.runs(key),'reviews':self.reviews(key),'controller':__import__('inspect').getsource(rail.reference_controller),'provider':'OFFLINE_DETERMINISTIC_NOT_AI','controller_source':self.controllers.read(key)}
  def _declaration(self,source,p):
   if not isinstance(source,str) or len(source.encode())>16384:raise ValueError('robot.json must be bounded UTF-8 JSON (maximum16KiB)')
   d=robot_import.validate(source)
@@ -143,6 +150,7 @@ class Workbench:
    if request['cases']!=[value['parameters']] or request['criteria']!=value['requirements'] or request['source_sha256']!=value['native_source']:raise ValueError('Run association differs from admitted native request')
   return value
  def start(self,key,expected,nonce,confirmation,submit):
+  if self.controllers.read(key):raise ValueError('This project selects DSL source; use exact approved-source execution, not the numerical reference controller')
   if confirmation!=RUN:raise PermissionError('Explicit one-case local native verification confirmation required')
   exact_id(nonce)
   with self.transaction():

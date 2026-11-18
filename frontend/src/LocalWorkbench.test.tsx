@@ -4,6 +4,7 @@ import {beforeEach,describe,it,expect,vi} from 'vitest';
 import LocalWorkbench,{verificationReport} from './LocalWorkbench';
 import {api} from './api';
 vi.mock('./api',()=>({api:vi.fn(),setToken:vi.fn()}));
+vi.mock('./ControllerWorkbench',()=>({default:()=> <div>UNIT source tools fixture, not execution</div>}));
 vi.mock('./Viewport',()=>({default:()=> <div>UNIT viewport fixture, not physics</div>}));
 const d={format:'EMBODY_ROBOT_CONFIGURATION_V1',title:'Fixture project',model_id:'rail_carriage',controller_id:'developer_velocity_brake_v1',parameters:{mass_kg:4,speed_mps:1.2,force_n:2,gap_m:1.44},requirements:{minimumClearance:.05,maximumFinalSpeed:.03,maximumSettlingTime:3,maximumContactEpisodes:0}};
 const base={id:'a'.repeat(32),sha256:'b'.repeat(64),revision:0,source:JSON.stringify(d,null,2)+'\n',declaration:d,design:{},controller:'UNIT fixture controller',runs:[],reviews:[]};
@@ -63,4 +64,9 @@ describe('asynchronous workspace isolation',()=>{
   await act(async()=>reject(new Error('STALE_REVIEW_FAILURE')));
   expect(screen.queryByRole('alert')).not.toBeInTheDocument();
  });
+});
+
+it('shows source verification count rather than the unused numerical-reference count',async()=>{
+ current={...current,controller_source:{head_sha256:'f'.repeat(64),runs:[{nonce:'1'},{nonce:'2'}]}};
+ await opened();expect(screen.getByRole('button',{name:'Verification runs (2)'})).toBeInTheDocument();expect(screen.queryByRole('button',{name:'Verification runs (0)'})).not.toBeInTheDocument();
 });

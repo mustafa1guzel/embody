@@ -13,7 +13,7 @@ PUBLIC_SUITES=BACKEND+[
  'tests/test_engineering_agent_live.py','tests/test_requirement_references.py','tests/test_agent_reliability.py',
  'tests/test_agent_deadline.py','tests/test_api_budget.py','tests/test_api_credentials.py',
  'tests/test_responses_continuation.py','tests/test_circuitbase.py','tests/test_advanced_circuit.py',
- 'tests/test_shapebase.py','tests/test_shapebase_api.py','tests/test_local_workbench.py']
+ 'tests/test_shapebase.py','tests/test_shapebase_api.py','tests/test_local_workbench.py','tests/test_controller_engineering.py']
 def main():
  p=argparse.ArgumentParser(description=__doc__);p.add_argument('--output',required=True);args=p.parse_args();out=Path(args.output).absolute()
  if out.exists():p.error('Use a new output directory; previous test evidence is never replaced')
