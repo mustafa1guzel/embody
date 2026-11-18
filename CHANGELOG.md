@@ -1,3 +1,18 @@
+# Changelog
+
+## 1.0.0-rc1 — local engineering workbench (release review)
+
+- Connect existing typed rail projects, source review, native verification/fresh
+  replay, deterministic engineering tools and reports in the default UI.
+- Add explicit numerical review/save/discard/restore and bounded native actions;
+  preserve original requirements, registered controllers and historical evidence.
+- Bind runs to immutable project snapshots and admitted requests; reject stale,
+  corrupt, repeated and interrupted operations without hidden retries.
+- Add a documented public local regression command. Retained archival tests still
+  require their private fixtures and are not claimed green in a clean checkout.
+- Preserve the canonical-ID validator repair and the unresolved live qualification
+  gate. No new paid calls, provider reservations, VMs, pushes or deployment.
+
 # Release notes
 
 ## v0.9.2.1 — live agent reliability (live explanation still unqualified)

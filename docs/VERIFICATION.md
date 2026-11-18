@@ -1,5 +1,58 @@
 # Verification
 
+## v1.0 local workbench candidate
+
+The new default local rail workflow is verified independently from historical live
+AI qualification. Its source is configuration JSON; registered controller code
+remains read-only. Native physics uses the existing trusted rail engine, fresh
+replay and strict saved-state reader. No paid provider/VM execution is part of this
+workstream.
+
+- Final supported public backend regression: **603 passed**, 0 failed, 0 skipped,
+  0 deselected, in 243.61 seconds, through the documented public runner. Earlier
+  601-public and 27-targeted runs overlap and are not added. The explicit
+  selection omits archival-only suites and VM tests; omissions are not skips.
+- Final frontend: **344 passed across 50 files** in 58.45 seconds. The targeted
+  export suite passed all 9 tests. Typecheck and final production build passed;
+  the existing chunk-size warning remains.
+- Real installed Chrome exercised create/open, source inspection, invalid edits,
+  saved sample playback, actual inspection/proposal tools, compiled preview,
+  separate human numerical save, native rerun, reload/history and report export.
+  Final UI had zero page errors and no external requests. One expected HTTP 400
+  corresponds to a deliberately invalid mass. A final GET-only export pass also
+  passed with zero page errors or mutations.
+- Browser physical cases used 4 kg, 1.2 m/s, 1.44 m initial clearance and unchanged
+  requirements. At 2.0 N the minimum measured clearance was 0.003 m (**FAIL**);
+  at 2.1 N it was 0.071570625 m (**PASS**). Both had zero final speed, zero wall
+  contact episodes and fresh replay PASS. Two cases / four rollouts / 2,400
+  integration steps; regression fixtures are separate and not included in that
+  browser count. These are deterministic local tests, not model-authored repairs.
+- Independent saved-state read-back and plain-sample calculations passed with
+  zero new integration. The browser now downloads the exact server report bytes;
+  JavaScript reserialization previously altered numeric spelling and broke its
+  canonical hash. Both the original defect and verified fix are retained.
+- The unrestricted historical non-VM sweep was stopped after **282 passed,
+  82 failed, 15 errors, 14 deselected**. Most failures require private historical
+  fixtures absent from this checkout; four early failures were caused by a test
+  guard incorrectly rejecting dummy credentials. The corrected guard passed the
+  public credential suite. This interrupted run is not a PASS.
+
+The source-bound private candidate review records the exact commit, complete test
+commands/logs, saved trajectory identities and historical preservation. It is
+excluded from publication; no credential, approval, certificate or raw private
+runtime evidence is required in the public README.
+
+Run the fixed public policy using `python -m tools.verify_local_release --output
+.runtime/new-local-release-check`. It extends the pre-existing documented public
+release policy and leaves archival tests intact. The test guard allows trusted
+native fixtures but denies outbound network, real credential paths, VM launches
+and historical writes. This instrumentation is not a containment certificate.
+
+[Candidate scope](../RELEASE_NOTES.md) · [Feature matrix](V100_FEATURE_MATRIX.md) ·
+[Commands and reproduction](../DEVELOPER.md)
+
+## Preserved earlier verification reports
+
 A schema-valid proposal, compiled geometry, successful replay and physical requirement PASS are different results.
 
 ## v0.8 multi-model toolkit · native qualification pending
