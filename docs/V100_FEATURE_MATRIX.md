@@ -7,7 +7,7 @@ reported separately for contracts, native runs, browser interactions and externa
 |---|---|---|
 | P0 Project workspace | Toolkit numerical snapshots in a new dedicated namespace | Create/open/reopen, exact-head save, no historical head mutation |
 | P0 Physical context | Original BODYBASE/WORLDBASE, registered rail geometry and SI settings | Actual compilation; invalid/missing/nonfinite fields rejected |
-| P0 Supported source | Editable bounded robot.json and actual readonly Python controller | Diff/review/discard, explicit save, restore as a new reviewed revision |
+| P0 Supported source | Editable robot.json, bounded Rail DSL and readonly registered Python | Typed source diff/review/discard, explicit application, restore as a new reviewed revision |
 | P0 Requirements | Original fixed rail predicates and canonical saved check IDs | No threshold relaxation; incorrect/missing/duplicate/cross-result references reject |
 | P0 Tools | Existing EngineeringAgent inspect/propose methods | Deterministic origin explicit; actual saved measurements and exact references |
 | P0 Native verification | Existing RailSweeps + fresh replay + NativeResults | One explicit bounded case, physical failure retained, independent force/contact/geometry audit |
@@ -22,6 +22,6 @@ reported separately for contracts, native runs, browser interactions and externa
 | External genuine AI | Existing accounted provider bridge; canonical-ID repair retained | **NOT QUALIFIED** for v1; future exact explicit approval required |
 | Out of scope | Arbitrary Python/controller/firmware execution, hardware, general CAD/robot support | Existing isolation/authorization boundaries preserved; no new executor |
 
-The source-editing gate is satisfied only for the supported numeric configuration
-language. The full general-purpose AI/controller-code golden path remains unproven;
-local deterministic success must not be described as that capability.
+The source-editing gate includes actual Rail DSL compilation/execution as well as
+numeric configuration. Arbitrary Python and genuine AI qualification remain
+unproven; deterministic source verification must not be described as either.

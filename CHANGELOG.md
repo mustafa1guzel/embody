@@ -1,5 +1,14 @@
 # Changelog
 
+## Source-bound Rail DSL controller engineering (local review)
+
+- Add actual bounded controller source compilation, explicit reviewed application,
+  native execution/fresh replay and independent source/control/force/contact audit.
+- Preserve numerical project formats and original native/acceptance implementations.
+- Integrate source tools, code diff, approval, comparison, restore and exact export
+  into the existing workbench. Offline proposals are deterministic, not GPT.
+- Retain historical evidence/accounting and require fresh approval for future AI.
+
 ## 1.0.0-rc1 — local engineering workbench (release review)
 
 - Connect existing typed rail projects, source review, native verification/fresh

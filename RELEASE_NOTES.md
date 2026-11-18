@@ -49,3 +49,18 @@ See [verification scope and actual counts](docs/VERIFICATION.md), the
 The private review manifest records the exact local commit, sources, test/build/
 browser evidence and any remaining release blockers. No push, release publication
 or deployment is performed automatically.
+
+## Source-bound Rail DSL addition
+
+Actual controller source can now be inspected, edited, validated, reviewed,
+explicitly applied, executed in native MuJoCo and independently replayed/audited.
+The new controller project and old numerical projects have separate explicit
+execution paths. The same physical scenario changed from wall-contact FAIL to
+0.099 m clearance PASS through a source-only edit, with exact source/artifact mapping.
+No native-bound historical file or acceptance threshold changed.
+
+This is bounded Rail DSL, not arbitrary Python or a genuine AI qualification.
+The source tools are provider-independent; all default proposals remain labelled
+OFFLINE DETERMINISTIC ENGINEERING ASSISTANT. Historical failed qualifications,
+accounting/reservations, artifacts and project heads are preserved. Archival
+fixture-dependent failures remain documented, not silently skipped or fixed.

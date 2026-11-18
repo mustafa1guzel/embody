@@ -1,5 +1,26 @@
 # Verification
 
+## Source-bound Rail DSL workflow
+
+Final supported backend: **635 passed**, 0 failed/skipped/deselected,240.47 s.
+Final frontend: **352 passed across51 files**, 0 failed,42.50 s. Typecheck and
+production build passed; the existing chunk warning remains. The fixed public
+runner now includes31 source-contract/lifecycle/native/HTTP tests. No archival
+test was removed, weakened or silently excluded from its previous policy.
+
+Real Chrome ran two source cases, each600 primary plus600 fresh replay steps.
+The initial source hit the wall (minimum clearance−0.002975 m,1 contact episode);
+the approved stopping-distance source passed (0.099 m,0 contacts). Both had zero
+final speed and fresh replay PASS. Mass4 kg, speed1.2 m/s, force4 N, initial
+clearance1.44 m and original requirements were identical before/after. Source and
+compiled artifact hashes map to the actual executed control trace. These are
+local deterministic decisions, **not a genuine GPT success**.
+
+The existing numerical workflow remains covered and works independently. Original
+private qualification failures and missing archival fixtures remain unchanged.
+See [controller contract](CONTROLLER_LANGUAGE.md) and
+[source review and execution](CONTROLLER_ENGINEERING.md).
+
 ## v1.0 local workbench candidate
 
 The new default local rail workflow is verified independently from historical live

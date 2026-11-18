@@ -245,3 +245,12 @@ No exception body, secret or authorization header is logged. Provider storage
 remains `store:true` and server-side continuation remains in use. The Inspect
 continuation disables further tool selection after the actual required inspection.
 See the [reliability report and post-commit freeze procedure](LIVE_AGENT_RELIABILITY.md).
+
+## Source-aware Rail DSL tools
+
+The local Controller view adds the [source-aware tool profile](CONTROLLER_ENGINEERING.md)
+without replacing this numerical assistant or its accounted provider bridge. Actual
+source, physical requirements and executed-source evidence can be inspected;
+source proposals are immutable reviews. Only explicit human routes can apply a
+review or authorize native execution. Offline proposals are visibly deterministic.
+There is no new live-model qualification or provider-dispatch authority.

@@ -92,3 +92,21 @@ as unavailable. Native replay PASS and physical PASS must remain distinct.
   this is not a verified repair and does not authorize relaxing requirements.
 - **Missing historical arm/experimental media:** not every private development
   recording is shipped. Current local rail verification does not depend on it.
+
+## Controller-source workflow
+
+The documented public suite now includes `tests/test_controller_engineering.py`:
+real production HTTP/native FAIL→PASS, actual source-to-control mapping, immutable
+revision/application/restore, unsafe constructs, compiler drift, cancellation and
+corruption negatives. Frontend tests label their protocol fixtures as fixtures.
+Use New controller project for the source workflow; existing New rail project keeps
+the numerical-only workflow. The initial source is intentionally faulty, with a
+feasible4 N physical envelope. All approval/run actions remain separate.
+
+Source projects retain physical JSON plus a separate project-bound source head.
+Their effective controller ID is the DSL version, not the JSON reference ID. Do not
+reset old heads to migrate across an interpreter change. Source hashes and compiled
+artifact hashes describe different layers; record and verify their mapping.
+See the [source tools](docs/CONTROLLER_ENGINEERING.md) and
+[bounded language](docs/CONTROLLER_LANGUAGE.md). Never add eval/exec or imports to
+this translator; arbitrary Python requires a separately audited isolation design.

@@ -30,6 +30,20 @@ A fresh replay PASS means an outcome reproduced; the physical requirements may
 still FAIL. Compilation, prediction, recorded evidence and hardware safety are
 separate concepts. A saved result never verifies a different configuration.
 
+## Source-bound controller debugging
+
+Choose **New controller project** to edit actual [Rail DSL source](docs/CONTROLLER_LANGUAGE.md).
+The source's compiled condition runs inside MuJoCo; it is not a decorative editor.
+The [controller workflow](docs/CONTROLLER_ENGINEERING.md) separates draft, static
+validation, diff, explicit source approval, physical execution and independent replay.
+
+At fixed 4 kg / 1.2 m/s / 4 N / 1.44 m, the initial late-braking source hit the wall.
+The reviewed offline stopping-distance source retained all physical parameters and
+original requirements and achieved **0.099 m clearance with zero wall contacts**.
+Source and artifact hashes, exact executed controls and both FAIL/PASS records are
+retained. The proposal is deterministic, **not GPT-authored**. Arbitrary Python is
+still unsupported; this bounded DSL has no imports, calls, loops or file access.
+
 ## Quick start
 
 Use an existing reviewed **Python 3.12** environment and the declared dependencies
@@ -57,9 +71,9 @@ See [developer setup and testing](DEVELOPER.md).
 | Capability | Scope |
 |---|---|
 | Local projects | Existing immutable Toolkit snapshots, exact-head numerical saves, reopen, source review/discard, restore as a new review |
-| Source | Editable bounded `robot.json`; registered Python controller inspection is read-only |
+| Source | Editable `robot.json` and bounded Rail DSL; registered Python remains read-only |
 | Physical context | BODYBASE/WORLDBASE-derived rail geometry, entered SI parameters, fixed original requirements |
-| Native verification | One trusted rail case per explicit action, fresh replay and existing independent native saved-state validation |
+| Native verification | One trusted rail case per explicit action, exact selected controller identity, fresh replay and independent native saved-state validation |
 | Engineering assistant | Actual inspect/propose tools, deterministic factual explanation and analytical force proposal; **not GPT** |
 | Evidence | Actual saved samples, separate physical/replay outcomes, revision/source association, downloadable JSON report |
 | Existing workspaces | Saved experiments, numerical rover toolkit, mechanical/SHAPEBASE/CIRCUITBASE and advanced analysis remain separately accessible |
@@ -71,8 +85,8 @@ install controller code or reuse any historical approval/accounting record.
 ## Important limits
 
 - This is a supported rigid rail reference, not universal robotics or real hardware validation.
-- JSON edits change numeric settings, including actuator authority. They do not edit
-  or execute arbitrary Python controller logic, firmware or model-authored source.
+- JSON edits change numeric settings. Rail DSL edits change bounded control logic.
+  Neither executes arbitrary Python, firmware, shell commands or unqualified GPT code.
 - The new workflow does not integrate circuit powertrain behavior with the rail simulation.
 - General live AI remains unqualified after the canonical-ID repair. Historical FAIL,
   blocked launches and unresolved reservations remain unchanged. New source requires

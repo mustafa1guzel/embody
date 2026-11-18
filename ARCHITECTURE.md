@@ -63,3 +63,17 @@ mechanism remain separate. No v1 UI action grants paid execution or consumes an 
 approval. Historical qualification, reservations and raw model output are unchanged.
 Untrusted source execution still requires its existing adequate isolation boundary;
 the local workbench never provides it with a new executor.
+
+## Source-bound controller extension
+
+`ControllerWorkbench` is mounted inside the current workbench, not a separate app.
+`ControllerEngineering` adds typed inspection/validation/proposal tools and explicit
+human source decisions over existing numerical projects, Store and Workbench locks.
+It does not add a model adapter or financial ledger. `controller_language` translates
+bounded source to data; `controller_native` interprets it inside the existing
+registered MuJoCo loop, runs fresh replay and independently audits saved controls,
+contacts, forces, geometry and original acceptance checks. The numerical reference
+path refuses execution for a selected DSL project, preventing silent substitution.
+
+[Language and safety contract](docs/CONTROLLER_LANGUAGE.md) ·
+[Source lifecycle and tools](docs/CONTROLLER_ENGINEERING.md)
