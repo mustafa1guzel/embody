@@ -95,7 +95,8 @@ class Workbench:
    p=self._project(key,expected);d=self._declaration(source,p)
    if d==p['declaration']:raise ValueError('No configuration change to review')
    design=self.toolkit.design(d) # Existing compiler verifies actual typed geometry; no stepping.
-   value={'format':'LOCAL_RAIL_REVIEW_V1','project_id':key,'base_sha256':expected,'base_revision':p['revision'],'before':p['declaration'],'after':d,'source_binding':self.binding(),'origin':origin,'tool_proposal':tool,'diff':''.join(difflib.unified_diff(pretty(p['declaration']).splitlines(True),pretty(d).splitlines(True),fromfile='saved/robot.json',tofile='proposed/robot.json')),'verification':'COMPILED_NOT_PHYSICALLY_VERIFIED','applied':False}
+   # Every explicit review needs its own decision identity, even after an identical discard.
+   value={'format':'LOCAL_RAIL_REVIEW_V1','review_nonce':uuid4().hex,'project_id':key,'base_sha256':expected,'base_revision':p['revision'],'before':p['declaration'],'after':d,'source_binding':self.binding(),'origin':origin,'tool_proposal':tool,'diff':''.join(difflib.unified_diff(pretty(p['declaration']).splitlines(True),pretty(d).splitlines(True),fromfile='saved/robot.json',tofile='proposed/robot.json')),'verification':'COMPILED_NOT_PHYSICALLY_VERIFIED','applied':False}
    store=self._store('reviews')
    if len(list(store.root.glob('*.json')))>=128:raise ValueError('Review retention limit; no automatic deletion')
    review_id=store.put(value);return {'review_id':review_id,**value,'design':design}

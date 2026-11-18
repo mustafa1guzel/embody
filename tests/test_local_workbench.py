@@ -165,3 +165,15 @@ def test_interrupted_before_admission_never_silently_retries(wb):
  p=wb.create('Interrupted mapping');nonce=uuid4().hex;root=wb.root/'runs';root.mkdir()
  (root/(nonce+'.json')).write_text(json.dumps({'project_id':p['id'],'project_sha256':p['sha256'],'project_revision':p['revision'],'parameters':p['declaration']['parameters'],'requirements':p['declaration']['requirements'],'native_source':rail.source_identity()}))
  with pytest.raises(ValueError,match='Interrupted'):wb.start(p['id'],p['sha256'],nonce,RUN,lambda op:pytest.fail('No resubmission'))
+
+
+def test_discard_then_repropose_identical_change_is_a_new_review(wb):
+ p=wb.create('Repeat deliberate review');d=copy.deepcopy(p['declaration']);d['parameters']['force_n']=3
+ first=wb.review(p['id'],p['sha256'],pretty(d));wb.decide(p['id'],p['sha256'],first['review_id'],'DISCARD',SAVE)
+ again=wb.review(p['id'],p['sha256'],pretty(d))
+ assert again['review_id']!=first['review_id']
+ assert wb._decision(first['review_id'])['decision']=='DISCARD'
+ assert wb.read(p['id'])['sha256']==p['sha256']
+ saved=wb.decide(p['id'],p['sha256'],again['review_id'],'SAVE',SAVE)
+ assert saved['revision']==1 and saved['declaration']['parameters']['force_n']==3
+ with pytest.raises(ValueError):wb.decide(p['id'],saved['sha256'],first['review_id'],'SAVE',SAVE)

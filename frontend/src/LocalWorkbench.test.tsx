@@ -45,3 +45,22 @@ describe('verification document export',()=>{
   finally{vi.unstubAllGlobals();}
  });
 });
+
+describe('asynchronous workspace isolation',()=>{
+ it('ignores a JSON file that finishes reading after a project reopen',async()=>{
+  await opened();source();let resolve:(v:string)=>void=()=>{};const pending=new Promise<string>(r=>resolve=r);
+  fireEvent.change(screen.getByLabelText('Load project JSON draft'),{target:{files:[{size:20,text:()=>pending}]}});
+  fireEvent.click(screen.getByRole('button',{name:/Fixture project Revision 0/}));
+  await screen.findByText('Saved configuration opened. Physical evidence remains separate.');
+  await act(async()=>resolve('OLD_CONTEXT_DRAFT'));
+  expect(screen.getByLabelText('Project JSON source')).toHaveValue(base.source);
+ });
+ it('does not attach a late request error to a reopened project',async()=>{
+  await opened();let reject:(e:Error)=>void=()=>{};const pending=new Promise((_,r)=>reject=r);const old=vi.mocked(api).getMockImplementation()!;
+  vi.mocked(api).mockImplementation((p,b)=>p==='workbench/review'?pending:old(p,b));
+  fireEvent.change(source(),{target:{value:JSON.stringify(review.after)}});fireEvent.click(screen.getByRole('button',{name:'Review JSON changes'}));
+  fireEvent.click(screen.getByRole('button',{name:/Fixture project Revision 0/}));await screen.findByText('Saved configuration opened. Physical evidence remains separate.');
+  await act(async()=>reject(new Error('STALE_REVIEW_FAILURE')));
+  expect(screen.queryByRole('alert')).not.toBeInTheDocument();
+ });
+});
